@@ -2,8 +2,13 @@
 .btn-default,
 .btn-primary,
 .btn-danger {
+  // We use flex to ensure icons etc are correctly aligned in buttons
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
   color: inherit;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: bold;
   padding: 8px 16px;
   position: relative;
   border-style: solid;
@@ -35,12 +40,8 @@
     box-shadow: none;
   }
 
-   &:focus-visible {
-    border-color: $eos-bc-blue-500;
-  }
-
   // Branding hover effect
-  &:not(:disabled):not(.disabled):not(.text-muted):hover::before {
+  &:not(:disabled):not(.disabled):not(.text-muted):hover::after {
     // background: #686565;
     border: 2px solid transparent;
     bottom: -2px;
@@ -77,7 +78,7 @@
   background: none;
   border: 0;
   padding: 4px 8px;
-  color: $eos-bc-pine-500;
+  color: @eos-bc-pine-500;
   font-size: 16px;
 
   i {
@@ -87,7 +88,7 @@
   &:active,
   &:focus,
   &:hover:not(:disabled):not(.disabled) {
-    color: $eos-bc-green-900;
+    color: @eos-bc-green-900;
   }
 
   &.disabled,
@@ -98,109 +99,126 @@
   }
 }
 
-// TODO: Add :active and :focus states for green etc
-// NB! Here and below, these are not nested because they're not used consistently along with .btn
-.btn-default {
+.btn-link {
+
   &,
   &:active,
   &:focus,
   &:disabled,
   &.disabled {
+
+    &,
+    &:hover {
+      color: @link-color;
+      font-weight: normal;
+    }
+
+    &:not(:disabled):not(.disabled):not(.text-muted):hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// TODO: Add :active and :focus states for green etc
+// NB! Here and below, these are not nested because they're not used consistently along with .btn
+.btn-default {
+
+  &,
+  &:active,
+  &:focus,
+  &:disabled,
+  &.disabled {
+
     &,
     &:hover {
       background: transparent;
-      border-color: $eos-bc-pine-500;
-      color: $eos-bc-pine-500;
+      border-color: @eos-bc-pine-500;
+      color: @eos-bc-pine-500;
 
-      &:not(:disabled):not(.disabled):not(.text-muted):hover::before {
-        background: $eos-bc-pine-500;
-      }
+      // &:not(:disabled):not(.disabled):not(.text-muted):hover::after {
+      //   background: @eos-bc-pine-500;
+      // }
     }
   }
 }
 
 .btn-default-inverse {
+
   &,
   &:active,
   &:focus,
   &:disabled,
   &.disabled {
+
     &,
     &:hover {
       background: transparent;
-      border-color: $eos-bc-white;
-      color: $eos-bc-white;
+      border-color: @eos-bc-white;
+      color: @eos-bc-white;
 
-      &:not(:disabled):not(.disabled):not(.text-muted):hover::before {
-        background: $eos-bc-white;
+      &:not(:disabled):not(.disabled):not(.text-muted):hover::after {
+        background: @eos-bc-white;
       }
     }
-  }
-
-  &:focus-visible {
-    border-color: $eos-bc-blue-500;
   }
 }
 
 .btn-primary {
+
   &,
   &:active,
   &:focus,
   &:disabled,
   &.disabled {
+
     &,
     &:hover {
-      background: $eos-bc-persimmon-500;
-      border-color: $eos-bc-persimmon-500;
-      color: $eos-bc-gray-1000;
+      background: @eos-bc-persimmon-500;
+      border-color: @eos-bc-persimmon-500;
+      color: @eos-bc-gray-1000;
 
-      &:not(:disabled):not(.disabled):not(.text-muted):hover::before {
-        background: $eos-bc-gray-900;
+      &:not(:disabled):not(.disabled):not(.text-muted):hover::after {
+        background: @eos-bc-gray-900;
       }
     }
-  }
-
-  &:focus-visible {
-    border-color: $eos-bc-blue-500;
   }
 }
 
+
 // Warning shouldn't currently be used anywhere, but cover it just in case
 .btn-danger {
+
   &,
   &:active,
   &:focus,
   &:disabled,
   &.disabled {
+
     &,
     &:hover {
-      background: $eos-bc-red-500;
-      border-color: $eos-bc-red-500;
-      color: $eos-bc-white;
+      background: @eos-bc-red-500;
+      border-color: @eos-bc-red-500;
+      color: @eos-bc-white;
 
       &:not(:disabled):not(.disabled):not(.text-muted):hover {
-        background: $eos-bc-red-900;
-        border-color: $eos-bc-red-900;
+        background: @eos-bc-red-900;
+        border-color: @eos-bc-red-900;
       }
 
-      &:not(:disabled):not(.disabled):not(.text-muted):hover::before {
-        background: $eos-bc-gray-900;
+      &:not(:disabled):not(.disabled):not(.text-muted):hover::after {
+        background: @eos-bc-gray-900;
       }
     }
-  }
-
-  &:focus-visible {
-    border-color: $eos-bc-blue-500;
   }
 }
 
 .input-group-btn .btn {
   border-width: 1px;
   padding: 6px 12px;
-  height: $input-height;
+  height: @input-height;
   z-index: 100;
 
-  &:not(:disabled):not(.disabled):not(.text-muted):hover::before {
+  &:not(:disabled):not(.disabled):not(.text-muted):hover::after {
     border-width: 1px;
     bottom: -1px;
     left: -1px;
@@ -216,12 +234,14 @@
 }
 
 .panel-heading,
-.panel-heading a:not(.btn):not(.btn-tertiary),
-th > a,
-th .orderBy {
-  border: none;
-  padding: 0;
-  font-weight: 600 !important;
-  color: $eos-bc-gray-1000 !important;
-  background-color: transparent;
+th {
+
+  .btn,
+  .btn-link,
+  a:not(.btn-unstyled) {
+    border: none;
+    padding: 0;
+    font-weight: bold;
+    color: @eos-bc-gray-1000;
+  }
 }

@@ -26,6 +26,9 @@ type BaseProps = {
   /** If true, disable the button. */
   disabled?: boolean;
 
+  /** If true, add unstyled button style */
+  unstyled?: boolean;
+
   /**
    * Any additional css classes for the button, `"btn"` is prepended automatically
    */
@@ -195,8 +198,16 @@ export class Button extends _ButtonBase<ButtonProps> {
         onClick={this.props.handler}
         disabled={this.props.disabled}
       >
-        {this.renderIcon()}
-        {text}
+        {this.props.unstyled ? (
+          <>
+            {this.renderIcon()}
+          </>
+          ) : (
+            <>
+            {this.renderIcon()}
+            {text}
+          </>
+        )}
       </button>
     );
   }
@@ -242,6 +253,7 @@ export class LinkButton extends _ButtonBase<LinkProps> {
           };
     return (
       <a
+        role="button"
         id={this.props.id}
         title={this.props.title}
         className={cssClasses}
@@ -252,8 +264,16 @@ export class LinkButton extends _ButtonBase<LinkProps> {
         {...targetProps}
         {...tooltipProps}
       >
-        {this.renderIcon()}
-        {text}
+        {this.props.unstyled ? (
+          <>
+            {this.renderIcon()}
+          </>
+          ) : (
+          <>
+            {this.renderIcon()}
+            {text}
+          </>
+        )}
       </a>
     );
   }
