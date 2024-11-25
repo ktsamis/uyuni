@@ -199,11 +199,9 @@ export class Button extends _ButtonBase<ButtonProps> {
         disabled={this.props.disabled}
       >
         {this.props.unstyled ? (
+          <>{this.renderIcon()}</>
+        ) : (
           <>
-            {this.renderIcon()}
-          </>
-          ) : (
-            <>
             {this.renderIcon()}
             {text}
           </>
@@ -265,10 +263,8 @@ export class LinkButton extends _ButtonBase<LinkProps> {
         {...tooltipProps}
       >
         {this.props.unstyled ? (
-          <>
-            {this.renderIcon()}
-          </>
-          ) : (
+          <>{this.renderIcon()}</>
+        ) : (
           <>
             {this.renderIcon()}
             {text}
