@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import { Button } from "components/buttons";
 import { cloneReactElement } from "components/utils";
 
 import styles from "./SearchPanel.module.scss";

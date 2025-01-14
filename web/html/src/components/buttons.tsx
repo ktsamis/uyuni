@@ -10,7 +10,6 @@ type BaseProps = {
   text?: React.ReactNode;
   /** Text to display on the button. */
   children?: React.ReactNode;
-
   /**
    * FontAwesome icon class of the button. Can also include additional FA classes
    * (sizing, animation etc.).
@@ -25,9 +24,6 @@ type BaseProps = {
 
   /** If true, disable the button. */
   disabled?: boolean;
-
-  /** If true, add unstyled button style */
-  unstyled?: boolean;
 
   /**
    * Any additional css classes for the button, `"btn"` is prepended automatically
@@ -198,14 +194,8 @@ export class Button extends _ButtonBase<ButtonProps> {
         onClick={this.props.handler}
         disabled={this.props.disabled}
       >
-        {this.props.unstyled ? (
-          <>{this.renderIcon()}</>
-        ) : (
-          <>
-            {this.renderIcon()}
-            {text}
-          </>
-        )}
+        {this.renderIcon()}
+        {text}
       </button>
     );
   }
@@ -251,7 +241,6 @@ export class LinkButton extends _ButtonBase<LinkProps> {
           };
     return (
       <a
-        role="button"
         id={this.props.id}
         title={this.props.title}
         className={cssClasses}
@@ -262,14 +251,8 @@ export class LinkButton extends _ButtonBase<LinkProps> {
         {...targetProps}
         {...tooltipProps}
       >
-        {this.props.unstyled ? (
-          <>{this.renderIcon()}</>
-        ) : (
-          <>
-            {this.renderIcon()}
-            {text}
-          </>
-        )}
+        {this.renderIcon()}
+        {text}
       </a>
     );
   }
