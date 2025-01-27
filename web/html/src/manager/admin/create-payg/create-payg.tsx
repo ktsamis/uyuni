@@ -59,7 +59,6 @@ const CreateProject = () => {
               className="btn-primary"
               title={t("Add PAYG ssh data")}
               text={t("Create")}
-              icon="fa-plus"
               action={() =>
                 onAction(payg.properties, "create")
                   .then((data) => {

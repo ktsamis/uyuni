@@ -173,6 +173,7 @@ class VirtualHostManagerEdit extends React.Component<Props, State> {
       <div className="btn-group pull-right">
         <Button
           id="back"
+          key="back"
           className="btn-default"
           icon="fa-chevron-left"
           text={t("Back")}
@@ -185,6 +186,7 @@ class VirtualHostManagerEdit extends React.Component<Props, State> {
       buttons.unshift(
         <SubmitButton
           id="update-btn"
+          key="update-btn"
           className="btn-primary me-4"
           icon="fa-edit"
           text={t("Update")}
@@ -195,6 +197,7 @@ class VirtualHostManagerEdit extends React.Component<Props, State> {
       buttons.unshift(
         <SubmitButton
           id="create-btn"
+          key="create-btn"
           className="btn-primary me-4"
           icon="fa-plus"
           text={t("Create")}

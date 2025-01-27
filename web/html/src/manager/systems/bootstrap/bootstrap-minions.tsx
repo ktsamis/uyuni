@@ -395,16 +395,16 @@ class BootstrapMinions extends React.Component<Props, State> {
     const buttons = [
       <AsyncButton
         id="bootstrap-btn"
+        key="bootstrap-btn"
         defaultType="btn-primary me-4"
-        icon="fa-plus"
         text={t("Bootstrap")}
         disabled={this.state.privKeyLoading}
         action={this.onBootstrap}
       />,
       <AsyncButton
         id="clear-btn"
+        key="clear-btn"
         defaultType="btn-default"
-        icon="fa-eraser"
         text={t("Clear fields")}
         action={this.clearFields}
       />,
