@@ -173,7 +173,6 @@ class VirtualHostManagerEdit extends React.Component<Props, State> {
       <div className="btn-group pull-right">
         <Button
           id="back"
-          key="back"
           className="btn-default"
           icon="fa-chevron-left"
           text={t("Back")}
