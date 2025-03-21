@@ -135,6 +135,13 @@ export class AsyncButton extends _ButtonBase<AsyncProps, AsyncState> {
 
     const text = this.props.text ?? this.props.children;
     const margin = text ? "" : " no-margin";
+    const tooltipProps = this.props.title
+      ? {
+          "data-bs-toggle": "tooltip",
+          "aria-label": this.props.title,
+          "data-bs-placement": this.props.tooltipPlacement,
+        }
+      : {};
     return (
       <button
         id={this.props.id}
@@ -166,6 +173,15 @@ export type ButtonProps = BaseProps & {
 export class Button extends _ButtonBase<ButtonProps> {
   render() {
     const text = this.props.text ?? this.props.children;
+    const cssClasses = "btn " + (this.props.className ?? "btn-default");
+    const tooltipProps = this.props.title
+      ? {
+          "data-bs-toggle": "tooltip",
+          "aria-label": this.props.title,
+          "data-bs-placement": this.props.tooltipPlacement,
+        }
+      : {};
+
     return (
       <button
         id={this.props.id}
@@ -202,15 +218,24 @@ type LinkProps = BaseProps & {
 export class LinkButton extends _ButtonBase<LinkProps> {
   render() {
     const text = this.props.text ?? this.props.children;
+    const cssClasses = "btn " + (this.props.className ?? "btn-default");
+    const tooltipProps = this.props.title
+      ? {
+          "data-bs-toggle": "tooltip",
+          "aria-label": this.props.title,
+          "data-bs-placement": this.props.tooltipPlacement,
+        }
+      : {};
+
     const targetProps: Partial<React.HTMLProps<HTMLAnchorElement>> =
       this.props.target === "_blank"
         ? {
-          target: "_blank",
-          rel: "noopener noreferrer",
-        }
+            target: "_blank",
+            rel: "noopener noreferrer",
+          }
         : {
-          target: this.props.target,
-        };
+            target: this.props.target,
+          };
     return (
       <a
         id={this.props.id}
@@ -234,6 +259,13 @@ export class LinkButton extends _ButtonBase<LinkProps> {
 export class SubmitButton extends _ButtonBase {
   render() {
     const text = this.props.text ?? this.props.children;
+    const tooltipProps = this.props.title
+      ? {
+          "data-bs-toggle": "tooltip",
+          "aria-label": this.props.title,
+          "data-bs-placement": this.props.tooltipPlacement,
+        }
+      : {};
     return (
       <button id={this.props.id} type="submit" className={"btn " + this.props.className} disabled={this.props.disabled}>
         {this.renderIcon()}
@@ -259,6 +291,13 @@ type DropdownProps = BaseProps & {
 export class DropdownButton extends _ButtonBase<DropdownProps> {
   render() {
     const text = this.props.text ?? this.props.children;
+    const tooltipProps = this.props.title
+      ? {
+          "data-bs-toggle": "tooltip",
+          "aria-label": this.props.title,
+          "data-bs-placement": this.props.tooltipPlacement,
+        }
+      : {};
     return (
       <div className="dropdown">
         <button

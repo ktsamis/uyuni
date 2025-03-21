@@ -123,10 +123,10 @@ class RecurringActionsDetails extends React.Component<RecurringActionsDetailsPro
                     (details.cronTimes.dayOfMonth === "1"
                       ? "st "
                       : details.cronTimes.dayOfMonth === "2"
-                        ? "nd "
-                        : details.cronTimes.dayOfMonth === "3"
-                          ? "rd "
-                          : "th ")
+                      ? "nd "
+                      : details.cronTimes.dayOfMonth === "3"
+                      ? "rd "
+                      : "th ")
                 }
               </b>
               {"of the month at "}
@@ -276,7 +276,7 @@ class RecurringActionsDetails extends React.Component<RecurringActionsDetailsPro
               identifier={(item) => item.position}
               selectable={false}
               data={_sortBy(this.state.details.states, "position")}
-              initialItemsPerPage={0}
+              hideHeaderFooter="both"
             >
               <Column header={t("Order")} columnKey="position" cell={(row) => row.position} />
               <Column

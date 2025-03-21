@@ -42,7 +42,7 @@ const IssPeripheral = (props: Props) => {
                 <LinkButton
                   id="issue-btn-link"
                   key="issue"
-                  className="btn-link"
+                  className="dropdown-item"
                   text={t("Migrate ISS v1...")}
                   handler={() =>
                     window.pageRenderers?.spaengine?.navigate?.(`/rhn/manager/admin/hub/peripherals/migrate-from-v1`)
@@ -51,7 +51,7 @@ const IssPeripheral = (props: Props) => {
                 <LinkButton
                   id="store-btn-link"
                   key="store"
-                  className="btn-link"
+                  className="dropdown-item"
                   text={t("Migrate ISS v2...")}
                   handler={() =>
                     window.pageRenderers?.spaengine?.navigate?.(`/rhn/manager/admin/hub/peripherals/migrate-from-v2`)

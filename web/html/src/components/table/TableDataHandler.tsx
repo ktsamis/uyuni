@@ -14,7 +14,7 @@ import { ItemsPerPageSelector, PaginationBlock } from "../pagination";
 import { Header } from "./Header";
 import { SearchField } from "./SearchField";
 import { SearchPanel } from "./SearchPanel";
-import { SelectedRowDetails } from "./SelectedRowDetails"
+import { SelectedRowDetails } from "./SelectedRowDetails";
 
 type ChildrenArgsProps = {
   currItems: any[];
@@ -62,8 +62,11 @@ type Props = {
   /** Initial search query */
   initialSearch?: string;
 
-  /** the initial number of how many row-per-page to show. If it's 0 table header and footer are hidden */
+  /** the initial number of how many row-per-page to show.*/
   initialItemsPerPage?: number;
+
+  /** Hide header and footer */
+  hideHeaderFooter?: string;
 
   /** enables item selection.
    * tells if a row is selectable.
@@ -327,6 +330,7 @@ export class TableDataHandler extends React.Component<Props, State> {
     const fromItem = itemCount > 0 ? firstItemIndex + 1 : 0;
     const toItem = firstItemIndex + itemsPerPage <= itemCount ? firstItemIndex + itemsPerPage : itemCount;
     const isEmpty = itemCount === 0;
+    const isTableHeaderEmpty = !this.props.titleButtons && !this.props.searchField && !this.props.additionalFilters;
 
     if (this.props.selectable) {
       const isSelectable =
@@ -396,32 +400,34 @@ export class TableDataHandler extends React.Component<Props, State> {
 
     const emptyText = this.props.emptyText || t("There are no entries to show.");
     const isSelectable = typeof this.props.selectable !== "undefined" && this.props.selectable !== false;
-
+    const hideHeader = this.props.hideHeaderFooter === "header" || this.props.hideHeaderFooter === "both";
+    const hideFooter = this.props.hideHeaderFooter === "footer" || this.props.hideHeaderFooter === "both";
     return (
       <div className="spacewalk-list">
         <div className="panel panel-default">
-          {this.props.initialItemsPerPage !== 0 ? (
-            <div className="panel-heading">
-              <div className="spacewalk-list-head-addons align-items-center">
-
-                <SearchPanel
-                  fromItem={fromItem}
-                  toItem={toItem}
-                  itemCount={itemCount}
-                  criteria={this.state.criteria}
-                  field={this.state.field}
-                  onSearch={this.onSearch}
-                  onSearchField={this.onSearchField}
-                  onClear={handleSearchPanelClear}
-                  onSelectAll={handleSearchPanelSelectAll}
-                  selectedCount={selectedItems.length}
-                  selectable={isSelectable}
-                >
-                  {this.props.searchField}
-                  {this.props.additionalFilters}
-                </SearchPanel>
-                <div className="spacewalk-list-head-addons-extra table-items-per-page-wrapper">
-                  {this.props.titleButtons}
+          {!hideHeader && !isTableHeaderEmpty ? (
+            <>
+              <div className=" panel-heading">
+                <div className="spacewalk-list-head-addons align-items-center">
+                  <SearchPanel
+                    fromItem={fromItem}
+                    toItem={toItem}
+                    itemCount={itemCount}
+                    criteria={this.state.criteria}
+                    field={this.state.field}
+                    onSearch={this.onSearch}
+                    onSearchField={this.onSearchField}
+                    onClear={handleSearchPanelClear}
+                    onSelectAll={handleSearchPanelSelectAll}
+                    selectedCount={selectedItems.length}
+                    selectable={isSelectable}
+                  >
+                    {this.props.searchField}
+                    {this.props.additionalFilters}
+                  </SearchPanel>
+                  <div className="spacewalk-list-head-addons-extra table-items-per-page-wrapper">
+                    {this.props.titleButtons}
+                  </div>
                 </div>
               </div>
               <SelectedRowDetails
@@ -433,8 +439,7 @@ export class TableDataHandler extends React.Component<Props, State> {
                 selectable={isSelectable}
                 selectedCount={selectedItems.length}
               />
-            </div>
-
+            </>
           ) : null}
           {this.state.loading ? (
             <Loading text={this.props.loadingText} />
@@ -456,7 +461,7 @@ export class TableDataHandler extends React.Component<Props, State> {
               </div>
             </div>
           )}
-          {this.props.initialItemsPerPage !== 0 ? (
+          {!hideFooter ? (
             <div className="panel-footer">
               <div className="spacewalk-list-bottom-addons d-flex justify-content-between">
                 <ItemsPerPageSelector
@@ -477,7 +482,6 @@ export class TableDataHandler extends React.Component<Props, State> {
             </div>
           ) : null}
         </div>
-        {this.renderBottomButtons()}
       </div>
     );
   }

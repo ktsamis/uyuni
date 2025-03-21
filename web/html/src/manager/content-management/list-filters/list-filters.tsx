@@ -133,10 +133,8 @@ const ListFilters = (props: Props) => {
     </div>
   );
 
-  // const unusedFilter = <Button className="btn-default" handler={onSelectUnused} text={t("Select unused")}></Button>;
-
-  const deleteSelected = [
-    <div className="btn-group">
+  const actionButtons = [
+    <div key="filter-action-buttons" className="btn-group">
       <Button className="btn-default" handler={onSelectUnused} text={t("Select unused")}></Button>
       <Button
         className="btn btn-danger"
@@ -144,7 +142,7 @@ const ListFilters = (props: Props) => {
         handler={deleteSelectedRows}
         text={t("Delete")}
       />
-    </div>
+    </div>,
   ];
 
   return (
@@ -164,7 +162,7 @@ const ListFilters = (props: Props) => {
         selectedItems={selectedIdentifiers}
         deletable={isDeletable}
         onDelete={deleteRow}
-        titleButtons={deleteSelected}
+        titleButtons={actionButtons}
       >
         <Column
           columnKey="filter_name"
