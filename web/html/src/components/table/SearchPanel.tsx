@@ -54,7 +54,7 @@ export function SearchPanel(props: SearchPanelProps) {
           onSearchField: props.onSearchField,
         })
       )}
-      <div className={styles.pagination}>
+      {/* <div className={styles.pagination}>
         <span>
           {t("Items {from} - {to} of {total}", { from: props.fromItem, to: props.toItem, total: props.itemCount })}
         </span>
