@@ -6,13 +6,15 @@ type Props = {
   minLines: number;
   maxLines: number;
   readOnly: boolean;
-  onChange?: (...args: any[]) => any;
+  onChange?: (value: string) => void;
   className: string;
   id: string;
   content: React.ReactNode;
 };
 
 class AceEditor extends React.Component<Props> {
+  editor: any = null;
+
   componentDidMount() {
     const component = this;
 
@@ -26,6 +28,8 @@ class AceEditor extends React.Component<Props> {
       editor.setOptions({ maxLines: component.props.maxLines });
       editor.setReadOnly(component.props.readOnly);
 
+      editor.setValue(component.props.content || "", 1);
+
       editor.getSession().on("change", function () {
         component.props.onChange?.(editor.getSession().getValue());
       });
@@ -37,12 +41,14 @@ class AceEditor extends React.Component<Props> {
     }
   }
 
+  componentDidUpdate(prevProps: Props) {
+    if (prevProps.content !== this.props.content && this.editor) {
+      this.editor.setValue(this.props.content || "", 1);
+    }
+  }
+
   render() {
-    return (
-      <div ref="editor" className={this.props.className} id={this.props.id}>
-        {this.props.content}
-      </div>
-    );
+    return <div ref="editor" className={this.props.className} id={this.props.id} />;
   }
 }
 
