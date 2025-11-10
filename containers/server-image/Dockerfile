@@ -63,6 +63,7 @@ RUN set -euo pipefail; \
         spacecmd \
         spacewalk-backend-sql-postgresql \
         spacewalk-java-postgresql \
+        susemanager-tools-salt \
         sssd \
         sssd-ad \
         sssd-dbus \
