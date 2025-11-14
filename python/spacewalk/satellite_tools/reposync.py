@@ -3055,10 +3055,10 @@ class RepoSync(object):
         if self.org_id:
             param_dict["org_id"] = self.org_id
             # pylint: disable-next=invalid-name
-            orgidStatement = " = :org_id"
+            orgidStatement = "(p.org_id = :org_id or p.org_id is NULL)"
         else:
             # pylint: disable-next=invalid-name
-            orgidStatement = " is NULL"
+            orgidStatement = "p.org_id is NULL"
 
         h = rhnSQL.prepare(
             # pylint: disable-next=consider-using-f-string
@@ -3072,7 +3072,7 @@ class RepoSync(object):
               join rhnChecksumView c on p.checksum_id = c.id
               join rhnChannelPackage cp on p.id = cp.package_id
              where pn.name = :name
-               and p.org_id %s
+               and %s
                and pevr.version = :version
                and pevr.release = :release
                and pa.label = :arch

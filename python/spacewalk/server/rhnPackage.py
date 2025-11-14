@@ -241,7 +241,7 @@ def get_info_for_package(pkg, channel_id, org_id):
     else:
         epochStatement = "epoch = :epoch"
     if params["org_id"]:
-        orgStatement = "org_id = :org_id"
+        orgStatement = "(org_id = :org_id or org_id is null)"
     else:
         orgStatement = "org_id is null"
 
@@ -267,7 +267,7 @@ def get_info_for_package(pkg, channel_id, org_id):
        and %s
        and pa.label = :arch
        and %s
-     order by cp.channel_id nulls last,
+     order by p.org_id nulls first, cp.channel_id nulls last,
               p.id desc
     """ % (
         epochStatement,
