@@ -1440,8 +1440,10 @@ class RepoSync(object):
             db_pack = None
             for p in packs:
                 if p["checksum"] == pack.checksum:
-                    db_pack = p
-                    break
+                    if not db_pack:
+                        db_pack = p
+                    else:
+                        self.disassociate_package_by_id(p["package_id"])
 
             to_download = True
             to_link = True
@@ -2030,6 +2032,17 @@ class RepoSync(object):
             checksum_type=checksum_type,
             checksum=checksum,
         )
+
+    def disassociate_package_by_id(self, package_id_in):
+        log(3, f"Disassociating package with id: {package_id_in}")
+        h = rhnSQL.prepare(
+            """
+            delete from rhnChannelPackage cp
+             where cp.channel_id = :channel_id
+               and cp.package_id = :package_id
+        """
+        )
+        h.execute(channel_id=int(self.channel["id"]), package_id=package_id_in)
 
     def disassociate_erratum(self, advisory_name):
         # pylint: disable-next=consider-using-f-string

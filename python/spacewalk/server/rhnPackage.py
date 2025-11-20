@@ -248,7 +248,7 @@ def get_info_for_package(pkg, channel_id, org_id):
     # pylint: disable-next=consider-using-f-string
     statement = """
     select p.path, cp.channel_id,
-           cv.checksum_type, cv.checksum, p.org_id, pe.epoch
+           cv.checksum_type, cv.checksum, p.org_id, pe.epoch, p.id as package_id
       from rhnPackage p
       join rhnPackageName pn
         on p.name_id = pn.id

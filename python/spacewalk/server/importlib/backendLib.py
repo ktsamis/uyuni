@@ -237,13 +237,11 @@ class BaseTableLookup:
                 k.append(key + [0])
                 if self.table.isOrNull(col):
                     q.append(query + [f"({col} = :{col} or {col} is null)"])
-                    k.append(key + [1])
-                    q.append(query + [f"{col} is null"])
                 else:
                     q.append(query + [f"{col} = :{col}"])
-                    if self.table.isNullable(col):
-                        k.append(key + [1])
-                        q.append(query + [f"{col} is null"])
+                if self.table.isNullable(col):
+                    k.append(key + [1])
+                    q.append(query + [f"{col} is null"])
             keys = k
             queries = q
         # Now put the queries in self.sqlqueries, keyed on the list of 0/1
