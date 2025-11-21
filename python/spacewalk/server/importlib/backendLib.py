@@ -91,6 +91,7 @@ class Table:
         "map": DictType,
         "nullable": ListType,  # Will become a hash eventually
         "or_null": ListType,
+        "select_extension": str,
         "severityHash": DictType,
         "defaultSeverity": IntType,
         "sequenceColumn": str,
@@ -114,6 +115,7 @@ class Table:
         # Nullable columns; will become a hash
         self.nullable = []
         self.or_null = []
+        self.select_extension = ""
         # Compute the diff
         self.severityHash = {}
         self.defaultSeverity = 4
@@ -290,10 +292,20 @@ class BaseTableLookup:
 class TableLookup(BaseTableLookup):
     def __init__(self, table, dbmodule):
         BaseTableLookup.__init__(self, table, dbmodule)
-        self.queryTemplate = "select * from %s where %s"
+        self.queryTemplate = "select * from %s where %s%s"
 
     def _buildQuery(self, key):
-        return self.queryTemplate % (self.table.name, self.whereclauses[key])
+        if self.__class__.__name__ == "TableLookup":
+            return self.queryTemplate % (
+                self.table.name,
+                self.whereclauses[key],
+                self.table.select_extension,
+            )
+        else:
+            return self.queryTemplate % (
+                self.table.name,
+                self.whereclauses[key],
+            )
 
 
 # pylint: disable-next=missing-class-docstring
