@@ -3101,7 +3101,7 @@ class RepoSync(object):
         h = rhnSQL.prepare(
             # pylint: disable-next=consider-using-f-string
             """
-            select p.id, c.checksum, c.checksum_type, pevr.epoch
+            select p.id, c.checksum, c.checksum_type, pevr.epoch, p.org_id
               from rhnPackage p
               join rhnPackagename pn on p.name_id = pn.id
               join rhnpackageevr pevr on p.evr_id = pevr.id
@@ -3132,7 +3132,7 @@ class RepoSync(object):
             if k not in ["epoch", "channel_label", "channel_id"]:
                 package[k] = param_dict[k]
         package["epoch"] = cs["epoch"]
-        package["org_id"] = self.org_id
+        package["org_id"] = cs["org_id"]
 
         package["checksums"] = {cs["checksum_type"]: cs["checksum"]}
         package["checksum_type"] = cs["checksum_type"]
