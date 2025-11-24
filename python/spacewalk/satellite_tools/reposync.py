@@ -1249,7 +1249,7 @@ class RepoSync(object):
         # with those in the database.
         e = importLib.Erratum()
         e["packages"] = self._updates_process_packages(
-            npkgs, e["advisory_name"], existing_packages
+            npkgs, patch_name, existing_packages
         )
 
         if (
@@ -2033,8 +2033,8 @@ class RepoSync(object):
             checksum=checksum,
         )
 
-    def disassociate_package_by_id(self, package_id_in):
-        log(3, f"Disassociating package with id: {package_id_in}")
+    def disassociate_package_by_id(self, package_id):
+        log(3, f"Disassociating package with id: {package_id}")
         h = rhnSQL.prepare(
             """
             delete from rhnChannelPackage cp
@@ -2042,7 +2042,7 @@ class RepoSync(object):
                and cp.package_id = :package_id
         """
         )
-        h.execute(channel_id=int(self.channel["id"]), package_id=package_id_in)
+        h.execute(channel_id=int(self.channel["id"]), package_id=package_id)
 
     def disassociate_erratum(self, advisory_name):
         # pylint: disable-next=consider-using-f-string
@@ -2058,6 +2058,21 @@ class RepoSync(object):
                         """
         )
         h.execute(channel_id=self.channel["id"], advisory_name=advisory_name)
+
+    def disassociate_erratum_package(self, advisory_name, package_id):
+        log(3, f"Disassociating erratum package: {advisory_name} [package id: {package_id}]")
+        h = rhnSQL.prepare(
+            """
+                delete from rhnErrataPackage ep
+                 where ep.package_id = :package_id
+                       and ep.errata_id in (select e.id
+                                              from rhnErrata e
+                                             where e.advisory_name = :advisory_name
+                                              and (e.org_id = :org_id or (e.org_id is null and :org_id is null))
+                                           )
+            """
+        )
+        h.execute(package_id=package_id, advisory_name=advisory_name, org_id=self.org_id)
 
     def load_channel(self):
         return rhnChannel.channel_info(self.channel_label)
@@ -2697,7 +2712,7 @@ class RepoSync(object):
         :existing_packages: list of already existing packages for this errata
 
         """
-        erratum_packages = existing_packages
+        erratum_packages = existing_packages.copy()
         for pkg in packages:
             if pkg["arch"] in ["src", "nosrc"]:
                 continue
@@ -2739,9 +2754,19 @@ class RepoSync(object):
 
             # add new packages to the errata
             found = False
-            for oldpkg in erratum_packages:
+            for oldpkg in existing_packages:
                 if oldpkg["package_id"] == ret["package_id"]:
                     found = True
+                elif (
+                    oldpkg["name"] == ret["name"]
+                    and oldpkg["arch"] == ret["arch"]
+                    and oldpkg["version"] == ret["version"]
+                    and oldpkg["release"] == ret["release"]
+                    and oldpkg["epoch"] == ret["epoch"]
+                    and oldpkg["org_id"] != ret["org_id"]
+                ):
+                    erratum_packages.remove(oldpkg)
+                    self.disassociate_erratum_package(advisory_name, oldpkg["package_id"])
             if not found:
                 erratum_packages.append(ret)
         return erratum_packages
@@ -3092,6 +3117,7 @@ class RepoSync(object):
                and %s
                and at.label = 'rpm'
                and cp.channel_id = :channel_id
+             order by p.org_id nulls first limit 1
             """
             % (orgidStatement, epochStatement)
         )
