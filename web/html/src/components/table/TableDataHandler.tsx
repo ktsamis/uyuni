@@ -140,7 +140,7 @@ export class TableDataHandler extends React.Component<Props, State> {
 
   constructor(props: Props) {
     super(props);
-    this.panelHeaderRef = React.createRef();
+    this.panelHeaderRef = createRef();
     this.state = {
       data: [],
       provider: this.getProvider(),
