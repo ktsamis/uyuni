@@ -243,6 +243,7 @@ export default function SchedulePlaybook({
             </div>
           </div>
           <AceEditor
+            key={playbookContent}
             className="form-control"
             id="playbook-content"
             minLines={20}
