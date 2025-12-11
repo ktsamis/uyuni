@@ -1,4 +1,5 @@
 import * as React from "react";
+import { createRef } from "react";
 
 import _isEqual from "lodash/isEqual";
 
@@ -213,6 +214,9 @@ export class TableDataHandler extends React.Component<Props, State> {
       if (!DEPRECATED_unsafeEquals(selectedIds, null)) {
         this.props.onSelect?.(selectedIds);
       }
+      if (this.props.onDataLoaded) {
+        this.props.onDataLoaded(items);
+      }
       const lastPage = this.getLastPage();
       if (this.state.currentPage > lastPage) {
         this.setState({ currentPage: lastPage });
@@ -420,7 +424,7 @@ export class TableDataHandler extends React.Component<Props, State> {
     const hideHeader = this.props.hideHeaderFooter === "header" || this.props.hideHeaderFooter === "both";
     const hideFooter = this.props.hideHeaderFooter === "footer" || this.props.hideHeaderFooter === "both";
     return (
-      <div className={`spacewalk-list ${this.props.stickyHeader ? "overflow-visible" : ""}`}>
+      <div className={`spacewalk-list ${stickyHeader ? "overflow-visible" : ""}`}>
         <div className="panel panel-default">
           {!hideHeader && !isTableHeaderEmpty ? (
             <>
@@ -467,7 +471,7 @@ export class TableDataHandler extends React.Component<Props, State> {
             </div>
           ) : (
             <div>
-              <div className={`table-responsive ${this.props.stickyHeader ? "overflow-visible" : ""}`}>
+              <div className={`table-responsive ${stickyHeader ? "overflow-visible" : ""}`}>
                 {this.props.children({
                   currItems,
                   headers,

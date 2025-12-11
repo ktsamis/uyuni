@@ -42,7 +42,7 @@ type SearchPanelProps = {
   children?: React.ReactNode;
 
   /** Align search fields inline */
-  searchPanelInline?: boolean
+  searchPanelInline?: boolean;
 };
 
 /** Panel containing the search fields for a table */
