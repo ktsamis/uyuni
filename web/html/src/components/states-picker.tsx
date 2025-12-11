@@ -398,7 +398,7 @@ class StatesPicker extends React.Component<StatesPickerProps, StatesPickerState>
     return (
       <span>
         {!this.props.messages && this.state.messages ? <Messages items={this.state.messages} /> : null}
-        <SectionToolbar>
+        <SectionToolbar top="50">
           <div className="action-button-wrapper">
             <div className="btn-group">{buttons}</div>
           </div>
