@@ -35,6 +35,10 @@
     box-shadow: none;
   }
 
+   &:focus-visible {
+    border-color: $eos-bc-blue-500;
+  }
+
   // Branding hover effect
   &:not(:disabled):not(.disabled):not(.text-muted):hover::before {
     // background: #686565;
@@ -107,6 +111,10 @@
       }
     }
   }
+
+  &:focus-visible {
+    border-color: $eos-bc-blue-500;
+  }
 }
 
 .btn-primary {
@@ -125,6 +133,10 @@
         background: $eos-bc-gray-900;
       }
     }
+  }
+
+  &:focus-visible {
+    border-color: $eos-bc-blue-500;
   }
 }
 
@@ -150,6 +162,10 @@
         background: $eos-bc-gray-900;
       }
     }
+  }
+
+  &:focus-visible {
+    border-color: $eos-bc-blue-500;
   }
 }
 
