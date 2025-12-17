@@ -14,6 +14,7 @@ assignees: ''
 - Real start date:
 - Planned deadline:
 - Real end date:
+- Resubmissions:
 
 ---
 
@@ -91,15 +92,15 @@ The official documentation is linked below, but you need to run the `upgrade` co
 ### Migration Tests
 
 - [ ] Product and Salt migration tests
-  - [ ] SLES15 SP6 minion → SP7
-  - [ ] SLES15 SP6 SSH minion → SP7
-  - [ ] SLE Micro 5.4 → 5.5
-  - [ ] Salt → Salt Bundle
+  - [ ] SLES 15 SP6 minion → SP7
+  - [ ] SLES 15 SP6 SSH minion → SP7
+  - [ ] SLE Micro 5.5 → 6.1
+  - [ ] OS Salt → Salt Bundle
 
 ### Retail
 
-- [ ] SLES15 SP6
-- [ ] SLES15 SP7
+- [ ] SLES 15 SP6
+- [ ] SLES 15 SP7
 
 ### Second host OS
 
