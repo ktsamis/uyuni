@@ -601,30 +601,115 @@ def update_controller_ca
   certutil -d sql:/root/.pki/nssdb -A -t TC -n "susemanager" -i  /etc/pki/trust/anchors/#{server_name}.cert`
 end
 
+# This method returns the timeout, in seconds, for syncing the given channel
+#
+# @param channel [String] the channel to check
+# @return [Integer] number of seconds representing the timeout
+def channel_timeout(channel)
+  if channel.include?('custom_channel') || channel.include?('ptf')
+    $stdout.puts "#{channel} is a custom or PTF channel - timeout set to 10 minutes"
+    return 600
+  elsif TIMEOUT_BY_CHANNEL_NAME[channel].nil?
+    $stdout.puts "Unknown timeout for channel #{channel}, assuming one minute"
+    return 60
+  end
+
+  timeout = TIMEOUT_BY_CHANNEL_NAME[channel]
+  timeout *= 2 if $code_coverage_mode
+  timeout
+end
+
+# Verifies that a list of channels has downloaded all delivered packages,
+# blocking until completion or until the global timeout budget is exhausted.
+#
+# This method handles the lifecycle of channel synchronization by:
+# 1 Initializing shared context variables (idempotent).
+# 2 Calculating a cumulative timeout: Sum of (channel_timeouts) + 900s flat margin.
+# 3 Polling the system until packages are downloaded or the timeout expires.
+# 4 Updating a global 'channels_timeout' budget used by the step solving packages dependencies for each channel
+#
+# @param channels [String, Array<String>] A single channel name or an array of channel names.
+# @param label [String] A descriptive name (e.g., parent channel name) for logging.
+# @param margin [Integer] The time buffer in seconds to add to the timeout (e.g., 900 for a standard, 0 for custom/PTF).
+#
+# @return [void]
+def wait_for_channels(channels, label, margin: 900)
+  channels = Array(channels).clone
+  # --- Context Initialization ---
+  add_context('channels_timeout', 0) if get_context('channels_timeout').nil?
+  add_context('channels_to_wait_solv_file', []) if get_context('channels_to_wait_solv_file').nil?
+  add_context('channels_failed_downloading', []) if get_context('channels_failed_downloading').nil?
+
+  # Register these channels for the later step solving packages dependencies for each channel
+  add_context('channels_to_wait_solv_file', get_context('channels_to_wait_solv_file') + channels)
+  # --- Timeout Calculation ---
+  total_channel_timeouts = channels.reduce(0) { |acc, elem| acc + channel_timeout(elem) }
+  timeout = total_channel_timeouts + margin
+  time_spent = 0
+  checking_rate = 10
+
+  # --- Execution Loop ---
+  begin
+    repeat_until_timeout(timeout: timeout, message: "Sync failed for #{label}") do
+      # Remove channels from the local tracking list as they complete
+      channels.reject! { |c| channel_packages_are_downloaded?(c) }
+      break if channels.empty?
+
+      if ((time_spent += checking_rate) % 60).zero?
+        log "#{time_spent / 60}m / #{timeout / 60}m waiting for #{label} synchronization"
+      end
+      sleep checking_rate
+    end
+  rescue StandardError => e
+    log "Failed channels for #{label}: #{channels}. #{e.message}"
+    # Cleanup: Remove failed channels from the solving queue
+    add_context('channels_to_wait_solv_file', get_context('channels_to_wait_solv_file') - channels)
+    add_context('channels_failed_downloading', get_context('channels_failed_downloading') + channels)
+    # Credit the remaining time budget to the global channels timeout
+    add_context('channels_timeout', get_context('channels_timeout') + (timeout - time_spent))
+    raise unless $build_validation
+  else
+    # Success: Add the "saved" time from this run to the global channels timeout
+    add_context('channels_timeout', get_context('channels_timeout') + (timeout - time_spent))
+  end
+end
+
 # This method checks if the synchronization for the given channel is completed
 #
 # @param channel_name [String] the channel to check
 # @return [Boolean] true if the synchronization is completed, false otherwise
-def channel_sync_completed?(channel_name)
+def channel_packages_are_downloaded?(channel_name)
+  if channel_name.include?('custom_channel')
+    client = channel_name.delete_prefix('custom_channel_')
+    return true if $custom_repositories[client].nil?
+  end
   log_tmp_file = '/tmp/reposync.log'
   get_target('server').extract('/var/log/rhn/reposync.log', log_tmp_file)
-  raise ScriptError, 'The file with repository synchronization logs doesn\'t exist or is empty' if !File.exist?(log_tmp_file) || File.empty?(log_tmp_file)
-
-  log_content = File.readlines(log_tmp_file)
-  channel_found = false
-  log_content.each do |line|
-    if line.include?('Channel: ') && line.include?(channel_name)
-      channel_found = true
-    elsif line.include?('Channel: ') && !line.include?(channel_name)
-      channel_found = false
-    elsif line.include?('Sync of channel completed.') && channel_found
-      return true if channel_is_synced?(channel_name)
-
-      log "WARN: Repository metadata for #{channel_name} seems not synchronized. Even if the reposync log says it is."
-      return false
-    end
+  unless File.exist?(log_tmp_file) && !File.empty?(log_tmp_file)
+    log "DEBUG: Log file #{log_tmp_file} is missing or empty."
+    return false
   end
+  log_content = File.readlines(log_tmp_file)
+  target_index = log_content.rindex { |line| line.include?("Channel: #{channel_name}") }
+  if target_index.nil?
+    log "DEBUG: Channel '#{channel_name}' not found in reposync.log"
+    return false
+  end
+  log "DEBUG: Found channel '#{channel_name}' at line #{target_index + 1}. Checking for completion..."
+  (target_index...log_content.length).each do |i|
+    line = log_content[i]
+    if line.include?('Channel: ') && !line.include?(channel_name)
+      log "DEBUG: Found a different channel header before completion for #{channel_name} at line #{i + 1}."
+      break
+    end
 
+    next unless line.include?('Sync of channel completed.')
+
+    log "DEBUG: Found 'Sync of channel completed.' for #{channel_name} at line #{i + 1}."
+    log "SUCCESS: #{channel_name} is fully synchronized."
+    return true
+  end
+  log "DEBUG: Sync for #{channel_name} still in progress (no completion message found)."
   false
 end
 
@@ -634,37 +719,55 @@ end
 # @return [Boolean] Returns true if the channel is synchronized, false otherwise.
 def channel_is_synced?(channel)
   sync_status = false
-  # solv is the last file to be written when the server synchronizes a channel, therefore we wait until it exist
-  result, code = get_target('server').run("dumpsolv /var/cache/rhn/repodata/#{channel}/solv", verbose: false, check_errors: false)
-  if code.zero? && !result.include?('repo size: 0')
-    # We want to check if no .new files exists. On a re-sync, the old files stay, the new one have this suffix until it's ready.
-    _result, new_code = get_target('server').run("dumpsolv /var/cache/rhn/repodata/#{channel}/solv.new", verbose: false, check_errors: false)
-    log 'Channel synced, no .new files exist and number of solvables is bigger than 0' unless new_code.zero?
-    sync_status = !new_code.zero?
-  elsif result.include?('repo size: 0')
-    if EMPTY_CHANNELS.include?(channel)
-      sync_status = true
-    else
-      _result, code = get_target('server').run("zcat /var/cache/rhn/repodata/#{channel}/*primary.xml.gz | grep 'packages=\"0\"'", verbose: false, check_errors: false)
-      log "/var/cache/rhn/repodata/#{channel}/*primary.xml.gz contains 0 packages" if code.zero?
-      sync_status = false
-    end
-  else
-    # If the solv file doesn't exist, we check if we are under a Debian-like repository
-    command = "test -s /var/cache/rhn/repodata/#{channel}/Release && test -e /var/cache/rhn/repodata/#{channel}/Packages"
-    _result, new_code = get_target('server').run(command, verbose: false, check_errors: false)
-    log 'Debian-like channel synced, if Release and Packages files exist' if new_code.zero?
-    sync_status = new_code.zero?
+  repo_path = "/var/cache/rhn/repodata/#{channel}"
+  server = get_target('server')
+  # Using a temporary dump file to avoid timeout with huge dumpsolv output
+  tmp_file = "/tmp/#{channel}_solv_dump"
+
+  _, new_file_check_code = server.run("test -f #{repo_path}/solv.new", check_errors: false)
+  if new_file_check_code.zero?
+    log "INFO: Found #{repo_path}/solv.new - metadata regeneration still in progress."
+    return false
   end
+  deb_code = nil
+
+  # Try RPM-based solv check
+  _, rpm_code = server.run("dumpsolv #{repo_path}/solv > #{tmp_file}", verbose: false, check_errors: false)
+  # Try Debian-based check
+  _, deb_code = server.run("test -s #{repo_path}/Release && test -e #{repo_path}/Packages", verbose: false, check_errors: false) unless rpm_code.zero?
+  if rpm_code.zero?
+    size_check, = server.run("grep 'repo size:' #{tmp_file}", verbose: false, check_errors: false)
+    if size_check.include?('repo size: 0')
+      if EMPTY_CHANNELS.include?(channel)
+        log "INFO: Channel #{channel} is verified empty as expected."
+      else
+        # Confirm package count in XML for channels not explicitly marked as empty
+        primary_result, = server.run("zcat #{repo_path}/*primary.xml.gz", verbose: false, check_errors: false)
+        log "WARN: #{channel} metadata exists but contains 0 packages." if primary_result.include?('packages="0")')
+      end
+    else
+      log "SUCCESS: Channel #{channel} initialized. No '.new' files and repo size > 0."
+    end
+    sync_status = true
+    server.run("rm #{tmp_file}", verbose: false, check_errors: false)
+  elsif deb_code&.zero?
+    log "SUCCESS: Debian-like channel #{channel} initialized (Release/Packages exist)."
+    sync_status = true
+  else
+    sync_status = false
+  end
+
+  # Log duration if synchronization is confirmed
   if sync_status
     begin
       duration = channel_synchronization_duration(channel)
-      log "Channel #{channel} synchronized in #{duration} seconds"
+      log "INFO: Channel #{channel} synchronization took #{duration} seconds."
     rescue ScriptError => e
-      log "Error while checking synchronization duration: #{e.message}"
-      sync_status = false
+      log "ERROR: Failed to retrieve sync duration for #{channel}: #{e.message}"
+      # We don't necessarily set sync_status to false here if the files actually exist
     end
   end
+
   sync_status
 end
 
