@@ -622,7 +622,8 @@ def max_length(items, minimum=0):
 
     return max_size
 
-def read_file(filename):
+
+def read_file(filename, binary=False):
     """
     Read file.
 
@@ -631,7 +632,9 @@ def read_file(filename):
 
         Returns:
     """
-    with open(filename, "r") as fhd:
+    mode = "rb" if binary else "r"
+    # pylint: disable-next=unspecified-encoding
+    with open(filename, mode) as fhd:
         return fhd.read()
 
 
