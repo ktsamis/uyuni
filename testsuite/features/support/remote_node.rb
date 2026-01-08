@@ -273,7 +273,7 @@ class RemoteNode
   #
   # @param file [String] The path of the file to check.
   # @return [Boolean] Returns true if the file exists, false otherwise.
-  def file_exists(file)
+  def file_exists?(file)
     if @has_mgrctl
       _out, code = run_local("mgrctl exec -- 'test -f #{file}'", check_errors: false)
     else
@@ -287,7 +287,7 @@ class RemoteNode
   #
   # @param file [String] The path of the folder to check.
   # @return [Boolean] Returns true if the folder exists, false otherwise.
-  def folder_exists(file)
+  def folder_exists?(file)
     if @has_mgrctl
       _out, code = run_local("mgrctl exec -- 'test -d #{file}'", check_errors: false)
     else
