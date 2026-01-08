@@ -246,7 +246,7 @@ public class AppStreamsController {
     public static ModelAndView ssmConfigureAppstreams(Request request, Response response, User user) {
         var channel = resolveAppStreamChannel(user, request.params("channelId"));
         if (channel == null) {
-            response.redirect("/manager/systems/ssm/appstreams");
+            response.redirect("/rhn/manager/systems/ssm/appstreams");
             return null;
         }
         var ssmAppStreams = AppStreamsManager.listSsmChannelAppStreams(channel.getId(), user);

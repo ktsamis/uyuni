@@ -2,8 +2,8 @@ import { FC } from "react";
 
 import { SSMAppStreamChannel } from "manager/appstreams/appstreams.type";
 
-import { Table } from "components/table";
 import { Column } from "components/table/Column";
+import { Table } from "components/table/Table";
 
 type ChannelSelectionProps = {
   channels: SSMAppStreamChannel[];
