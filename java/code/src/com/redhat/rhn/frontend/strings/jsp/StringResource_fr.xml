@@ -29417,6 +29417,18 @@ canal  {0}. Les systèmes abonnés vont perdre leur accès aux paquetages spéci
         <source>Compare Task</source>
         <target state="new"/>
       </trans-unit>
-    </body>
+    <trans-unit id="ssm.overview.appstreams" xml:space="preserve">
+            <source>AppStreams</source>
+        <target state="new"/>
+  </trans-unit>
+        <trans-unit id="ssm.overview.appstreams.manage" xml:space="preserve">
+            <source>&lt;a href="/rhn/manager/systems/ssm/appstreams"&gt;Enable and disable&lt;/a&gt; AppStreams on the selected systems</source>
+        <target state="new"/>
+  </trans-unit>
+        <trans-unit id="task.status.root-ca-cert-update" xml:space="preserve">
+        <source>CA Certificates Update</source>
+      <target state="new"/>
+  </trans-unit>
+      </body>
   </file>
 </xliff>
