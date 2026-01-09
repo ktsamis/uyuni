@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:02+0100\n"
+"POT-Creation-Date: 2026-01-09 10:28+0000\n"
 "PO-Revision-Date: 2025-06-05 09:59+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/uyuni/spacecmd/ca/>\n"
@@ -306,8 +306,8 @@ msgstr "Mètode de contacte: %s"
 msgid "Software Channels"
 msgstr "Canals de programari"
 
-#: ../src/spacecmd/activationkey.py:978 ../src/spacecmd/configchannel.py:807
-#: ../src/spacecmd/configchannel.py:921 ../src/spacecmd/system.py:2990
+#: ../src/spacecmd/activationkey.py:978 ../src/spacecmd/configchannel.py:809
+#: ../src/spacecmd/configchannel.py:923 ../src/spacecmd/system.py:2990
 msgid "Configuration Channels"
 msgstr "Canals de configuració"
 
@@ -426,6 +426,7 @@ msgid "File %s exists, confirm overwrite file? (y/n)"
 msgstr "El fitxer %s existeix, confirmeu la sobreescriptura del fitxer? (s/n)"
 
 #: ../src/spacecmd/activationkey.py:1330
+#, python-brace-format
 msgid "Failed to save exported keys to file: {}"
 msgstr "No s'han pogut desar les claus exportades al fitxer: {}"
 
@@ -511,7 +512,7 @@ msgstr "Clau original:"
 msgid "Cloned Key:"
 msgstr "Clau clonada:"
 
-#: ../src/spacecmd/activationkey.py:1497 ../src/spacecmd/configchannel.py:1441
+#: ../src/spacecmd/activationkey.py:1497 ../src/spacecmd/configchannel.py:1443
 msgid "Error - must specify either -c or -x options!"
 msgstr "Error - ha d'especificar les opcions -c o -x!"
 
@@ -552,7 +553,7 @@ msgstr "no existeix, s'omet!"
 msgid "Cloning key %s as %s"
 msgstr "S'està clonant la clau %s com a %s"
 
-#: ../src/spacecmd/activationkey.py:1609 ../src/spacecmd/configchannel.py:1493
+#: ../src/spacecmd/activationkey.py:1609 ../src/spacecmd/configchannel.py:1495
 #, python-format
 msgid "Failed to clone %s to %s"
 msgstr "No s'ha pogut clonar %s a %s"
@@ -793,23 +794,23 @@ msgstr "Modificat: %s"
 msgid "Target Path:     %s"
 msgstr "Camí de destinació: %s"
 
-#: ../src/spacecmd/configchannel.py:291 ../src/spacecmd/configchannel.py:722
+#: ../src/spacecmd/configchannel.py:291 ../src/spacecmd/configchannel.py:724
 #, python-format
 msgid "Owner:           %s"
 msgstr "Propietari: %s"
 
-#: ../src/spacecmd/configchannel.py:292 ../src/spacecmd/configchannel.py:723
+#: ../src/spacecmd/configchannel.py:292 ../src/spacecmd/configchannel.py:725
 #, python-format
 msgid "Group:           %s"
 msgstr "Grup: %s"
 
-#: ../src/spacecmd/configchannel.py:293 ../src/spacecmd/configchannel.py:724
+#: ../src/spacecmd/configchannel.py:293 ../src/spacecmd/configchannel.py:726
 #, python-format
 msgid "Mode:            %s"
 msgstr "Mode: %s"
 
 #: ../src/spacecmd/configchannel.py:295 ../src/spacecmd/configchannel.py:693
-#: ../src/spacecmd/configchannel.py:726
+#: ../src/spacecmd/configchannel.py:728
 #, python-format
 msgid "SELinux Context: %s"
 msgstr "Context SELinux: %s"
@@ -819,13 +820,13 @@ msgstr "Context SELinux: %s"
 msgid "SHA256:          %s"
 msgstr "SHA256: %s"
 
-#: ../src/spacecmd/configchannel.py:299 ../src/spacecmd/configchannel.py:725
+#: ../src/spacecmd/configchannel.py:299 ../src/spacecmd/configchannel.py:727
 #, python-format
 msgid "Binary:          %s"
 msgstr "Binari: %s"
 
-#: ../src/spacecmd/configchannel.py:303 ../src/spacecmd/configchannel.py:738
-#: ../src/spacecmd/configchannel.py:994 ../src/spacecmd/kickstart.py:1974
+#: ../src/spacecmd/configchannel.py:303 ../src/spacecmd/configchannel.py:740
+#: ../src/spacecmd/configchannel.py:996 ../src/spacecmd/kickstart.py:1974
 #: ../src/spacecmd/snippet.py:163
 msgid "Contents"
 msgstr "Continguts"
@@ -1007,16 +1008,16 @@ msgstr "Mode [%s]:"
 msgid "SELinux Context [%s]:"
 msgstr "Context SELinux [%s]:"
 
-#: ../src/spacecmd/configchannel.py:617 ../src/spacecmd/configchannel.py:959
+#: ../src/spacecmd/configchannel.py:617 ../src/spacecmd/configchannel.py:961
 msgid "Revision [next]:"
 msgstr "Revisió [següent]:"
 
-#: ../src/spacecmd/configchannel.py:635 ../src/spacecmd/configchannel.py:964
+#: ../src/spacecmd/configchannel.py:635 ../src/spacecmd/configchannel.py:966
 msgid "The revision must be an integer"
 msgstr "La revisió ha de ser un enter"
 
 #. get the contents of the script
-#: ../src/spacecmd/configchannel.py:638 ../src/spacecmd/configchannel.py:946
+#: ../src/spacecmd/configchannel.py:638 ../src/spacecmd/configchannel.py:948
 #: ../src/spacecmd/cryptokey.py:109 ../src/spacecmd/kickstart.py:2027
 #: ../src/spacecmd/snippet.py:143
 msgid "Read an existing file [y/N]:"
@@ -1030,7 +1031,7 @@ msgstr "Fitxer:"
 msgid "The path is required"
 msgstr "El camí és obligatori"
 
-#: ../src/spacecmd/configchannel.py:672 ../src/spacecmd/configchannel.py:970
+#: ../src/spacecmd/configchannel.py:672 ../src/spacecmd/configchannel.py:972
 msgid "You must provide the file contents"
 msgstr "Heu de proporcionar el contingut del fitxer"
 
@@ -1038,30 +1039,30 @@ msgstr "Heu de proporcionar el contingut del fitxer"
 msgid "You must provide the target path for a symlink"
 msgstr "Heu de proporcionar el camí de destinació per a un enllaç simbòlic"
 
-#: ../src/spacecmd/configchannel.py:691 ../src/spacecmd/configchannel.py:720
+#: ../src/spacecmd/configchannel.py:691 ../src/spacecmd/configchannel.py:722
 #, python-format
 msgid "Path:            %s"
 msgstr "Camí: %s"
 
-#: ../src/spacecmd/configchannel.py:721
+#: ../src/spacecmd/configchannel.py:723
 #, python-format
 msgid "Directory:       %s"
 msgstr "Directori: %s"
 
-#: ../src/spacecmd/configchannel.py:731
+#: ../src/spacecmd/configchannel.py:733
 #, python-format
 msgid "Revision:        %i"
 msgstr "Revisió: %i"
 
-#: ../src/spacecmd/configchannel.py:736
+#: ../src/spacecmd/configchannel.py:738
 msgid "Contents not displayed (base64 encoded)"
 msgstr "Continguts no mostrats (codificats en base64)"
 
-#: ../src/spacecmd/configchannel.py:749
+#: ../src/spacecmd/configchannel.py:751
 msgid "configchannel_addfile/configchannel_updatefile: Create a configuration file"
 msgstr "configchanneladdfile/configchannelupdatefile: Crea un fitxer de configuració"
 
-#: ../src/spacecmd/configchannel.py:750
+#: ../src/spacecmd/configchannel.py:752
 msgid ""
 "usage: configchannel_addfile/configchannel_updatefile -c CHANNEL - p PATH -f LOCAL_FILE_PATH [OPTIONS])\n"
 "\n"
@@ -1107,39 +1108,39 @@ msgstr ""
 "  permès en XML) cal enviar-lo com a binari (-b).  S'ha fet un esforç per a auto-\n"
 "  detecteu fitxers que ho requereixin, però potser haureu d'especificar-ho explícitament.\n"
 
-#: ../src/spacecmd/configchannel.py:812 ../src/spacecmd/softwarechannel.py:795
+#: ../src/spacecmd/configchannel.py:814 ../src/spacecmd/softwarechannel.py:795
 #: ../src/spacecmd/softwarechannel.py:916
 #: ../src/spacecmd/softwarechannel.py:923
 msgid "Select:"
 msgstr "Selecciona:"
 
-#: ../src/spacecmd/configchannel.py:819 ../src/spacecmd/configchannel.py:932
+#: ../src/spacecmd/configchannel.py:821 ../src/spacecmd/configchannel.py:934
 #: ../src/spacecmd/softwarechannel.py:1352
 #, python-format
 msgid "%s is not a valid channel"
 msgstr "%s no és un canal vàlid"
 
-#: ../src/spacecmd/configchannel.py:824
+#: ../src/spacecmd/configchannel.py:826
 msgid "Unable to obtain a valid channel. Aborting."
 msgstr "No s'ha pogut obtenir un canal vàlid. S'interromp."
 
-#: ../src/spacecmd/configchannel.py:830 ../src/spacecmd/scap.py:162
+#: ../src/spacecmd/configchannel.py:832 ../src/spacecmd/scap.py:162
 msgid "Path:"
 msgstr "Camí:"
 
-#: ../src/spacecmd/configchannel.py:846 ../src/spacecmd/configchannel.py:983
+#: ../src/spacecmd/configchannel.py:848 ../src/spacecmd/configchannel.py:985
 msgid "No config channel specified!"
 msgstr "No s'ha especificat cap canal de configuració!"
 
-#: ../src/spacecmd/configchannel.py:851 ../src/spacecmd/configchannel.py:988
+#: ../src/spacecmd/configchannel.py:853 ../src/spacecmd/configchannel.py:990
 msgid "Error obtaining file info"
 msgstr "Error en obtenir la informació del fitxer"
 
-#: ../src/spacecmd/configchannel.py:894
+#: ../src/spacecmd/configchannel.py:896
 msgid "configchannel_updateinitsls: Update init.sls file"
 msgstr "configchannelupdateinitsls: Actualitza el fitxer init.sls"
 
-#: ../src/spacecmd/configchannel.py:895
+#: ../src/spacecmd/configchannel.py:897
 msgid ""
 "usage: configchannel_updateinitsls -c CHANNEL -f LOCAL_FILE_PATH [OPTIONS])\n"
 "\n"
@@ -1157,52 +1158,52 @@ msgstr ""
 "  -f camí local al contingut del fitxer\n"
 "  -y continua automàticament amb el contingut del fitxer\n"
 
-#: ../src/spacecmd/configchannel.py:942
+#: ../src/spacecmd/configchannel.py:944
 #, python-format
 msgid "No existing file information found for %s"
 msgstr "No s'ha trobat informació de fitxer existent per a %s"
 
-#: ../src/spacecmd/configchannel.py:992
+#: ../src/spacecmd/configchannel.py:994
 #, python-format
 msgid "revision:                 %s"
 msgstr "revisió: %s"
 
-#: ../src/spacecmd/configchannel.py:993
+#: ../src/spacecmd/configchannel.py:995
 #, python-format
 msgid "contents_enc64:           %s"
 msgstr "contentenc64: %s"
 
-#: ../src/spacecmd/configchannel.py:1020
+#: ../src/spacecmd/configchannel.py:1022
 msgid "configchannel_removefiles: Remove configuration files"
 msgstr "configchannelremovefiles: Elimina els fitxers de configuració"
 
-#: ../src/spacecmd/configchannel.py:1021
+#: ../src/spacecmd/configchannel.py:1023
 msgid "usage: configchannel_removefiles CHANNEL <FILE ...>"
 msgstr "ús: configchannelremovefiles CHANNEL <FILE ...>"
 
-#: ../src/spacecmd/configchannel.py:1060
+#: ../src/spacecmd/configchannel.py:1062
 msgid "configchannel_verifyfile: Verify a configuration file"
 msgstr "configchannelverifyfile: Verifica un fitxer de configuració"
 
-#: ../src/spacecmd/configchannel.py:1061
+#: ../src/spacecmd/configchannel.py:1063
 msgid "usage: configchannel_verifyfile CHANNEL FILE <SYSTEMS>"
 msgstr "ús: configchannelverifyfile CHANNEL FILE <SYSTEMS>"
 
-#: ../src/spacecmd/configchannel.py:1101
+#: ../src/spacecmd/configchannel.py:1103
 msgid "No valid system selected"
 msgstr "No s'ha seleccionat cap sistema vàlid"
 
-#: ../src/spacecmd/configchannel.py:1109 ../src/spacecmd/system.py:514
+#: ../src/spacecmd/configchannel.py:1111 ../src/spacecmd/system.py:514
 #: ../src/spacecmd/system.py:534 ../src/spacecmd/system.py:966
 #, python-format
 msgid "Action ID: %i"
 msgstr "ID d'acció: %i"
 
-#: ../src/spacecmd/configchannel.py:1117
+#: ../src/spacecmd/configchannel.py:1119
 msgid "configchannel_export: export config channel(s) to json format file"
 msgstr "configchannelexport: exporta els canals de configuració al fitxer de format json"
 
-#: ../src/spacecmd/configchannel.py:1118
+#: ../src/spacecmd/configchannel.py:1120
 msgid ""
 "usage: configchannel_export <CHANNEL>... [options])\n"
 "options:\n"
@@ -1223,114 +1224,115 @@ msgstr ""
 "Nota: la llista de CANALS és opcional, per defecte és exportar-HO TOT"
 
 #. Get the cc details
-#: ../src/spacecmd/configchannel.py:1134
+#: ../src/spacecmd/configchannel.py:1136
 #, python-format
 msgid "Getting config channel details for %s"
 msgstr "S'estan obtenint els detalls del canal de configuració per a %s"
 
-#: ../src/spacecmd/configchannel.py:1154
+#: ../src/spacecmd/configchannel.py:1156
 #, python-format
 msgid "Failed to get details for file %s from %s"
 msgstr "No s'han pogut obtenir els detalls del fitxer %s de %s"
 
-#: ../src/spacecmd/configchannel.py:1200
+#: ../src/spacecmd/configchannel.py:1202
 #, python-format
 msgid "File %s could not be exported "
 msgstr "No s'ha pogut exportar el fitxer %s "
 
-#: ../src/spacecmd/configchannel.py:1201
+#: ../src/spacecmd/configchannel.py:1203
 msgid "with this API version(needs base64 encoding)"
 msgstr "amb aquesta versió API (necessita codificació base64)"
 
-#: ../src/spacecmd/configchannel.py:1203
+#: ../src/spacecmd/configchannel.py:1205
 #, python-format
 msgid "File %s could not be exported as"
 msgstr "No s'ha pogut exportar el fitxer %s com"
 
-#: ../src/spacecmd/configchannel.py:1204
+#: ../src/spacecmd/configchannel.py:1206
 msgid " text...getting base64 encoded version"
 msgstr " text... S'està establint la versió codificada en base64"
 
-#: ../src/spacecmd/configchannel.py:1235
+#: ../src/spacecmd/configchannel.py:1237
 #, python-format
 msgid "Exporting ALL config channels to %s"
 msgstr "S'estan exportant tots els canals de configuració a %s"
 
-#: ../src/spacecmd/configchannel.py:1242
+#: ../src/spacecmd/configchannel.py:1244
 msgid "Error, no valid config channel passed, check name is  correct with spacecmd configchannel_list"
 msgstr "Error, no s'ha passat cap canal de configuració vàlid, el nom de la comprovació és correcte amb spacecmd configchannellist"
 
-#: ../src/spacecmd/configchannel.py:1257
+#: ../src/spacecmd/configchannel.py:1259
 #, python-format
 msgid "Exporting cc %s to %s"
 msgstr "S'està exportant el cc %s a %s"
 
-#: ../src/spacecmd/configchannel.py:1264
+#: ../src/spacecmd/configchannel.py:1266
+#, python-brace-format
 msgid "File '{}' exists, confirm overwrite file? (y/n)"
 msgstr "El fitxer «{}» existeix, confirmeu la sobreescriptura del fitxer? (s/n)"
 
-#: ../src/spacecmd/configchannel.py:1268
+#: ../src/spacecmd/configchannel.py:1270
 #, python-format
 msgid "Error saving exported config channels to file: %s"
 msgstr "S'ha produït un error en desar els canals de configuració exportats al fitxer: %s"
 
-#: ../src/spacecmd/configchannel.py:1277
+#: ../src/spacecmd/configchannel.py:1279
 msgid "configchannel_import: import config channel(s) from json file"
 msgstr "configchannelimport: importa els canals de configuració des del fitxer json"
 
-#: ../src/spacecmd/configchannel.py:1278
+#: ../src/spacecmd/configchannel.py:1280
 msgid "usage: configchannel_import <JSONFILES...>"
 msgstr "ús: configchannelimport <JSONFILES...>"
 
-#: ../src/spacecmd/configchannel.py:1287 ../src/spacecmd/kickstart.py:2411
+#: ../src/spacecmd/configchannel.py:1289 ../src/spacecmd/kickstart.py:2411
 msgid "Error, no filename passed"
 msgstr "Error, no s'ha passat el nom de fitxer"
 
-#: ../src/spacecmd/configchannel.py:1295 ../src/spacecmd/kickstart.py:2419
+#: ../src/spacecmd/configchannel.py:1297 ../src/spacecmd/kickstart.py:2419
 #, python-format
 msgid "Error, could not read json data from %s"
 msgstr "Error, no s'han pogut llegir les dades json de %s"
 
-#: ../src/spacecmd/configchannel.py:1299
+#: ../src/spacecmd/configchannel.py:1301
 #, python-format
 msgid "Error importing configchannel %s"
 msgstr "S'ha produït un error en importar el canal de configuració %s"
 
-#: ../src/spacecmd/configchannel.py:1311
+#: ../src/spacecmd/configchannel.py:1313
 #, python-format
 msgid "Config channel %s already exists! Skipping!"
 msgstr "El canal de configuració %s ja existeix! Salta!"
 
 #. create the cc, we need to drop the org prefix from the cc name
-#: ../src/spacecmd/configchannel.py:1316
+#: ../src/spacecmd/configchannel.py:1318
 #, python-format
 msgid "Importing config channel  %s"
 msgstr "S'està important el canal de configuració %s"
 
-#: ../src/spacecmd/configchannel.py:1331
+#: ../src/spacecmd/configchannel.py:1333
 #, python-format
 msgid "Found %s %s for cc %s"
 msgstr "S'ha trobat %s %s per a cc %s"
 
-#: ../src/spacecmd/configchannel.py:1359
+#: ../src/spacecmd/configchannel.py:1361
 #, python-format
 msgid "Failed trying to import file %s (empty content)"
 msgstr "Ha fallat en intentar importar el fitxer %s (contingut buit)"
 
-#: ../src/spacecmd/configchannel.py:1361
+#: ../src/spacecmd/configchannel.py:1363
 msgid "Older APIs can't export encoded files"
 msgstr "Les API antigues no poden exportar fitxers codificats"
 
-#: ../src/spacecmd/configchannel.py:1384
+#: ../src/spacecmd/configchannel.py:1386
 #, python-format
 msgid "Error adding file %s to %s"
 msgstr "S'ha produït un error en afegir el fitxer %s a %s"
 
-#: ../src/spacecmd/configchannel.py:1394
+#: ../src/spacecmd/configchannel.py:1396
 msgid "configchannel_clone: Clone config channel(s)"
 msgstr "configchannelclone: Clona el/s canal/s de configuració"
 
-#: ../src/spacecmd/configchannel.py:1395
+#: ../src/spacecmd/configchannel.py:1397
 msgid ""
 "usage examples:\n"
 "                 configchannel_clone foo_label -c bar_label\n"
@@ -1360,100 +1362,100 @@ msgstr ""
 "                   clona el nom, l'etiqueta i la descripció\n"
 "  Nota: Si no s'especifica cap opció -c o -x, s'assumeix que és interactiva"
 
-#: ../src/spacecmd/configchannel.py:1424
+#: ../src/spacecmd/configchannel.py:1426
 msgid "No config channels found"
 msgstr "No s'ha trobat cap canal de configuració"
 
-#: ../src/spacecmd/configchannel.py:1427
+#: ../src/spacecmd/configchannel.py:1429
 msgid "Config Channels"
 msgstr "Canals de configuració"
 
-#: ../src/spacecmd/configchannel.py:1433
+#: ../src/spacecmd/configchannel.py:1435
 #, python-format
 msgid "Channel to clone: %s"
 msgstr "Canal a clonar: %s"
 
-#: ../src/spacecmd/configchannel.py:1437
+#: ../src/spacecmd/configchannel.py:1439
 msgid "Channel to clone:"
 msgstr "Canal a clonar:"
 
-#: ../src/spacecmd/configchannel.py:1438
+#: ../src/spacecmd/configchannel.py:1440
 msgid "Clone label:"
 msgstr "Clona l'etiqueta:"
 
-#: ../src/spacecmd/configchannel.py:1447
+#: ../src/spacecmd/configchannel.py:1449
 msgid "Error no channel label passed!"
 msgstr "Error sense etiqueta de canal passada!"
 
-#: ../src/spacecmd/configchannel.py:1456
+#: ../src/spacecmd/configchannel.py:1458
 msgid "No suitable channels to clone has been found."
 msgstr "No s'ha trobat cap canal adequat per clonar."
 
-#: ../src/spacecmd/configchannel.py:1509
+#: ../src/spacecmd/configchannel.py:1511
 msgid "no configchannel given"
 msgstr "no s'ha donat cap canal de configuració"
 
-#: ../src/spacecmd/configchannel.py:1512
+#: ../src/spacecmd/configchannel.py:1514
 msgid "invalid configchannel label "
 msgstr "etiqueta de configchannel no vàlida "
 
-#: ../src/spacecmd/configchannel.py:1538
+#: ../src/spacecmd/configchannel.py:1540
 msgid "configchannel_diff: diff between config channels"
 msgstr "configchanneldiff: diff entre canals de configuració"
 
-#: ../src/spacecmd/configchannel.py:1540
+#: ../src/spacecmd/configchannel.py:1542
 msgid "usage: configchannel_diff SOURCE_CHANNEL TARGET_CHANNEL"
 msgstr "ús: configchanneldiff SOURCECHANNEL TARGETCHANNEL"
 
-#: ../src/spacecmd/configchannel.py:1590
+#: ../src/spacecmd/configchannel.py:1592
 msgid "configchannel_sync:"
 msgstr "configchannelsync:"
 
-#: ../src/spacecmd/configchannel.py:1591
+#: ../src/spacecmd/configchannel.py:1593
 msgid "sync config files between two config channels"
 msgstr "sincronitza els fitxers de configuració entre dos canals de configuració"
 
-#: ../src/spacecmd/configchannel.py:1593
+#: ../src/spacecmd/configchannel.py:1595
 msgid "usage: configchannel_sync SOURCE_CHANNEL TARGET_CHANNEL"
 msgstr "ús: configchannelsync SOURCECHANNEL TARGETCHANNEL"
 
-#: ../src/spacecmd/configchannel.py:1631
+#: ../src/spacecmd/configchannel.py:1633
 msgid "syncing files from configchannel "
 msgstr "S'estan sincronitzant els fitxers des del canal de configuració "
 
-#: ../src/spacecmd/configchannel.py:1638
+#: ../src/spacecmd/configchannel.py:1640
 msgid "files common in both channels:"
 msgstr "fitxers comuns en tots dos canals:"
 
-#: ../src/spacecmd/configchannel.py:1644
+#: ../src/spacecmd/configchannel.py:1646
 msgid "files only in source "
 msgstr "fitxers només en origen "
 
-#: ../src/spacecmd/configchannel.py:1650
+#: ../src/spacecmd/configchannel.py:1652
 msgid "files only in target "
 msgstr "només fitxers a l'objectiu "
 
-#: ../src/spacecmd/configchannel.py:1655
+#: ../src/spacecmd/configchannel.py:1657
 msgid "files that are in both channels will be overwritten in the target channel"
 msgstr "els fitxers que estiguin en els dos canals se sobreescriuran al canal de destinació"
 
-#: ../src/spacecmd/configchannel.py:1657
+#: ../src/spacecmd/configchannel.py:1659
 msgid "files only in the source channel will be added to the target channel"
 msgstr "els fitxers només al canal d'origen s'afegiran al canal de destinació"
 
-#: ../src/spacecmd/configchannel.py:1659
+#: ../src/spacecmd/configchannel.py:1661
 msgid "files only in the target channel will be deleted"
 msgstr "s'eliminaran els fitxers només al canal de destinació"
 
-#: ../src/spacecmd/configchannel.py:1662
+#: ../src/spacecmd/configchannel.py:1664
 msgid "nothing to do"
 msgstr "no hi ha res a fer"
 
-#: ../src/spacecmd/configchannel.py:1666
+#: ../src/spacecmd/configchannel.py:1668
 msgid "perform synchronisation [y/N]:"
 msgstr "realitza la sincronització [y/N]:"
 
-#: ../src/spacecmd/configchannel.py:1718
+#: ../src/spacecmd/configchannel.py:1720
 msgid "unknown file type "
 msgstr "tipus de fitxer desconegut "
 
@@ -1587,6 +1589,7 @@ msgid "usage: custominfo_details KEY ..."
 msgstr "ús: clau custominfodetails..."
 
 #: ../src/spacecmd/custominfo.py:157
+#, python-brace-format
 msgid "No keys matched argument '{}'."
 msgstr "No hi ha cap clau que coincideixi amb l'argument «{}»."
 
@@ -3485,34 +3488,34 @@ msgstr "** S'està generant la memòria cau del sistema **"
 msgid "Could not create directory %s"
 msgstr "No s'ha pogut crear el directori %s"
 
-#: ../src/spacecmd/misc.py:813
+#: ../src/spacecmd/misc.py:821
 #, python-format
 msgid "Can't find system ID for %s"
 msgstr "No es pot trobar l'ID del sistema per a %s"
 
-#: ../src/spacecmd/misc.py:818
+#: ../src/spacecmd/misc.py:826
 msgid "Duplicate system profile names found!"
 msgstr "S'han trobat noms de perfil duplicats del sistema!"
 
-#: ../src/spacecmd/misc.py:819
+#: ../src/spacecmd/misc.py:827
 msgid "Please reference systems by ID or resolve the"
 msgstr "Si us plau, faci referència als sistemes per ID o resolgui"
 
-#: ../src/spacecmd/misc.py:820
+#: ../src/spacecmd/misc.py:828
 msgid "underlying issue with 'system_delete' or 'system_rename'"
 msgstr "problema subjacent amb «systemdelete» o «systemrename»"
 
-#: ../src/spacecmd/misc.py:888
+#: ../src/spacecmd/misc.py:896
 #, python-format
 msgid "No systems in group %s"
 msgstr "No hi ha sistemes al grup %s"
 
-#: ../src/spacecmd/misc.py:902
+#: ../src/spacecmd/misc.py:910
 #, python-format
 msgid "No systems subscribed to %s"
 msgstr "No hi ha cap sistema subscrit a %s"
 
-#: ../src/spacecmd/misc.py:962
+#: ../src/spacecmd/misc.py:970
 msgid "Is this ok [y/N]:"
 msgstr "Està bé [y/N]:"
 
@@ -3656,6 +3659,7 @@ msgstr "No s'ha trobat cap organització per al nom %s"
 #: ../src/spacecmd/org.py:208 ../src/spacecmd/org.py:241
 #: ../src/spacecmd/org.py:275 ../src/spacecmd/org.py:311
 #: ../src/spacecmd/org.py:420 ../src/spacecmd/org.py:456
+#, python-brace-format
 msgid "Organisation '{}' was not found"
 msgstr "No s'ha trobat l'organització «{}»"
 
@@ -3685,6 +3689,7 @@ msgid "No trust organisation found for the name %s"
 msgstr "No s'ha trobat cap organització de confiança per al nom %s"
 
 #: ../src/spacecmd/org.py:279 ../src/spacecmd/org.py:315
+#, python-brace-format
 msgid "Organisation '{}' to trust for, was not found"
 msgstr "No s'ha trobat l'organització «{}» per a la qual confiar"
 
@@ -3718,6 +3723,7 @@ msgid "No trusted organisation found for the name %s"
 msgstr "No s'ha trobat cap organització de confiança per al nom %s"
 
 #: ../src/spacecmd/org.py:354
+#, python-brace-format
 msgid "Trusted organisation '{}' was not found"
 msgstr "No s'ha trobat l'organització de confiança «{}»"
 
@@ -4004,7 +4010,6 @@ msgid "proxy_container_config: create a proxy system and return its configuratio
 msgstr "proxycontainerconfig: crea un sistema proxy i retorna el seu fitxer de configuració"
 
 #: ../src/spacecmd/proxy.py:33
-#, python-format
 msgid ""
 "usage: proxy_container_config [options] PROXY_FQDN SERVER_FQDN MAX_CACHE EMAIL ROOT_CA CRT KEY\n"
 "\n"
@@ -4051,7 +4056,7 @@ msgid "proxy_container_config_generate_cert: create a proxy system and return it
 msgstr "proxycontainerconfiggeneratecert: crea un sistema proxy i retorna el seu fitxer de configuració"
 
 #: ../src/spacecmd/proxy.py:90
-#, fuzzy, python-format
+#, fuzzy
 #| msgid ""
 #| "usage: proxy_container_config_generate_cert PROXY_FQDN SERVER_FQDN MAX_CACHE EMAIL\n"
 #| "\n"
@@ -4181,6 +4186,7 @@ msgid "Repository SSL Client Key:         %s"
 msgstr "Clau del client SSL del repositori: %s"
 
 #: ../src/spacecmd/repo.py:103
+#, python-brace-format
 msgid "No repositories found for '{}' query"
 msgstr "No s'ha trobat cap repositori per a la consulta «{}»"
 
@@ -4401,6 +4407,7 @@ msgid "%s  # Systems"
 msgstr "%s   Sistemes"
 
 #: ../src/spacecmd/report.py:174
+#, python-brace-format
 msgid "No errata found for '{}'"
 msgstr "No s'ha trobat cap errata per a «{}»"
 
@@ -4825,6 +4832,7 @@ msgid "If no date is provided it will delete all archived actions"
 msgstr "Si no es proporciona cap data, es suprimiran totes les accions arxivades"
 
 #: ../src/spacecmd/schedule.py:492
+#, python-brace-format
 msgid "Do you want to delete ({}) archived actions? [y/N]"
 msgstr "Voleu suprimir ({}) accions arxivades? [s/N]"
 
@@ -4845,6 +4853,7 @@ msgid "If no date is provided it will archive all completed actions"
 msgstr "Si no es proporciona cap data, s'arxivaran totes les accions completades"
 
 #: ../src/spacecmd/schedule.py:551
+#, python-brace-format
 msgid "Do you want to archive ({}) completed actions? [y/N]"
 msgstr "Voleu arxivar ({}) accions completades? [s/N]"
 
@@ -6110,10 +6119,12 @@ msgstr "fusionant errata des del canal de programari "
 
 #. pylint: disable=len-as-condition
 #: ../src/spacecmd/softwarechannel.py:2578
+#, python-brace-format
 msgid "{} contains no errata which is not already present in {}"
 msgstr "{} no conté cap errata que no estigui present a {}"
 
 #: ../src/spacecmd/softwarechannel.py:2583
+#, python-brace-format
 msgid "errata to add to channel {}: "
 msgstr "errata a afegir al canal {}: "
 
@@ -6127,6 +6138,7 @@ msgid " errata to  "
 msgstr " errata a  "
 
 #: ../src/spacecmd/softwarechannel.py:2594
+#, python-brace-format
 msgid "Perform these changes to channel {} [y/N]:"
 msgstr "Realitza aquests canvis al canal {} [y/N]:"
 
@@ -8003,6 +8015,7 @@ msgid "Server is not supporting reactivation keys at bootstrap time"
 msgstr "El servidor no admet claus de reactivació en temps d'arrencada"
 
 #: ../src/spacecmd/system.py:4630
+#, python-brace-format
 msgid "Bootstrapping '{}'. This may take a while."
 msgstr "S'està arrencant «{}». Això pot trigar una estona."
 
@@ -8324,40 +8337,41 @@ msgstr "Rang no vàlid"
 msgid "Clearing current selections"
 msgstr "Esborrant les seleccions actuals"
 
-#: ../src/spacecmd/utils.py:762
+#: ../src/spacecmd/utils.py:765
 msgid "Could not generate json data object!"
 msgstr "No s'ha pogut generar l'objecte de dades json!"
 
-#: ../src/spacecmd/utils.py:769
+#: ../src/spacecmd/utils.py:772
 #, python-format
 msgid "Could not open file %s for writing: %s"
 msgstr "No s'ha pogut obrir el fitxer %s per a escriptura: %s"
 
-#: ../src/spacecmd/utils.py:780
+#: ../src/spacecmd/utils.py:783
 #, python-format
 msgid "Could not open file %s for reading: %s"
 msgstr "No s'ha pogut obrir el fitxer %s per a lectura: %s"
 
-#: ../src/spacecmd/utils.py:782
+#: ../src/spacecmd/utils.py:785
 #, python-format
 msgid "Could not parse JSON data from %s: %s"
 msgstr "No s'han pogut analitzar les dades JSON de %s: %s"
 
 #. pylint: disable=broad-except
-#: ../src/spacecmd/utils.py:784
+#: ../src/spacecmd/utils.py:787
 #, python-format
 msgid "Error processing file %s: %s"
 msgstr "S'ha produït un error en processar el fitxer %s: %s"
 
-#: ../src/spacecmd/utils.py:821
+#: ../src/spacecmd/utils.py:824
 msgid "Skipping usage of common strings: both strings are equal"
 msgstr "S'omet l'ús de cadenes comunes: ambdues cadenes són iguals"
 
-#: ../src/spacecmd/utils.py:837
+#: ../src/spacecmd/utils.py:840
 msgid "Skipping usage of common strings: number of substrings differ"
 msgstr "S'omet l'ús de cadenes comunes: el nombre de subcadenes difereix"
 
-#: ../src/spacecmd/utils.py:925
+#: ../src/spacecmd/utils.py:928
+#, python-brace-format
 msgid "Parameter {} not a string type, but {}."
 msgstr "El paràmetre {} no és un tipus de cadena, sinó {}."
 

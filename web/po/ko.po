@@ -3,17 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ../html/src/components/input/range/Range.tsx:47
-#: ../html/src/components/input/range/Range.tsx:48
-#: ../html/src/components/input/range/Range.tsx:60
-#: ../html/src/components/input/range/Range.tsx:61
 #: ../html/src/core/intl/index.test.tsx:11
 #: ../html/src/manager/content-management/list-filters/list-filters.tsx:198
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:02+0100\n"
+"POT-Creation-Date: 2026-01-09 10:28+0000\n"
 "PO-Revision-Date: 2025-06-20 06:59+0000\n"
 "Last-Translator: Seeun Lee <selee@e4net.net>\n"
 "Language-Team: Korean <https://l10n.opensuse.org/projects/uyuni/web/ko/>\n"
@@ -31,6 +27,18 @@ msgstr "남음"
 #: ../html/javascript/spacewalk-essentials.js:427
 msgid "The browser Internet Explorer is not supported. Try using Firefox, Chrome or Edge"
 msgstr "Internet Explorer 브라우저는 지원되지 않습니다. Firefox, Chrome 또는 Edge를 사용하십시오."
+
+#: ../html/src/components/CoCoScansList.tsx:68
+#: ../html/src/components/package/PackageListActionScheduler.tsx:83
+#: ../html/src/components/product-migration/utils.tsx:113
+#: ../html/src/manager/appstreams/appstreams.tsx:61
+#: ../html/src/manager/state/highstate.tsx:62
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure.tsx:60
+#: ../html/src/manager/systems/coco/ssm-schedule.tsx:68
+#, fuzzy
+#| msgid "Action has been successfully added to the action chain <link>'{name}'</link>."
+msgid "Action has been successfully added to the action chain <link>\"{name}\"</link>."
+msgstr "작업이 작업 체인 <link>'{name}'</link>에 추가되었습니다."
 
 #: ../html/src/components/CoCoScansList.tsx:75
 #: ../html/src/components/package/PackageListActionScheduler.tsx:90
@@ -54,9 +62,9 @@ msgstr "증명 실행 확인"
 #: ../html/src/manager/maintenance/edit/maintenance-windows-edit.tsx:40
 #: ../html/src/manager/maintenance/edit/maintenance-windows-edit.tsx:59
 #: ../html/src/manager/maintenance/ssm/schedule-picker.tsx:127
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:111
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:158
 #: ../html/src/manager/minion/details/support-data.tsx:142
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:231
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:232
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:104
 msgid "Schedule"
 msgstr "일정"
@@ -65,7 +73,7 @@ msgstr "일정"
 #: ../html/src/components/CoCoScansList.tsx:192
 #: ../html/src/components/package/PackageListActionScheduler.tsx:190
 #: ../html/src/manager/admin/hub/peripheral-details.tsx:43
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:241
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:242
 msgid "Back to list"
 msgstr "목록으로 돌아가기"
 
@@ -84,6 +92,12 @@ msgstr "증명 보고서 세부 정보"
 #: ../html/src/components/FormulaForm.tsx:24
 msgid "Formula saved. Applying the highstate is not needed for this formula."
 msgstr "수식이 저장되었습니다. 이 수식에는 highstate를 적용할 필요가 없습니다."
+
+#: ../html/src/components/FormulaForm.tsx:134
+#, fuzzy
+#| msgid "Multiple Group formulas detected. Only one formula for \"{0}\" can be used on each system!"
+msgid "Multiple Group formulas detected. Only one formula for \"{name}\" can be used on each system!"
+msgstr "여러 그룹 수식이 감지되었습니다. 각 시스템에서 \"{0}\"에 대한 1개의 수식만 사용할 수 있습니다!"
 
 #: ../html/src/components/FormulaForm.tsx:165
 msgid "Please input required fields: {fields}"
@@ -145,6 +159,10 @@ msgstr "스케줄러를 로드하는 중..."
 msgid "Attestations"
 msgstr "증명"
 
+#: ../html/src/components/coco-attestation/CoCoAttestationTable.tsx:41
+msgid "No attestation report available. Schedule an execution to create one."
+msgstr ""
+
 #: ../html/src/components/coco-attestation/CoCoAttestationTable.tsx:48
 msgid "Attestation"
 msgstr "증명"
@@ -193,7 +211,7 @@ msgstr "마지막으로 수정된 날짜"
 #: ../html/src/manager/audit/subscription-matching/subscription-matching-pins.tsx:151
 #: ../html/src/manager/content-management/shared/components/panels/environment-lifecycle/environment-view.tsx:57
 #: ../html/src/manager/images/image-view-runtime.tsx:138
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:162
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:167
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:782
 #: ../html/src/manager/systems/virtual-list.tsx:83
 msgid "Status"
@@ -226,7 +244,7 @@ msgstr "작업"
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:55
 #: ../html/src/manager/recurring/recurring-actions-list.tsx:206
 #: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:377
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:160
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:165
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-list.tsx:77
 msgid "Details"
 msgstr "세부 사항"
@@ -246,6 +264,7 @@ msgstr "마지막으로 수정된 날짜"
 
 #: ../html/src/components/coco-attestation/CoCoReport.tsx:84
 #: ../html/src/manager/notifications/notifications-list.tsx:129
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:115
 msgid "Action"
 msgstr "작업"
 
@@ -287,7 +306,9 @@ msgstr "프로세스 출력"
 #: ../html/src/manager/admin/password-policy/password-policy.tsx:117
 #: ../html/src/manager/content-management/list-filters/filter-edit.tsx:196
 #: ../html/src/manager/minion/ansible/edit-ansible-path.tsx:17
+#: ../html/src/manager/minion/ansible/edit-ansible-vars-modal.tsx:95
 #: ../html/src/manager/minion/ansible/new-ansible-path.tsx:35
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:173
 #: ../html/src/manager/minion/packages/package-states.tsx:192
 msgid "Save"
 msgstr "저장"
@@ -366,7 +387,7 @@ msgstr "선택한 {name}을(를) {action}하시겠습니까?({name} {count}개 �
 #: ../html/src/components/large-text-attachment.tsx:188
 #: ../html/src/components/panels/CreatorPanel.tsx:114
 #: ../html/src/manager/admin/setup/proxy/proxy.tsx:56
-#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:34
+#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:62
 #: ../html/src/manager/content-management/list-filters/filter-edit.tsx:183
 #: ../html/src/manager/content-management/shared/components/panels/build/build.tsx:129
 #: ../html/src/manager/content-management/shared/components/panels/promote/promote.tsx:107
@@ -376,6 +397,7 @@ msgstr "선택한 {name}을(를) {action}하시겠습니까?({name} {count}개 �
 #: ../html/src/manager/images/image-view-overview.tsx:816
 #: ../html/src/manager/images/image-view-overview.tsx:817
 #: ../html/src/manager/minion/ansible/edit-ansible-path.tsx:20
+#: ../html/src/manager/minion/ansible/edit-ansible-vars-modal.tsx:87
 #: ../html/src/manager/systems/delete-system.tsx:79
 #: ../html/src/manager/systems/delete-system.tsx:80
 msgid "Cancel"
@@ -407,6 +429,8 @@ msgstr "취소"
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:47
 #: ../html/src/manager/maintenance/list/calendar-list.tsx:88
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:73
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:311
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:330
 #: ../html/src/manager/minion/ansible/edit-ansible-path.tsx:24
 #: ../html/src/manager/packages/list.tsx:73
 #: ../html/src/manager/packages/list.tsx:126
@@ -500,7 +524,6 @@ msgstr "3"
 
 #: ../html/src/components/formik/Form.example.tsx:63
 #: ../html/src/manager/audit/subscription-matching/subscription-matching-pins.tsx:307
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:127
 msgid "Select"
 msgstr "선택"
 
@@ -551,6 +574,7 @@ msgid "required"
 msgstr "필수"
 
 #: ../html/src/components/formik/field/MultiField.tsx:37
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:178
 msgid "Remove item"
 msgstr "항목 제거"
 
@@ -813,8 +837,8 @@ msgstr "상태가 지정되지 않았습니다."
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:29
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:31
 #: ../html/src/manager/maintenance/edit/maintenance-windows-edit.tsx:51
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:103
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:121
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:266
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:150
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:234
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:236
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-details.tsx:105
@@ -1209,6 +1233,9 @@ msgstr "이름을 기준으로 필터링"
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties-form.tsx:23
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties-view.tsx:40
 #: ../html/src/manager/images/image-view.tsx:643
+#: ../html/src/manager/minion/ansible/variables/boolean-editor.tsx:32
+#: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:75
+#: ../html/src/manager/minion/ansible/variables/list-editor.tsx:36
 #: ../html/src/manager/salt/keys/key-management.tsx:160
 #: ../html/src/manager/systems/details/mgr-server-info.tsx:83
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-details.tsx:77
@@ -1266,7 +1293,7 @@ msgstr "다음이 변경됨:"
 #: ../html/src/components/states-picker.tsx:368
 #: ../html/src/components/states-picker.tsx:562
 #: ../html/src/manager/admin/setup/products/products.tsx:1086
-#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:38
+#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:66
 #: ../html/src/manager/maintenance/edit/calendar-edit.tsx:194
 #: ../html/src/manager/maintenance/shared/cancel-actions-dialog.tsx:16
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:1132
@@ -1317,7 +1344,7 @@ msgstr "유효"
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:123
 #: ../html/src/manager/systems/coco/ssm-settings.tsx:74
 #: ../html/src/manager/systems/list-filter.tsx:38
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:123
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:128
 msgid "Yes"
 msgstr "예"
 
@@ -1326,7 +1353,7 @@ msgstr "예"
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:123
 #: ../html/src/manager/systems/coco/ssm-settings.tsx:74
 #: ../html/src/manager/systems/list-filter.tsx:39
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:123
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:128
 msgid "No"
 msgstr "아니요"
 
@@ -1517,7 +1544,7 @@ msgstr "옵션 없음"
 #: ../html/src/components/input/select/Select.tsx:14
 #: ../html/src/components/utils/loading/Loading.tsx:20
 #: ../html/src/manager/appstreams/appstream-packages.tsx:32
-#: ../html/src/manager/minion/ansible/ansible-path-content.tsx:74
+#: ../html/src/manager/minion/ansible/ansible-path-content.tsx:76
 #: ../html/src/manager/minion/ptf/ptf-overview.renderer.tsx:56
 #: ../html/src/manager/systems/activation-key/activation-key-channels.tsx:104
 #: ../html/src/manager/systems/subscribe-channels/subscribe-channels.tsx:629
@@ -1689,6 +1716,10 @@ msgstr "모든 달에 반복 일정을 사용할 수 있도록 일수는 28일�
 msgid "Custom Quartz format:"
 msgstr "사용자 정의 Quartz 형식:"
 
+#: ../html/src/components/picker/recurring-event-picker.tsx:486
+msgid "e.g. \"0 15 2 ? * 7\""
+msgstr "예: \"0 15 2 ? * 7\""
+
 #: ../html/src/components/picker/recurring-event-picker.tsx:505
 msgid "Select a Schedule"
 msgstr "일정 선택"
@@ -1741,6 +1772,7 @@ msgstr ""
 
 #: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:45
 #: ../html/src/manager/header/search/search.tsx:10
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:104
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:180
 msgid "Systems"
 msgstr "시스템"
@@ -2154,6 +2186,14 @@ msgstr "이 채널 필요"
 msgid "Please see <link>Format.JS docs</link> for the message syntax."
 msgstr ""
 
+#: ../html/src/core/intl/index.example.tsx:23
+msgid ""
+"Always use plural forms for numbers: {fooCount, plural,\n"
+"            one {only one item}\n"
+"            other {{fooCount} items}\n"
+"          }."
+msgstr ""
+
 #: ../html/src/core/intl/index.test.tsx:9
 msgid "foo"
 msgstr "푸"
@@ -2385,13 +2425,13 @@ msgid "Hub Details"
 msgstr "허브 상세 정보"
 
 #: ../html/src/manager/admin/hub/hub-details.tsx:80
-msgid "No hub is currently configured for this server. "
-msgstr "현재 이 서버에 허브가 구성되어 있지 않습니다. "
+msgid "No hub is currently configured for this server. Refresh this page after configuring this server as a peripheral, to see the hub details"
+msgstr ""
 
 #: ../html/src/manager/admin/hub/hub-details.tsx:89
 #, fuzzy
 #| msgid "This server is currently registered as peripheral of hub {fqdn}. "
-msgid "This server is currently registered as peripheral of hub {fqdn}. "
+msgid "This server is currently registered as peripheral of hub {fqdn}. This page shows the details of the hub server."
 msgstr "이 서버는 현재 허브 {fqdn}의 주변기기로 등록되어 있습니다. "
 
 #: ../html/src/manager/admin/hub/hub-details.tsx:108
@@ -2417,7 +2457,7 @@ msgstr "{fqdn} - 주변 장치 세부 정보"
 #: ../html/src/manager/admin/hub/peripheral-details.tsx:51
 #, fuzzy
 #| msgid "The server {fqdn} is currently registered as peripheral of this hub. "
-msgid "The server {fqdn} is currently registered as peripheral of this hub. "
+msgid "The server {fqdn} is currently registered as peripheral of this hub. This page shows the details of the peripheral server."
 msgstr "이 서버 {fqdn}은 현재 이 허브의 주변 장치로 등록되어 있습니다. "
 
 #: ../html/src/manager/admin/hub/peripherals.tsx:24
@@ -2557,10 +2597,6 @@ msgstr "속성을 편집하는 중..."
 msgid "Last Status Update"
 msgstr "최신 상태 업데이트"
 
-#: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-edit.tsx:52
-msgid "Edit "
-msgstr "편집 "
-
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-edit.tsx:71
 msgid "Editing ssh connection data.."
 msgstr "SSH 연결 데이터 편집 중..."
@@ -2651,6 +2687,12 @@ msgstr "다음 제품 설치에 실패했습니다. 로그 파일을 확인하�
 msgid "Selected channels were scheduled successfully for syncing."
 msgstr "선택한 채널의 동기화가 예정되었습니다."
 
+#: ../html/src/manager/admin/setup/products/products.tsx:260
+#, fuzzy
+#| msgid "The following channel installations for '{product}' failed. Please check log files."
+msgid "The following channel installations for \"{product}\" failed. Please check log files."
+msgstr "'{product}'에 대한 다음 채널 설치에 실패했습니다. 로그 파일을 확인하십시오."
+
 #: ../html/src/manager/admin/setup/products/products.tsx:285
 msgid "A refresh of the product data is currently running in the background. Please try again later."
 msgstr "제품 데이터 새로 고침이 현재 백그라운드에서 실행 중입니다. 나중에 다시 시도하십시오."
@@ -2704,18 +2746,6 @@ msgstr "채널"
 #: ../html/src/manager/admin/setup/products/products.tsx:604
 msgid "Recommended"
 msgstr "권장"
-
-#: ../html/src/manager/admin/setup/products/products.tsx:779
-msgid " channels sync failed"
-msgstr " 채널을 동기화하지 못함"
-
-#: ../html/src/manager/admin/setup/products/products.tsx:787
-msgid " channels sync in progress"
-msgstr " 채널 동기화 진행 중"
-
-#: ../html/src/manager/admin/setup/products/products.tsx:795
-msgid " channels synced"
-msgstr " 채널 동기화됨"
 
 #: ../html/src/manager/admin/setup/products/products.tsx:820
 msgid "To enable this product, the parent product should be selected first"
@@ -2959,24 +2989,29 @@ msgid "AppStream {stream} has {count} packages:"
 msgstr "AppStream {stream}에 {count}개 패키지 있음:"
 
 #: ../html/src/manager/appstreams/appstreams.tsx:68
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure.tsx:67
 msgid "Updating the selection of AppStream modules has been <link>scheduled</link>."
 msgstr "AppStream 모듈의 일부 업데이트가 <link>예약</link>되었습니다."
 
-#: ../html/src/manager/appstreams/appstreams.tsx:116
+#: ../html/src/manager/appstreams/appstreams.tsx:118
 #: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:137
 #: ../html/src/manager/systems/activation-key/activation-keys-appstreams.tsx:74
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:93
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure.tsx:129
 msgid "AppStreams"
 msgstr "AppStreams"
 
-#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:31
-msgid "Please review the changes below before scheduling an action to apply the changes on the system."
+#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:59
+#, fuzzy
+#| msgid "Please review the changes below before scheduling an action to apply the changes on the system."
+msgid "Please review the changes below before scheduling an action to apply the changes."
 msgstr "시스템에서 변경 사항을 적용하기 위한 작업을 예약하기 전에 아래의 변경 사항을 검토하십시오."
 
-#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:49
+#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:77
 msgid "Streams to be enabled:"
 msgstr "활성화할 스트림:"
 
-#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:60
+#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:88
 msgid "Streams to be disabled:"
 msgstr "비활성화할 스트림:"
 
@@ -3001,16 +3036,20 @@ msgid "Affected, patches available in channels which are not assigned"
 msgstr "할당되지 않은 채널에서 사용 가능한 패치가 적용됨"
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:45
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:53
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:89
 #, fuzzy
-#| msgid "The client is affected by a vulnerability for which a patch has been released,"
-msgid "The client is affected by a vulnerability and we have a patch for it,"
-msgstr "이 클라이언트는 패치가 릴리스된 취약점의 영향을 받습니다."
+#| msgid "The client is affected by a vulnerability and we have a patch for it,"
+msgid "The client is affected by a vulnerability and we have a patch for it, but the channel(s) offering the patch are not assigned to the client."
+msgstr "클라이언트가 취약점의 영향을 받으며 이에 대한 패치가 있습니다."
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:51
 msgid "Affected, patches available in a Product Migration target"
 msgstr "제품 마이그레이션 대상에서 사용 가능한 패치가 적용됨"
+
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:53
+#, fuzzy
+#| msgid "The client is affected by a vulnerability and we have a patch for it,"
+msgid "The client is affected by a vulnerability and we have a patch for it, but applying the patch requires migrating the product to a newer version."
+msgstr "클라이언트가 취약점의 영향을 받으며 이에 대한 패치가 있습니다."
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:59
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:60
@@ -3046,12 +3085,20 @@ msgid "Affected, patch is unavailable in relevant channels"
 msgstr "영향을 받음, 관련 채널에서 패치를 사용할 수 없음"
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:81
-msgid "The client is affected by a vulnerability for which a patch has been released,"
-msgstr "이 클라이언트는 패치가 릴리스된 취약점의 영향을 받습니다."
+#, fuzzy
+#| msgid "The client is affected by a vulnerability for which a patch has not yet been released."
+msgid "The client is affected by a vulnerability for which a patch has been released, but the patch can't be found in the relevant channels."
+msgstr "이 클라이언트는 아직 패치가 릴리스되지 않은 취약점의 영향을 받습니다."
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:87
 msgid "Affected, partial patch available in assigned channel"
 msgstr "영향을 받음, 할당된 채널에서 부분 패치 사용 가능"
+
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:89
+#, fuzzy
+#| msgid "The client is affected by a vulnerability and we have a patch for it,"
+msgid "The client is affected by a vulnerability and we have a patch for it, but applying the patch will only update some of the vulnerable packages."
+msgstr "클라이언트가 취약점의 영향을 받으며 이에 대한 패치가 있습니다."
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:95
 msgid "Unknown, CVE metadata not available"
@@ -3452,6 +3499,7 @@ msgstr "프로젝트 만들기"
 
 #: ../html/src/manager/content-management/list-filters/appstreams/module-selector.tsx:29
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:28
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:85
 msgid "Module"
 msgstr "모듈"
 
@@ -4197,23 +4245,23 @@ msgstr "요청한 페이지 {currentUrl}을(를) 찾을 수 없습니다."
 #: ../html/src/manager/errors/not-found.tsx:12
 #, fuzzy
 #| msgid "If you typed this address into your browser, double-check the spelling and capitalization."
-msgid "If you typed this address into your browser, double-check the spelling and capitalization."
+msgid "If you typed this address into your browser, double-check the spelling and capitalization. The address you are copying may also be outdated."
 msgstr "이 주소를 브라우저에 입력한 경우 맞춤법과 대/소문자를 다시 확인하십시오. 복사한 주소가 오래되었을 수도 있습니다."
 
 #: ../html/src/manager/errors/not-found.tsx:18
 #, fuzzy
 #| msgid "If you followed a link, the link may be incorrect or outdated. Click on the back button in your "
-msgid "If you followed a link, the link may be incorrect or outdated. Click on the back button in your "
+msgid "If you followed a link, the link may be incorrect or outdated. Click on the back button in your browser to try a different link, or use the top (or left) navigation bars to find the page you are looking for."
 msgstr "링크를 따라간 경우 링크가 잘못되었거나 오래되었을 수 있습니다. 뒤로 버튼을 클릭하십시오. "
 
 #: ../html/src/manager/errors/not-found.tsx:25
-msgid "If you used a bookmark, the page may have moved to a different location since the bookmark was "
-msgstr "책갈피를 사용한 경우, 책갈피가 이전에 사용된 이후 페이지가 다른 위치로 이동했을 수 있습니다. "
+msgid "If you used a bookmark, the page may have moved to a different location since the bookmark was created. Use the top (or left) navigation bars to find the page you are looking for, and if you find the document be sure to update your bookmark."
+msgstr "책갈피를 사용한 경우 책갈피가 생성된 후 해당 페이지가 다른 위치로 이동되었을 수 있습니다. 상단(또는 왼쪽)에 있는 탐색 모음을 사용하여 찾고 있는 페이지를 찾으십시오. 문서를 찾으면 책갈피를 업데이트해야 합니다."
 
 #: ../html/src/manager/errors/not-found.tsx:32
 #, fuzzy
 #| msgid "If you feel you've reached this page in error, please contact us with details of how you received "
-msgid "If you feel you've reached this page in error, please contact us with details of how you received "
+msgid "If you feel you've reached this page in error, please contact us with details of how you received this message."
 msgstr "이 페이지에 잘못 도달했다고 생각되는 경우 수신 방법에 대한 세부 정보를 문의하십시오. "
 
 #: ../html/src/manager/groups/config-channels/group-config-channels.tsx:29
@@ -4281,7 +4329,7 @@ msgid "Building the image has been "
 msgstr "이미지 빌드가 "
 
 #: ../html/src/manager/images/image-build.tsx:210
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:217
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:274
 #: ../html/src/manager/minion/config-channels/minion-config-channels.tsx:31
 #: ../html/src/manager/minion/packages/use-package-states.api.tsx:51
 #: ../html/src/manager/systems/proxy.tsx:69
@@ -4414,10 +4462,6 @@ msgid "Update"
 msgstr "업데이트"
 
 #: ../html/src/manager/images/image-profile-edit.tsx:515
-msgid "Edit Image Profile: '"
-msgstr "이미지 프로파일 편집: '"
-
-#: ../html/src/manager/images/image-profile-edit.tsx:515
 msgid "Create Image Profile"
 msgstr "이미지 프로파일 만들기"
 
@@ -4477,10 +4521,6 @@ msgstr "선택한 프로파일을 삭제하시겠습니까?({count}개 프로파
 #: ../html/src/manager/images/image-store-edit.tsx:165
 msgid "Use credentials"
 msgstr "자격 증명 사용"
-
-#: ../html/src/manager/images/image-store-edit.tsx:237
-msgid "Edit Image Store: '"
-msgstr "이미지 저장소 편집: '"
 
 #: ../html/src/manager/images/image-store-edit.tsx:237
 msgid "Create Image Store"
@@ -4570,39 +4610,19 @@ msgstr "큐에 추가됨"
 msgid "Go to event"
 msgstr "이벤트로 이동"
 
-#: ../html/src/manager/images/image-view-overview.tsx:52
-msgid " is queued"
-msgstr " 이(가) 큐에 추가됨"
-
 #: ../html/src/manager/images/image-view-overview.tsx:59
 msgid "In progress"
 msgstr "진행 중"
 
-#: ../html/src/manager/images/image-view-overview.tsx:64
-msgid " in progress"
-msgstr " 진행 중"
-
 #: ../html/src/manager/images/image-view-overview.tsx:71
 msgid "Successful"
 msgstr "성공"
-
-#: ../html/src/manager/images/image-view-overview.tsx:76
-msgid " is successful"
-msgstr " 성공"
-
-#: ../html/src/manager/images/image-view-overview.tsx:88
-msgid " has failed"
-msgstr " 실패"
 
 #: ../html/src/manager/images/image-view-overview.tsx:107
 #: ../html/src/manager/images/image-view-overview.tsx:108
 #: ../html/src/manager/images/image-view.tsx:501
 msgid "Built externally"
 msgstr "외부에서 빌드됨"
-
-#: ../html/src/manager/images/image-view-overview.tsx:130
-msgid " Status"
-msgstr " 상태"
 
 #: ../html/src/manager/images/image-view-overview.tsx:135
 msgid "Picked Up"
@@ -4650,6 +4670,13 @@ msgstr "프로파일 편집"
 #: ../html/src/manager/images/image-view-overview.tsx:352
 msgid "Edit store"
 msgstr "저장소 편집"
+
+#: ../html/src/manager/images/image-view-overview.tsx:467
+#: ../html/src/manager/images/image-view.tsx:751
+#, fuzzy
+#| msgid "Instance Details for '{name}'"
+msgid "Instance Details for \"{name}\""
+msgstr "'{name}'용 인스턴스 세부 사항"
 
 #: ../html/src/manager/images/image-view-overview.tsx:522
 #: ../html/src/manager/images/image-view-overview.tsx:523
@@ -5080,6 +5107,12 @@ msgstr "검색 시스템"
 msgid "Current Schedule"
 msgstr "현재 일정"
 
+#: ../html/src/manager/maintenance/edit/calendar-edit.tsx:114
+#, fuzzy
+#| msgid "Url '{url}' is invalid"
+msgid "Url \"{url}\" is invalid"
+msgstr "'{url}' URL이 잘못됨"
+
 #: ../html/src/manager/maintenance/edit/calendar-edit.tsx:138
 msgid "Calendar data"
 msgstr "달력 날짜"
@@ -5161,10 +5194,6 @@ msgstr "아래는 현재 사용자가 사용할 수 있는 유지보수 일정 �
 msgid "Below is a list of Maintenance Calendars available to the current user."
 msgstr "아래는 현재 사용자가 사용할 수 있는 유지보수 달력 목록입니다."
 
-#: ../html/src/manager/maintenance/list/maintenance-windows-list.tsx:50
-msgid "schedule"
-msgstr "일정"
-
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:30
 msgid "No schedules created. Use Create to add a schedule."
 msgstr "일정이 생성되지 않았습니다. 일정을 추가하려면 생성을 사용하십시오."
@@ -5172,16 +5201,6 @@ msgstr "일정이 생성되지 않았습니다. 일정을 추가하려면 생성
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:89
 msgid "This will remove the schedule from all the systems assigned to it."
 msgstr "이 작업을 수행하면 할당된 모든 시스템에서 일정이 제거됩니다."
-
-#: ../html/src/manager/maintenance/maintenance-windows.tsx:115
-msgid "successfully"
-msgstr "성공"
-
-#: ../html/src/manager/maintenance/maintenance-windows.tsx:140
-#, fuzzy
-#| msgid "Error when deleting the "
-msgid "Error when deleting the "
-msgstr "다음 삭제 중 오류 발생: "
 
 #: ../html/src/manager/maintenance/maintenance-windows.tsx:149
 msgid "Calendar successfully refreshed"
@@ -5270,7 +5289,7 @@ msgid "Loading content.."
 msgstr "컨텐트를 로드하는 중..."
 
 #: ../html/src/manager/minion/ansible/ansible-control-node.tsx:57
-#: ../html/src/manager/minion/ansible/ansible-path-content.tsx:50
+#: ../html/src/manager/minion/ansible/ansible-path-content.tsx:51
 msgid "An error occurred while loading data. Please check server logs."
 msgstr "데이터를 로드하는 동안 오류가 발생했습니다. 서버 로그를 확인하십시오."
 
@@ -5302,60 +5321,193 @@ msgstr "인벤토리 파일 추가"
 msgid "e.g., /etc/ansible/testing/hosts"
 msgstr "예: /etc/ansible/testing/hosts"
 
-#: ../html/src/manager/minion/ansible/ansible-path-content.tsx:85
+#: ../html/src/manager/minion/ansible/ansible-path-content.tsx:87
 msgid "Nothing configured. Please add paths in the "
 msgstr "구성된 항목이 없습니다. 다음에 경로 추가: "
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:93
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:197
+#, fuzzy
+#| msgid "Add Peripheral"
+msgid "Add Variable"
+msgstr "주변기기 추가"
+
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:222
+#: ../html/src/manager/minion/ansible/variables/boolean-editor.tsx:48
+#: ../html/src/manager/recurring/recurring-actions-details.tsx:168
+msgid "True"
+msgstr "참"
+
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:226
+#: ../html/src/manager/minion/ansible/variables/boolean-editor.tsx:51
+#, fuzzy
+#| msgid "false"
+msgid "False"
+msgstr "false"
+
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:244
+#, fuzzy
+#| msgid "Edit "
+msgid "Edit YAML"
+msgstr "편집 "
+
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:255
+#, fuzzy
+#| msgid "Collapse All Sections"
+msgid "Collapse All"
+msgstr "전체 섹션 축소"
+
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:255
+#, fuzzy
+#| msgid "Expand All Sections"
+msgid "Expand All"
+msgstr "전체 섹션 확장"
+
+#: ../html/src/manager/minion/ansible/edit-ansible-vars-modal.tsx:65
+#, fuzzy
+#| msgid "Edit profile"
+msgid "Edit variables"
+msgstr "프로파일 편집"
+
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:140
 msgid "Loading playbook contents.."
 msgstr "플레이북 컨텐츠를 로드하는 중..."
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:99
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:223
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:146
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:224
 #: ../html/src/manager/state/highstate.tsx:119
 msgid "Test mode"
 msgstr "테스트 모드"
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:104
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:122
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:151
 msgid "Back to playbook list"
 msgstr "플레이북 목록으로 돌아가기"
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:110
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:157
 msgid "Schedule playbook execution"
 msgstr "플레이북 실행 예약"
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:128
-msgid "Select the current Playbook"
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:167
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:80
+msgid "Change Playbook"
+msgstr "플레이북 변경"
+
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:168
+#, fuzzy
+#| msgid "Change Playbook"
+msgid "Choose a different Playbook"
+msgstr "플레이북 변경"
+
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:174
+#, fuzzy
+#| msgid "Select the current Playbook"
+msgid "Save the current Playbook"
 msgstr "현재 플레이북 선택"
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:147
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:184
+#, fuzzy
+#| msgid "Playbook '{name}'"
+msgid "Playbook \"{name}\""
+msgstr "'{name}' 플레이북"
+
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:193
 msgid "Schedule Playbook Execution"
 msgstr "플레이북 실행 예약"
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:166
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:212
 msgid "Inventory Path"
 msgstr "인벤토리 경로"
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:180
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:226
 msgid "Flush Ansible fact cache"
 msgstr "Ansible 팩트 캐시 플러시"
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:181
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:227
 msgid "Clear the fact cache for every host in inventory"
 msgstr "인벤토리의 모든 호스트에 대한 팩트 캐시 지우기"
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:189
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:236
 msgid "Playbook Content"
 msgstr "플레이북 컨텐트"
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:209
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:266
 msgid "Action has been successfully added to action chain"
 msgstr "작업이 작업 체인에 추가되었습니다."
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:216
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:273
 msgid "Playbook execution has been"
 msgstr "플레이븍 실행이"
+
+#: ../html/src/manager/minion/ansible/variables/boolean-editor.tsx:27
+#: ../html/src/manager/minion/ansible/variables/boolean-editor.tsx:56
+#, fuzzy
+#| msgid "Add token"
+msgid "Add Boolean"
+msgstr "토큰 추가"
+
+#: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:93
+msgid "Key-Value Pairs"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:115
+#, fuzzy
+#| msgid "Add item"
+msgid "Add Item"
+msgstr "항목 추가"
+
+#: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:120
+#, fuzzy
+#| msgid "Delete Image"
+msgid "Delete Item"
+msgstr "이미지 삭제"
+
+#: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:131
+#, fuzzy
+#| msgid "Add Calendar"
+msgid "Add Key-Value Pair"
+msgstr "달력 추가"
+
+#: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:131
+#, fuzzy
+#| msgid "Add token"
+msgid "Add Dictionary"
+msgstr "토큰 추가"
+
+#: ../html/src/manager/minion/ansible/variables/list-editor.tsx:49
+#, fuzzy
+#| msgid "Systems"
+msgid "Items"
+msgstr "시스템"
+
+#: ../html/src/manager/minion/ansible/variables/list-editor.tsx:69
+#, fuzzy
+#| msgid "Add item"
+msgid "Add List Item"
+msgstr "항목 추가"
+
+#: ../html/src/manager/minion/ansible/variables/list-editor.tsx:76
+#, fuzzy
+#| msgid "Delete cluster"
+msgid "Delete List Item"
+msgstr "클러스터 삭제"
+
+#: ../html/src/manager/minion/ansible/variables/list-editor.tsx:87
+#, fuzzy
+#| msgid "Add item"
+msgid "Add List"
+msgstr "항목 추가"
+
+#: ../html/src/manager/minion/ansible/variables/string-editor.tsx:31
+#: ../html/src/manager/minion/ansible/variables/string-editor.tsx:58
+#, fuzzy
+#| msgid "Add token"
+msgid "Add String"
+msgstr "토큰 추가"
+
+#: ../html/src/manager/minion/ansible/variables/string-editor.tsx:36
+#, fuzzy
+#| msgid "New value"
+msgid "Name and value"
+msgstr "새 값"
 
 #: ../html/src/manager/minion/coco/coco-settings.tsx:66
 msgid "Settings"
@@ -5670,10 +5822,6 @@ msgstr "고급"
 msgid "Registry URL"
 msgstr "등록 URL"
 
-#: ../html/src/manager/minion/proxy/proxy-config.tsx:332
-msgid "e.g., "
-msgstr "예: "
-
 #: ../html/src/manager/minion/proxy/proxy-config.tsx:339
 msgid "Containers Tag"
 msgstr "컨테이너 태그"
@@ -5761,8 +5909,8 @@ msgid "Install Program Temporary Fixes (PTFs)"
 msgstr "프로그램 임시 수정(PTF) 설치"
 
 #: ../html/src/manager/minion/ptf/ptf-install.renderer.tsx:29
-msgid "The following Program Temporary Fixes (PTFs) are available for installation on this system. "
-msgstr "이 시스템에 설치할 수 있는 프로그램 임시 수정(PTF)은 다음과 같습니다. "
+msgid "The following Program Temporary Fixes (PTFs) are available for installation on this system. These packages are only meant to address a specific open issue. Please follow the instructions from customer support before proceeding with the installation."
+msgstr ""
 
 #: ../html/src/manager/minion/ptf/ptf-install.renderer.tsx:33
 msgid "No Program Temporary Fixes (PTFs) available."
@@ -5781,8 +5929,8 @@ msgid "Remove Program Temporary Fixes (PTFs)"
 msgstr "프로그램 임시 수정(PTF) 제거"
 
 #: ../html/src/manager/minion/ptf/ptf-list-remove.renderer.tsx:29
-msgid "The following Program Temporary Fixes (PTFs) are currently installed on this system. "
-msgstr "이 시스템에 현재 설치된 프로그램 임시 수정(PTF)은 다음과 같습니다. "
+msgid "The following Program Temporary Fixes (PTFs) are currently installed on this system. These PTFs may be scheduled for removal by selecting them and clicking \"Remove PTF\" below. Please note that removing any non-obsolete PTF will result in the installation of the most recent versions of the packages that are part of the PTF."
+msgstr ""
 
 #: ../html/src/manager/minion/ptf/ptf-list-remove.renderer.tsx:34
 msgid "No Program Temporary Fixes (PTFs) installed."
@@ -5855,7 +6003,7 @@ msgid "Mark selected as read"
 msgstr "선택 항목을 읽음으로 표시"
 
 #: ../html/src/manager/notifications/notifications-list.tsx:226
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:145
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:150
 msgid "show details"
 msgstr "세부 사항 표시"
 
@@ -6084,10 +6232,6 @@ msgstr "비활성"
 msgid "Test"
 msgstr "테스트"
 
-#: ../html/src/manager/recurring/recurring-actions-details.tsx:168
-msgid "True"
-msgstr "참"
-
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:172
 msgid "Action type"
 msgstr "작업 유형"
@@ -6113,7 +6257,7 @@ msgid "Quartz format string"
 msgstr "Quartz 형식 문자열"
 
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:207
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:74
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:101
 msgid "Playbook details"
 msgstr "플레이북 세부 정보"
 
@@ -6130,12 +6274,12 @@ msgid "Flush fact cache"
 msgstr "팩트 캐시 플러시"
 
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:221
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:93
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:120
 msgid "true"
 msgstr "true"
 
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:221
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:93
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:120
 msgid "false"
 msgstr "false"
 
@@ -6169,25 +6313,25 @@ msgstr "일정을 생성했습니다."
 msgid "Action scheduled on selected minions"
 msgstr "선택한 미니언에 예정된 작업"
 
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:231
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:232
 msgid "Update "
 msgstr "업데이트 "
 
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:231
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:232
 msgid "Create "
 msgstr "만들기 "
 
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:249
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:250
 msgid "Schedule Recurring Action"
 msgstr "반복 작업 예약"
 
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:258
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:259
 #: ../html/src/manager/recurring/recurring-actions-list.tsx:194
 #: ../html/src/manager/recurring/search/recurring-actions-search-utils.tsx:35
 msgid "Action Type"
 msgstr "작업 유형"
 
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:282
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:283
 msgid "Configure states to execute"
 msgstr "실행할 상태 구성"
 
@@ -6235,25 +6379,27 @@ msgstr "작업을 삭제하는 동안 오류가 발생했습니다. Taskomatic�
 msgid "The below times are displayed in the server time zone {timeZone}. The scheduled time will be the server time."
 msgstr "아래 시간은 서버 시간대 {timeZone}에 표시됩니다. 예약된 시간은 서버 시간이 됩니다."
 
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:54
-msgid "Change Playbook"
-msgstr "플레이북 변경"
-
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:61
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:87
 msgid "Select a Playbook"
 msgstr "플레이북 선택"
 
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:79
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:106
 msgid "Playbook path:"
 msgstr "플레이북 경로:"
 
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:85
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:112
 msgid "Inventory path:"
 msgstr "인벤토리 경로:"
 
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:91
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:118
 msgid "Flush fact cache:"
 msgstr "팩트 캐시 플러시:"
+
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:126
+#, fuzzy
+#| msgid "Disable"
+msgid "Variables"
+msgstr "비활성화"
 
 #. Value options for filtering by Action Type in recurring actions list
 #: ../html/src/manager/recurring/search/recurring-actions-search-utils.tsx:10
@@ -6501,14 +6647,6 @@ msgstr "하위 채널 로드 중.."
 msgid "Base Channel:"
 msgstr "기본 채널:"
 
-#: ../html/src/manager/systems/activation-key/activation-key-channels.tsx:133
-msgid "${defaultChannelName}"
-msgstr "${defaultChannelName}"
-
-#: ../html/src/manager/systems/activation-key/activation-key-channels.tsx:143
-msgid "${this.getDefaultBase().name}"
-msgstr "${this.getDefaultBase().name}"
-
 #: ../html/src/manager/systems/activation-key/activation-key-channels.tsx:153
 msgid "Child Channels:"
 msgstr "하위 채널:"
@@ -6566,6 +6704,56 @@ msgstr "기본 채널"
 #: ../html/src/manager/systems/list-filter.tsx:53
 msgid "System Type"
 msgstr "시스템 유형"
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-channel-selection.tsx:16
+msgid "No modular channels are available for the selected systems in SSM."
+msgstr ""
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-channel-selection.tsx:19
+#, fuzzy
+#| msgid "Desync Channel"
+msgid "Select Channel"
+msgstr "채널 동기화 취소"
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-channel-selection.tsx:21
+msgid "First, select the channel containing the AppStreams to be configured upon the selected systems."
+msgstr ""
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:19
+#, fuzzy
+#| msgid "Base Channel"
+msgid "Change Channel"
+msgstr "기본 채널"
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:22
+#, fuzzy
+#| msgid "Config channel"
+msgid "Change channel"
+msgstr "채널 구성"
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:75
+#, fuzzy
+#| msgid "The following AppStream modules are currently available to the system."
+msgid "The following AppStream modules are available on the selected channel."
+msgstr "현재 시스템에서 사용할 수 있는 AppStream 모듈은 다음과 같습니다."
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:99
+#, fuzzy
+#| msgid "AppStreams"
+msgid "({count} AppStreams)"
+msgstr "AppStreams"
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:124
+#, fuzzy
+#| msgid "No change"
+msgid "Don't change"
+msgstr "변경 사항 없음"
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:136
+#, fuzzy
+#| msgid "Enable"
+msgid "Enable "
+msgstr "활성화"
 
 #: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:42
 msgid "Error Details"
@@ -6847,43 +7035,49 @@ msgstr "구성 채널"
 msgid "Product Migration - Schedule"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:116
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:106
+#, fuzzy
+#| msgid "Product"
+msgid "Unknown base product"
+msgstr "제품"
+
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:120
 #, fuzzy
 #| msgid "Show product's channels"
 msgid "Show product details"
 msgstr "제품 채널 표시"
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:131
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:136
 msgid "The products installed on this system can be migrated"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:134
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:139
 msgid "The products installed on this system cannot be migrated"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:140
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:145
 msgid "The products installed on this system can be migrated."
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:159
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:164
 #, fuzzy
 #| msgid "Product"
 msgid "Base Product"
 msgstr "제품"
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:161
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:166
 msgid "Can be migrated?"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:213
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:218
 msgid "Product details for {system}"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:217
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:222
 msgid "These are the products currently installed on {system}:"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:228
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:233
 #, fuzzy
 #| msgid "This slave is currently disabled and cannot be selected for migration"
 msgid "The systems currently selected cannot be migrated in batch."
@@ -7239,71 +7433,84 @@ msgstr "인증 오류입니다. 페이지를 다시 로드하거나 로그아웃
 msgid "Resource not found."
 msgstr "리소스를 찾을 수 없음"
 
-#: ../html/src/utils/network.ts:104
-msgid "HTTP Error code "
-msgstr "HTTP 오류 코드 "
+#~ msgid "No hub is currently configured for this server. "
+#~ msgstr "현재 이 서버에 허브가 구성되어 있지 않습니다. "
+
+#~ msgid " channels sync failed"
+#~ msgstr " 채널을 동기화하지 못함"
+
+#~ msgid " channels sync in progress"
+#~ msgstr " 채널 동기화 진행 중"
+
+#~ msgid " channels synced"
+#~ msgstr " 채널 동기화됨"
+
+#, fuzzy
+#~| msgid "The client is affected by a vulnerability for which a patch has been released,"
+#~ msgid "The client is affected by a vulnerability and we have a patch for it,"
+#~ msgstr "이 클라이언트는 패치가 릴리스된 취약점의 영향을 받습니다."
+
+#~ msgid "The client is affected by a vulnerability for which a patch has been released,"
+#~ msgstr "이 클라이언트는 패치가 릴리스된 취약점의 영향을 받습니다."
+
+#~ msgid "If you used a bookmark, the page may have moved to a different location since the bookmark was "
+#~ msgstr "책갈피를 사용한 경우, 책갈피가 이전에 사용된 이후 페이지가 다른 위치로 이동했을 수 있습니다. "
+
+#~ msgid "Edit Image Profile: '"
+#~ msgstr "이미지 프로파일 편집: '"
+
+#~ msgid "Edit Image Store: '"
+#~ msgstr "이미지 저장소 편집: '"
+
+#~ msgid " is queued"
+#~ msgstr " 이(가) 큐에 추가됨"
+
+#~ msgid " in progress"
+#~ msgstr " 진행 중"
+
+#~ msgid " is successful"
+#~ msgstr " 성공"
+
+#~ msgid " has failed"
+#~ msgstr " 실패"
+
+#~ msgid " Status"
+#~ msgstr " 상태"
+
+#~ msgid "schedule"
+#~ msgstr "일정"
+
+#~ msgid "successfully"
+#~ msgstr "성공"
+
+#, fuzzy
+#~| msgid "Error when deleting the "
+#~ msgid "Error when deleting the "
+#~ msgstr "다음 삭제 중 오류 발생: "
+
+#~ msgid "e.g., "
+#~ msgstr "예: "
+
+#~ msgid "The following Program Temporary Fixes (PTFs) are available for installation on this system. "
+#~ msgstr "이 시스템에 설치할 수 있는 프로그램 임시 수정(PTF)은 다음과 같습니다. "
+
+#~ msgid "The following Program Temporary Fixes (PTFs) are currently installed on this system. "
+#~ msgstr "이 시스템에 현재 설치된 프로그램 임시 수정(PTF)은 다음과 같습니다. "
+
+#~ msgid "${defaultChannelName}"
+#~ msgstr "${defaultChannelName}"
+
+#~ msgid "${this.getDefaultBase().name}"
+#~ msgstr "${this.getDefaultBase().name}"
+
+#~ msgid "HTTP Error code "
+#~ msgstr "HTTP 오류 코드 "
 
 #~ msgid "Edit the ranking of the states by dragging them."
 #~ msgstr "드래그하여 상태의 순위를 편집하십시오."
 
 #~ msgid "Edit the ranking of the configuration channels by dragging them."
 #~ msgstr "드래그하여 구성 채널의 순위를 편집하십시오."
-
-#, fuzzy
-#~| msgid "Action has been successfully added to the action chain <link>'{name}'</link>."
-#~ msgid "Action has been successfully added to the action chain <link>\"{name}\"</link>."
-#~ msgstr "작업이 작업 체인 <link>'{name}'</link>에 추가되었습니다."
-
-#, fuzzy
-#~| msgid "Multiple Group formulas detected. Only one formula for \"{0}\" can be used on each system!"
-#~ msgid "Multiple Group formulas detected. Only one formula for \"{name}\" can be used on each system!"
-#~ msgstr "여러 그룹 수식이 감지되었습니다. 각 시스템에서 \"{0}\"에 대한 1개의 수식만 사용할 수 있습니다!"
-
-#~ msgid "e.g. \"0 15 2 ? * 7\""
-#~ msgstr "예: \"0 15 2 ? * 7\""
-
-#, fuzzy
-#~| msgid "The following channel installations for '{product}' failed. Please check log files."
-#~ msgid "The following channel installations for \"{product}\" failed. Please check log files."
-#~ msgstr "'{product}'에 대한 다음 채널 설치에 실패했습니다. 로그 파일을 확인하십시오."
-
-#, fuzzy
-#~| msgid "The client is affected by a vulnerability and we have a patch for it,"
-#~ msgid "The client is affected by a vulnerability and we have a patch for it, but the channel(s) offering the patch are not assigned to the client."
-#~ msgstr "클라이언트가 취약점의 영향을 받으며 이에 대한 패치가 있습니다."
-
-#, fuzzy
-#~| msgid "The client is affected by a vulnerability and we have a patch for it,"
-#~ msgid "The client is affected by a vulnerability and we have a patch for it, but applying the patch requires migrating the product to a newer version."
-#~ msgstr "클라이언트가 취약점의 영향을 받으며 이에 대한 패치가 있습니다."
-
-#, fuzzy
-#~| msgid "The client is affected by a vulnerability for which a patch has not yet been released."
-#~ msgid "The client is affected by a vulnerability for which a patch has been released, but the patch can't be found in the relevant channels."
-#~ msgstr "이 클라이언트는 아직 패치가 릴리스되지 않은 취약점의 영향을 받습니다."
-
-#, fuzzy
-#~| msgid "The client is affected by a vulnerability and we have a patch for it,"
-#~ msgid "The client is affected by a vulnerability and we have a patch for it, but applying the patch will only update some of the vulnerable packages."
-#~ msgstr "클라이언트가 취약점의 영향을 받으며 이에 대한 패치가 있습니다."
-
-#~ msgid "If you used a bookmark, the page may have moved to a different location since the bookmark was created. Use the top (or left) navigation bars to find the page you are looking for, and if you find the document be sure to update your bookmark."
-#~ msgstr "책갈피를 사용한 경우 책갈피가 생성된 후 해당 페이지가 다른 위치로 이동되었을 수 있습니다. 상단(또는 왼쪽)에 있는 탐색 모음을 사용하여 찾고 있는 페이지를 찾으십시오. 문서를 찾으면 책갈피를 업데이트해야 합니다."
-
-#, fuzzy
-#~| msgid "Instance Details for '{name}'"
-#~ msgid "Instance Details for \"{name}\""
-#~ msgstr "'{name}'용 인스턴스 세부 사항"
-
-#, fuzzy
-#~| msgid "Url '{url}' is invalid"
-#~ msgid "Url \"{url}\" is invalid"
-#~ msgstr "'{url}' URL이 잘못됨"
-
-#, fuzzy
-#~| msgid "Playbook '{name}'"
-#~ msgid "Playbook \"{name}\""
-#~ msgstr "'{name}' 플레이북"
 
 #~ msgid "e.g., latest"
 #~ msgstr "예: 최신"
@@ -8179,9 +8386,6 @@ msgstr "HTTP 오류 코드 "
 
 #~ msgid " has been added successfully."
 #~ msgstr " 추가되었습니다."
-
-#~ msgid "Delete cluster"
-#~ msgstr "클러스터 삭제"
 
 #~ msgid "Delete Cluster"
 #~ msgstr "클러스터 삭제"
