@@ -13,7 +13,7 @@
  * in this software or its documentation.
  */
 
-package com.suse.proxy.get.formdata.test;
+package com.suse.proxy.test;
 
 import static com.redhat.rhn.common.ExceptionMessage.NOT_INSTANTIABLE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -52,6 +52,9 @@ public class ProxyConfigGetFormTestUtils {
         context.checking(new Expectations() {{
             allowing(mockConfigDefaults).isUyuni();
             will(returnValue(expectedIsUyuni));
+
+            allowing(mockConfigDefaults).getProductVersion();
+            will(returnValue(expectedIsUyuni ? "2026.01" : "5.2.0"));
 
             allowing(mockConfigDefaults);
             will(new CustomAction("delegate to real object") {

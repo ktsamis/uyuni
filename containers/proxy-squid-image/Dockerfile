@@ -57,4 +57,5 @@ EXPOSE 8080/tcp
 
 VOLUME [ "/etc/uyuni", "/var/cache/squid" ]
 
+USER squid
 CMD uyuni-configure.py && squid -z --foreground && squid -FC -d 1 --foreground

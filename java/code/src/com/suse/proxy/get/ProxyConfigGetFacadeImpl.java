@@ -18,14 +18,12 @@ import static java.util.Arrays.asList;
 
 import com.redhat.rhn.domain.server.Server;
 import com.redhat.rhn.domain.user.User;
-import com.redhat.rhn.manager.system.entitling.SystemEntitlementManager;
 
 import com.suse.proxy.ProxyConfigUtils;
 import com.suse.proxy.get.formdata.ProxyConfigGetFormDataAcquisitor;
 import com.suse.proxy.get.formdata.ProxyConfigGetFormDataContext;
 import com.suse.proxy.get.formdata.ProxyConfigGetFormDataContextHandler;
 import com.suse.proxy.get.formdata.ProxyConfigGetFormDataPreConditions;
-import com.suse.proxy.get.formdata.ProxyConfigGetFormDataProxyInitializer;
 import com.suse.proxy.get.formdata.ProxyConfigGetFormDefaults;
 import com.suse.proxy.model.ProxyConfig;
 import com.suse.utils.Json;
@@ -39,7 +37,7 @@ import java.util.Map;
  * Class responsible for getting proxy configurations
  */
 public class ProxyConfigGetFacadeImpl implements ProxyConfigGetFacade {
-    public static final String MGRPXY = "mgrpxy";
+
     private final List<ProxyConfigGetFormDataContextHandler> getFormDataContextHandlerChain = new ArrayList<>();
 
     /**
@@ -48,7 +46,6 @@ public class ProxyConfigGetFacadeImpl implements ProxyConfigGetFacade {
     public ProxyConfigGetFacadeImpl() {
         this.getFormDataContextHandlerChain.addAll(asList(
                 new ProxyConfigGetFormDataPreConditions(),
-                new ProxyConfigGetFormDataProxyInitializer(),
                 new ProxyConfigGetFormDefaults(),
                 new ProxyConfigGetFormDataAcquisitor()
         ));
@@ -77,17 +74,12 @@ public class ProxyConfigGetFacadeImpl implements ProxyConfigGetFacade {
      *
      * @param user                       the user
      * @param server                     the server
-     * @param systemEntitlementManager   the systemEntitlementManager
      * @return the form data
      */
     @Override
-    public Map<String, Object> getFormData(
-            User user,
-            Server server,
-            SystemEntitlementManager systemEntitlementManager
-    ) {
+    public Map<String, Object> getFormData(User user, Server server) {
         ProxyConfigGetFormDataContext context =
-                new ProxyConfigGetFormDataContext(user, server, this.getProxyConfig(server), systemEntitlementManager);
+                new ProxyConfigGetFormDataContext(user, server, this.getProxyConfig(server));
 
         for (ProxyConfigGetFormDataContextHandler handler : getFormDataContextHandlerChain) {
             handler.handle(context);

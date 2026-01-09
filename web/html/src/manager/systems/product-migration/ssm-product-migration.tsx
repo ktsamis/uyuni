@@ -102,6 +102,10 @@ export const SSMProductMigration: React.FC<Props> = ({
   }
 
   function renderBaseProduct(system: MigrationSystemData): React.ReactNode {
+    if (system.installedProduct === null) {
+      return <span>{t("Unknown base product")}</span>;
+    }
+
     const highlight =
       !commonBaseProduct && migrationSource !== null && system.installedProduct.id === migrationSource.id;
 
@@ -111,10 +115,11 @@ export const SSMProductMigration: React.FC<Props> = ({
   function renderProductDetails(system: MigrationSystemData): React.ReactNode {
     return (
       <LinkButton
-        className="btn-link"
+        className={system.installedProduct !== null ? "btn-link" : "btn-link disabled"}
         icon="fa-1-5x fa-list"
         title={t("Show product details")}
         handler={() => setInstalledProductData(system)}
+        disabled={system.installedProduct === null}
       />
     );
   }
@@ -205,7 +210,7 @@ export const SSMProductMigration: React.FC<Props> = ({
           content={stringToReact(statusDetailsData.details ?? "")}
         />
       )}
-      {installedProductData && (
+      {installedProductData && installedProductData.installedProduct !== null && (
         <Dialog
           id="migration-product-popup-dialog"
           isOpen={true}

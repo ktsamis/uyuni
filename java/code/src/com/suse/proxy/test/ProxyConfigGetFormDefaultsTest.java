@@ -25,9 +25,9 @@ import static com.suse.proxy.get.formdata.ProxyConfigGetFormDefaults.DEFAULT_UYU
 import static com.suse.proxy.get.formdata.ProxyConfigGetFormDefaults.DEFAULT_UYUNI_REGISTRY_URL;
 import static com.suse.proxy.get.formdata.ProxyConfigGetFormDefaults.MLM_REGISTRY_URL_EXAMPLE;
 import static com.suse.proxy.get.formdata.ProxyConfigGetFormDefaults.UYUNI_REGISTRY_URL_EXAMPLE;
+import static com.suse.proxy.test.ProxyConfigGetFormTestUtils.setConfigDefaultsInstance;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.redhat.rhn.GlobalInstanceHolder;
 import com.redhat.rhn.common.conf.ConfigDefaults;
 import com.redhat.rhn.domain.server.MinionServer;
 import com.redhat.rhn.domain.server.ServerFactory;
@@ -47,7 +47,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
-import java.lang.reflect.Field;
 import java.util.Map;
 
 /**
@@ -100,7 +99,7 @@ public class ProxyConfigGetFormDefaultsTest extends BaseTestCaseWithUser {
 
         //
         ProxyConfigGetFormDataContext proxyConfigGetFormDataContext = new ProxyConfigGetFormDataContext(user,
-                testMinionServer, null, GlobalInstanceHolder.SYSTEM_ENTITLEMENT_MANAGER);
+                testMinionServer, null);
 
         //
         new ProxyConfigGetFormDefaults().handle(proxyConfigGetFormDataContext);
@@ -138,7 +137,7 @@ public class ProxyConfigGetFormDefaultsTest extends BaseTestCaseWithUser {
 
         //
         ProxyConfigGetFormDataContext proxyConfigGetFormDataContext = new ProxyConfigGetFormDataContext(user,
-                testMinionServer, null, GlobalInstanceHolder.SYSTEM_ENTITLEMENT_MANAGER);
+                testMinionServer, null);
 
         //
         new ProxyConfigGetFormDefaults().handle(proxyConfigGetFormDataContext);
@@ -153,17 +152,4 @@ public class ProxyConfigGetFormDefaultsTest extends BaseTestCaseWithUser {
 
     }
 
-    /**
-     * Overrides the ConfigDefaults instance
-     * @param configDefaultsIn the ConfigDefaults instance
-     * @throws NoSuchFieldException if a field with the specified name is not found.
-     * @throws IllegalAccessException if the field is not accessible.
-     */
-    @SuppressWarnings("java:S3011")
-    private static void setConfigDefaultsInstance(ConfigDefaults configDefaultsIn)
-            throws NoSuchFieldException, IllegalAccessException {
-        Field field = ConfigDefaults.class.getDeclaredField("instance");
-        field.setAccessible(true);
-        field.set(null, configDefaultsIn);
-    }
 }

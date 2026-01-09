@@ -35,9 +35,6 @@ General template for leavers of the SUSE Multi-Linux team.
   - [ ] Remove from [Multi-Linux Administrators](https://github.com/orgs/SUSE/teams/multi-linux-manager-administrators/members)
   - [ ] Remove from [Multi-Linux CI Administrators](https://github.com/orgs/SUSE/teams/multi-linux-manager-ci-administrators/members)
   - [ ] Remove from [Uyuni organization](https://github.com/orgs/uyuni-project/people) and [teams](https://github.com/orgs/uyuni-project/teams). It can remain a member (but not owner), if it will keep contributing.
-- [ ] Trello access
-  - [ ] Tell the person to leave all SUSE Trello boards, otherwise, they might become paid guests
-  - The account will be removed from the SUSE organization 30 days after termination date, when the OKTA account is removed.
 - [ ] Confluence
   - [ ] Remove from the [team overview page](https://confluence.suse.com/display/SUSEMANAGER/)
   - [ ] Remove from the [squads page](https://confluence.suse.com/display/SUSEMANAGER/Squads%2C+People+and+Topics), cleaning ownerships if needed
@@ -52,24 +49,24 @@ General template for leavers of the SUSE Multi-Linux team.
   - [ ] [galaxy-releng](https://mailman.suse.de/mailman/admin/galaxy-releng/members/remove)
   - [ ] [salt](https://mailman.suse.de/mailman/admin/salt/members/remove)
   - [ ] [salt-maintainers](https://mailman.suse.de/mailman/admin/salt-maintainers/members/remove)
-  - [ ] [multi-linux-manager](https://mailman.suse.de/mailman/admin/multi-linux-manager/remove)
+  - [ ] [multi-linux-manager](https://mailman.suse.de/mailman/admin/multi-linux-manager/members/remove)
   - [ ] [tomcat-maintainers](https://mailman.suse.de/mailman/admin/tomcat-maintainers/members/remove)
   - [ ] [uyuni-leader](https://mailman.suse.de/mailman/admin/uyuni-leader/members/remove)
   - [ ] uyuni announce as [user](https://lists.opensuse.org/manage/lists/announce.lists.uyuni-project.org/members/member/) (to prevent bounces later), and maybe [moderator](https://lists.opensuse.org/manage/lists/announce.lists.uyuni-project.org/members/moderator/) and [owner](https://lists.opensuse.org/manage/lists/announce.lists.uyuni-project.org/members/owner/)
-- [ ] Remove from meeting invitations/calendars (in case the leaver got the meeting with a forward)
-  - [ ] Multi-Linux Team Review Meeting
-  - [ ] Priorities, Help and Planning (PHP)
-  - [ ] Multi-Linux Team Retrospective
 - [ ] Slack
   - [ ] Update workflows (daily standup, meetings, etc.)
-  - [ ] Remove from groups (left menu -> `...` -> `People` -> `User Groups`)
+  - [ ] Remove from groups (left menu -> `Directories` -> `User Groups`)
     - [ ] `multi-linux-manager-engineers`
     - [ ] `multi-linux-manager-infra`, if leaver is part of the [Infra squad](https://confluence.suse.com/display/SUSEMANAGER/Squads%2C+People+and+Topics)
     - [ ] `multi-linux-manager-coordinators`, if leaver is a [squad coordinator](https://confluence.suse.com/display/SUSEMANAGER/Squads%2C+People+and+Topics)
     - [ ] Squad specific group
 - [ ] Remove from Google [SUSE Multi-Linux Team](https://groups.google.com/a/suse.com/g/multi-linux-all/members) and squads groups (if available)
+- [ ] Check the Google meeting events and remove if needed (in case the leaver got the meeting with a forward):
+  - [ ] Multi-Linux Team Review Meeting
+  - [ ] Priorities, Help and Planning (PHP)
+  - [ ] Multi-Linux Team Retrospective
 - [ ] Hardware
-  - [ ] Collect remaining equipment, as explained via ticket created ahead of the termination date.
+  - [ ] Confirm collection of the remaining equipment, as explained via ticket created ahead of the termination date.
   - [ ] Are there somewhere machines (e.g. RPI) or VMs around managed by this person? Stop them or transfer the management to other team members
 - [ ] Cloud resources (accounts for each cloud at the [Landing Zones](https://confluence.suse.com/display/CCOE/Cloud+Landing+Zone+Access#CloudLandingZoneAccess-OktaGroupNaming/PermissionScheme#Roles) confluence page).
   - [ ] AWS

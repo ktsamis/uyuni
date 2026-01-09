@@ -11,7 +11,7 @@
 
 package com.suse.proxy.test;
 
-import static com.suse.proxy.get.ProxyConfigGetFacadeImpl.MGRPXY;
+import static com.suse.proxy.ProxyConfigUtils.MGRPXY;
 import static com.suse.proxy.test.ProxyConfigUpdateTestUtils.DUMMY_PARENT_FQDN;
 import static com.suse.proxy.test.ProxyConfigUpdateTestUtils.DUMMY_PROXY_FQDN;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -19,7 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-import com.redhat.rhn.GlobalInstanceHolder;
 import com.redhat.rhn.common.conf.Config;
 import com.redhat.rhn.common.conf.ConfigDefaults;
 import com.redhat.rhn.domain.channel.Channel;
@@ -129,8 +128,7 @@ public class ProxyConfigGetFacadeImplTest extends BaseTestCaseWithUser {
         final String[] expectedValidationErrorMessages = { "Server not found" };
 
         //
-        Map<String, Object> formData = new ProxyConfigGetFacadeImpl().getFormData(user, null,
-                GlobalInstanceHolder.SYSTEM_ENTITLEMENT_MANAGER);
+        Map<String, Object> formData = new ProxyConfigGetFacadeImpl().getFormData(user, null);
 
         assertEquals(expectedCurrentConfig, formData.get("currentConfig"));
         assertEquals(expectedParents, formData.get("parents"));
@@ -169,8 +167,7 @@ public class ProxyConfigGetFacadeImplTest extends BaseTestCaseWithUser {
         setConfigDefaultsInstance(mockConfigDefaults);
 
         //
-        Map<String, Object> formData = new ProxyConfigGetFacadeImpl().getFormData(user, server,
-                GlobalInstanceHolder.SYSTEM_ENTITLEMENT_MANAGER);
+        Map<String, Object> formData = new ProxyConfigGetFacadeImpl().getFormData(user, server);
 
         assertEquals(expectedCurrentConfig, formData.get("currentConfig"));
         assertEquals(expectedParents, formData.get("parents"));
