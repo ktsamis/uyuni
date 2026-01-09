@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-20 17:53+0200\n"
-"PO-Revision-Date: 2026-01-07 06:04+0000\n"
+"PO-Revision-Date: 2026-01-09 05:04+0000\n"
 "Last-Translator: \"Kristijan \\\"Fremen\\\" Velkovski\" <me@krisfremen.com>\n"
 "Language-Team: Macedonian <https://l10n.opensuse.org/projects/uyuni/backend-5-1/mk/>\n"
 "Language: mk\n"
@@ -74,10 +74,9 @@ msgstr ""
 "                   Молиме контактирајте го вашиот Орг Администратор за помош."
 
 #: ../server/handlers/xmlrpc/proxy.py:71
-#, fuzzy, python-format
-#| msgid "SUSE Manager Proxy service not enabled for server profile: \"%s\""
+#, python-format
 msgid "SUSE Multi-Linux Manager Proxy service not enabled for server profile: \"%s\""
-msgstr "SUSE Manager Proxy сервис не е уклучен за сервер профилот: \"%s\""
+msgstr "SUSE Multi-Linux Manager Proxy сервис не е уклучен за сервер профилот: \"%s\""
 
 #: ../server/handlers/xmlrpc/proxy.py:94
 msgid "Invalid session key"
@@ -355,15 +354,15 @@ msgstr "Прекршување на минималната должина на �
 
 #: ../common/rhnException.py:66
 msgid "Minimum password length violation."
-msgstr ""
+msgstr "Прекршување на минималната должина на лозинката."
 
 #: ../common/rhnException.py:67
 msgid "The username contains invalid characters."
-msgstr ""
+msgstr "Корисничкото име содржи неважечки знаци."
 
 #: ../common/rhnException.py:68
 msgid "File not found."
-msgstr ""
+msgstr "Фајлот не е пронајден."
 
 #: ../common/rhnException.py:69
 msgid "Architecture and OS version combination is not supported."
@@ -525,11 +524,6 @@ msgid ""
 msgstr ""
 
 #: ../common/rhnException.py:154
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "               %s Account has been deactivated on this server.\n"
-#| "               Please contact your Org administrator for more help."
 msgid ""
 "\n"
 "     The --force mgrpush option is disabled on this server.\n"
@@ -537,8 +531,9 @@ msgid ""
 "     "
 msgstr ""
 "\n"
-"               %s корисникот е деактивиран на овој сервер.\n"
-"               Молиме контактирајте го Орг администраторот за помош."
+"     Опцијата --force mgrpus е оневозможена на овој сервер.\n"
+"     Ве молиме контактирајте го вашиот администратор на SUSE Multi-Linux Manager за повеќе помош.\n"
+"     "
 
 #: ../common/rhnException.py:161
 msgid ""
