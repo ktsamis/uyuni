@@ -6,7 +6,8 @@ import { getStreamName } from "manager/appstreams/utils";
 
 import { LinkButton } from "components/buttons";
 import { Panel } from "components/panels";
-import { Column, Table } from "components/table";
+import { Column } from "components/table/Column";
+import { Table } from "components/table/Table";
 
 export const NO_CHANGE = "no-change";
 export const DISABLE = "disable";
