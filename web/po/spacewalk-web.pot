@@ -3,10 +3,6 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#: ../html/src/components/input/range/Range.tsx:47
-#: ../html/src/components/input/range/Range.tsx:48
-#: ../html/src/components/input/range/Range.tsx:60
-#: ../html/src/components/input/range/Range.tsx:61
 #: ../html/src/core/intl/index.test.tsx:11
 #: ../html/src/manager/content-management/list-filters/list-filters.tsx:198
 #, fuzzy
@@ -14,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 11:02+0100\n"
+"POT-Creation-Date: 2026-01-09 10:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,6 +27,18 @@ msgstr ""
 msgid ""
 "The browser Internet Explorer is not supported. Try using Firefox, Chrome or "
 "Edge"
+msgstr ""
+
+#: ../html/src/components/CoCoScansList.tsx:68
+#: ../html/src/components/package/PackageListActionScheduler.tsx:83
+#: ../html/src/components/product-migration/utils.tsx:113
+#: ../html/src/manager/appstreams/appstreams.tsx:61
+#: ../html/src/manager/state/highstate.tsx:62
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure.tsx:60
+#: ../html/src/manager/systems/coco/ssm-schedule.tsx:68
+msgid ""
+"Action has been successfully added to the action chain <link>\"{name}\"</"
+"link>."
 msgstr ""
 
 #: ../html/src/components/CoCoScansList.tsx:75
@@ -57,9 +65,9 @@ msgstr ""
 #: ../html/src/manager/maintenance/edit/maintenance-windows-edit.tsx:40
 #: ../html/src/manager/maintenance/edit/maintenance-windows-edit.tsx:59
 #: ../html/src/manager/maintenance/ssm/schedule-picker.tsx:127
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:111
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:158
 #: ../html/src/manager/minion/details/support-data.tsx:142
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:231
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:232
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:104
 msgid "Schedule"
 msgstr ""
@@ -68,7 +76,7 @@ msgstr ""
 #: ../html/src/components/CoCoScansList.tsx:192
 #: ../html/src/components/package/PackageListActionScheduler.tsx:190
 #: ../html/src/manager/admin/hub/peripheral-details.tsx:43
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:241
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:242
 msgid "Back to list"
 msgstr ""
 
@@ -86,6 +94,12 @@ msgstr ""
 
 #: ../html/src/components/FormulaForm.tsx:24
 msgid "Formula saved. Applying the highstate is not needed for this formula."
+msgstr ""
+
+#: ../html/src/components/FormulaForm.tsx:134
+msgid ""
+"Multiple Group formulas detected. Only one formula for \"{name}\" can be "
+"used on each system!"
 msgstr ""
 
 #: ../html/src/components/FormulaForm.tsx:165
@@ -153,6 +167,10 @@ msgstr ""
 msgid "Attestations"
 msgstr ""
 
+#: ../html/src/components/coco-attestation/CoCoAttestationTable.tsx:41
+msgid "No attestation report available. Schedule an execution to create one."
+msgstr ""
+
 #: ../html/src/components/coco-attestation/CoCoAttestationTable.tsx:48
 msgid "Attestation"
 msgstr ""
@@ -201,7 +219,7 @@ msgstr ""
 #: ../html/src/manager/audit/subscription-matching/subscription-matching-pins.tsx:151
 #: ../html/src/manager/content-management/shared/components/panels/environment-lifecycle/environment-view.tsx:57
 #: ../html/src/manager/images/image-view-runtime.tsx:138
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:162
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:167
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:782
 #: ../html/src/manager/systems/virtual-list.tsx:83
 msgid "Status"
@@ -234,7 +252,7 @@ msgstr ""
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:55
 #: ../html/src/manager/recurring/recurring-actions-list.tsx:206
 #: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:377
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:160
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:165
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-list.tsx:77
 msgid "Details"
 msgstr ""
@@ -254,6 +272,7 @@ msgstr ""
 
 #: ../html/src/components/coco-attestation/CoCoReport.tsx:84
 #: ../html/src/manager/notifications/notifications-list.tsx:129
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:115
 msgid "Action"
 msgstr ""
 
@@ -295,7 +314,9 @@ msgstr ""
 #: ../html/src/manager/admin/password-policy/password-policy.tsx:117
 #: ../html/src/manager/content-management/list-filters/filter-edit.tsx:196
 #: ../html/src/manager/minion/ansible/edit-ansible-path.tsx:17
+#: ../html/src/manager/minion/ansible/edit-ansible-vars-modal.tsx:95
 #: ../html/src/manager/minion/ansible/new-ansible-path.tsx:35
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:173
 #: ../html/src/manager/minion/packages/package-states.tsx:192
 msgid "Save"
 msgstr ""
@@ -376,7 +397,7 @@ msgstr ""
 #: ../html/src/components/large-text-attachment.tsx:188
 #: ../html/src/components/panels/CreatorPanel.tsx:114
 #: ../html/src/manager/admin/setup/proxy/proxy.tsx:56
-#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:34
+#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:62
 #: ../html/src/manager/content-management/list-filters/filter-edit.tsx:183
 #: ../html/src/manager/content-management/shared/components/panels/build/build.tsx:129
 #: ../html/src/manager/content-management/shared/components/panels/promote/promote.tsx:107
@@ -386,6 +407,7 @@ msgstr ""
 #: ../html/src/manager/images/image-view-overview.tsx:816
 #: ../html/src/manager/images/image-view-overview.tsx:817
 #: ../html/src/manager/minion/ansible/edit-ansible-path.tsx:20
+#: ../html/src/manager/minion/ansible/edit-ansible-vars-modal.tsx:87
 #: ../html/src/manager/systems/delete-system.tsx:79
 #: ../html/src/manager/systems/delete-system.tsx:80
 msgid "Cancel"
@@ -417,6 +439,8 @@ msgstr ""
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:47
 #: ../html/src/manager/maintenance/list/calendar-list.tsx:88
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:73
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:311
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:330
 #: ../html/src/manager/minion/ansible/edit-ansible-path.tsx:24
 #: ../html/src/manager/packages/list.tsx:73
 #: ../html/src/manager/packages/list.tsx:126
@@ -510,7 +534,6 @@ msgstr ""
 
 #: ../html/src/components/formik/Form.example.tsx:63
 #: ../html/src/manager/audit/subscription-matching/subscription-matching-pins.tsx:307
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:127
 msgid "Select"
 msgstr ""
 
@@ -559,6 +582,7 @@ msgid "required"
 msgstr ""
 
 #: ../html/src/components/formik/field/MultiField.tsx:37
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:178
 msgid "Remove item"
 msgstr ""
 
@@ -827,8 +851,8 @@ msgstr ""
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:29
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:31
 #: ../html/src/manager/maintenance/edit/maintenance-windows-edit.tsx:51
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:103
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:121
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:266
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:150
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:234
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:236
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-details.tsx:105
@@ -1232,6 +1256,9 @@ msgstr ""
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties-form.tsx:23
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties-view.tsx:40
 #: ../html/src/manager/images/image-view.tsx:643
+#: ../html/src/manager/minion/ansible/variables/boolean-editor.tsx:32
+#: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:75
+#: ../html/src/manager/minion/ansible/variables/list-editor.tsx:36
 #: ../html/src/manager/salt/keys/key-management.tsx:160
 #: ../html/src/manager/systems/details/mgr-server-info.tsx:83
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-details.tsx:77
@@ -1291,7 +1318,7 @@ msgstr ""
 #: ../html/src/components/states-picker.tsx:368
 #: ../html/src/components/states-picker.tsx:562
 #: ../html/src/manager/admin/setup/products/products.tsx:1086
-#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:38
+#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:66
 #: ../html/src/manager/maintenance/edit/calendar-edit.tsx:194
 #: ../html/src/manager/maintenance/shared/cancel-actions-dialog.tsx:16
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:1132
@@ -1342,7 +1369,7 @@ msgstr ""
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:123
 #: ../html/src/manager/systems/coco/ssm-settings.tsx:74
 #: ../html/src/manager/systems/list-filter.tsx:38
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:123
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:128
 msgid "Yes"
 msgstr ""
 
@@ -1351,7 +1378,7 @@ msgstr ""
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:123
 #: ../html/src/manager/systems/coco/ssm-settings.tsx:74
 #: ../html/src/manager/systems/list-filter.tsx:39
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:123
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:128
 msgid "No"
 msgstr ""
 
@@ -1549,7 +1576,7 @@ msgstr ""
 #: ../html/src/components/input/select/Select.tsx:14
 #: ../html/src/components/utils/loading/Loading.tsx:20
 #: ../html/src/manager/appstreams/appstream-packages.tsx:32
-#: ../html/src/manager/minion/ansible/ansible-path-content.tsx:74
+#: ../html/src/manager/minion/ansible/ansible-path-content.tsx:76
 #: ../html/src/manager/minion/ptf/ptf-overview.renderer.tsx:56
 #: ../html/src/manager/systems/activation-key/activation-key-channels.tsx:104
 #: ../html/src/manager/systems/subscribe-channels/subscribe-channels.tsx:629
@@ -1723,6 +1750,10 @@ msgstr ""
 msgid "Custom Quartz format:"
 msgstr ""
 
+#: ../html/src/components/picker/recurring-event-picker.tsx:486
+msgid "e.g. \"0 15 2 ? * 7\""
+msgstr ""
+
 #: ../html/src/components/picker/recurring-event-picker.tsx:505
 msgid "Select a Schedule"
 msgstr ""
@@ -1764,6 +1795,7 @@ msgstr ""
 
 #: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:45
 #: ../html/src/manager/header/search/search.tsx:10
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:104
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:180
 msgid "Systems"
 msgstr ""
@@ -2172,6 +2204,14 @@ msgstr ""
 msgid "Please see <link>Format.JS docs</link> for the message syntax."
 msgstr ""
 
+#: ../html/src/core/intl/index.example.tsx:23
+msgid ""
+"Always use plural forms for numbers: {fooCount, plural,\n"
+"            one {only one item}\n"
+"            other {{fooCount} items}\n"
+"          }."
+msgstr ""
+
 #: ../html/src/core/intl/index.test.tsx:9
 msgid "foo"
 msgstr ""
@@ -2419,11 +2459,15 @@ msgid "Hub Details"
 msgstr ""
 
 #: ../html/src/manager/admin/hub/hub-details.tsx:80
-msgid "No hub is currently configured for this server. "
+msgid ""
+"No hub is currently configured for this server. Refresh this page after "
+"configuring this server as a peripheral, to see the hub details"
 msgstr ""
 
 #: ../html/src/manager/admin/hub/hub-details.tsx:89
-msgid "This server is currently registered as peripheral of hub {fqdn}. "
+msgid ""
+"This server is currently registered as peripheral of hub {fqdn}. This page "
+"shows the details of the hub server."
 msgstr ""
 
 #: ../html/src/manager/admin/hub/hub-details.tsx:108
@@ -2447,7 +2491,9 @@ msgid "{fqdn} - Peripheral Details"
 msgstr ""
 
 #: ../html/src/manager/admin/hub/peripheral-details.tsx:51
-msgid "The server {fqdn} is currently registered as peripheral of this hub. "
+msgid ""
+"The server {fqdn} is currently registered as peripheral of this hub. This "
+"page shows the details of the peripheral server."
 msgstr ""
 
 #: ../html/src/manager/admin/hub/peripherals.tsx:24
@@ -2591,10 +2637,6 @@ msgstr ""
 msgid "Last Status Update"
 msgstr ""
 
-#: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-edit.tsx:52
-msgid "Edit "
-msgstr ""
-
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-edit.tsx:71
 msgid "Editing ssh connection data.."
 msgstr ""
@@ -2688,6 +2730,12 @@ msgstr ""
 msgid "Selected channels were scheduled successfully for syncing."
 msgstr ""
 
+#: ../html/src/manager/admin/setup/products/products.tsx:260
+msgid ""
+"The following channel installations for \"{product}\" failed. Please check "
+"log files."
+msgstr ""
+
 #: ../html/src/manager/admin/setup/products/products.tsx:285
 msgid ""
 "A refresh of the product data is currently running in the background. Please "
@@ -2748,18 +2796,6 @@ msgstr ""
 
 #: ../html/src/manager/admin/setup/products/products.tsx:604
 msgid "Recommended"
-msgstr ""
-
-#: ../html/src/manager/admin/setup/products/products.tsx:779
-msgid " channels sync failed"
-msgstr ""
-
-#: ../html/src/manager/admin/setup/products/products.tsx:787
-msgid " channels sync in progress"
-msgstr ""
-
-#: ../html/src/manager/admin/setup/products/products.tsx:795
-msgid " channels synced"
 msgstr ""
 
 #: ../html/src/manager/admin/setup/products/products.tsx:820
@@ -3010,27 +3046,30 @@ msgid "AppStream {stream} has {count} packages:"
 msgstr ""
 
 #: ../html/src/manager/appstreams/appstreams.tsx:68
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure.tsx:67
 msgid ""
 "Updating the selection of AppStream modules has been <link>scheduled</link>."
 msgstr ""
 
-#: ../html/src/manager/appstreams/appstreams.tsx:116
+#: ../html/src/manager/appstreams/appstreams.tsx:118
 #: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:137
 #: ../html/src/manager/systems/activation-key/activation-keys-appstreams.tsx:74
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:93
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure.tsx:129
 msgid "AppStreams"
 msgstr ""
 
-#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:31
+#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:59
 msgid ""
 "Please review the changes below before scheduling an action to apply the "
-"changes on the system."
+"changes."
 msgstr ""
 
-#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:49
+#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:77
 msgid "Streams to be enabled:"
 msgstr ""
 
-#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:60
+#: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:88
 msgid "Streams to be disabled:"
 msgstr ""
 
@@ -3055,13 +3094,19 @@ msgid "Affected, patches available in channels which are not assigned"
 msgstr ""
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:45
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:53
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:89
-msgid "The client is affected by a vulnerability and we have a patch for it,"
+msgid ""
+"The client is affected by a vulnerability and we have a patch for it, but "
+"the channel(s) offering the patch are not assigned to the client."
 msgstr ""
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:51
 msgid "Affected, patches available in a Product Migration target"
+msgstr ""
+
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:53
+msgid ""
+"The client is affected by a vulnerability and we have a patch for it, but "
+"applying the patch requires migrating the product to a newer version."
 msgstr ""
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:59
@@ -3104,11 +3149,17 @@ msgstr ""
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:81
 msgid ""
 "The client is affected by a vulnerability for which a patch has been "
-"released,"
+"released, but the patch can't be found in the relevant channels."
 msgstr ""
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:87
 msgid "Affected, partial patch available in assigned channel"
+msgstr ""
+
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:89
+msgid ""
+"The client is affected by a vulnerability and we have a patch for it, but "
+"applying the patch will only update some of the vulnerable packages."
 msgstr ""
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:95
@@ -3535,6 +3586,7 @@ msgstr ""
 
 #: ../html/src/manager/content-management/list-filters/appstreams/module-selector.tsx:29
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:28
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:85
 msgid "Module"
 msgstr ""
 
@@ -4290,25 +4342,28 @@ msgstr ""
 #: ../html/src/manager/errors/not-found.tsx:12
 msgid ""
 "If you typed this address into your browser, double-check the spelling and "
-"capitalization."
+"capitalization. The address you are copying may also be outdated."
 msgstr ""
 
 #: ../html/src/manager/errors/not-found.tsx:18
 msgid ""
 "If you followed a link, the link may be incorrect or outdated. Click on the "
-"back button in your "
+"back button in your browser to try a different link, or use the top (or "
+"left) navigation bars to find the page you are looking for."
 msgstr ""
 
 #: ../html/src/manager/errors/not-found.tsx:25
 msgid ""
 "If you used a bookmark, the page may have moved to a different location "
-"since the bookmark was "
+"since the bookmark was created. Use the top (or left) navigation bars to "
+"find the page you are looking for, and if you find the document be sure to "
+"update your bookmark."
 msgstr ""
 
 #: ../html/src/manager/errors/not-found.tsx:32
 msgid ""
 "If you feel you've reached this page in error, please contact us with "
-"details of how you received "
+"details of how you received this message."
 msgstr ""
 
 #: ../html/src/manager/groups/config-channels/group-config-channels.tsx:29
@@ -4384,7 +4439,7 @@ msgid "Building the image has been "
 msgstr ""
 
 #: ../html/src/manager/images/image-build.tsx:210
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:217
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:274
 #: ../html/src/manager/minion/config-channels/minion-config-channels.tsx:31
 #: ../html/src/manager/minion/packages/use-package-states.api.tsx:51
 #: ../html/src/manager/systems/proxy.tsx:69
@@ -4517,10 +4572,6 @@ msgid "Update"
 msgstr ""
 
 #: ../html/src/manager/images/image-profile-edit.tsx:515
-msgid "Edit Image Profile: '"
-msgstr ""
-
-#: ../html/src/manager/images/image-profile-edit.tsx:515
 msgid "Create Image Profile"
 msgstr ""
 
@@ -4583,10 +4634,6 @@ msgstr ""
 
 #: ../html/src/manager/images/image-store-edit.tsx:165
 msgid "Use credentials"
-msgstr ""
-
-#: ../html/src/manager/images/image-store-edit.tsx:237
-msgid "Edit Image Store: '"
 msgstr ""
 
 #: ../html/src/manager/images/image-store-edit.tsx:237
@@ -4678,38 +4725,18 @@ msgstr ""
 msgid "Go to event"
 msgstr ""
 
-#: ../html/src/manager/images/image-view-overview.tsx:52
-msgid " is queued"
-msgstr ""
-
 #: ../html/src/manager/images/image-view-overview.tsx:59
 msgid "In progress"
-msgstr ""
-
-#: ../html/src/manager/images/image-view-overview.tsx:64
-msgid " in progress"
 msgstr ""
 
 #: ../html/src/manager/images/image-view-overview.tsx:71
 msgid "Successful"
 msgstr ""
 
-#: ../html/src/manager/images/image-view-overview.tsx:76
-msgid " is successful"
-msgstr ""
-
-#: ../html/src/manager/images/image-view-overview.tsx:88
-msgid " has failed"
-msgstr ""
-
 #: ../html/src/manager/images/image-view-overview.tsx:107
 #: ../html/src/manager/images/image-view-overview.tsx:108
 #: ../html/src/manager/images/image-view.tsx:501
 msgid "Built externally"
-msgstr ""
-
-#: ../html/src/manager/images/image-view-overview.tsx:130
-msgid " Status"
 msgstr ""
 
 #: ../html/src/manager/images/image-view-overview.tsx:135
@@ -4757,6 +4784,11 @@ msgstr ""
 
 #: ../html/src/manager/images/image-view-overview.tsx:352
 msgid "Edit store"
+msgstr ""
+
+#: ../html/src/manager/images/image-view-overview.tsx:467
+#: ../html/src/manager/images/image-view.tsx:751
+msgid "Instance Details for \"{name}\""
 msgstr ""
 
 #: ../html/src/manager/images/image-view-overview.tsx:522
@@ -5206,6 +5238,10 @@ msgstr ""
 msgid "Current Schedule"
 msgstr ""
 
+#: ../html/src/manager/maintenance/edit/calendar-edit.tsx:114
+msgid "Url \"{url}\" is invalid"
+msgstr ""
+
 #: ../html/src/manager/maintenance/edit/calendar-edit.tsx:138
 msgid "Calendar data"
 msgstr ""
@@ -5283,24 +5319,12 @@ msgstr ""
 msgid "Below is a list of Maintenance Calendars available to the current user."
 msgstr ""
 
-#: ../html/src/manager/maintenance/list/maintenance-windows-list.tsx:50
-msgid "schedule"
-msgstr ""
-
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:30
 msgid "No schedules created. Use Create to add a schedule."
 msgstr ""
 
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:89
 msgid "This will remove the schedule from all the systems assigned to it."
-msgstr ""
-
-#: ../html/src/manager/maintenance/maintenance-windows.tsx:115
-msgid "successfully"
-msgstr ""
-
-#: ../html/src/manager/maintenance/maintenance-windows.tsx:140
-msgid "Error when deleting the "
 msgstr ""
 
 #: ../html/src/manager/maintenance/maintenance-windows.tsx:149
@@ -5394,7 +5418,7 @@ msgid "Loading content.."
 msgstr ""
 
 #: ../html/src/manager/minion/ansible/ansible-control-node.tsx:57
-#: ../html/src/manager/minion/ansible/ansible-path-content.tsx:50
+#: ../html/src/manager/minion/ansible/ansible-path-content.tsx:51
 msgid "An error occurred while loading data. Please check server logs."
 msgstr ""
 
@@ -5428,59 +5452,152 @@ msgstr ""
 msgid "e.g., /etc/ansible/testing/hosts"
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/ansible-path-content.tsx:85
+#: ../html/src/manager/minion/ansible/ansible-path-content.tsx:87
 msgid "Nothing configured. Please add paths in the "
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:93
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:197
+msgid "Add Variable"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:222
+#: ../html/src/manager/minion/ansible/variables/boolean-editor.tsx:48
+#: ../html/src/manager/recurring/recurring-actions-details.tsx:168
+msgid "True"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:226
+#: ../html/src/manager/minion/ansible/variables/boolean-editor.tsx:51
+msgid "False"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:244
+msgid "Edit YAML"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:255
+msgid "Collapse All"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:255
+msgid "Expand All"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/edit-ansible-vars-modal.tsx:65
+msgid "Edit variables"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:140
 msgid "Loading playbook contents.."
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:99
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:223
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:146
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:224
 #: ../html/src/manager/state/highstate.tsx:119
 msgid "Test mode"
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:104
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:122
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:151
 msgid "Back to playbook list"
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:110
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:157
 msgid "Schedule playbook execution"
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:128
-msgid "Select the current Playbook"
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:167
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:80
+msgid "Change Playbook"
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:147
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:168
+msgid "Choose a different Playbook"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:174
+msgid "Save the current Playbook"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:184
+msgid "Playbook \"{name}\""
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:193
 msgid "Schedule Playbook Execution"
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:166
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:212
 msgid "Inventory Path"
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:180
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:226
 msgid "Flush Ansible fact cache"
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:181
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:227
 msgid "Clear the fact cache for every host in inventory"
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:189
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:236
 msgid "Playbook Content"
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:209
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:266
 msgid "Action has been successfully added to action chain"
 msgstr ""
 
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:216
+#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:273
 msgid "Playbook execution has been"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/boolean-editor.tsx:27
+#: ../html/src/manager/minion/ansible/variables/boolean-editor.tsx:56
+msgid "Add Boolean"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:93
+msgid "Key-Value Pairs"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:115
+msgid "Add Item"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:120
+msgid "Delete Item"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:131
+msgid "Add Key-Value Pair"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:131
+msgid "Add Dictionary"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/list-editor.tsx:49
+msgid "Items"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/list-editor.tsx:69
+msgid "Add List Item"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/list-editor.tsx:76
+msgid "Delete List Item"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/list-editor.tsx:87
+msgid "Add List"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/string-editor.tsx:31
+#: ../html/src/manager/minion/ansible/variables/string-editor.tsx:58
+msgid "Add String"
+msgstr ""
+
+#: ../html/src/manager/minion/ansible/variables/string-editor.tsx:36
+msgid "Name and value"
 msgstr ""
 
 #: ../html/src/manager/minion/coco/coco-settings.tsx:66
@@ -5786,10 +5903,6 @@ msgstr ""
 msgid "Registry URL"
 msgstr ""
 
-#: ../html/src/manager/minion/proxy/proxy-config.tsx:332
-msgid "e.g., "
-msgstr ""
-
 #: ../html/src/manager/minion/proxy/proxy-config.tsx:339
 msgid "Containers Tag"
 msgstr ""
@@ -5879,7 +5992,9 @@ msgstr ""
 #: ../html/src/manager/minion/ptf/ptf-install.renderer.tsx:29
 msgid ""
 "The following Program Temporary Fixes (PTFs) are available for installation "
-"on this system. "
+"on this system. These packages are only meant to address a specific open "
+"issue. Please follow the instructions from customer support before "
+"proceeding with the installation."
 msgstr ""
 
 #: ../html/src/manager/minion/ptf/ptf-install.renderer.tsx:33
@@ -5901,7 +6016,10 @@ msgstr ""
 #: ../html/src/manager/minion/ptf/ptf-list-remove.renderer.tsx:29
 msgid ""
 "The following Program Temporary Fixes (PTFs) are currently installed on this "
-"system. "
+"system. These PTFs may be scheduled for removal by selecting them and "
+"clicking \"Remove PTF\" below. Please note that removing any non-obsolete "
+"PTF will result in the installation of the most recent versions of the "
+"packages that are part of the PTF."
 msgstr ""
 
 #: ../html/src/manager/minion/ptf/ptf-list-remove.renderer.tsx:34
@@ -5975,7 +6093,7 @@ msgid "Mark selected as read"
 msgstr ""
 
 #: ../html/src/manager/notifications/notifications-list.tsx:226
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:145
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:150
 msgid "show details"
 msgstr ""
 
@@ -6210,10 +6328,6 @@ msgstr ""
 msgid "Test"
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-actions-details.tsx:168
-msgid "True"
-msgstr ""
-
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:172
 msgid "Action type"
 msgstr ""
@@ -6239,7 +6353,7 @@ msgid "Quartz format string"
 msgstr ""
 
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:207
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:74
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:101
 msgid "Playbook details"
 msgstr ""
 
@@ -6256,12 +6370,12 @@ msgid "Flush fact cache"
 msgstr ""
 
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:221
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:93
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:120
 msgid "true"
 msgstr ""
 
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:221
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:93
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:120
 msgid "false"
 msgstr ""
 
@@ -6295,25 +6409,25 @@ msgstr ""
 msgid "Action scheduled on selected minions"
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:231
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:232
 msgid "Update "
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:231
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:232
 msgid "Create "
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:249
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:250
 msgid "Schedule Recurring Action"
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:258
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:259
 #: ../html/src/manager/recurring/recurring-actions-list.tsx:194
 #: ../html/src/manager/recurring/search/recurring-actions-search-utils.tsx:35
 msgid "Action Type"
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-actions-edit.tsx:282
+#: ../html/src/manager/recurring/recurring-actions-edit.tsx:283
 msgid "Configure states to execute"
 msgstr ""
 
@@ -6365,24 +6479,24 @@ msgid ""
 "scheduled time will be the server time."
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:54
-msgid "Change Playbook"
-msgstr ""
-
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:61
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:87
 msgid "Select a Playbook"
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:79
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:106
 msgid "Playbook path:"
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:85
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:112
 msgid "Inventory path:"
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:91
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:118
 msgid "Flush fact cache:"
+msgstr ""
+
+#: ../html/src/manager/recurring/recurring-playbook-picker.tsx:126
+msgid "Variables"
 msgstr ""
 
 #. Value options for filtering by Action Type in recurring actions list
@@ -6637,14 +6751,6 @@ msgstr ""
 msgid "Base Channel:"
 msgstr ""
 
-#: ../html/src/manager/systems/activation-key/activation-key-channels.tsx:133
-msgid "${defaultChannelName}"
-msgstr ""
-
-#: ../html/src/manager/systems/activation-key/activation-key-channels.tsx:143
-msgid "${this.getDefaultBase().name}"
-msgstr ""
-
 #: ../html/src/manager/systems/activation-key/activation-key-channels.tsx:153
 msgid "Child Channels:"
 msgstr ""
@@ -6703,6 +6809,44 @@ msgstr ""
 #: ../html/src/manager/systems/all-list.tsx:184
 #: ../html/src/manager/systems/list-filter.tsx:53
 msgid "System Type"
+msgstr ""
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-channel-selection.tsx:16
+msgid "No modular channels are available for the selected systems in SSM."
+msgstr ""
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-channel-selection.tsx:19
+msgid "Select Channel"
+msgstr ""
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-channel-selection.tsx:21
+msgid ""
+"First, select the channel containing the AppStreams to be configured upon "
+"the selected systems."
+msgstr ""
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:19
+msgid "Change Channel"
+msgstr ""
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:22
+msgid "Change channel"
+msgstr ""
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:75
+msgid "The following AppStream modules are available on the selected channel."
+msgstr ""
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:99
+msgid "({count} AppStreams)"
+msgstr ""
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:124
+msgid "Don't change"
+msgstr ""
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:136
+msgid "Enable "
 msgstr ""
 
 #: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:42
@@ -6999,39 +7143,43 @@ msgstr ""
 msgid "Product Migration - Schedule"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:116
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:106
+msgid "Unknown base product"
+msgstr ""
+
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:120
 msgid "Show product details"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:131
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:136
 msgid "The products installed on this system can be migrated"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:134
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:139
 msgid "The products installed on this system cannot be migrated"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:140
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:145
 msgid "The products installed on this system can be migrated."
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:159
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:164
 msgid "Base Product"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:161
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:166
 msgid "Can be migrated?"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:213
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:218
 msgid "Product details for {system}"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:217
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:222
 msgid "These are the products currently installed on {system}:"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:228
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:233
 msgid "The systems currently selected cannot be migrated in batch."
 msgstr ""
 
@@ -7401,8 +7549,4 @@ msgstr ""
 
 #: ../html/src/utils/network.ts:100
 msgid "Resource not found."
-msgstr ""
-
-#: ../html/src/utils/network.ts:104
-msgid "HTTP Error code "
 msgstr ""
