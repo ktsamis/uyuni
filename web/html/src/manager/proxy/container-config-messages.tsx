@@ -9,8 +9,8 @@ export const ContainerConfigMessages = (success: SuccessType, messagesIn: React.
   } else if (messagesIn.length > 0) {
     showErrorToastr(
       <>
-        {messagesIn.map((msg, i) => (
-          <div key={msg}>{msg}</div>
+        {messagesIn.map((msg, index) => (
+          <div key={`error${index}`}>{msg}</div>
         ))}
       </>,
       { autoHide: false }
