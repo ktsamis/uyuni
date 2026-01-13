@@ -55,6 +55,9 @@ type Props = {
   /** 1 for ascending, -1 for descending */
   initialSortDirection?: number;
 
+  /** Callback for search input, setting `onSearch` sets `searchField` to a simple search input if none is provided */
+  onSearch?: (criteria: string) => void;
+
   /** the React Object that contains the filter search field */
   searchField?: React.ReactComponentElement<typeof SearchField>;
 
@@ -305,6 +308,14 @@ export class TableDataHandler extends React.Component<Props, State> {
     }
   };
 
+  renderTitleButtons = () => {
+    return React.Children.map(this.props.titleButtons, (item: React.ReactNode) =>
+      cloneReactElement(item, {
+        search: { field: this.state.field, criteria: this.state.criteria },
+      })
+    );
+  };
+
   renderBottomButtons = () => {
     return React.Children.map(this.props.bottomButtons, (item: React.ReactNode) =>
       cloneReactElement(item, {
@@ -358,6 +369,7 @@ export class TableDataHandler extends React.Component<Props, State> {
     if (!searchField && this.props.onSearch) {
       searchField = <SearchField />;
     }
+    const isTableHeaderEmpty = !this.props.titleButtons && !searchField && !this.props.additionalFilters;
     const stickyHeader = this.props.stickyHeader;
 
     if (this.props.selectable) {
@@ -435,8 +447,11 @@ export class TableDataHandler extends React.Component<Props, State> {
         <div className="panel panel-default">
           {!hideHeader && !isTableHeaderEmpty ? (
             <>
-            <div ref={this.panelHeaderRef} className={` panel-heading ${stickyHeader ? "sticky-panel-heading" : ""}`}>
-                <div className="spacewalk-list-head-addons align-items-center">
+              <div
+                ref={this.panelHeaderRef}
+                className={` panel-heading ${this.props.stickyHeader ? "sticky-panel-heading" : ""}`}
+              >
+                <div className="spacewalk-list-head-addons">
                   <SearchPanel
                     fromItem={fromItem}
                     toItem={toItem}
@@ -455,7 +470,7 @@ export class TableDataHandler extends React.Component<Props, State> {
                     {this.props.additionalFilters}
                   </SearchPanel>
                   <div className="spacewalk-list-head-addons-extra table-items-per-page-wrapper">
-                    {this.props.titleButtons}
+                    {this.renderTitleButtons()}
                   </div>
                 </div>
               </div>

@@ -43,11 +43,6 @@ type SearchPanelProps = {
 
   /** Align search fields inline */
   searchPanelInline?: boolean;
-
-  onClear?: () => void;
-  onSelectAll?: () => void;
-  selectedCount?: number;
-  selectable?: boolean;
 };
 
 /** Panel containing the search fields for a table */

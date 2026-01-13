@@ -47,6 +47,9 @@ type TableProps = {
   /** a function that return a css class for each row */
   cssClassFunction?: Function;
 
+  /** Callback for search input, setting `onSearch` sets `searchField` to a simple search input if none is provided */
+  onSearch?: (criteria: string) => void;
+
   /** the React Object that contains the filter search field */
   searchField?: React.ReactComponentElement<typeof SearchField>;
 
@@ -106,6 +109,9 @@ type TableProps = {
 
   /** Title buttons to add next to the items per page selection */
   titleButtons?: React.ReactNode[];
+
+  /** Bottom buttons to add after the table */
+  bottomButtons?: React.ReactNode[];
 
   /** Make header sticky */
   stickyHeader?: boolean;
