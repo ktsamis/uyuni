@@ -54,24 +54,6 @@ export function SearchPanel(props: SearchPanelProps) {
           onSearchField: props.onSearchField,
         })
       )}
-      <div className={styles.pagination}>
-        <span>
-          {t("Items {from} - {to} of {total}", { from: props.fromItem, to: props.toItem, total: props.itemCount })}
-        </span>
-        {props.selectable && props.selectedCount > 0 && (
-          <span>
-            {t("({selectedCount} selected)", { selectedCount: props.selectedCount })}&nbsp;
-            <button className="btn-link" onClick={props.onClear}>
-              {t("Clear")}
-            </button>
-          </span>
-        )}
-        {props.selectable && (
-          <button className="btn-link" onClick={props.onSelectAll}>
-            {t("Select All")}
-          </button>
-        )}
-      </div>
     </div>
   );
 }
