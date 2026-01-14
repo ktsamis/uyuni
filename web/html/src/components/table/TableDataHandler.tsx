@@ -272,7 +272,8 @@ export class TableDataHandler extends React.Component<Props, State> {
     return lastPage > 0 ? lastPage : 1;
   };
 
-  onSearch = (criteria?: string): void => {
+  onSearch = (criteria: string = ""): void => {
+    this.props.onSearch?.(criteria);
     this.setState({ currentPage: 1, criteria: criteria }, () => this.getData());
   };
 
