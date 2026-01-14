@@ -1,4 +1,5 @@
 import * as React from "react";
+import { createRef } from "react";
 
 import _isEqual from "lodash/isEqual";
 
@@ -23,6 +24,7 @@ type ChildrenArgsProps = {
   selectedItems: any[];
   criteria?: string;
   field?: string;
+  headerHeight?: number | null;
 };
 
 type Props = {
@@ -52,6 +54,9 @@ type Props = {
 
   /** 1 for ascending, -1 for descending */
   initialSortDirection?: number;
+
+  /** Callback for search input, setting `onSearch` sets `searchField` to a simple search input if none is provided */
+  onSearch?: (criteria: string) => void;
 
   /** the React Object that contains the filter search field */
   searchField?: React.ReactComponentElement<typeof SearchField>;
@@ -110,6 +115,14 @@ type Props = {
 
   /** Bottom buttons to add after the table */
   bottomButtons?: React.ReactNode[];
+
+  /** Sticky table header */
+  stickyHeader?: boolean;
+
+  /** Align search fields inline */
+  searchPanelInline?: boolean;
+
+  onDataLoaded?: (items: any[], info?: { totalItems: number; currentPage: number }) => void;
 };
 
 type State = {
@@ -123,6 +136,7 @@ type State = {
   sortColumnKey: string | null;
   sortDirection: number;
   loading: boolean;
+  headerHeight: number | null;
 };
 
 export class TableDataHandler extends React.Component<Props, State> {
@@ -131,9 +145,11 @@ export class TableDataHandler extends React.Component<Props, State> {
     deletable: false,
     columns: [],
   };
+  panelHeaderRef: React.RefObject<HTMLDivElement>;
 
   constructor(props: Props) {
     super(props);
+    this.panelHeaderRef = createRef();
     this.state = {
       data: [],
       provider: this.getProvider(),
@@ -145,6 +161,7 @@ export class TableDataHandler extends React.Component<Props, State> {
       sortColumnKey: this.props.initialSortColumnKey || null,
       sortDirection: this.props.initialSortDirection || 1,
       loading: false,
+      headerHeight: null,
     };
   }
 
@@ -205,6 +222,12 @@ export class TableDataHandler extends React.Component<Props, State> {
       if (!DEPRECATED_unsafeEquals(selectedIds, null)) {
         this.props.onSelect?.(selectedIds);
       }
+      if (this.props.onDataLoaded) {
+        this.props.onDataLoaded(items, {
+          totalItems: total,
+          currentPage: this.state.currentPage,
+        });
+      }
       const lastPage = this.getLastPage();
       if (this.state.currentPage > lastPage) {
         this.setState({ currentPage: lastPage });
@@ -214,6 +237,10 @@ export class TableDataHandler extends React.Component<Props, State> {
 
   componentDidMount() {
     this.getData();
+
+    if (this.panelHeaderRef.current) {
+      this.setState({ headerHeight: this.panelHeaderRef.current.clientHeight });
+    }
   }
 
   componentDidUpdate(prevProps: Props) {
@@ -245,7 +272,8 @@ export class TableDataHandler extends React.Component<Props, State> {
     return lastPage > 0 ? lastPage : 1;
   };
 
-  onSearch = (criteria?: string): void => {
+  onSearch = (criteria: string = ""): void => {
+    this.props.onSearch?.(criteria);
     this.setState({ currentPage: 1, criteria: criteria }, () => this.getData());
   };
 
@@ -279,6 +307,14 @@ export class TableDataHandler extends React.Component<Props, State> {
     if (this.props.onSelect) {
       this.props.onSelect(selection);
     }
+  };
+
+  renderTitleButtons = () => {
+    return React.Children.map(this.props.titleButtons, (item: React.ReactNode) =>
+      cloneReactElement(item, {
+        search: { field: this.state.field, criteria: this.state.criteria },
+      })
+    );
   };
 
   renderBottomButtons = () => {
@@ -330,7 +366,12 @@ export class TableDataHandler extends React.Component<Props, State> {
     const fromItem = itemCount > 0 ? firstItemIndex + 1 : 0;
     const toItem = firstItemIndex + itemsPerPage <= itemCount ? firstItemIndex + itemsPerPage : itemCount;
     const isEmpty = itemCount === 0;
-    const isTableHeaderEmpty = !this.props.titleButtons && !this.props.searchField && !this.props.additionalFilters;
+    let searchField = this.props.searchField;
+    if (!searchField && this.props.onSearch) {
+      searchField = <SearchField />;
+    }
+    const isTableHeaderEmpty = !this.props.titleButtons && !searchField && !this.props.additionalFilters;
+    const stickyHeader = this.props.stickyHeader;
 
     if (this.props.selectable) {
       const isSelectable =
@@ -403,12 +444,15 @@ export class TableDataHandler extends React.Component<Props, State> {
     const hideHeader = this.props.hideHeaderFooter === "header" || this.props.hideHeaderFooter === "both";
     const hideFooter = this.props.hideHeaderFooter === "footer" || this.props.hideHeaderFooter === "both";
     return (
-      <div className="spacewalk-list">
+      <div className={`spacewalk-list ${stickyHeader ? "overflow-visible" : ""}`}>
         <div className="panel panel-default">
           {!hideHeader && !isTableHeaderEmpty ? (
             <>
-              <div className=" panel-heading">
-                <div className="spacewalk-list-head-addons align-items-center">
+              <div
+                ref={this.panelHeaderRef}
+                className={` panel-heading ${this.props.stickyHeader ? "sticky-panel-heading" : ""}`}
+              >
+                <div className="spacewalk-list-head-addons">
                   <SearchPanel
                     fromItem={fromItem}
                     toItem={toItem}
@@ -421,12 +465,13 @@ export class TableDataHandler extends React.Component<Props, State> {
                     onSelectAll={handleSearchPanelSelectAll}
                     selectedCount={selectedItems.length}
                     selectable={isSelectable}
+                    searchPanelInline={this.props.searchPanelInline}
                   >
                     {this.props.searchField}
                     {this.props.additionalFilters}
                   </SearchPanel>
                   <div className="spacewalk-list-head-addons-extra table-items-per-page-wrapper">
-                    {this.props.titleButtons}
+                    {this.renderTitleButtons()}
                   </div>
                 </div>
               </div>
@@ -449,7 +494,7 @@ export class TableDataHandler extends React.Component<Props, State> {
             </div>
           ) : (
             <div>
-              <div className="table-responsive">
+              <div className={`table-responsive ${stickyHeader ? "overflow-visible" : ""}`}>
                 {this.props.children({
                   currItems,
                   headers,
@@ -457,6 +502,7 @@ export class TableDataHandler extends React.Component<Props, State> {
                   selectedItems: selectedItems,
                   criteria: this.state.criteria,
                   field: this.state.field,
+                  headerHeight: this.state.headerHeight,
                 })}
               </div>
             </div>
