@@ -86,19 +86,7 @@ export function AllSystems(props: Props) {
         defaultSearchField={props.queryColumn || "server_name"}
         initialSearch={props.query}
         emptyText={t("No Systems.")}
-        titleButtons={[
-          <a
-            role="button"
-            title="Download CSV"
-            href="/rhn/manager/systems/csv/all"
-            className="btn btn-default"
-            data-senna-off="true"
-            key="download-csv-button"
-          >
-            <IconTag type="item-download-csv" />
-            {t("Download CSV")}
-          </a>,
-        ]}
+        titleButtons={[<DownloadCSVButton key="download-csv-button" search={{}} />]}
       >
         <Column
           columnKey="server_name"
