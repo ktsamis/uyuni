@@ -9,16 +9,18 @@ assignees: ''
 ---
 
 # Tasks
-  - [ ] Make sure SLE MU pipeline is in good shape
-    - [ ] [4.3 NUE](https://ci.suse.de/view/Manager/view/Manager-4.3/job/manager-4.3-qe-sle-update-NUE/)
-    - [ ] [5.0 micro NUE](https://ci.suse.de/view/Manager/view/Manager-5.0/job/manager-5.0-micro-qe-sle-update-NUE/)
-    - [ ] [5.0 sles NUE](https://ci.suse.de/view/Manager/view/Manager-5.0/job/manager-5.0-sles-qe-sle-update-NUE/)
-    - [ ] [5.1 micro NUE](https://ci.suse.de/view/Manager/view/Manager-5.1/job/manager-5.1-micro-qe-sle-update-NUE/)
-    - [ ] [5.1 sles NUE](https://ci.suse.de/view/Manager/view/Manager-5.1/job/manager-5.1-sles-qe-sle-update-NUE/)
+Validate a Maintenance Incident depending its content:
 
-  - [ ] Take care of incoming SLE MUs following priorities
-    [smelt.suse.de](https://smelt.suse.de/overview/?7=qam-manager#testing)
-  - [ ] For all SLE MUs that have the susemanager-releng reviewer tag, please
-    also ping susemanager-releng on slack after approval
+- **Server or Proxy dependencies** (examples: tomcat, apache, log4j, hibernate, etc ):
+  - [ ] [manager-4.3-qe-mi-validation-sles](https://ci.suse.de/view/Manager/view/Manager-4.3/job/manager-4.3-qe-mi-validation-sles/)
+  - [ ] [manager-5.0-qe-mi-validation-bci](https://ci.suse.de/view/Manager/view/Manager-5.0/job/manager-5.0-qe-mi-validation-bci/)
+  - [ ] [manager-5.1-qe-mi-validation-bci](https://ci.suse.de/view/Manager/view/Manager-5.1/job/manager-5.1-qe-mi-validation-bci/)
+
+- **Mgr-Tools dependencies** (examples: podman, netavark, etc)
+  - [ ] [manager-5.0-qe-mi-validation-mgrtools](https://ci.suse.de/view/Manager/view/Manager-5.0/job/manager-5.0-qe-mi-validation-mgrtools/)
+  - [ ] [manager-5.1-qe-mi-validation-mgrtools](https://ci.suse.de/view/Manager/view/Manager-5.1/job/manager-5.1-qe-mi-validation-mgrtools/)
+
+- [ ] Take care of incoming SLE MUs following priorities [smelt.suse.de](https://smelt.suse.de/overview/?7=qam-manager#testing)
+- [ ] For all SLE MUs that have the susemanager-releng reviewer tag, please also ping susemanager-releng on slack after approval
 
 Additional information: [QE SLE Maintenance Updates](https://confluence.suse.com/display/SUSEMANAGER/QE+SLE+Maintenance+Updates)

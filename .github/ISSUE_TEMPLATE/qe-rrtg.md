@@ -52,9 +52,10 @@ assignees: ''
   - See the [RRTG introduction](https://confluence.suse.com/display/SUSEMANAGER/The+Round+Robin+Testsuite+Geeko) for more information on the role
 
 - **Links to the test suites**:
-  - [Head](https://ci.suse.de/view/Manager/view/Manager-Head/job/manager-Head-dev-acceptance-tests-NUE/)
-  - [5.1 NUE](https://ci.suse.de/view/Manager/view/Manager-5.1/job/manager-5.1-dev-acceptance-tests-NUE/)
-  - [5.0 NUE](https://ci.suse.de/view/Manager/view/Manager-5.0/job/manager-5.0-dev-acceptance-tests-NUE/),[5.0 PRV](https://ci.suse.de/view/Manager/view/Manager-5.0/job/manager-5.0-dev-acceptance-tests-PRV/)
-  - [4.3 NUE](https://ci.suse.de/view/Manager/view/Manager-4.3/job/manager-4.3-dev-acceptance-tests-NUE/), [4.3 PRV](https://ci.suse.de/view/Manager/view/Manager-4.3/job/manager-4.3-dev-acceptance-tests-PRV/)
+  - [Head Podman](https://ci.suse.de/view/Manager/view/Manager-Head/job/manager-Head-dev-acceptance-tests-podman/)
+  - [Head RKE2](https://ci.suse.de/view/Manager/view/Manager-Head/job/manager-Head-dev-acceptance-tests-RKE2/)
+  - [5.1](https://ci.suse.de/view/Manager/view/Manager-5.1/job/manager-5.1-dev-acceptance-tests/)
+  - [5.0](https://ci.suse.de/view/Manager/view/Manager-5.0/job/manager-5.0-dev-acceptance-tests/),[5.0 Backup](https://ci.suse.de/view/Manager/view/Manager-5.0/job/manager-5.0-dev-acceptance-tests-BACKUP/)
+  - [4.3](https://ci.suse.de/view/Manager/view/Manager-4.3/job/manager-4.3-dev-acceptance-tests/), [4.3 Backup](https://ci.suse.de/view/Manager/view/Manager-4.3/job/manager-4.3-dev-acceptance-tests-BACKUP/)
   - [Uyuni](https://ci.suse.de/view/Manager/view/Uyuni/job/uyuni-master-dev-acceptance-tests-podman/)
-  - [Uyuni K3s](https://ci.suse.de/view/Manager/view/Uyuni/job/uyuni-master-dev-acceptance-tests-K3S/)
+  - [Uyuni RKE2](https://ci.suse.de/view/Manager/view/Uyuni/job/uyuni-master-dev-acceptance-tests-RKE2/)
