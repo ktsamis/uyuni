@@ -467,7 +467,7 @@ export class TableDataHandler extends React.Component<Props, State> {
                     selectable={isSelectable}
                     searchPanelInline={this.props.searchPanelInline}
                   >
-                    {this.props.searchField}
+                    {searchField}
                     {this.props.additionalFilters}
                   </SearchPanel>
                   <div className="spacewalk-list-head-addons-extra table-items-per-page-wrapper">

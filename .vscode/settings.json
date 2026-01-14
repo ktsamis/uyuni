@@ -36,5 +36,8 @@
     "javadoc.type.scope": "package",
     "javadoc.var.scope": "package"
   },
-  "prettier.configPath": "web/.prettierrc"
+  "prettier.configPath": "web/.prettierrc",
+  "[json]": {
+    "editor.defaultFormatter": "prettier.prettier-vscode"
+  }
 }
