@@ -68,6 +68,12 @@ header {
     float: none !important;
   }
 
+  #spacewalk-content,
+  .flipped {
+    height: 100%;
+    overflow: auto;
+  }
+
   #page-body {
     flex: 1 1 auto;
     overflow: auto;
@@ -749,6 +755,11 @@ i[class~="fa-right"] {
       // TODO: Check
       @extend .pull-left;
       @extend .text-left;
+    }
+
+    .spacewalk-list-reflinks {
+      display: flex;
+      justify-content: space-between
     }
   }
 }

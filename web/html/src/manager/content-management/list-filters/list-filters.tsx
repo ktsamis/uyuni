@@ -133,16 +133,17 @@ const ListFilters = (props: Props) => {
     </div>
   );
 
-  const unusedFilter = <Button className="btn-default" handler={onSelectUnused} text={t("Select unused")}></Button>;
-
-  const deleteSelected = (
-    <Button
-      className="btn btn-danger"
-      disabled={!selectedIdentifiers.length}
-      handler={deleteSelectedRows}
-      text={t("Delete selected")}
-    />
-  );
+  const actionButtons = [
+    <div key="filter-action-buttons" className="btn-group">
+      <Button className="btn-default" handler={onSelectUnused} text={t("Select unused")}></Button>
+      <Button
+        className="btn btn-danger"
+        disabled={!selectedIdentifiers.length}
+        handler={deleteSelectedRows}
+        text={t("Delete")}
+      />
+    </div>,
+  ];
 
   return (
     <TopPanel
@@ -161,7 +162,7 @@ const ListFilters = (props: Props) => {
         selectedItems={selectedIdentifiers}
         deletable={isDeletable}
         onDelete={deleteRow}
-        additionalFilters={[unusedFilter, deleteSelected]}
+        titleButtons={actionButtons}
       >
         <Column
           columnKey="filter_name"

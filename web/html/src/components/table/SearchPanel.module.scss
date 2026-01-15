@@ -1,5 +1,6 @@
 :global(.old-theme),
 :global(.new-theme) {
+  .inlineSearchPanel,
   .searchPanel {
     display: flex;
     flex-wrap: wrap;
@@ -25,18 +26,8 @@
     }
   }
 
-  .pagination {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    min-height: 30px;
-
-    &:not(:first-child) {
-      margin-left: 10px;
-    }
-
-    :global(.btn-link) {
-      padding: 0;
-    }
+  .inlineSearchPanel {
+    flex: 0;
+    flex-wrap: initial; 
   }
 }
