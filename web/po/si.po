@@ -4,12 +4,12 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #: ../html/src/core/intl/index.test.tsx:11
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:198
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:199
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-09 10:28+0000\n"
+"POT-Creation-Date: 2026-01-15 15:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -28,7 +28,7 @@ msgstr ""
 
 #: ../html/src/components/CoCoScansList.tsx:68
 #: ../html/src/components/package/PackageListActionScheduler.tsx:83
-#: ../html/src/components/product-migration/utils.tsx:113
+#: ../html/src/components/product-migration/utils.tsx:95
 #: ../html/src/manager/appstreams/appstreams.tsx:61
 #: ../html/src/manager/state/highstate.tsx:62
 #: ../html/src/manager/systems/appstreams/ssm-appstreams-configure.tsx:60
@@ -38,7 +38,7 @@ msgstr ""
 
 #: ../html/src/components/CoCoScansList.tsx:75
 #: ../html/src/components/package/PackageListActionScheduler.tsx:90
-#: ../html/src/components/product-migration/utils.tsx:120
+#: ../html/src/components/product-migration/utils.tsx:102
 #: ../html/src/manager/minion/details/support-data.tsx:75
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:75
 msgid "The action has been <link>scheduled</link>."
@@ -217,13 +217,15 @@ msgstr ""
 
 #: ../html/src/components/coco-attestation/CoCoAttestationTable.tsx:111
 #: ../html/src/components/hub/TokenTable.tsx:104
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:130
+#: ../html/src/manager/admin/access-control/access-group-user.tsx:142
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:406
 #: ../html/src/manager/images/image-profiles.tsx:191
 #: ../html/src/manager/images/image-stores.tsx:193
 #: ../html/src/manager/images/image-view.tsx:684
 #: ../html/src/manager/maintenance/list/calendar-list.tsx:65
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:50
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:201
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:200
 #: ../html/src/manager/salt/keys/key-management.tsx:196
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-list.tsx:71
 msgid "Actions"
@@ -231,12 +233,13 @@ msgstr ""
 
 #: ../html/src/components/coco-attestation/CoCoAttestationTable.tsx:116
 #: ../html/src/components/coco-attestation/CoCoResult.tsx:54
+#: ../html/src/manager/admin/access-control/access-group.tsx:183
 #: ../html/src/manager/admin/setup/products/products-scc-dialog.tsx:197
 #: ../html/src/manager/images/image-view-patches.tsx:87
 #: ../html/src/manager/images/image-view.tsx:690
 #: ../html/src/manager/maintenance/list/calendar-list.tsx:70
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:55
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:206
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:205
 #: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:377
 #: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:165
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-list.tsx:77
@@ -377,9 +380,11 @@ msgstr ""
 #: ../html/src/components/hub/AddTokenButton.tsx:154
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:252
 #: ../html/src/components/hub/ModalEditButton.tsx:87
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:372
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:295
 #: ../html/src/components/large-text-attachment.tsx:188
 #: ../html/src/components/panels/CreatorPanel.tsx:114
+#: ../html/src/components/steps-progress-bar.tsx:62
+#: ../html/src/manager/admin/access-control/access-group-tab-container.tsx:48
 #: ../html/src/manager/admin/setup/proxy/proxy.tsx:56
 #: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:62
 #: ../html/src/manager/content-management/list-filters/filter-edit.tsx:183
@@ -407,10 +412,11 @@ msgstr ""
 #: ../html/src/components/large-text-attachment.tsx:208
 #: ../html/src/components/large-text-attachment.tsx:221
 #: ../html/src/components/panels/CreatorPanel.tsx:97
-#: ../html/src/components/table/Table.tsx:184
+#: ../html/src/components/table/Table.tsx:231
 #: ../html/src/manager/admin/payg/payg.tsx:71
 #: ../html/src/manager/admin/payg/payg.tsx:72
 #: ../html/src/manager/content-management/list-filters/filter-edit.tsx:164
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:143
 #: ../html/src/manager/content-management/project/project.tsx:107
 #: ../html/src/manager/images/image-profiles.tsx:136
 #: ../html/src/manager/images/image-profiles.tsx:211
@@ -430,7 +436,7 @@ msgstr ""
 #: ../html/src/manager/packages/list.tsx:126
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:249
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:252
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:223
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:222
 #: ../html/src/manager/salt/keys/key-management.tsx:54
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-details.tsx:126
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-details.tsx:128
@@ -462,6 +468,7 @@ msgstr ""
 #: ../html/src/components/input/form/Form.example.tsx:25
 #: ../html/src/components/input/text/Text.example.tsx:25
 #: ../html/src/components/input/text/Text.example.tsx:34
+#: ../html/src/components/steps-progress-bar.stories.tsx:11
 msgid "Minimum 2 characters"
 msgstr ""
 
@@ -613,13 +620,13 @@ msgid "Toggle section visibility"
 msgstr ""
 
 #: ../html/src/components/hub/AddTokenButton.tsx:66
-#: ../html/src/components/hub/AddTokenButton.tsx:93
+#: ../html/src/components/hub/AddTokenButton.tsx:95
 #: ../html/src/components/hub/AddTokenButton.tsx:120
 msgid "Issue a new token"
 msgstr ""
 
 #: ../html/src/components/hub/AddTokenButton.tsx:77
-#: ../html/src/components/hub/AddTokenButton.tsx:101
+#: ../html/src/components/hub/AddTokenButton.tsx:103
 #: ../html/src/components/hub/AddTokenButton.tsx:120
 msgid "Store an external token"
 msgstr ""
@@ -687,6 +694,49 @@ msgstr ""
 msgid "Access token copied to the clipboard"
 msgstr ""
 
+#. Vendor channels can't sync orgs
+#: ../html/src/components/hub/ChannelSelectorTable.tsx:33
+msgid "Vendor"
+msgstr ""
+
+#: ../html/src/components/hub/ChannelSelectorTable.tsx:50
+msgid "Select Organization"
+msgstr ""
+
+#: ../html/src/components/hub/ChannelSelectorTable.tsx:112
+#: ../html/src/manager/admin/setup/products/products.tsx:488
+msgid "Filter by architecture"
+msgstr ""
+
+#: ../html/src/components/hub/ChannelSelectorTable.tsx:127
+msgid "Search channels..."
+msgstr ""
+
+#: ../html/src/components/hub/ChannelSelectorTable.tsx:130
+msgid "Sync"
+msgstr ""
+
+#: ../html/src/components/hub/ChannelSelectorTable.tsx:134
+#: ../html/src/components/states-picker.tsx:454
+msgid "Channel Name"
+msgstr ""
+
+#: ../html/src/components/hub/ChannelSelectorTable.tsx:145
+#: ../html/src/components/table/nested-data.example.tsx:56
+#: ../html/src/manager/admin/setup/products/products.tsx:588
+#: ../html/src/manager/admin/setup/products/products.tsx:973
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:159
+#: ../html/src/manager/images/image-view-packages.tsx:50
+#: ../html/src/manager/minion/ptf/ptf-column-definition.tsx:22
+msgid "Architecture"
+msgstr ""
+
+#: ../html/src/components/hub/ChannelSelectorTable.tsx:151
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:236
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:272
+msgid "Sync Org"
+msgstr ""
+
 #: ../html/src/components/hub/DeregisterServer.tsx:39
 #: ../html/src/components/hub/DeregisterServer.tsx:48
 msgid "Deregister"
@@ -744,44 +794,6 @@ msgstr ""
 
 #: ../html/src/components/hub/DesyncChannel.tsx:64
 msgid "The channels have been successfully desynced."
-msgstr ""
-
-#: ../html/src/components/hub/HierarchicalChannelsTable.tsx:142
-msgid "Select Organization"
-msgstr ""
-
-#: ../html/src/components/hub/HierarchicalChannelsTable.tsx:172
-#: ../html/src/manager/admin/setup/products/products.tsx:488
-msgid "Filter by architecture"
-msgstr ""
-
-#: ../html/src/components/hub/HierarchicalChannelsTable.tsx:193
-msgid "Search channels..."
-msgstr ""
-
-#: ../html/src/components/hub/HierarchicalChannelsTable.tsx:208
-msgid "Sync"
-msgstr ""
-
-#: ../html/src/components/hub/HierarchicalChannelsTable.tsx:209
-#: ../html/src/components/states-picker.tsx:454
-msgid "Channel Name"
-msgstr ""
-
-#: ../html/src/components/hub/HierarchicalChannelsTable.tsx:210
-#: ../html/src/components/table/Table.example.tsx:57
-#: ../html/src/manager/admin/setup/products/products.tsx:588
-#: ../html/src/manager/admin/setup/products/products.tsx:973
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:159
-#: ../html/src/manager/images/image-view-packages.tsx:50
-#: ../html/src/manager/minion/ptf/ptf-column-definition.tsx:22
-msgid "Architecture"
-msgstr ""
-
-#: ../html/src/components/hub/HierarchicalChannelsTable.tsx:211
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:313
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:349
-msgid "Sync Org"
 msgstr ""
 
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:67
@@ -876,7 +888,7 @@ msgstr ""
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:64
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:241
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:244
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:214
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:213
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-details.tsx:119
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-details.tsx:121
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-list.tsx:85
@@ -996,6 +1008,8 @@ msgid "The token that grant access to the remote server to establish the connect
 msgstr ""
 
 #: ../html/src/components/hub/RegisterPeripheralForm.tsx:196
+#: ../html/src/manager/admin/access-control/access-group-review.tsx:162
+#: ../html/src/manager/admin/access-control/access-group-user.tsx:136
 #: ../html/src/manager/admin/setup/proxy/proxy.tsx:106
 #: ../html/src/manager/images/image-store-edit.tsx:171
 #: ../html/src/manager/login/susemanager/login.tsx:88
@@ -1172,33 +1186,38 @@ msgstr ""
 msgid "Mirror credentials successfully regenerated."
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:179
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:108
 msgid "No changes to apply"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:224
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:149
 msgid "Channels synced correctly to peripheral!"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:258
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:185
 msgid "Please select at least one channel to add or remove from sync"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:300
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:223
 msgid "Channels to Add"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:308
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:344
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:231
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:267
 msgid "Filter by Name"
 msgstr ""
 
 #. ref={nameInputRef}
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:310
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:346
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:233
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:269
 #: ../html/src/components/input/form/Form.example.tsx:23
+#: ../html/src/components/steps-progress-bar.stories.tsx:9
+#: ../html/src/manager/admin/access-control/access-group-details.tsx:113
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:107
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:354
+#: ../html/src/manager/admin/access-control/access-group-review.tsx:175
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:389
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:169
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:170
 #: ../html/src/manager/content-management/list-projects/list-projects.tsx:98
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:132
 #: ../html/src/manager/content-management/shared/components/panels/environment-lifecycle/environment-form.tsx:28
@@ -1214,8 +1233,8 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:311
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:347
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:234
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:270
 #: ../html/src/manager/content-management/shared/components/panels/environment-lifecycle/environment-form.tsx:38
 #: ../html/src/manager/content-management/shared/components/panels/environment-lifecycle/environment-view.tsx:39
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties-form.tsx:29
@@ -1230,37 +1249,37 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:312
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:348
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:235
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:271
 #: ../html/src/manager/admin/setup/products/products.tsx:590
 msgid "Arch"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:324
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:247
 msgid "Some custom channels do not have a sync organization selected. Please select organizations before confirming."
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:330
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:253
 msgid "No channels selected to add"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:337
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:260
 msgid "Channels to Remove"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:352
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:275
 msgid "No channels selected to remove"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:359
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:282
 msgid "Channel Sync Changes"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:360
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:283
 msgid "You are about to make the following changes:"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:379
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:302
 #: ../html/src/components/package/PackageListActionScheduler.tsx:181
 #: ../html/src/components/states-picker.tsx:368
 #: ../html/src/components/states-picker.tsx:562
@@ -1273,25 +1292,25 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:402
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:312
 msgid "{peripheralFqdn} - Peripheral Sync Channels"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:412
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:322
 msgid "Back to details"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:425
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:426
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:335
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:336
 #: ../html/src/manager/appstreams/actions-appstreams.tsx:14
 msgid "Apply Changes"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:434
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:344
 msgid "Sync Channels from Hub to Peripheral"
 msgstr ""
 
-#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:444
+#: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:355
 msgid "Confirm Channel Synchronization Changes"
 msgstr ""
 
@@ -1436,6 +1455,8 @@ msgstr ""
 #: ../html/src/components/input/form-multi-input/multiple-fields.example.tsx:24
 #: ../html/src/components/input/form-multi-input/single-field.example.tsx:24
 #: ../html/src/components/input/form-multi-input/table-fields.example.tsx:32
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:122
+#: ../html/src/manager/admin/access-control/access-group.tsx:206
 msgid "Users"
 msgstr ""
 
@@ -1503,7 +1524,8 @@ msgid "Both values need to be positive integers"
 msgstr ""
 
 #: ../html/src/components/input/select/ClearIndicator.tsx:17
-#: ../html/src/components/table/SearchPanel.tsx:65
+#: ../html/src/components/table/SelectedRowDetails.tsx:45
+#: ../html/src/components/table/SelectedRowDetails.tsx:68
 #: ../html/src/manager/admin/setup/products/products.tsx:330
 msgid "Clear"
 msgstr ""
@@ -1594,34 +1616,12 @@ msgstr ""
 msgid "Package Name"
 msgstr ""
 
-#: ../html/src/components/pagination.tsx:23
-msgid "First"
-msgstr ""
-
-#: ../html/src/components/pagination.tsx:28
-#: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:1098
-#: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:1129
-#: ../html/src/manager/systems/subscribe-channels/subscribe-channels.tsx:665
-msgid "Prev"
-msgstr ""
-
-#: ../html/src/components/pagination.tsx:33
-#: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:1079
-#: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:1105
-#: ../html/src/manager/systems/subscribe-channels/subscribe-channels.tsx:562
-msgid "Next"
-msgstr ""
-
-#: ../html/src/components/pagination.tsx:38
-msgid "Last"
-msgstr ""
-
-#: ../html/src/components/pagination.tsx:94
-msgid "Page <dropdown></dropdown> of {total}"
-msgstr ""
-
-#: ../html/src/components/pagination.tsx:117
-msgid "Page {current} of {total}"
+#: ../html/src/components/pagination.tsx:146
+msgid ""
+"{total, plural,\n"
+"            one {<dropdown></dropdown> of # page}\n"
+"            other {<dropdown></dropdown> of # pages}\n"
+"        }"
 msgstr ""
 
 #: ../html/src/components/picker/recurring-event-picker.tsx:57
@@ -1655,7 +1655,7 @@ msgstr ""
 #: ../html/src/components/picker/recurring-event-picker.tsx:326
 #: ../html/src/manager/maintenance/edit/schedule-edit.tsx:96
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:32
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:163
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:162
 #: ../html/src/manager/recurring/search/recurring-actions-search-utils.tsx:17
 msgid "Schedule Name"
 msgstr ""
@@ -1696,33 +1696,33 @@ msgstr ""
 msgid "Select a Schedule"
 msgstr ""
 
-#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:165
+#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:154
 #: ../html/src/components/product-migration/MigrationTargetSelectorForm.tsx:56
 msgid "Source Product"
 msgstr ""
 
-#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:172
+#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:161
 msgid "Target Product"
 msgstr ""
 
-#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:179
+#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:168
 msgid "Target base channel"
 msgstr ""
 
-#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:193
+#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:182
 msgid "Target child channels"
 msgstr ""
 
-#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:200
+#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:189
 #: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:85
 msgid "Allow vendor change"
 msgstr ""
 
-#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:213
+#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:202
 msgid "Back to target selection"
 msgstr ""
 
-#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:216
+#: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:205
 msgid "Schedule Migration"
 msgstr ""
 
@@ -1781,7 +1781,7 @@ msgstr ""
 msgid "Target Products"
 msgstr ""
 
-#: ../html/src/components/product-migration/MigrationTargetSelectorForm.tsx:85
+#: ../html/src/components/product-migration/MigrationTargetSelectorForm.tsx:84
 msgid "Select Channels"
 msgstr ""
 
@@ -1806,7 +1806,7 @@ msgid "Normal Configuration Channel"
 msgstr ""
 
 #: ../html/src/components/ranking-table.tsx:44
-#: ../html/src/components/table/TableDataHandler.tsx:398
+#: ../html/src/components/table/TableDataHandler.tsx:442
 msgid "There are no entries to show."
 msgstr ""
 
@@ -1865,6 +1865,7 @@ msgid "Search in configuration channels"
 msgstr ""
 
 #: ../html/src/components/states-picker.tsx:423
+#: ../html/src/components/table/SearchField.tsx:68
 #: ../html/src/manager/header/search/search.tsx:77
 #: ../html/src/manager/header/search/search.tsx:86
 #: ../html/src/manager/minion/packages/package-states.tsx:212
@@ -1903,11 +1904,15 @@ msgid "State Label"
 msgstr ""
 
 #: ../html/src/components/states-picker.tsx:455
-#: ../html/src/components/table/Table.example.tsx:51
+#: ../html/src/components/table/nested-data.example.tsx:50
 msgid "Channel Label"
 msgstr ""
 
 #: ../html/src/components/states-picker.tsx:456
+#: ../html/src/manager/admin/access-control/access-group-details.tsx:120
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:111
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:374
+#: ../html/src/manager/admin/access-control/access-group-review.tsx:176
 #: ../html/src/manager/admin/create-payg/create-payg.tsx:71
 #: ../html/src/manager/admin/list-payg/list-payg.tsx:79
 #: ../html/src/manager/admin/payg-shared/info/payg-info-form.tsx:23
@@ -2029,41 +2034,33 @@ msgstr ""
 msgid "Select a filter"
 msgstr ""
 
-#: ../html/src/components/table/SearchPanel.tsx:59
-msgid "Items {from} - {to} of {total}"
-msgstr ""
-
-#: ../html/src/components/table/SearchPanel.tsx:63
-msgid "({selectedCount} selected)"
-msgstr ""
-
-#: ../html/src/components/table/SearchPanel.tsx:71
-msgid "Select All"
-msgstr ""
-
 #: ../html/src/components/table/SelectSearchField.tsx:5
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:222
 msgid "All"
 msgstr ""
 
-#: ../html/src/components/table/Table.example.tsx:40
+#: ../html/src/components/table/nested-data.example.tsx:39
 msgid "Channel name"
 msgstr ""
 
-#: ../html/src/components/table/Table.example.tsx:62
+#: ../html/src/components/table/nested-data.example.tsx:61
 msgid "Hub Org"
 msgstr ""
 
-#: ../html/src/components/table/Table.example.tsx:66
+#: ../html/src/components/table/nested-data.example.tsx:65
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:382
+#: ../html/src/manager/admin/access-control/access-group-review.tsx:179
 msgid "View"
 msgstr ""
 
-#: ../html/src/components/table/Table.example.tsx:67
+#: ../html/src/components/table/nested-data.example.tsx:66
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:403
+#: ../html/src/manager/admin/access-control/access-group-review.tsx:194
 msgid "Modify"
 msgstr ""
 
-#: ../html/src/components/table/TableDataHandler.tsx:429
-msgid "items per page"
+#: ../html/src/components/table/search.example.tsx:20
+msgid "Item id"
 msgstr ""
 
 #: ../html/src/components/target-systems.tsx:26
@@ -2149,6 +2146,177 @@ msgstr ""
 #: ../html/src/core/intl/index.test.tsx:18
 #: ../html/src/core/intl/index.test.tsx:19
 msgid "foo {insert} bar"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-details.tsx:51
+msgid "An unexpected error occurred while fetching organizations."
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-details.tsx:64
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:51
+msgid "An unexpected error occurred while fetching access groups."
+msgstr ""
+
+#. Value options for filtering by Target Type in recurring actions list
+#: ../html/src/manager/admin/access-control/access-group-details.tsx:131
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:118
+#: ../html/src/manager/proxy/container-config.tsx:324
+#: ../html/src/manager/recurring/recurring-actions-utils.tsx:8
+#: ../html/src/manager/recurring/search/recurring-actions-search-utils.tsx:4
+#: ../html/src/manager/state/highstate-summary.tsx:173
+#: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-details.tsx:175
+#: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-list.tsx:63
+msgid "Organization"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-details.tsx:134
+msgid "Search for organizations..."
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-details.tsx:135
+msgid "No Organizations Found"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-details.tsx:144
+msgid "Copy Permissions From"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-details.tsx:147
+msgid "Search for existing access groups..."
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-details.tsx:148
+msgid "No Access group"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-details.tsx:156
+msgid "This action copy permissions from an existing access group to a new one. Once created, the new access group will function independently, unaffected by future updates to the original."
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:71
+msgid "Edit Access Group"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:76
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:134
+msgid "Delete Access Group"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:88
+msgid "Access Group Management"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:93
+msgid "Create Access Group"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:104
+msgid "No Access Group found."
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:105
+msgid "Filter by name or description"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:127
+msgid "permissions"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-list.tsx:135
+msgid "Are you sure you want to delete the selected Access Group?"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:155
+msgid "An unexpected error occurred while fetching namespaces."
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:216
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:363
+msgid "API"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:219
+msgid "Web"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:222
+msgid "Only selected"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:282
+#: ../html/src/manager/admin/access-control/access-group-review.tsx:128
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:255
+msgid "Expand All"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:282
+#: ../html/src/manager/admin/access-control/access-group-review.tsx:128
+#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:255
+msgid "Collapse All"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:338
+msgid "Review and modify the permissions for this custom group as needed."
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-permissions.tsx:347
+#: ../html/src/manager/admin/task-engine-status/taskotop.tsx:196
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:363
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-pins.tsx:281
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:143
+msgid "Filter by name"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-review.tsx:160
+#: ../html/src/manager/admin/access-control/access-group-user.tsx:134
+msgid "No Users selected."
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-review.tsx:163
+#: ../html/src/manager/admin/access-control/access-group-user.tsx:137
+#: ../html/src/manager/proxy/container-config.tsx:326
+msgid "Email"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-review.tsx:164
+#: ../html/src/manager/admin/access-control/access-group-user.tsx:138
+msgid "Real Name"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-review.tsx:171
+msgid "No permissions selected."
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-tab-container.tsx:49
+msgid "Update Access Group"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-user.tsx:48
+msgid "An unexpected error occurred while fetching users."
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group-user.tsx:118
+msgid "Search & Add Users"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group.tsx:173
+msgid "Access Group successfully created."
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group.tsx:195
+msgid "Namespaces & Permissions"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group.tsx:211
+msgid "Review"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group.tsx:219
+msgid "Access Group Details"
+msgstr ""
+
+#: ../html/src/manager/admin/access-control/access-group.tsx:224
+msgid "Create: Access Group"
 msgstr ""
 
 #: ../html/src/manager/admin/config/monitoring-admin.tsx:21
@@ -2324,7 +2492,7 @@ msgstr ""
 #: ../html/src/manager/images/image-stores.tsx:148
 #: ../html/src/manager/maintenance/edit/maintenance-windows-edit.tsx:40
 #: ../html/src/manager/maintenance/list/maintenance-windows-list.tsx:29
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:104
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:105
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-edit.tsx:207
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager.tsx:172
 msgid "Create"
@@ -2692,7 +2860,7 @@ msgid "This product is mirrored."
 msgstr ""
 
 #: ../html/src/manager/admin/setup/products/products.tsx:862
-#: ../html/src/manager/content-management/shared/components/panels/sources/channels/child-channel.tsx:81
+#: ../html/src/manager/content-management/shared/components/panels/sources/channels/child-channel.tsx:82
 #: ../html/src/manager/systems/activation-key/child-channels.tsx:144
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:494
 #: ../html/src/manager/systems/subscribe-channels/subscribe-channels.tsx:542
@@ -2863,13 +3031,6 @@ msgstr ""
 
 #: ../html/src/manager/admin/task-engine-status/taskotop.tsx:190
 msgid " seconds"
-msgstr ""
-
-#: ../html/src/manager/admin/task-engine-status/taskotop.tsx:196
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:363
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-pins.tsx:281
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:141
-msgid "Filter by name"
 msgstr ""
 
 #: ../html/src/manager/admin/task-engine-status/taskotop.tsx:198
@@ -3341,33 +3502,33 @@ msgstr ""
 msgid "Your subscriptions"
 msgstr ""
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:59
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:64
 msgid "Product name"
 msgstr ""
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:65
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:70
 msgid "Unmatched system count"
 msgstr ""
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:73
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:74
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:78
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:79
 msgid "Show system list"
 msgstr ""
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:93
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:95
 msgid "No unmatching products are found."
 msgstr ""
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:98
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:100
 #: ../html/src/manager/audit/subscription-matching/subscription-matching.tsx:154
 msgid "Unmatched Products"
 msgstr ""
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:146
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:148
 msgid "System name"
 msgstr ""
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:154
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:156
 msgid "Unmatched systems"
 msgstr ""
 
@@ -3611,26 +3772,19 @@ msgstr ""
 msgid "Some of the selected filters are used in projects and can not be deleted."
 msgstr ""
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:136
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:138
 msgid "Select unused"
 msgstr ""
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:143
-#: ../html/src/manager/images/image-profiles.tsx:137
-#: ../html/src/manager/images/image-stores.tsx:137
-#: ../html/src/manager/images/image-view.tsx:352
-msgid "Delete selected"
-msgstr ""
-
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:149
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:150
 msgid "Content Lifecycle Filters"
 msgstr ""
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:158
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:159
 msgid "Filter by name or project"
 msgstr ""
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:174
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:175
 msgid "Projects in use"
 msgstr ""
 
@@ -4103,15 +4257,15 @@ msgstr ""
 msgid "This channel is required by:"
 msgstr ""
 
-#: ../html/src/manager/content-management/shared/components/panels/sources/channels/child-channel.tsx:80
+#: ../html/src/manager/content-management/shared/components/panels/sources/channels/child-channel.tsx:81
 msgid "This channel is recommended"
 msgstr ""
 
-#: ../html/src/manager/content-management/shared/components/panels/sources/channels/child-channel.tsx:85
+#: ../html/src/manager/content-management/shared/components/panels/sources/channels/child-channel.tsx:86
 msgid "This channel is mandatory"
 msgstr ""
 
-#: ../html/src/manager/content-management/shared/components/panels/sources/channels/child-channel.tsx:86
+#: ../html/src/manager/content-management/shared/components/panels/sources/channels/child-channel.tsx:87
 #: ../html/src/manager/systems/activation-key/child-channels.tsx:149
 #: ../html/src/manager/systems/subscribe-channels/subscribe-channels.tsx:547
 msgid "mandatory"
@@ -4403,6 +4557,12 @@ msgstr ""
 
 #: ../html/src/manager/images/image-profiles.tsx:33
 msgid "Image profiles have been deleted."
+msgstr ""
+
+#: ../html/src/manager/images/image-profiles.tsx:137
+#: ../html/src/manager/images/image-stores.tsx:137
+#: ../html/src/manager/images/image-view.tsx:352
+msgid "Delete selected"
 msgstr ""
 
 #: ../html/src/manager/images/image-profiles.tsx:158
@@ -4929,7 +5089,7 @@ msgstr ""
 #: ../html/src/manager/maintenance/details/schedule-details.tsx:46
 #: ../html/src/manager/maintenance/list/calendar-list.tsx:103
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:88
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:237
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:236
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-list.tsx:107
 msgid "Are you sure you want to delete the selected item?"
 msgstr ""
@@ -5250,14 +5410,6 @@ msgstr ""
 
 #: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:244
 msgid "Edit YAML"
-msgstr ""
-
-#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:255
-msgid "Collapse All"
-msgstr ""
-
-#: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:255
-msgid "Expand All"
 msgstr ""
 
 #: ../html/src/manager/minion/ansible/edit-ansible-vars-modal.tsx:65
@@ -6028,22 +6180,8 @@ msgstr ""
 msgid "City"
 msgstr ""
 
-#. Value options for filtering by Target Type in recurring actions list
-#: ../html/src/manager/proxy/container-config.tsx:324
-#: ../html/src/manager/recurring/recurring-actions-utils.tsx:8
-#: ../html/src/manager/recurring/search/recurring-actions-search-utils.tsx:4
-#: ../html/src/manager/state/highstate-summary.tsx:173
-#: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-details.tsx:175
-#: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-list.tsx:63
-msgid "Organization"
-msgstr ""
-
 #: ../html/src/manager/proxy/container-config.tsx:325
 msgid "Organization Unit"
-msgstr ""
-
-#: ../html/src/manager/proxy/container-config.tsx:326
-msgid "Email"
 msgstr ""
 
 #: ../html/src/manager/proxy/container-config.tsx:334
@@ -6068,7 +6206,7 @@ msgid "State:"
 msgstr ""
 
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:163
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:148
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:149
 msgid "Active"
 msgstr ""
 
@@ -6132,7 +6270,7 @@ msgid "false"
 msgstr ""
 
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:265
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:236
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:235
 msgid "Delete Recurring Action Schedule"
 msgstr ""
 
@@ -6174,7 +6312,7 @@ msgid "Schedule Recurring Action"
 msgstr ""
 
 #: ../html/src/manager/recurring/recurring-actions-edit.tsx:259
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:194
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:193
 #: ../html/src/manager/recurring/search/recurring-actions-search-utils.tsx:35
 msgid "Action Type"
 msgstr ""
@@ -6183,28 +6321,28 @@ msgstr ""
 msgid "Configure states to execute"
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:115
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:116
 msgid " Recurring Actions "
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:121
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:122
 msgid "The following recurring actions have been created."
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:125
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:126
 msgid "To create new recurring actions head to the system, group or organization you want to create the action for."
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:170
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:169
 msgid "Frequency"
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:178
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:177
 #: ../html/src/manager/recurring/search/recurring-actions-search-utils.tsx:29
 msgid "Target Type"
 msgstr ""
 
-#: ../html/src/manager/recurring/recurring-actions-list.tsx:186
+#: ../html/src/manager/recurring/recurring-actions-list.tsx:185
 #: ../html/src/manager/recurring/search/recurring-actions-search-utils.tsx:23
 msgid "Target Name"
 msgstr ""
@@ -6891,15 +7029,15 @@ msgstr ""
 msgid "Can be migrated?"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:218
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:222
 msgid "Product details for {system}"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:222
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:226
 msgid "These are the products currently installed on {system}:"
 msgstr ""
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:233
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:237
 msgid "The systems currently selected cannot be migrated in batch."
 msgstr ""
 
@@ -7092,6 +7230,18 @@ msgstr ""
 
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:1052
 msgid "Channel changes scheduled."
+msgstr ""
+
+#: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:1079
+#: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:1105
+#: ../html/src/manager/systems/subscribe-channels/subscribe-channels.tsx:562
+msgid "Next"
+msgstr ""
+
+#: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:1098
+#: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:1129
+#: ../html/src/manager/systems/subscribe-channels/subscribe-channels.tsx:665
+msgid "Prev"
 msgstr ""
 
 #: ../html/src/manager/systems/subscribe-channels/subscribe-channels.tsx:235
