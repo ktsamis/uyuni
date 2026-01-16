@@ -1,4 +1,29 @@
 -------------------------------------------------------------------
+Sat Jan 17 00:37:53 CET 2026 - marina.latini@suse.com
+
+- version 5.1.14-0
+  * Add leftovers of partially missing ARMHF for Debian (bsc#1248783)
+  * Fix channel end of life date incorrectly set to 0 instead of null
+  * Optimize schedule page queries for better performance
+    (bsc#1244641)
+  * Fix MLM admin status display in Users pages (bsc#1244321)
+  * Add RBAC mappings for config channel list GUI table operations
+    (bsc#1251236)
+  * Add RBAC rules for proxy config backup API
+  * Add GPG key for SLFO packages
+  * Decouple Server and Proxy identification from its
+    software channels (bsc#1248113)
+  * Rename "Proxy" to "Proxy Entitled Servers" (bsc#1250641)
+  * Added schema for RBAC management UI
+  * Increase size of column 'context' on tables
+    'suseappstream' and 'suseserverappstream' (bsc#1255653)
+  * Add indexes to rhnActionSubChannelsTokens table
+  * Add index to rhnChannelNewestPackage table (bsc#1249089)
+  * Move the SSM product migration endpoints to the correct
+    namespace (bsc#1254263)
+  * Add RBAC mappings for AppStreams in SSM
+
+-------------------------------------------------------------------
 Thu Nov 20 18:11:55 CET 2025 - marina.latini@suse.com
 
 - version 5.1.13-0
