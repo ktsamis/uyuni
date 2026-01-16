@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Sat Jan 17 00:58:36 CET 2026 - marina.latini@suse.com
+
+- version 5.1.11
+  * Use BCI base image as base
+  * Cleanup and simplify image building
+
+-------------------------------------------------------------------
 Thu Nov 20 18:38:31 CET 2025 - marina.latini@suse.com
 
 - version 5.1.10
