@@ -1,4 +1,19 @@
 -------------------------------------------------------------------
+Sat Jan 17 01:18:07 CET 2026 - marina.latini@suse.com
+
+- version 5.1.15-0
+  * Fix reposync mediaproduct fetch when
+    URL contains auth token (bsc#1252388)
+  * Fix PREPENDED_DIR error when importing pkgs
+  * Reposync: prevent excessive logging for patches
+    that are skipped (bsc#1250239)
+  * Reposync: show message about filtering failed
+    packages only when there are failing packages
+  * Fix collecting database information in support config
+  * Use libsolv for version comparison for reposync with --latest
+    (bsc#1248799)
+
+-------------------------------------------------------------------
 Fri Aug 29 12:19:05 CEST 2025 - rosuna@suse.com
 
 - version 5.1.14-0
