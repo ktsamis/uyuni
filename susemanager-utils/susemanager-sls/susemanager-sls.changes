@@ -1,4 +1,16 @@
 -------------------------------------------------------------------
+Sat Jan 17 01:29:19 CET 2026 - marina.latini@suse.com
+
+- version 5.1.19-0
+  * Fix error on shutdown for SLE 12 (bsc#1255634)
+  * Add proxy migration execution module
+  * Fix the preflight script to distingish SLES 16.0 and SL Micro 6.2
+  * Fix path to shutdown command for SLE 12
+  * Fix reebot needed detection of transaction update systems
+  * Remove product installation state from packages as it is
+    already available in the channels state
+
+-------------------------------------------------------------------
 Thu Nov 20 18:12:57 CET 2025 - marina.latini@suse.com
 
 - version 5.1.18-0
