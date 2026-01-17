@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Sat Jan 17 01:27:48 CET 2026 - marina.latini@suse.com
+
+- version 5.1.14-0
+  * Fixed the package name to correct one (bsc#1255089)
+  * Fix the product ids of client tools channels
+  * Add logrotate to Ubuntu bootstrap repositories
+
+-------------------------------------------------------------------
 Mon Sep 08 11:24:52 CEST 2025 - rosuna@suse.com
 
 - version 5.1.13-0
