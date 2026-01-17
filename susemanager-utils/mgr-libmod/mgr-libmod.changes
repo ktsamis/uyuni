@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Sat Jan 17 01:04:01 CET 2026 - marina.latini@suse.com
+
+- version 5.1.2-0
+  * Add CreateArchive directive for git workflow usage
+
+-------------------------------------------------------------------
 Mon Oct 14 15:37:39 CEST 2024 - rosuna@suse.com
 
 - version 5.1.1-0
