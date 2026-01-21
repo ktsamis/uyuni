@@ -968,7 +968,7 @@
         <context-group name="ctx">
           <context context-type="sourcefile">Bad Parameter error page</context>
         </context-group>
-        <target>북마크가 잘못되거나 유효하지 않은 경우</target>
+        <target state="final">북마크가 잘못되거나 유효하지 않습니다.</target>
       </trans-unit>
       <trans-unit id="badparam.jsp.reason2" xml:space="preserve">
         <source>An incorrect or out-of-date hyperlink.</source>
@@ -1346,12 +1346,12 @@
         </context-group>
         <target>작업</target>
       </trans-unit>
-      <trans-unit approved="yes" id="preferences.tasks.description" xml:space="preserve">
+      <trans-unit approved="no" id="preferences.tasks.description" xml:space="preserve">
         <source> A task-oriented menu of quick links to different areas of the @@PRODUCT_NAME@@ user interface.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/UserPreferences</context>
         </context-group>
-        <target> @@PRODUCT_NAME@@ 사용자 인터페이스의 다른 위치에 바로 연결하는 작업 중심적인 메뉴</target>
+        <target state="translated"> @@PRODUCT_NAME@@ 사용자 인터페이스의 다른 위치에 바로 연결하는 작업 중심적인 메뉴입니다.</target>
       </trans-unit>
       <trans-unit id="preferences.critical-systems.name" xml:space="preserve">
         <source>Most Critical Systems</source>
@@ -1365,7 +1365,7 @@
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/UserPreferences</context>
         </context-group>
-        <target> 중요 업데이트 및 건강 상태에 대한 시스템 목록</target>
+        <target state="final"> 중요 업데이트 및 건강 상태에 대한 시스템 목록입니다.</target>
       </trans-unit>
       <trans-unit id="preferences.system-groups-widget.name" xml:space="preserve">
         <source>System Groups</source>
@@ -1379,7 +1379,7 @@
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/UserPreferences</context>
         </context-group>
-        <target> 시스템 그룹의 전체 상태 미리 보기</target>
+        <target state="final"> 시스템 그룹의 전체 상태 미리 보기입니다.</target>
       </trans-unit>
       <trans-unit id="preferences.latest-errata.name" xml:space="preserve">
         <source>Relevant Security Errata</source>
