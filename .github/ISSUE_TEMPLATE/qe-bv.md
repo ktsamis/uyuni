@@ -94,7 +94,7 @@ The official documentation is linked below, but you need to run the `upgrade` co
 - [ ] Product and Salt migration tests
   - [ ] SLES 15 SP6 minion → SP7
   - [ ] SLES 15 SP6 SSH minion → SP7
-  - [ ] SLE Micro 5.5 → 6.1
+  - [ ] SL Micro 5.5 → 6.1
   - [ ] OS Salt → Salt Bundle
 
 ### Retail
@@ -115,6 +115,14 @@ The official documentation is linked below, but you need to run the `upgrade` co
 
 - [ ] Ping our release engineers in Slack
 - [ ] Approve all related MUs in [IBS](https://smelt.suse.de/overview/?7=qam-manager#testing) or via the [command line](https://confluence.suse.com/display/SUSEMANAGER/QE+Build+Validation)
+
+---
+
+## Report
+
+- [ ] Prepare the report according to the template in [Confluence](https://confluence.suse.com/x/d4GTdg)
+- [ ] Add the report to Confluence
+- [ ] Send the report to `galaxy-devel@suse.de`
 
 ---
 
