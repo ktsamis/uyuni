@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Fri Jan 23 14:24:42 CET 2026 - marina.latini@suse.com
+
+- version 5.1.21-0
+  * proxy.backup state to use mgrcompat instead of module run (bsc#1257147)
+
+-------------------------------------------------------------------
 Fri Jan 23 12:59:52 CET 2026 - marina.latini@suse.com
 
 - version 5.1.20-0
