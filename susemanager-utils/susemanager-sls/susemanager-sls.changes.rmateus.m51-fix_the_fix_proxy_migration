@@ -1,0 +1,1 @@
+- proxy.backup state to use mgrcompat instead of module run (bsc#1257147)
