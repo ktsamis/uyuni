@@ -20,7 +20,6 @@ Validate a Maintenance Incident depending its content:
   - [manager-5.0-qe-mi-validation-mgrtools](https://ci.suse.de/view/Manager/view/Manager-5.0/job/manager-5.0-qe-mi-validation-mgrtools/)
   - [manager-5.1-qe-mi-validation-mgrtools](https://ci.suse.de/view/Manager/view/Manager-5.1/job/manager-5.1-qe-mi-validation-mgrtools/)
 
-Remember to also:
 - Take care of incoming SLE MUs following priorities [smelt.suse.de](https://smelt.suse.de/overview/?7=qam-manager#testing)
 - For all SLE MUs that have the susemanager-releng reviewer tag, please also ping susemanager-releng on slack after approval
 
