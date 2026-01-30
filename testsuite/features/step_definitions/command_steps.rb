@@ -1384,7 +1384,9 @@ When(/^I export config channels "([^"]*)" with ISS v2 to "([^"]*)"$/) do |channe
 end
 
 When(/^I import data with ISS v2 from "([^"]*)"$/) do |path|
-  get_target('server').run("inter-server-sync import --importDir=#{path}")
+  # WORKAROUND for bsc#1249127
+  # Remove "echo admin |" when the product issue is solved
+  get_target('server').run("echo admin | inter-server-sync import --importDir=#{path}")
 end
 
 Then(/^"(.*?)" folder on server is ISS v2 export directory$/) do |folder|
