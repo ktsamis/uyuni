@@ -131,6 +131,21 @@ class ChannelTimeoutException(ChannelException):
     pass
 
 
+def in_memory_pressure():
+    """
+    Check if MemAvailable < 3GB (~10% of minimal server memory requirement)
+    """
+    try:
+        with open("/proc/meminfo", "r") as f:
+            for line in f:
+                if line.startswith("MemAvailable:"):
+                    mem_available = int(line.split()[1])
+                    return mem_available < (3 * 1024 * 1024)
+    except (IOError, IndexError, ValueError):
+        pass
+    return False
+
+
 def send_mail(sync_type="Repo"):
     """Send email summary"""
     body = dumpEMAIL_LOG()
@@ -1774,9 +1789,11 @@ class RepoSync(object):
             finally:
                 try:
                     # importing packages by batch or if the current packages is the last
+                    # (in memory pressure the batch size is reduced)
                     if mpm_bin_batch and (
                         import_count == to_download_count
                         or len(mpm_bin_batch) % import_batch_size == 0
+                        or in_memory_pressure()
                     ):
                         importer = packageImport.PackageImport(
                             mpm_bin_batch, backend, caller=upload_caller
@@ -1792,6 +1809,7 @@ class RepoSync(object):
                     if mpm_src_batch and (
                         import_count == to_download_count
                         or len(mpm_src_batch) % import_batch_size == 0
+                        or in_memory_pressure()
                     ):
                         src_importer = packageImport.SourcePackageImport(
                             mpm_src_batch, backend, caller=upload_caller
