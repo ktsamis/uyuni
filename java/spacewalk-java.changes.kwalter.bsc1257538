@@ -1,0 +1,1 @@
+- fix reposync crashing at metadata generation (bsc#1257538)
