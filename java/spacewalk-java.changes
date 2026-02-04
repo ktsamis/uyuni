@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Wed Feb 04 13:29:10 CET 2026 - michael.calmer@suse.com
+
+- version 5.1.23-0
+  * Add check for virt vm_info availability (bsc#1254316)
+  * Fix reposync crashing at metadata generation (bsc#1257538)
+
+-------------------------------------------------------------------
 Sat Jan 17 00:35:17 CET 2026 - marina.latini@suse.com
 
 - version 5.1.22-0
