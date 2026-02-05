@@ -2,7 +2,7 @@
 name: QE - SLE Maintenance Updates
 about: Use this template for the SLE Maintenance updates role
 title: "SLE Maintenance Update Testing Week "
-labels: ["qe-squad"]
+labels: ["qe-squad", "high priority"]
 projects: ["SUSE/32"]
 assignees: ''
 
