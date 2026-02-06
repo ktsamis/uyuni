@@ -488,6 +488,8 @@ public class SystemHandlerTest extends BaseHandlerTestCase {
         catch (InvalidChannelException e) {
             // success
         }
+
+        commitHappened();
     }
 
     @Test
@@ -618,6 +620,8 @@ public class SystemHandlerTest extends BaseHandlerTestCase {
         catch (InvalidChannelException e) {
             // success
         }
+
+        commitHappened();
     }
 
     @Test
@@ -707,6 +711,8 @@ public class SystemHandlerTest extends BaseHandlerTestCase {
         catch (InvalidChannelException e) {
             // success
         }
+
+        commitHappened();
     }
 
     @Test
@@ -796,6 +802,8 @@ public class SystemHandlerTest extends BaseHandlerTestCase {
         catch (InvalidChannelException e) {
             // success
         }
+
+        commitHappened();
     }
 
     @Test

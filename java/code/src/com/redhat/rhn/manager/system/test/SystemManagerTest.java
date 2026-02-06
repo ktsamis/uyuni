@@ -1336,8 +1336,6 @@ public class SystemManagerTest extends JMockBaseTestCaseWithUser {
 
     @Test
     public void testUpdateServerChannels() throws Exception {
-        User user = UserTestUtils.findNewUser("testUser", "testOrg" +
-                this.getClass().getSimpleName());
         Server server = ServerFactoryTest.createTestServer(user, true);
 
         Channel base1 = ChannelFactoryTest.createBaseChannel(user);
@@ -1362,12 +1360,12 @@ public class SystemManagerTest extends JMockBaseTestCaseWithUser {
         assertEquals(2, server.getChildChannels().size());
         assertTrue(server.getChildChannels().stream().anyMatch(cc -> cc.getId().equals(ch21.getId())));
         assertTrue(server.getChildChannels().stream().anyMatch(cc -> cc.getId().equals(ch22.getId())));
+
+        commitHappened();
     }
 
     @Test
     public void testUpdateServerChannelsNoChildren() throws Exception {
-        User user = UserTestUtils.findNewUser("testUser", "testOrg" +
-                this.getClass().getSimpleName());
         Server server = ServerFactoryTest.createTestServer(user, true);
 
         ProductName pnbase = MgrSyncUtils.findOrCreateProductName("Product Name Base");
@@ -1400,12 +1398,12 @@ public class SystemManagerTest extends JMockBaseTestCaseWithUser {
         assertEquals(base2.getId(), server.getBaseChannel().getId());
         assertEquals(1, server.getChildChannels().size());
         assertEquals(ch21, server.getChildChannels().iterator().next());
+
+        commitHappened();
     }
 
     @Test
     public void testUpdateServerChannelsNoBase() throws Exception {
-        User user = UserTestUtils.findNewUser("testUser", "testOrg" +
-                this.getClass().getSimpleName());
         Server server = ServerFactoryTest.createTestServer(user, true);
 
         Channel base1 = ChannelFactoryTest.createBaseChannel(user);
@@ -1431,6 +1429,8 @@ public class SystemManagerTest extends JMockBaseTestCaseWithUser {
 
         assertNull(server.getBaseChannel());
         assertEquals(0, server.getChildChannels().size());
+
+        commitHappened();
     }
 
     /**
