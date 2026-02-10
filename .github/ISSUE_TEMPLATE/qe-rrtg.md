@@ -50,6 +50,7 @@ assignees: ''
   - Label the cards with the version the issue was found for: "xxx_ci", i.e. `4.3_ci`
   - You can also compare the new failures with older versions from the [Grafana Test Report timeline (Features/Version)](http://grafana.mgr.suse.de/d/GreziyMMk/testsuites-wip-time-perspective?orgId=1&from=now-3d&to=now)
   - See the [RRTG introduction](https://confluence.suse.com/display/SUSEMANAGER/The+Round+Robin+Testsuite+Geeko) for more information on the role
+  - It's recommended to add a pipeline report about the number of failures in each pipeline with icons green, red to show if they pass in secondary and arrows to show the trend of failures since the day before in the #discuss-multi-linux-manager-ci-development channel in slack.
 
 - **Links to the test suites**:
   - [Head Podman](https://ci.suse.de/view/Manager/view/Manager-Head/job/manager-Head-dev-acceptance-tests-podman/)
@@ -59,3 +60,4 @@ assignees: ''
   - [4.3](https://ci.suse.de/view/Manager/view/Manager-4.3/job/manager-4.3-dev-acceptance-tests/), [4.3 Backup](https://ci.suse.de/view/Manager/view/Manager-4.3/job/manager-4.3-dev-acceptance-tests-BACKUP/)
   - [Uyuni](https://ci.suse.de/view/Manager/view/Uyuni/job/uyuni-master-dev-acceptance-tests-podman/)
   - [Uyuni RKE2](https://ci.suse.de/view/Manager/view/Uyuni/job/uyuni-master-dev-acceptance-tests-RKE2/)
+  - [Github acceptance tests on master](https://github.com/uyuni-project/uyuni/actions/workflows/acceptance_tests_scheduler.yml)
