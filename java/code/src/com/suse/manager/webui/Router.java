@@ -281,10 +281,13 @@ public class Router implements SparkApplication {
         AccessGroupController.initRoutes();
 
         // Validate RBAC endpoints
-        RbacRouteValidator.validateEndpoints();
-
-        // if the calls above opened Hibernate session, close it now
-        HibernateFactory.closeSession();
+        try {
+            RbacRouteValidator.validateEndpoints();
+        }
+        finally {
+            // If any of the calls above opened Hibernate session, close it now
+            HibernateFactory.closeSession();
+        }
     }
 
     private void initNotFoundRoutes(JadeTemplateEngine jade) {
