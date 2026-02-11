@@ -7,6 +7,9 @@ Feature: Migrate a SLES 15 SP6 Salt minion to 15 SP7
   Scenario: Log in as admin user
     Given I am authorized for the "Admin" section
 
+  Scenario: Prerequisite: update OS zypper to the latest version
+    When I upgrade "sle15sp6_minion" with the last "zypper" version
+
   Scenario: Migrate this minion to SLE 15 SP7
     Given I am on the Systems overview page of this "sle15sp6_minion"
     When I follow "Software" in the content area
