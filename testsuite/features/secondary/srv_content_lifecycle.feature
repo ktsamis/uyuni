@@ -189,7 +189,6 @@ Feature: Content lifecycle
     And I wait for "1" second
     Then I wait at most 600 seconds until I see "Built" text in the environment "prod_name"
 
-
   Scenario: Create a CLM filter of type Package(NEVRA) that allows packages whose version and release number are lower to a defined one
     When I follow the left menu "Content Lifecycle > Filters"
     And I click on "Create Filter"
@@ -207,7 +206,7 @@ Feature: Content lifecycle
     And I click on "Save" in "Create a new filter" modal
     Then I should see a "Filter created successfully" text
 
-   Scenario: Create a CLM filter of type Package(NEVRA) that denys packages whose version and release number are lower to a defined one
+  Scenario: Create a CLM filter of type Package(NEVRA) that denys packages whose version and release number are lower to a defined one
     When I follow the left menu "Content Lifecycle > Filters"
     And I click on "Create Filter"
     And I wait at most 10 seconds until I see modal containing "Create a new filter" text
@@ -224,7 +223,7 @@ Feature: Content lifecycle
     And I click on "Save" in "Create a new filter" modal
     Then I should see a "Filter created successfully" text
 
-Scenario: Create CLM filter that allows packages of type Package (Provides Name)
+  Scenario: Create CLM filter that allows packages of type Package (Provides Name)
     When I follow the left menu "Content Lifecycle > Filters"
     And I click on "Create Filter"
     And I wait at most 10 seconds until I see modal containing "Create a new filter" text
@@ -235,7 +234,7 @@ Scenario: Create CLM filter that allows packages of type Package (Provides Name)
     And I enter "cereal" as "Provides Name"
     And I click on "Save" in "Create a new filter" modal
     Then I should see a "Filter created successfully" text
-  
+
   Scenario: Create CLM filter that denys packages of type Package (Provides Name)
     When I follow the left menu "Content Lifecycle > Filters"
     And I click on "Create Filter"
@@ -249,7 +248,7 @@ Scenario: Create CLM filter that allows packages of type Package (Provides Name)
     And I click on "Save" in "Create a new filter" modal
     Then I should see a "Filter created successfully" text
 
-Scenario: Create CLM filter of type Package (Build date) that allows packages whose date is lower than a defined one
+  Scenario: Create CLM filter of type Package (Build date) that allows packages whose date is lower than a defined one
     When I follow the left menu "Content Lifecycle > Filters"
     And I click on "Create Filter"
     And I wait at most 10 seconds until I see modal containing "Create a new filter" text
@@ -260,7 +259,7 @@ Scenario: Create CLM filter of type Package (Build date) that allows packages wh
     And I check radio button "Allow"
     And I click on "Save" in "Create a new filter" modal
     Then I should see a "Filter created successfully" text
-  
+
   Scenario: Create CLM filter of type Package (Build date) that denys packages whose date is lower than a defined one
     When I follow the left menu "Content Lifecycle > Filters"
     And I click on "Create Filter"
@@ -388,7 +387,7 @@ Scenario: Create CLM filter of type Package (Build date) that allows packages wh
     And I check radio button "Allow"
     And I click on "Save" in "Create a new filter" modal
     Then I should see a "Filter created successfully" text
-  
+
   Scenario: Create CLM filter of type Patch(Issue date) that denys patches whose date is greater or equal than a defined one
     When I follow the left menu "Content Lifecycle > Filters"
     And I click on "Create Filter"
@@ -632,7 +631,7 @@ Scenario: Create CLM filter of type Package (Build date) that allows packages wh
   Scenario: Cleanup: remove the CLM filters
     When I follow the left menu "Content Lifecycle > Filters"
     And I click on "Select unused"
-    And I click on "Delete selected"
+    And I click on "Delete"
     Then I should not see a "remove fonts packages" text
     And I should not see a "africa-patch" text
     And I should not see a "andromeda-patch" text
