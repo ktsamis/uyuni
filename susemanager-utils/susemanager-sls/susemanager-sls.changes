@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Fri Feb 13 09:44:26 WET 2026 - psuarezhernandez@suse.com
+
+- version 5.1.23-0
+  * Fix bootstrap for SLM 6.2 and newer (bsc#1257992)
+
+-------------------------------------------------------------------
 Wed Feb 04 13:30:00 CET 2026 - michael.calmer@suse.com
 
 - version 5.1.22-0
