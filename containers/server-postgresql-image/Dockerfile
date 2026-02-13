@@ -5,11 +5,11 @@ ARG BASE=registry.suse.com/bci/bci-base:15.6
 ARG PG_BASE=registry.opensuse.org/opensuse/postgres:16
 
 FROM $BASE AS builder
-RUN zypper --non-interactive install --download-only postgresql16-contrib && \
+RUN zypper --non-interactive install --download-only --force --no-recommends postgresql16-contrib tar && \
     mkdir -p /opt/contrib /opt/results && \
-    find /var/cache/zypp/packages -name postgresql16-contrib* -exec cp {} /opt/contrib \; && \
-    cd /opt/contrib && rpm2cpio postgresql16-contrib.rpm | cpio -idmv && \
-    find . -name pg_trgm* -exec cp --parents {} ../results/ \;
+    find /var/cache/zypp/packages \( -name postgresql16-contrib* -o -name tar* \) -exec cp {} /opt/contrib \; && \
+    cd /opt/contrib && rpm2cpio postgresql16-contrib.rpm | cpio -idmv && rpm2cpio tar*.rpm | cpio -idmv && \
+    find . \( -name pg_trgm* -o -name tar \) -exec cp --parents {} ../results/ \;
 
 FROM $PG_BASE
 COPY --from=builder /opt/results/ /
