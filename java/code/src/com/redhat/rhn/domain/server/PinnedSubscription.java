@@ -15,6 +15,8 @@
 
 package com.redhat.rhn.domain.server;
 
+import com.google.gson.annotations.SerializedName;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -24,7 +26,11 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 public class PinnedSubscription {
 
     private Long id;
+
+    @SerializedName("system_id")
     private Long systemId;
+
+    @SerializedName("subscription_id")
     private Long subscriptionId;
 
     /**
