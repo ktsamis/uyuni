@@ -2,7 +2,7 @@
 name: QE - RRTG
 about: Use this template for the RRTG role
 title: "RRTG Week "
-labels: ["qe-squad", "testsuite review", "testsuite", "high priority"]
+labels: ["qe-squad", "testsuite review", "testsuite", "high-priority"]
 projects: ["SUSE/32"]
 assignees: ''
 
