@@ -71,4 +71,7 @@ Feature: Very first settings
   ## WORKAROUND: https://bugzilla.suse.com/show_bug.cgi?id=1257487
   @skip_if_transactional_server
   Scenario: Restart the container server
-  When I restart the SUSE Manager container using mgradm and wait for readiness
+    When I restart the server container
+    And I wait until "uyuni-server" container is active
+    And I wait until "spacewalk.target" service is active on "server"
+    And I wait until "tomcat.service" service is active on "server"
