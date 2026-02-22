@@ -289,7 +289,7 @@ end
 When(/^I wait until "([^"]*)" container is active$/) do |service|
   node = get_target('server')
   cmd = "systemctl is-active #{service}"
-  node.run_local_until_ok(cmd)
+  node.run_until_ok(cmd, runs_in_container: false)
 end
 
 When(/^I wait until "([^"]*)" service is active on "([^"]*)"$/) do |service, host|
@@ -1642,6 +1642,12 @@ When(/^I reboot the server through SSH$/) do
     end
     sleep 1
   end
+end
+
+## WORKAROUND: https://bugzilla.suse.com/show_bug.cgi?id=1257487
+When(/^I restart the server container$/) do
+  server = get_target('server')
+  server.run('mgradm restart', runs_in_container: false)
 end
 
 When(/^I reboot the "([^"]*)" host through SSH, waiting until it comes back$/) do |host|

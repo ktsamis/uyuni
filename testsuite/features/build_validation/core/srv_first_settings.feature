@@ -67,3 +67,11 @@ Feature: Very first settings
 
   Scenario: Detect latest Salt changes on the server
     When I query latest Salt changes on "server"
+
+  ## WORKAROUND: https://bugzilla.suse.com/show_bug.cgi?id=1257487
+  @skip_if_transactional_server
+  Scenario: Restart the container server
+    When I restart the server container
+    And I wait until "uyuni-server" container is active
+    And I wait until "spacewalk.target" service is active on "server"
+    And I wait until "tomcat.service" service is active on "server"
