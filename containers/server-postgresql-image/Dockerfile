@@ -5,11 +5,12 @@ ARG BASE=registry.suse.com/bci/bci-base:15.6
 ARG PG_BASE=registry.opensuse.org/opensuse/postgres:16
 
 FROM $BASE AS builder
-RUN zypper --non-interactive install --download-only postgresql16-contrib && \
+RUN zypper --non-interactive install --download-only --force --no-recommends postgresql16-contrib tar gzip && \
     mkdir -p /opt/contrib /opt/results && \
-    find /var/cache/zypp/packages -name postgresql16-contrib* -exec cp {} /opt/contrib \; && \
-    cd /opt/contrib && rpm2cpio postgresql16-contrib.rpm | cpio -idmv && \
-    find . -name pg_trgm* -exec cp --parents {} ../results/ \;
+    find /var/cache/zypp/packages \( -name postgresql16-contrib* -o -name tar* -o -name gzip* \) -exec cp {} /opt/contrib \; && \
+    cd /opt/contrib && rpm2cpio postgresql16-contrib.rpm | cpio -idmv && rpm2cpio tar*.rpm | cpio -idmv && rpm2cpio gzip*.rpm | cpio -idmv && \
+    find . -name pg_trgm* -exec cp --parents {} opt/results/ \; && \
+    cp --parents usr/bin/tar usr/bin/gzip /opt/results/
 
 FROM $PG_BASE
 COPY --from=builder /opt/results/ /
@@ -29,7 +30,7 @@ LABEL org.opencontainers.image.description="${PRODUCT} PostgreSQL container imag
 LABEL org.opencontainers.image.created="%BUILDTIME%"
 LABEL org.opencontainers.image.vendor="${VENDOR}"
 LABEL org.opencontainers.image.url="${URL}"
-LABEL org.opencontainers.image.version=5.1.8
+LABEL org.opencontainers.image.version=5.1.9
 LABEL org.openbuildservice.disturl="%DISTURL%"
 LABEL org.opensuse.reference="${REFERENCE_PREFIX}/server-postgresql:${PRODUCT_VERSION}.%RELEASE%"
 # endlabelprefix

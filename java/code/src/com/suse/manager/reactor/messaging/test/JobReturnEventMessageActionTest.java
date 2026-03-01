@@ -2100,6 +2100,8 @@ public class JobReturnEventMessageActionTest extends JMockBaseTestCaseWithUser {
         assertTokenChannel(minion, base);
         assertTokenChannel(minion, ch1);
         assertTokenChannel(minion, ch2);
+
+        commitHappened();
     }
 
     @Test
@@ -2150,6 +2152,8 @@ public class JobReturnEventMessageActionTest extends JMockBaseTestCaseWithUser {
         MinionServer reloaded = HibernateFactory.reload(minion);
         // check that tokens are really gone
         assertEquals(0, reloaded.getAccessTokens().size());
+
+        commitHappened();
     }
 
     private void assertTokenChannel(MinionServer minion, Channel channel) {

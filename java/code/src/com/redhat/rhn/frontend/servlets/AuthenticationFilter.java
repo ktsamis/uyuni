@@ -95,9 +95,10 @@ public class AuthenticationFilter implements Filter {
                         CSRFTokenValidator.validate(hreq);
                     }
                     catch (CSRFTokenException e) {
+                        LOG.debug("Security token validation failed:'{}'", e.getMessage());
                         // send HTTP 401 if security token validation failed
                         HttpServletResponse hres = (HttpServletResponse) response;
-                        hres.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+                        hres.sendError(HttpServletResponse.SC_UNAUTHORIZED);
                         return;
                     }
                 }
@@ -126,7 +127,8 @@ public class AuthenticationFilter implements Filter {
             // Ignore requests to the download and login endpoints
             if (servletRequest.getServletPath().startsWith("/manager/download/") ||
                     servletRequest.getServletPath().equals("/manager/api/login") ||
-                    servletRequest.getServletPath().equals("/manager/api/auth/login")) {
+                    servletRequest.getServletPath().equals("/manager/api/auth/login") ||
+                    servletRequest.getServletPath().equals("/manager/api/oidcLogin")) {
                 chain.doFilter(request, response);
             }
             // Send 401 for unauthorized API requests and senna SPA requests, else redirect to login

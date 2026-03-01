@@ -132,6 +132,7 @@ public class PinnedSubscriptionFactory extends HibernateFactory {
                 .createNativeQuery(sql, PinnedSubscription.class)
                 .setParameter("systemId", systemId, StandardBasicTypes.LONG)
                 .setParameter("subscriptionId", subscriptionId, StandardBasicTypes.LONG)
-                .getSingleResult();
+                .uniqueResultOptional()
+                .orElse(null);
     }
 }

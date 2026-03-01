@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Sat Jan 17 00:46:06 CET 2026 - marina.latini@suse.com
+
+- version 5.1.12
+  * Cleanup and simplify image building
+
+-------------------------------------------------------------------
 Thu Nov 20 18:28:06 CET 2025 - marina.latini@suse.com
 
 - version 5.1.11

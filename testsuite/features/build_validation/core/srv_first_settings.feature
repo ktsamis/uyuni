@@ -6,9 +6,6 @@ Feature: Very first settings
   As the admin user
   I want to create the organisation, the first users and set the HTTP proxy
 
-  Scenario: Cleanup Salt files
-    When I run "rm -Rf /srv/salt/*" on "server"
-
 @skip_if_containerized_server
   Scenario: Create admin user and first organization
     Given I access the host the first time
@@ -70,3 +67,11 @@ Feature: Very first settings
 
   Scenario: Detect latest Salt changes on the server
     When I query latest Salt changes on "server"
+
+  ## WORKAROUND: https://bugzilla.suse.com/show_bug.cgi?id=1257487
+  @skip_if_transactional_server
+  Scenario: Restart the container server
+    When I restart the server container
+    And I wait until "uyuni-server" container is active
+    And I wait until "spacewalk.target" service is active on "server"
+    And I wait until "tomcat.service" service is active on "server"

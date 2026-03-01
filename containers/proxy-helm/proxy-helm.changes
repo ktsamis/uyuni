@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Sat Jan 17 00:43:51 CET 2026 - marina.latini@suse.com
+
+- version 5.1.11
+  * Add ssh_tuning value to configure sshd (bsc#1253738)
+
+-------------------------------------------------------------------
 Thu Nov 20 18:25:33 CET 2025 - marina.latini@suse.com
 
 - version 5.1.10

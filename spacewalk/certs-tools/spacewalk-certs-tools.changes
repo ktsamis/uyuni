@@ -1,4 +1,26 @@
 -------------------------------------------------------------------
+Fri Feb 13 09:45:10 WET 2026 - psuarezhernandez@suse.com
+
+- version 5.1.10-0
+  * Fix bootstrap script for SLM 6.2 (bsc#1257992)
+
+-------------------------------------------------------------------
+Tue Jan 20 19:42:01 CET 2026 - marina.latini@suse.com
+
+- version 5.1.9-0
+  * Fix failing bootstrap with bootstrap script on SLES 16
+    and SL Micro 6.2 (bsc#1256991)
+
+-------------------------------------------------------------------
+Sat Jan 17 01:19:24 CET 2026 - marina.latini@suse.com
+
+- version 5.1.8-0
+  * Correct PROFILE_NAME variable definition in bootstrap script
+    (bsc#1246035)
+  * Fix the bootstrap script to distinguish SLES 16.0 and SL Micro 6.2
+  * Add flag to bootstrap script ot generate machine_id for Uyuni
+
+-------------------------------------------------------------------
 Fri Aug 29 12:20:28 CEST 2025 - rosuna@suse.com
 
 - version 5.1.7-0

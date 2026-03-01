@@ -45,7 +45,6 @@ export function VirtualSystems(props: Props) {
           <IconTag type="header-help" />
         </a>
       </h1>
-
       <Table
         data="/rhn/manager/api/systems/list/virtual"
         identifier={(item) => item.virtualSystemId || item.uuid}
@@ -57,6 +56,18 @@ export function VirtualSystems(props: Props) {
         defaultSearchField={props.queryColumn || "host_server_name"}
         initialSearch={props.query}
         emptyText={t("No Virtual Systems.")}
+        titleButtons={[
+          <a
+            key="download-csv"
+            href="/rhn/manager/systems/csv/virtualSystems"
+            title="Download CSV"
+            className="btn btn-default"
+            data-senna-off="true"
+          >
+            <IconTag type="item-download-csv" />
+            {t("Download CSV")}
+          </a>,
+        ]}
       >
         <Column
           columnKey="hostServerName"

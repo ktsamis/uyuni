@@ -560,35 +560,28 @@ end
 When(/^I perform a full salt minion cleanup on "([^"]*)"$/) do |host|
   node = get_target(host)
 
-  # Define config directory based on bundle usage
-  config_dir = use_salt_bundle ? '/etc/venv-salt-minion' : '/etc/salt'
+  # Define config directory
+  salt_bundle_config_dir = '/etc/venv-salt-minion'
+  salt_classic_config_dir = '/etc/salt'
 
-  # Define cleanup paths based on bundle usage
-  cleanup_paths =
-    if use_salt_bundle
-      '/var/cache/venv-salt-minion /run/venv-salt-minion /var/venv-salt-minion.log /var/tmp/.root*'
-    else
-      '/var/cache/salt/minion /var/run/salt /run/salt /var/log/salt /var/tmp/.root*'
-    end
+  # Define cleanup paths
+  salt_bundle_cleanup_paths = '/var/cache/venv-salt-minion /run/venv-salt-minion /var/log/venv-salt-minion.log /var/tmp/.root*'
+  salt_classic_cleanup_paths = '/var/cache/salt/minion /var/run/salt /run/salt /var/log/salt /var/tmp/.root*'
 
-  # Selective file cleanup within the configuration directory
-  node.run("rm -f #{config_dir}/grains #{config_dir}/minion_id", check_errors: false)
-  node.run("find #{config_dir}/minion.d/ -type f ! -name '00-venv.conf' -delete", check_errors: false)
-  node.run("rm -f #{config_dir}/pki/minion/*", check_errors: false)
+  # File cleanup within the configuration directory
+  node.run("rm -f #{salt_bundle_config_dir}/grains #{salt_bundle_config_dir}/minion_id", check_errors: false)
+  node.run("find #{salt_bundle_config_dir}/minion.d/ -type f ! -name '00-venv.conf' -delete", check_errors: false)
+  node.run("rm -f #{salt_bundle_config_dir}/pki/minion/*", check_errors: false)
+
+  node.run("rm -f #{salt_classic_config_dir}/grains #{salt_classic_config_dir}/minion_id", check_errors: false)
+  node.run("find #{salt_classic_config_dir}/minion.d/ -type f ! -name '00-venv.conf' -delete", check_errors: false)
+  node.run("rm -f #{salt_classic_config_dir}/pki/minion/*", check_errors: false)
 
   # Additional cleanup for cached and runtime files
-  node.run("rm -Rf /root/salt #{cleanup_paths}", check_errors: false)
+  node.run("rm -Rf /root/salt #{salt_bundle_cleanup_paths} #{salt_classic_cleanup_paths}", check_errors: false)
 
   # Package removal using the existing step
-  package_list = use_salt_bundle ? 'venv-salt-minion' : 'salt salt-minion'
-  step %(I remove package "#{package_list}" from this "#{host}" without error control)
-
-  # Conditional additional package removal
-  if transactional_system?(host) && use_salt_bundle
-    # Check if salt-minion is installed, remove if present from sumaform
-    _result, code = node.run('rpm -q salt-minion', check_errors: false)
-    step %(I remove package "salt-minion" from this "#{host}" without error control) if code.zero?
-  end
+  step %(I remove packages "venv-salt-minion salt salt-minion" from this "#{host}")
 
   # Disable repositories
   step %(I disable the repositories "tools_update_repo tools_pool_repo" on this "#{host}" without error control)

@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Sat Jan 17 00:57:53 CET 2026 - marina.latini@suse.com
+
+- version 5.1.12
+  * Use BCI init image as base
+  * Add zchunk to server image (bsc#1247687)
+  * Ignore http proxy for localhost in healthcheck (bsc#1249155)
+
+-------------------------------------------------------------------
 Thu Nov 20 18:37:17 CET 2025 - marina.latini@suse.com
 
 - version 5.1.11

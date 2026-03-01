@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Sat Jan 17 01:22:24 CET 2026 - marina.latini@suse.com
+
+- version 5.1.7-0
+  * Disable listing the content of /icons (bsc#1247544)
+
+-------------------------------------------------------------------
 Fri Aug 29 12:26:17 CEST 2025 - rosuna@suse.com
 
 - version 5.1.6-0

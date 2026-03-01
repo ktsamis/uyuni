@@ -1,4 +1,40 @@
 -------------------------------------------------------------------
+Fri Feb 13 09:44:26 WET 2026 - psuarezhernandez@suse.com
+
+- version 5.1.23-0
+  * Fix bootstrap for SLM 6.2 and newer (bsc#1257992)
+
+-------------------------------------------------------------------
+Wed Feb 04 13:30:00 CET 2026 - michael.calmer@suse.com
+
+- version 5.1.22-0
+  * Add check for virt vm_info availability (bsc#1254316)
+
+-------------------------------------------------------------------
+Fri Jan 23 14:24:42 CET 2026 - marina.latini@suse.com
+
+- version 5.1.21-0
+  * proxy.backup state to use mgrcompat instead of module run (bsc#1257147)
+
+-------------------------------------------------------------------
+Fri Jan 23 12:59:52 CET 2026 - marina.latini@suse.com
+
+- version 5.1.20-0
+  * Add proxy backup salt sate implementation (bsc#1257147)
+
+-------------------------------------------------------------------
+Sat Jan 17 01:29:19 CET 2026 - marina.latini@suse.com
+
+- version 5.1.19-0
+  * Fix error on shutdown for SLE 12 (bsc#1255634)
+  * Add proxy migration execution module
+  * Fix the preflight script to distingish SLES 16.0 and SL Micro 6.2
+  * Fix path to shutdown command for SLE 12
+  * Fix reebot needed detection of transaction update systems
+  * Remove product installation state from packages as it is
+    already available in the channels state
+
+-------------------------------------------------------------------
 Thu Nov 20 18:12:57 CET 2025 - marina.latini@suse.com
 
 - version 5.1.18-0

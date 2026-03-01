@@ -1,4 +1,91 @@
 -------------------------------------------------------------------
+Wed Feb 04 13:29:10 CET 2026 - michael.calmer@suse.com
+
+- version 5.1.23-0
+  * Add check for virt vm_info availability (bsc#1254316)
+  * Fix reposync crashing at metadata generation (bsc#1257538)
+
+-------------------------------------------------------------------
+Sat Jan 17 00:35:17 CET 2026 - marina.latini@suse.com
+
+- version 5.1.22-0
+  * Add details on config channels and state order in UI
+    (bsc#1253285)
+  * Fix ungrouped systems list menu item (bsc#1254251)
+  * Enhanced Ansible UI to support editing playbook variables.
+  * Implemented a new StepsProgressBar component for managing RBAC.
+  * Fix http proxy verification (bsc#1253501)
+  * Fix: Broken URL in API docs (bsc#1244177)
+  * Adds provisionSystem API call without a proxy and with
+    kernel_options (bsc#1245528)
+  * Using corrected PROFILE_NAME variable definition in bootstrap
+    script (bsc#1246035)
+  * Correctly handles http proxy empty passwords (bsc#1249502)
+  * Fix mispaced documentation link (bsc#1250318)
+  * Fix crash in ubuntu errata sync on deleted channel ids
+    (bsc#1250561)
+  * Fix a bug in apidoc of syncPeripheralChannels (bsc#1250906)
+  * Create an API endpoint to perform an immediate repo-sync
+    from command line (bsc#1251808)
+  * Fix dnf updateinfo showing wrong severity for
+    security updates (bsc#1252937)
+  * Fix intermittently failing test in ForwardRegistrationTaskTest
+  * Fix synchronized CLM channels end of life date
+    in hub-peripheral scenario
+  * Fix MLM admin status display in Users pages (bsc#1244321)
+  * Optimize schedule page queries for better performance
+    (bsc#1244641)
+  * Fix authentication for spaceapi search module (bsc#1250424)
+  * Fix RBAC access of unauthorized XMLRPC methods (bsc#1251814)
+  * Ignore commented lines in /etc/hosts when updating it
+    (bsc#1253736)
+  * Add proxy migration automation
+  * Drop legacy dependencies (bsc#1247983)
+  * Update web UI dependencies
+  * Build no longer requires susemanager-frontend-libs (bsc#1247983)
+  * Add product identification for openSUSE Leap 16.0 and
+    SUSE Linux Enterprise 16
+  * Enhance API documentation about errata cloning (bsc#1244519)
+  * Before assigning groups to a server filter out groups from
+    incompatible organizations
+  * Prevent a NPE when comparing package types
+  * Fix execution of virtual instance refresh action (bsc#1253161)
+  * Fix SystemOverview DTO to use boolean for mgr_server and proxy
+    columns (bsc#1247407)
+  * Identify the state of a channel synchronized and show it in
+    Software Channel Details API
+  * Decouple Server and Proxy identification from its
+    software channels (bsc#1248113)
+  * Fix scheduling of channel sync
+  * Prevent printing user input in traceback logs and mails
+    (bsc#1239636)
+  * Refactoring and fixes of saltboot cobbler migrations
+  * Fix release notes URL and use proxy aware downloader
+    (bsc#1247111)
+  * Only show subscription warning to authorized users (bsc#1253127)
+  * Ensure proxy extension channel is checked and installed
+    when converting to proxy (bsc#1249438)
+  * Move proxy initialization to run when proxy config is
+    applied (bsc#1252948)
+  * Fix missing ProxyInfo cleanup on entitlement removal
+    (bsc#1252950)
+  * Adapt oval file download to use configured proxy (bsc#1247822)
+  * Fix oval data ubuntu affected process method.
+  * Added the possibility to deregister an unreachable ISS Hub
+    or Peripheral server
+  * Improved selection of channels to syncronize to a peripheral
+  * Fix parsing errors in organization credentials list (bsc#1246436)
+  * Add multi-thread support for message queue (bsc#1247722)
+  * Fix systems list CSV download to include only
+    filtered data (bsc#1248409)
+  * Ensure consistency of pending package updates
+    after CLM build (bsc#1253007)
+  * Fix NPE when retrieving VM info (bsc#1254316)
+  * Add AppStreams to SSM
+  * Ensure SSM product migration works when the installed base
+    product is not detected
+
+-------------------------------------------------------------------
 Thu Nov 20 18:09:44 CET 2025 - marina.latini@suse.com
 
 - version 5.1.21-0

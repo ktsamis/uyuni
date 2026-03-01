@@ -1,4 +1,42 @@
 -------------------------------------------------------------------
+Thu Feb 12 11:01:26 WET 2026 - psuarezhernandez@suse.com
+
+- version 5.1.18-0
+  * RBAC editor UI fix (bsc#1258082)
+
+-------------------------------------------------------------------
+Sat Jan 17 00:39:22 CET 2026 - marina.latini@suse.com
+
+- version 5.1.17-0
+  * Add details on config channels and state order in UI
+    (bsc#1253285)
+  * Enhanced Ansible UI to support editing playbook variables.
+  * Wrap events output instead of long side scroll (bsc#1250342)
+  * Checked options immediately enable linked password policy
+    fields. (bsc#1244430)
+  * Improved table pagination controls UI and usability.
+  * Implemented a new StepsProgressBar component for managing RBAC.
+  * Add the last checked in column back to the system lists
+    (bsc#1248411)
+  * Ensure proxy extension channel is checked and installed when
+    converting to proxy (bsc#1249438)
+  * Drop unused build requirements
+  * Drop legacy dependencies (bsc#1247983)
+  * Update web UI dependencies
+  * Build no longer requires susemanager-frontend-libs (bsc#1247983)
+  * Fix URL to salt formular documentation (bsc#1248741)
+  * Added the possibility to deregister an unreachable ISS Hub
+    or Peripheral server
+  * Improved selection of channels to syncronize to a peripheral
+  * Fix parsing errors in organization credentials list (bsc#1246436)
+  * Fix systems list CSV download to align
+    with UI filtering (bsc#1248409)
+  * Fix physical systems list (bsc#1248661)
+  * Add AppStreams to SSM
+  * Ensure SSM product migration works when the installed base
+    product is not detected
+
+-------------------------------------------------------------------
 Thu Nov 20 18:11:10 CET 2025 - marina.latini@suse.com
 
 - version 5.1.16-0
