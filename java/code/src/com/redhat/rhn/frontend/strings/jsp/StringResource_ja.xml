@@ -13993,7 +13993,7 @@ the &lt;strong&gt;@@ENTERPRISE_LINUX_NAME@@ System Administration Guide.&lt;/str
           <context context-type="sourcefile">/rhn/activationkeys/configuration/* pages</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="activation-keys.config.rank.jsp.para1" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="activation-keys.config.rank.jsp.para1" xml:space="preserve">
         <source>This activation key is subscribed to the configuration channels listed below in order from highest to lowest rank. Files from a particular channel will override files with the same filepath and name from channels below it. In other words, the channel listed last will be applied first.</source>
         <target state="final">このアクティベーションキーは以下に表示される設定チャンネルに順位の高い順から低い順でサブスクライブされています。特定のチャンネルからのファイルはそれより下にあるチャンネルの同じファイルパスと同じ名前を持つファイルを上書きします。つまり、最後に表示されているチャンネルが最初に適用されます。</target>
         <context-group name="ctx">
@@ -23671,7 +23671,7 @@ The Tree Path, Base Channel, and Installer Generation should always match. This 
           <context context-type="sourcefile">/rhn/systems/details/configuration/RankChannels.do</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="sdc.config.rank.jsp.para1" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="sdc.config.rank.jsp.para1" xml:space="preserve">
         <source>This system is subscribed to the configuration channels listed below in order from highest to lowest rank. Files from a particular channel will override files with the same filepath and name from channels below it. In other words, the channel listed last will be applied first.</source>
         <target state="final">このシステムは以下に表示される設定チャンネルに順位の高い順から低い順でサブスクライブされています。特定のチャンネルからのファイルはそれより下にあるチャンネルの同じファイルパスと同じ名前を持つファイルを上書きします。つまり、最後に表示されているチャンネルが最初に適用されます。</target>
         <context-group name="ctx">
@@ -27815,14 +27815,6 @@ given channel.</source>
         <source>Repo Cache Status</source>
         <target>リポジトリキャッシュの状態</target>
       </trans-unit>
-      <trans-unit id="channel.jsp.repodata.completed" xml:space="preserve">
-        <source> Completed </source>
-        <target state="translated"> 完了 </target>
-      </trans-unit>
-      <trans-unit id="channel.jsp.repodata.inProgress" xml:space="preserve">
-        <source> In Progress </source>
-        <target state="translated"> 実行しています </target>
-      </trans-unit>
       <trans-unit id="channel.jsp.gpgcheck" xml:space="preserve">
         <source>Enable GPG Check </source>
         <target state="translated">GPG チェックの有効化 </target>
@@ -29863,18 +29855,44 @@ given channel.</source>
         <source>Compare Task</source>
         <target state="final">比較タスク</target>
       </trans-unit>
-      <trans-unit id="ssm.overview.appstreams" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="ssm.overview.appstreams" xml:space="preserve">
         <source>AppStreams</source>
         <target state="final">AppStream</target>
       </trans-unit>
-      <trans-unit id="ssm.overview.appstreams.manage" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="ssm.overview.appstreams.manage" xml:space="preserve">
         <source>&lt;a href="/rhn/manager/systems/ssm/appstreams"&gt;Enable and disable&lt;/a&gt; AppStreams on the selected systems</source>
         <target state="final">選択したシステムにおけるAppStreamの&lt;a href="/rhn/manager/systems/ssm/appstreams"&gt;有効化と無効化&lt;/a&gt;</target>
       </trans-unit>
-      <trans-unit id="task.status.root-ca-cert-update" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="task.status.root-ca-cert-update" xml:space="preserve">
         <source>CA Certificates Update</source>
         <target state="final">CA証明書の更新</target>
       </trans-unit>
-    </body>
+    <trans-unit id="pkg.lock.message.lockerror" xml:space="preserve">
+        <source>Failed to lock selected packages. Can't lock multiple versions of the same package.</source>
+        <context-group name="ctx">
+          <context context-type="sourcefile">/rhn/systems/details/packages/LockPackages.do</context>
+        </context-group>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="system.event.actionId" xml:space="preserve">
+          <source>Action ID</source>
+        <context-group name="ctx">
+          <context context-type="sourcefile">System Events Pages</context>
+        </context-group>
+        <target state="new"/>
+  </trans-unit>
+        <trans-unit id="channel.jsp.sync.status.ready" xml:space="preserve">
+        <source> Completed </source>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="channel.jsp.sync.status.syncing" xml:space="preserve">
+        <source> In Progress </source>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="channel.jsp.sync.status.created" xml:space="preserve">
+        <source> New Created </source>
+      <target state="new"/>
+  </trans-unit>
+      </body>
   </file>
 </xliff>
