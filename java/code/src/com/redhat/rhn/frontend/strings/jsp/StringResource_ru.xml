@@ -26028,14 +26028,6 @@ given channel.</source>
         <source>Repo Cache Status</source>
         <target>Статус кэша репозитория</target>
       </trans-unit>
-      <trans-unit id="channel.jsp.repodata.completed" xml:space="preserve">
-        <source> Completed </source>
-        <target state="needs-adaptation">Завершено</target>
-      </trans-unit>
-      <trans-unit id="channel.jsp.repodata.inProgress" xml:space="preserve">
-        <source> In Progress </source>
-        <target state="needs-adaptation">Выполняется</target>
-      </trans-unit>
       <trans-unit id="channel.jsp.gpgcheck" xml:space="preserve">
         <source>Enable GPG Check </source>
       <target state="needs-adaptation"/>
@@ -27908,6 +27900,32 @@ given channel.</source>
   </trans-unit>
         <trans-unit id="task.status.root-ca-cert-update" xml:space="preserve">
         <source>CA Certificates Update</source>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="pkg.lock.message.lockerror" xml:space="preserve">
+        <source>Failed to lock selected packages. Can't lock multiple versions of the same package.</source>
+        <context-group name="ctx">
+          <context context-type="sourcefile">/rhn/systems/details/packages/LockPackages.do</context>
+        </context-group>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="system.event.actionId" xml:space="preserve">
+          <source>Action ID</source>
+        <context-group name="ctx">
+          <context context-type="sourcefile">System Events Pages</context>
+        </context-group>
+        <target state="new"/>
+  </trans-unit>
+        <trans-unit id="channel.jsp.sync.status.ready" xml:space="preserve">
+        <source> Completed </source>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="channel.jsp.sync.status.syncing" xml:space="preserve">
+        <source> In Progress </source>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="channel.jsp.sync.status.created" xml:space="preserve">
+        <source> New Created </source>
       <target state="new"/>
   </trans-unit>
       </body>

@@ -3,13 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: ../html/src/components/input/range/Range.tsx:47
+#: ../html/src/components/input/range/Range.tsx:48
+#: ../html/src/components/input/range/Range.tsx:60
+#: ../html/src/components/input/range/Range.tsx:61
 #: ../html/src/core/intl/index.test.tsx:11
 #: ../html/src/manager/content-management/list-filters/list-filters.tsx:199
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-15 15:30+0000\n"
+"POT-Creation-Date: 2026-03-01 11:02+0100\n"
 "PO-Revision-Date: 2024-04-25 20:43+0000\n"
 "Last-Translator: Marina Latini <marina.latini@suse.com>\n"
 "Language-Team: Italian <https://l10n.opensuse.org/projects/uyuni/web/it/>\n"
@@ -27,16 +31,6 @@ msgstr "rimanente"
 #: ../html/javascript/spacewalk-essentials.js:427
 msgid "The browser Internet Explorer is not supported. Try using Firefox, Chrome or Edge"
 msgstr "Il browser Internet Explorer non è supportato. Utilizza Firefox, Chrome o Edge"
-
-#: ../html/src/components/CoCoScansList.tsx:68
-#: ../html/src/components/package/PackageListActionScheduler.tsx:83
-#: ../html/src/components/product-migration/utils.tsx:95
-#: ../html/src/manager/appstreams/appstreams.tsx:61
-#: ../html/src/manager/state/highstate.tsx:62
-#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure.tsx:60
-#: ../html/src/manager/systems/coco/ssm-schedule.tsx:68
-msgid "Action has been successfully added to the action chain <link>\"{name}\"</link>."
-msgstr ""
 
 #: ../html/src/components/CoCoScansList.tsx:75
 #: ../html/src/components/package/PackageListActionScheduler.tsx:90
@@ -90,10 +84,6 @@ msgstr ""
 #: ../html/src/components/FormulaForm.tsx:24
 msgid "Formula saved. Applying the highstate is not needed for this formula."
 msgstr "Formula salvata. L'applicazione dello stato alto non è necessaria per questa formula."
-
-#: ../html/src/components/FormulaForm.tsx:134
-msgid "Multiple Group formulas detected. Only one formula for \"{name}\" can be used on each system!"
-msgstr ""
 
 #: ../html/src/components/FormulaForm.tsx:165
 #, fuzzy
@@ -157,10 +147,6 @@ msgstr "Caricamento dello scheduler..."
 msgid "Attestations"
 msgstr ""
 
-#: ../html/src/components/coco-attestation/CoCoAttestationTable.tsx:41
-msgid "No attestation report available. Schedule an execution to create one."
-msgstr ""
-
 #: ../html/src/components/coco-attestation/CoCoAttestationTable.tsx:48
 msgid "Attestation"
 msgstr ""
@@ -193,7 +179,7 @@ msgstr ""
 
 #: ../html/src/components/coco-attestation/CoCoAttestationTable.tsx:83
 #: ../html/src/components/hub/TokenTable.tsx:89
-#: ../html/src/manager/notifications/notifications-list.tsx:126
+#: ../html/src/manager/notifications/notifications-list.tsx:151
 msgid "Created"
 msgstr ""
 
@@ -212,7 +198,7 @@ msgstr "Crea"
 #: ../html/src/manager/images/image-view-runtime.tsx:138
 #: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:167
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:782
-#: ../html/src/manager/systems/virtual-list.tsx:83
+#: ../html/src/manager/systems/virtual-list.tsx:94
 msgid "Status"
 msgstr ""
 
@@ -238,7 +224,7 @@ msgstr ""
 
 #: ../html/src/components/coco-attestation/CoCoAttestationTable.tsx:116
 #: ../html/src/components/coco-attestation/CoCoResult.tsx:54
-#: ../html/src/manager/admin/access-control/access-group.tsx:183
+#: ../html/src/manager/admin/access-control/access-group.tsx:185
 #: ../html/src/manager/admin/setup/products/products-scc-dialog.tsx:197
 #: ../html/src/manager/images/image-view-patches.tsx:87
 #: ../html/src/manager/images/image-view.tsx:690
@@ -266,7 +252,7 @@ msgid "Last modified on"
 msgstr ""
 
 #: ../html/src/components/coco-attestation/CoCoReport.tsx:84
-#: ../html/src/manager/notifications/notifications-list.tsx:129
+#: ../html/src/manager/notifications/notifications-list.tsx:154
 #: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:115
 msgid "Action"
 msgstr ""
@@ -304,11 +290,11 @@ msgid "Process Output"
 msgstr ""
 
 #: ../html/src/components/coco-attestation/CoCoSettingsForm.tsx:82
-#: ../html/src/components/formula-selection.tsx:293
+#: ../html/src/components/formula-selection.tsx:299
 #: ../html/src/components/hub/ModalEditButton.tsx:94
 #: ../html/src/components/large-text-attachment.tsx:195
 #: ../html/src/components/panels/CreatorPanel.tsx:125
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:117
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:115
 #: ../html/src/manager/content-management/list-filters/filter-edit.tsx:196
 #: ../html/src/manager/minion/ansible/edit-ansible-path.tsx:17
 #: ../html/src/manager/minion/ansible/edit-ansible-vars-modal.tsx:95
@@ -444,6 +430,7 @@ msgstr "Annulla"
 #: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:311
 #: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:330
 #: ../html/src/manager/minion/ansible/edit-ansible-path.tsx:24
+#: ../html/src/manager/notifications/notifications-list.tsx:115
 #: ../html/src/manager/packages/list.tsx:73
 #: ../html/src/manager/packages/list.tsx:126
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:249
@@ -599,15 +586,15 @@ msgstr "Rimuovi"
 msgid "Add item"
 msgstr "Sistema"
 
-#: ../html/src/components/formula-selection.tsx:135
+#: ../html/src/components/formula-selection.tsx:136
 msgid " No group"
 msgstr " Nessun gruppo"
 
-#: ../html/src/components/formula-selection.tsx:272
+#: ../html/src/components/formula-selection.tsx:278
 msgid "On this page you can select Salt Formulas for this group/system, which can then be configured on group and system level. This allows you to automatically install and configure software."
 msgstr "In questa pagina sono disponibili le Formule Salt per questo gruppo/sistema, che possono essere configurate a livello di gruppo e di sistema. In questo modo potrai installare e configurare automaticamente il software."
 
-#: ../html/src/components/formula-selection.tsx:299
+#: ../html/src/components/formula-selection.tsx:305
 #: ../html/src/manager/groups/formula/group-formula-selection.renderer.tsx:65
 #: ../html/src/manager/groups/formula/group-formula.renderer.tsx:29
 msgid "Formulas"
@@ -618,8 +605,7 @@ msgid "This field is used as a 'key' identifier in the resulting pillar data."
 msgstr "Questo campo viene utilizzato come identificatore \"chiave\" nei dati del pillar risultante."
 
 #: ../html/src/components/formulas/FormulaComponentGenerator.tsx:158
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:132
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:133
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:129
 #: ../html/src/manager/appstreams/actions-appstreams.tsx:8
 msgid "Reset"
 msgstr "Reimposta"
@@ -955,20 +941,20 @@ msgid "Are you sure you want to remove the current Root Certificate Authority fo
 msgstr "Sei sicuro di voler {0} {1} "
 
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:364
-#: ../html/src/manager/notifications/notifications-list.tsx:339
-#: ../html/src/manager/notifications/notifications-list.tsx:340
+#: ../html/src/manager/notifications/notifications-list.tsx:336
+#: ../html/src/manager/notifications/notifications-list.tsx:337
 msgid "Info"
 msgstr ""
 
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:369
-#: ../html/src/manager/notifications/notifications-list.tsx:346
-#: ../html/src/manager/notifications/notifications-list.tsx:347
+#: ../html/src/manager/notifications/notifications-list.tsx:343
+#: ../html/src/manager/notifications/notifications-list.tsx:344
 msgid "Warning"
 msgstr ""
 
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:374
-#: ../html/src/manager/notifications/notifications-list.tsx:353
-#: ../html/src/manager/notifications/notifications-list.tsx:354
+#: ../html/src/manager/notifications/notifications-list.tsx:350
+#: ../html/src/manager/notifications/notifications-list.tsx:351
 msgid "Error"
 msgstr ""
 
@@ -1492,7 +1478,7 @@ msgstr "Rimuovi"
 #: ../html/src/components/input/form-multi-input/single-field.example.tsx:24
 #: ../html/src/components/input/form-multi-input/table-fields.example.tsx:32
 #: ../html/src/manager/admin/access-control/access-group-list.tsx:122
-#: ../html/src/manager/admin/access-control/access-group.tsx:206
+#: ../html/src/manager/admin/access-control/access-group.tsx:208
 msgid "Users"
 msgstr ""
 
@@ -1655,12 +1641,8 @@ msgstr ""
 msgid "Package Name"
 msgstr ""
 
-#: ../html/src/components/pagination.tsx:146
-msgid ""
-"{total, plural,\n"
-"            one {<dropdown></dropdown> of # page}\n"
-"            other {<dropdown></dropdown> of # pages}\n"
-"        }"
+#: ../html/src/components/pagination.tsx:110
+msgid "Items {from} - {to} of {total}"
 msgstr ""
 
 #: ../html/src/components/picker/recurring-event-picker.tsx:57
@@ -1725,10 +1707,6 @@ msgstr ""
 
 #: ../html/src/components/picker/recurring-event-picker.tsx:476
 msgid "Custom Quartz format:"
-msgstr ""
-
-#: ../html/src/components/picker/recurring-event-picker.tsx:486
-msgid "e.g. \"0 15 2 ? * 7\""
 msgstr ""
 
 #: ../html/src/components/picker/recurring-event-picker.tsx:505
@@ -2017,7 +1995,7 @@ msgstr "Gestore dell'host virtuale"
 #: ../html/src/components/systems.tsx:31
 #: ../html/src/manager/systems/list-filter.tsx:8
 #: ../html/src/manager/systems/list-filter.tsx:68
-#: ../html/src/manager/systems/virtual-list.tsx:64
+#: ../html/src/manager/systems/virtual-list.tsx:75
 #, fuzzy
 msgid "Virtual Host"
 msgstr "Gestore dell'host virtuale"
@@ -2184,14 +2162,6 @@ msgstr ""
 
 #: ../html/src/core/intl/index.example.tsx:7
 msgid "Please see <link>Format.JS docs</link> for the message syntax."
-msgstr ""
-
-#: ../html/src/core/intl/index.example.tsx:23
-msgid ""
-"Always use plural forms for numbers: {fooCount, plural,\n"
-"            one {only one item}\n"
-"            other {{fooCount} items}\n"
-"          }."
 msgstr ""
 
 #: ../html/src/core/intl/index.test.tsx:9
@@ -2370,23 +2340,23 @@ msgstr ""
 msgid "Search & Add Users"
 msgstr ""
 
-#: ../html/src/manager/admin/access-control/access-group.tsx:173
+#: ../html/src/manager/admin/access-control/access-group.tsx:175
 msgid "Access Group successfully created."
 msgstr ""
 
-#: ../html/src/manager/admin/access-control/access-group.tsx:195
+#: ../html/src/manager/admin/access-control/access-group.tsx:197
 msgid "Namespaces & Permissions"
 msgstr ""
 
-#: ../html/src/manager/admin/access-control/access-group.tsx:211
+#: ../html/src/manager/admin/access-control/access-group.tsx:213
 msgid "Review"
 msgstr ""
 
-#: ../html/src/manager/admin/access-control/access-group.tsx:219
+#: ../html/src/manager/admin/access-control/access-group.tsx:221
 msgid "Access Group Details"
 msgstr ""
 
-#: ../html/src/manager/admin/access-control/access-group.tsx:224
+#: ../html/src/manager/admin/access-control/access-group.tsx:226
 msgid "Create: Access Group"
 msgstr ""
 
@@ -2606,11 +2576,11 @@ msgid "Hub Details"
 msgstr ""
 
 #: ../html/src/manager/admin/hub/hub-details.tsx:80
-msgid "No hub is currently configured for this server. Refresh this page after configuring this server as a peripheral, to see the hub details"
+msgid "No hub is currently configured for this server. "
 msgstr ""
 
 #: ../html/src/manager/admin/hub/hub-details.tsx:89
-msgid "This server is currently registered as peripheral of hub {fqdn}. This page shows the details of the hub server."
+msgid "This server is currently registered as peripheral of hub {fqdn}. "
 msgstr ""
 
 #: ../html/src/manager/admin/hub/hub-details.tsx:108
@@ -2634,7 +2604,7 @@ msgid "{fqdn} - Peripheral Details"
 msgstr ""
 
 #: ../html/src/manager/admin/hub/peripheral-details.tsx:51
-msgid "The server {fqdn} is currently registered as peripheral of this hub. This page shows the details of the peripheral server."
+msgid "The server {fqdn} is currently registered as peripheral of this hub. "
 msgstr ""
 
 #: ../html/src/manager/admin/hub/peripherals.tsx:24
@@ -2698,7 +2668,7 @@ msgstr ""
 msgid "Password Policy Settings"
 msgstr ""
 
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:31
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:29
 msgid "Min Password Length"
 msgstr ""
 
@@ -2706,47 +2676,44 @@ msgstr ""
 msgid "Max Password Length"
 msgstr ""
 
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:45
+#. Require Digits
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:51
 msgid "Require Digits"
 msgstr ""
 
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:52
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:54
 msgid "Require Lowercase Characters"
 msgstr ""
 
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:59
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:61
 msgid "Require Uppercase Characters"
 msgstr ""
 
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:66
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:68
 msgid "Restrict Consecutive Characters"
 msgstr ""
 
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:73
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:75
 msgid "Require Special Characters"
 msgstr ""
 
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:80
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:85
 msgid "Allowed Special Characters"
 msgstr ""
 
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:92
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:94
 msgid "Restrict Characters Occurrences"
 msgstr ""
 
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:99
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:101
 msgid "Max Characters Occurrences"
 msgstr ""
 
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:116
-msgid "Save Password Policy"
-msgstr ""
-
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:122
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:119
 msgid "Password Policy Changed"
 msgstr ""
 
-#: ../html/src/manager/admin/password-policy/password-policy.tsx:141
+#: ../html/src/manager/admin/password-policy/password-policy.tsx:136
 #, fuzzy
 #| msgid "Password"
 msgid "Password Policy Reset to Default"
@@ -2774,6 +2741,10 @@ msgstr ""
 
 #: ../html/src/manager/admin/payg-shared/info/payg-info-view.tsx:24
 msgid "Last Status Update"
+msgstr ""
+
+#: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-edit.tsx:52
+msgid "Edit "
 msgstr ""
 
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-edit.tsx:71
@@ -2834,7 +2805,7 @@ msgstr ""
 #: ../html/src/manager/images/image-profiles.tsx:141
 #: ../html/src/manager/images/image-stores.tsx:141
 #: ../html/src/manager/images/image-view.tsx:375
-#: ../html/src/manager/notifications/notifications-list.tsx:195
+#: ../html/src/manager/notifications/notifications-list.tsx:108
 msgid "Refresh"
 msgstr ""
 
@@ -2865,10 +2836,6 @@ msgstr ""
 
 #: ../html/src/manager/admin/setup/products/products.tsx:251
 msgid "Selected channels were scheduled successfully for syncing."
-msgstr ""
-
-#: ../html/src/manager/admin/setup/products/products.tsx:260
-msgid "The following channel installations for \"{product}\" failed. Please check log files."
 msgstr ""
 
 #: ../html/src/manager/admin/setup/products/products.tsx:285
@@ -2924,6 +2891,21 @@ msgstr ""
 #: ../html/src/manager/admin/setup/products/products.tsx:604
 msgid "Recommended"
 msgstr ""
+
+#: ../html/src/manager/admin/setup/products/products.tsx:779
+#, fuzzy
+msgid " channels sync failed"
+msgstr "Applica lo stato alto"
+
+#: ../html/src/manager/admin/setup/products/products.tsx:787
+#, fuzzy
+msgid " channels sync in progress"
+msgstr "Applica lo stato alto"
+
+#: ../html/src/manager/admin/setup/products/products.tsx:795
+#, fuzzy
+msgid " channels synced"
+msgstr "Applica lo stato alto"
 
 #: ../html/src/manager/admin/setup/products/products.tsx:820
 msgid "To enable this product, the parent product should be selected first"
@@ -3208,15 +3190,13 @@ msgid "Affected, patches available in channels which are not assigned"
 msgstr ""
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:45
-msgid "The client is affected by a vulnerability and we have a patch for it, but the channel(s) offering the patch are not assigned to the client."
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:53
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:89
+msgid "The client is affected by a vulnerability and we have a patch for it,"
 msgstr ""
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:51
 msgid "Affected, patches available in a Product Migration target"
-msgstr ""
-
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:53
-msgid "The client is affected by a vulnerability and we have a patch for it, but applying the patch requires migrating the product to a newer version."
 msgstr ""
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:59
@@ -3254,15 +3234,11 @@ msgid "Affected, patch is unavailable in relevant channels"
 msgstr ""
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:81
-msgid "The client is affected by a vulnerability for which a patch has been released, but the patch can't be found in the relevant channels."
+msgid "The client is affected by a vulnerability for which a patch has been released,"
 msgstr ""
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:87
 msgid "Affected, partial patch available in assigned channel"
-msgstr ""
-
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:89
-msgid "The client is affected by a vulnerability and we have a patch for it, but applying the patch will only update some of the vulnerable packages."
 msgstr ""
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:95
@@ -3364,6 +3340,7 @@ msgstr ""
 
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:531
 #: ../html/src/manager/audit/subscription-matching/subscription-matching-util.tsx:9
+#: ../html/src/manager/systems/virtual-list.tsx:68
 msgid "Download CSV"
 msgstr ""
 
@@ -4373,7 +4350,7 @@ msgstr ""
 #: ../html/src/manager/images/image-view-patches.tsx:79
 #: ../html/src/manager/images/image-view.tsx:642
 #: ../html/src/manager/maintenance/edit/schedule-edit.tsx:105
-#: ../html/src/manager/notifications/notifications-list.tsx:114
+#: ../html/src/manager/notifications/notifications-list.tsx:139
 #: ../html/src/manager/state/highstate-summary.tsx:77
 msgid "Type"
 msgstr ""
@@ -4404,19 +4381,19 @@ msgid "The page you requested, {currentUrl}, was not found."
 msgstr ""
 
 #: ../html/src/manager/errors/not-found.tsx:12
-msgid "If you typed this address into your browser, double-check the spelling and capitalization. The address you are copying may also be outdated."
+msgid "If you typed this address into your browser, double-check the spelling and capitalization."
 msgstr ""
 
 #: ../html/src/manager/errors/not-found.tsx:18
-msgid "If you followed a link, the link may be incorrect or outdated. Click on the back button in your browser to try a different link, or use the top (or left) navigation bars to find the page you are looking for."
+msgid "If you followed a link, the link may be incorrect or outdated. Click on the back button in your "
 msgstr ""
 
 #: ../html/src/manager/errors/not-found.tsx:25
-msgid "If you used a bookmark, the page may have moved to a different location since the bookmark was created. Use the top (or left) navigation bars to find the page you are looking for, and if you find the document be sure to update your bookmark."
+msgid "If you used a bookmark, the page may have moved to a different location since the bookmark was "
 msgstr ""
 
 #: ../html/src/manager/errors/not-found.tsx:32
-msgid "If you feel you've reached this page in error, please contact us with details of how you received this message."
+msgid "If you feel you've reached this page in error, please contact us with details of how you received "
 msgstr ""
 
 #: ../html/src/manager/groups/config-channels/group-config-channels.tsx:29
@@ -4618,6 +4595,10 @@ msgid "Update"
 msgstr ""
 
 #: ../html/src/manager/images/image-profile-edit.tsx:515
+msgid "Edit Image Profile: '"
+msgstr ""
+
+#: ../html/src/manager/images/image-profile-edit.tsx:515
 msgid "Create Image Profile"
 msgstr ""
 
@@ -4682,6 +4663,10 @@ msgstr ""
 
 #: ../html/src/manager/images/image-store-edit.tsx:165
 msgid "Use credentials"
+msgstr ""
+
+#: ../html/src/manager/images/image-store-edit.tsx:237
+msgid "Edit Image Store: '"
 msgstr ""
 
 #: ../html/src/manager/images/image-store-edit.tsx:237
@@ -4773,19 +4758,42 @@ msgstr ""
 msgid "Go to event"
 msgstr ""
 
+#: ../html/src/manager/images/image-view-overview.tsx:52
+msgid " is queued"
+msgstr ""
+
 #: ../html/src/manager/images/image-view-overview.tsx:59
 msgid "In progress"
 msgstr ""
 
+#: ../html/src/manager/images/image-view-overview.tsx:64
+#, fuzzy
+msgid " in progress"
+msgstr "Applica lo stato alto"
+
 #: ../html/src/manager/images/image-view-overview.tsx:71
 msgid "Successful"
 msgstr ""
+
+#: ../html/src/manager/images/image-view-overview.tsx:76
+msgid " is successful"
+msgstr ""
+
+#: ../html/src/manager/images/image-view-overview.tsx:88
+#, fuzzy
+msgid " has failed"
+msgstr "Applica lo stato alto"
 
 #: ../html/src/manager/images/image-view-overview.tsx:107
 #: ../html/src/manager/images/image-view-overview.tsx:108
 #: ../html/src/manager/images/image-view.tsx:501
 msgid "Built externally"
 msgstr ""
+
+#: ../html/src/manager/images/image-view-overview.tsx:130
+#, fuzzy
+msgid " Status"
+msgstr "Stato"
 
 #: ../html/src/manager/images/image-view-overview.tsx:135
 msgid "Picked Up"
@@ -4832,11 +4840,6 @@ msgstr ""
 
 #: ../html/src/manager/images/image-view-overview.tsx:352
 msgid "Edit store"
-msgstr ""
-
-#: ../html/src/manager/images/image-view-overview.tsx:467
-#: ../html/src/manager/images/image-view.tsx:751
-msgid "Instance Details for \"{name}\""
 msgstr ""
 
 #: ../html/src/manager/images/image-view-overview.tsx:522
@@ -5050,7 +5053,7 @@ msgstr ""
 #: ../html/src/manager/images/image-view.tsx:651
 #: ../html/src/manager/systems/all-list.tsx:100
 #: ../html/src/manager/systems/list-filter.tsx:45
-#: ../html/src/manager/systems/virtual-list.tsx:89
+#: ../html/src/manager/systems/virtual-list.tsx:100
 msgid "Updates"
 msgstr ""
 
@@ -5268,10 +5271,6 @@ msgstr ""
 msgid "Current Schedule"
 msgstr ""
 
-#: ../html/src/manager/maintenance/edit/calendar-edit.tsx:114
-msgid "Url \"{url}\" is invalid"
-msgstr ""
-
 #: ../html/src/manager/maintenance/edit/calendar-edit.tsx:138
 msgid "Calendar data"
 msgstr ""
@@ -5351,12 +5350,24 @@ msgstr ""
 msgid "Below is a list of Maintenance Calendars available to the current user."
 msgstr ""
 
+#: ../html/src/manager/maintenance/list/maintenance-windows-list.tsx:50
+msgid "schedule"
+msgstr ""
+
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:30
 msgid "No schedules created. Use Create to add a schedule."
 msgstr ""
 
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:89
 msgid "This will remove the schedule from all the systems assigned to it."
+msgstr ""
+
+#: ../html/src/manager/maintenance/maintenance-windows.tsx:115
+msgid "successfully"
+msgstr ""
+
+#: ../html/src/manager/maintenance/maintenance-windows.tsx:140
+msgid "Error when deleting the "
 msgstr ""
 
 #: ../html/src/manager/maintenance/maintenance-windows.tsx:149
@@ -5535,10 +5546,6 @@ msgstr ""
 
 #: ../html/src/manager/minion/ansible/schedule-playbook.tsx:174
 msgid "Save the current Playbook"
-msgstr ""
-
-#: ../html/src/manager/minion/ansible/schedule-playbook.tsx:184
-msgid "Playbook \"{name}\""
 msgstr ""
 
 #: ../html/src/manager/minion/ansible/schedule-playbook.tsx:193
@@ -5761,11 +5768,11 @@ msgstr ""
 msgid "Applying the packages states has been "
 msgstr ""
 
-#: ../html/src/manager/minion/proxy/proxy-config-messages.tsx:13
+#: ../html/src/manager/minion/proxy/proxy-config-messages.tsx:18
 msgid "Proxy configuration action has been scheduled."
 msgstr ""
 
-#: ../html/src/manager/minion/proxy/proxy-config-messages.tsx:25
+#: ../html/src/manager/minion/proxy/proxy-config-messages.tsx:22
 #, fuzzy
 msgid "Scheduling proxy configuration action..."
 msgstr "Configurazione Canali"
@@ -5930,6 +5937,10 @@ msgstr ""
 msgid "Registry URL"
 msgstr ""
 
+#: ../html/src/manager/minion/proxy/proxy-config.tsx:332
+msgid "e.g., "
+msgstr ""
+
 #: ../html/src/manager/minion/proxy/proxy-config.tsx:339
 msgid "Containers Tag"
 msgstr ""
@@ -6008,7 +6019,7 @@ msgid "Apply"
 msgstr ""
 
 #: ../html/src/manager/minion/ptf/ptf-column-definition.tsx:18
-#: ../html/src/manager/notifications/notifications-list.tsx:120
+#: ../html/src/manager/notifications/notifications-list.tsx:145
 msgid "Summary"
 msgstr ""
 
@@ -6017,7 +6028,7 @@ msgid "Install Program Temporary Fixes (PTFs)"
 msgstr ""
 
 #: ../html/src/manager/minion/ptf/ptf-install.renderer.tsx:29
-msgid "The following Program Temporary Fixes (PTFs) are available for installation on this system. These packages are only meant to address a specific open issue. Please follow the instructions from customer support before proceeding with the installation."
+msgid "The following Program Temporary Fixes (PTFs) are available for installation on this system. "
 msgstr ""
 
 #: ../html/src/manager/minion/ptf/ptf-install.renderer.tsx:33
@@ -6037,7 +6048,7 @@ msgid "Remove Program Temporary Fixes (PTFs)"
 msgstr ""
 
 #: ../html/src/manager/minion/ptf/ptf-list-remove.renderer.tsx:29
-msgid "The following Program Temporary Fixes (PTFs) are currently installed on this system. These PTFs may be scheduled for removal by selecting them and clicking \"Remove PTF\" below. Please note that removing any non-obsolete PTF will result in the installation of the most recent versions of the packages that are part of the PTF."
+msgid "The following Program Temporary Fixes (PTFs) are currently installed on this system. "
 msgstr ""
 
 #: ../html/src/manager/minion/ptf/ptf-list-remove.renderer.tsx:34
@@ -6069,82 +6080,76 @@ msgstr ""
 msgid "Install PTF"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:78
+#: ../html/src/manager/notifications/notifications-list.tsx:77
 msgid "Notification Messages"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:83
+#: ../html/src/manager/notifications/notifications-list.tsx:82
 msgid "The server has collected the following notification messages."
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:100
+#: ../html/src/manager/notifications/notifications-list.tsx:98
 msgid "Filter by summary"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:108
-msgid "Severity"
+#: ../html/src/manager/notifications/notifications-list.tsx:123
+msgid "Mark as Read"
 msgstr ""
 
 #: ../html/src/manager/notifications/notifications-list.tsx:133
+msgid "Severity"
+msgstr ""
+
+#: ../html/src/manager/notifications/notifications-list.tsx:158
 msgid "Read|Delete"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:159
+#: ../html/src/manager/notifications/notifications-list.tsx:184
 msgid "Filter by type"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:177
+#: ../html/src/manager/notifications/notifications-list.tsx:202
 msgid "Unread Messages"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:182
+#: ../html/src/manager/notifications/notifications-list.tsx:207
 msgid "All Messages"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:199
-#: ../html/src/manager/notifications/notifications-list.tsx:200
-msgid "Delete selected messages"
-msgstr ""
-
-#: ../html/src/manager/notifications/notifications-list.tsx:207
-#: ../html/src/manager/notifications/notifications-list.tsx:208
-msgid "Mark selected as read"
-msgstr ""
-
-#: ../html/src/manager/notifications/notifications-list.tsx:226
+#: ../html/src/manager/notifications/notifications-list.tsx:223
 #: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:150
 msgid "show details"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:242
+#: ../html/src/manager/notifications/notifications-list.tsx:239
 msgid "Retry"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:254
+#: ../html/src/manager/notifications/notifications-list.tsx:251
 msgid "Flag as Unread"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:254
+#: ../html/src/manager/notifications/notifications-list.tsx:251
 msgid "Flag as Read"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:260
+#: ../html/src/manager/notifications/notifications-list.tsx:257
 msgid "Delete Notification"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:307
+#: ../html/src/manager/notifications/notifications-list.tsx:304
 msgid "{number} messages status updated successfully"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:308
+#: ../html/src/manager/notifications/notifications-list.tsx:305
 msgid "Message read status updated successfully"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:325
+#: ../html/src/manager/notifications/notifications-list.tsx:322
 msgid "{number} messages deleted successfully"
 msgstr ""
 
-#: ../html/src/manager/notifications/notifications-list.tsx:326
+#: ../html/src/manager/notifications/notifications-list.tsx:323
 msgid "Message deleted successfully"
 msgstr ""
 
@@ -6200,11 +6205,11 @@ msgstr "Pacchetti"
 msgid "Content Provider"
 msgstr ""
 
-#: ../html/src/manager/proxy/container-config-messages.tsx:14
+#: ../html/src/manager/proxy/container-config-messages.tsx:8
 msgid "The container based proxy configuration has been generated correctly."
 msgstr ""
 
-#: ../html/src/manager/proxy/container-config-messages.tsx:33
+#: ../html/src/manager/proxy/container-config-messages.tsx:19
 msgid "Generation of the proxy configuration in progress: waiting for a response..."
 msgstr ""
 
@@ -6748,6 +6753,15 @@ msgstr ""
 msgid "Base Channel:"
 msgstr ""
 
+#: ../html/src/manager/systems/activation-key/activation-key-channels.tsx:133
+#, fuzzy
+msgid "${defaultChannelName}"
+msgstr "Applica lo stato alto"
+
+#: ../html/src/manager/systems/activation-key/activation-key-channels.tsx:143
+msgid "${this.getDefaultBase().name}"
+msgstr ""
+
 #: ../html/src/manager/systems/activation-key/activation-key-channels.tsx:153
 msgid "Child Channels:"
 msgstr ""
@@ -6848,6 +6862,10 @@ msgstr ""
 #| msgid "No Change"
 msgid "Don't change"
 msgstr "Nessuna modifica"
+
+#: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:127
+msgid " (No system to disable)"
+msgstr ""
 
 #: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:136
 msgid "Enable "
@@ -7109,7 +7127,7 @@ msgid "Groups"
 msgstr "Gruppo"
 
 #: ../html/src/manager/systems/list-filter.tsx:69
-#: ../html/src/manager/systems/virtual-list.tsx:72
+#: ../html/src/manager/systems/virtual-list.tsx:83
 #, fuzzy
 msgid "Virtual System"
 msgstr "Gestore dell'host virtuale"
@@ -7412,12 +7430,12 @@ msgstr ""
 msgid "Virtual Systems"
 msgstr "Gestori di host virtuali"
 
-#: ../html/src/manager/systems/virtual-list.tsx:59
+#: ../html/src/manager/systems/virtual-list.tsx:58
 #, fuzzy
 msgid "No Virtual Systems."
 msgstr "Gestori di host virtuali"
 
-#: ../html/src/manager/systems/virtual-list.tsx:100
+#: ../html/src/manager/systems/virtual-list.tsx:111
 msgid "Base Software Channel"
 msgstr ""
 
@@ -7541,33 +7559,9 @@ msgstr ""
 msgid "Resource not found."
 msgstr ""
 
-#, fuzzy
-#~ msgid " channels sync failed"
-#~ msgstr "Applica lo stato alto"
-
-#, fuzzy
-#~ msgid " channels sync in progress"
-#~ msgstr "Applica lo stato alto"
-
-#, fuzzy
-#~ msgid " channels synced"
-#~ msgstr "Applica lo stato alto"
-
-#, fuzzy
-#~ msgid " in progress"
-#~ msgstr "Applica lo stato alto"
-
-#, fuzzy
-#~ msgid " has failed"
-#~ msgstr "Applica lo stato alto"
-
-#, fuzzy
-#~ msgid " Status"
-#~ msgstr "Stato"
-
-#, fuzzy
-#~ msgid "${defaultChannelName}"
-#~ msgstr "Applica lo stato alto"
+#: ../html/src/utils/network.ts:104
+msgid "HTTP Error code "
+msgstr ""
 
 #, fuzzy
 #~ msgid "Subscription Warning"
