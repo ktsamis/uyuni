@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2025 SUSE LLC
+# Copyright (c) 2019-2026 SUSE LLC
 # Licensed under the terms of the MIT license.
 
 ENV_VAR_BY_HOST = {
@@ -26,8 +26,6 @@ ENV_VAR_BY_HOST = {
   'sle15sp7_minion' => 'SLE15SP7_MINION',
   'sle15sp7_ssh_minion' => 'SLE15SP7_SSHMINION',
   'sle15sp7_buildhost' => 'SLE15SP7_BUILDHOST',
-  'slemicro51_minion' => 'SLEMICRO51_MINION',
-  'slemicro51_ssh_minion' => 'SLEMICRO51_SSHMINION',
   'slemicro52_minion' => 'SLEMICRO52_MINION',
   'slemicro52_ssh_minion' => 'SLEMICRO52_SSHMINION',
   'slemicro53_minion' => 'SLEMICRO53_MINION',
@@ -170,8 +168,6 @@ PACKAGE_BY_CLIENT = {
   'sle15sp6_ssh_minion' => 'bison',
   'sle15sp7_minion' => 'bison',
   'sle15sp7_ssh_minion' => 'bison',
-  'slemicro51_minion' => 'dejavu',
-  'slemicro51_ssh_minion' => 'dejavu',
   'slemicro52_minion' => 'dejavu',
   'slemicro52_ssh_minion' => 'dejavu',
   'slemicro53_minion' => 'dejavu',
@@ -249,8 +245,6 @@ BASE_CHANNEL_BY_CLIENT = {
     'sle15sp7_buildhost' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
     'sle15sp7_ssh_minion' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
     'sle15sp7_terminal' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
-    'slemicro51_minion' => 'SUSE-MicroOS-5.1-Pool for x86_64',
-    'slemicro51_ssh_minion' => 'SUSE-MicroOS-5.1-Pool for x86_64',
     'slemicro52_minion' => 'SUSE-MicroOS-5.2-Pool for x86_64',
     'slemicro52_ssh_minion' => 'SUSE-MicroOS-5.2-Pool for x86_64',
     'slemicro53_minion' => 'SLE-Micro-5.3-Pool for x86_64',
@@ -320,8 +314,6 @@ BASE_CHANNEL_BY_CLIENT = {
     'sle15sp7_ssh_minion' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
     'sle15sp7_buildhost' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
     'sle15sp7_terminal' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
-    'slemicro51_minion' => 'SUSE-MicroOS-5.1-Pool for x86_64',
-    'slemicro51_ssh_minion' => 'SUSE-MicroOS-5.1-Pool for x86_64',
     'slemicro52_minion' => 'SUSE-MicroOS-5.2-Pool for x86_64',
     'slemicro52_ssh_minion' => 'SUSE-MicroOS-5.2-Pool for x86_64',
     'slemicro53_minion' => 'SLE-Micro-5.3-Pool for x86_64',
@@ -388,7 +380,6 @@ LABEL_BY_BASE_CHANNEL = {
     'SLE-Product-SLES15-SP6-Pool for x86_64' => 'sle-product-sles15-sp6-pool-x86_64',
     'SLE-Product-SLES15-SP7-Pool for x86_64' => 'sle-product-sles15-sp7-pool-x86_64',
     'SLE-Product-SLES15-SP5-Pool for s390x' => 'sle-product-sles15-sp5-pool-s390x',
-    'SUSE-MicroOS-5.1-Pool for x86_64' => 'suse-microos-5.1-pool-x86_64',
     'SUSE-MicroOS-5.2-Pool for x86_64' => 'suse-microos-5.2-pool-x86_64',
     'SLE-Micro-5.3-Pool for x86_64' => 'sle-micro-5.3-pool-x86_64',
     'SLE-Micro-5.4-Pool for x86_64' => 'sle-micro-5.4-pool-x86_64',
@@ -420,7 +411,6 @@ LABEL_BY_BASE_CHANNEL = {
     'SLE-Product-SLES15-SP6-Pool for x86_64' => 'sle-product-sles15-sp6-pool-x86_64',
     'SLE-Product-SLES15-SP7-Pool for x86_64' => 'sle-product-sles15-sp7-pool-x86_64',
     'SLE-Product-SLES15-SP5-Pool for s390x' => 'sle-product-sles15-sp5-pool-s390x',
-    'SUSE-MicroOS-5.1-Pool for x86_64' => 'suse-microos-5.1-pool-x86_64',
     'SUSE-MicroOS-5.2-Pool for x86_64' => 'suse-microos-5.2-pool-x86_64',
     'SLE-Micro-5.3-Pool for x86_64' => 'sle-micro-5.3-pool-x86_64',
     'SLE-Micro-5.4-Pool for x86_64' => 'sle-micro-5.4-pool-x86_64',
@@ -457,7 +447,6 @@ CHANNEL_LABEL_TO_SYNC_BY_BASE_CHANNEL = {
     'SLE-Product-SLES15-SP6-Pool for x86_64' => 'SLE-15-SP6-x86_64',
     'SLE-Product-SLES15-SP7-Pool for x86_64' => 'SLE-15-SP7-x86_64',
     'SLE-Product-SLES15-SP5-Pool for s390x' => 'SLE-15-SP5-s390x',
-    'SUSE-MicroOS-5.1-Pool for x86_64' => 'SLE-MICRO-5.1-x86_64',
     'SUSE-MicroOS-5.2-Pool for x86_64' => 'SLE-MICRO-5.2-x86_64',
     'SLE-Micro-5.3-Pool for x86_64' => 'SLE-MICRO-5.3-x86_64',
     'SLE-Micro-5.4-Pool for x86_64' => 'SLE-MICRO-5.4-x86_64',
@@ -489,7 +478,6 @@ CHANNEL_LABEL_TO_SYNC_BY_BASE_CHANNEL = {
     'SLE-Product-SLES15-SP6-Pool for x86_64' => 'SLE-15-SP6-x86_64',
     'SLE-Product-SLES15-SP7-Pool for x86_64' => 'SLE-15-SP7-x86_64',
     'SLE-Product-SLES15-SP5-Pool for s390x' => 'SLE-15-SP5-s390x',
-    'SUSE-MicroOS-5.1-Pool for x86_64' => 'SLE-MICRO-5.1-x86_64',
     'SUSE-MicroOS-5.2-Pool for x86_64' => 'SLE-MICRO-5.2-x86_64',
     'SLE-Micro-5.3-Pool for x86_64' => 'SLE-MICRO-5.3-x86_64',
     'SLE-Micro-5.4-Pool for x86_64' => 'SLE-MICRO-5.4-x86_64',
@@ -527,7 +515,6 @@ PARENT_CHANNEL_LABEL_TO_SYNC_BY_BASE_CHANNEL = {
     'SLE-Product-SLES15-SP5-Pool for x86_64' => 'sle-product-sles15-sp5-pool-x86_64',
     'SLE-Product-SLES15-SP6-Pool for x86_64' => 'sle-product-sles15-sp6-pool-x86_64',
     'SLE-Product-SLES15-SP7-Pool for x86_64' => 'sle-product-sles15-sp7-pool-x86_64',
-    'SUSE-MicroOS-5.1-Pool for x86_64' => 'suse-microos-5.1-pool-x86_64',
     'SUSE-MicroOS-5.2-Pool for x86_64' => 'suse-microos-5.2-pool-x86_64',
     'SLE-Micro-5.3-Pool for x86_64' => 'sle-micro-5.3-pool-x86_64',
     'SLE-Micro-5.4-Pool for x86_64' => 'sle-micro-5.4-pool-x86_64',
@@ -559,7 +546,6 @@ PARENT_CHANNEL_LABEL_TO_SYNC_BY_BASE_CHANNEL = {
     'SLE-Product-SLES15-SP5-Pool for x86_64' => 'sle-product-sles15-sp5-pool-x86_64',
     'SLE-Product-SLES15-SP6-Pool for x86_64' => 'sle-product-sles15-sp6-pool-x86_64',
     'SLE-Product-SLES15-SP7-Pool for x86_64' => 'sle-product-sles15-sp7-pool-x86_64',
-    'SUSE-MicroOS-5.1-Pool for x86_64' => 'suse-microos-5.1-pool-x86_64',
     'SUSE-MicroOS-5.2-Pool for x86_64' => 'suse-microos-5.2-pool-x86_64',
     'SLE-Micro-5.3-Pool for x86_64' => 'sle-micro-5.3-pool-x86_64',
     'SLE-Micro-5.4-Pool for x86_64' => 'sle-micro-5.4-pool-x86_64',
@@ -601,8 +587,6 @@ PKGARCH_BY_CLIENT = {
   'sle15sp6_ssh_minion' => 'x86_64',
   'sle15sp7_minion' => 'x86_64',
   'sle15sp7_ssh_minion' => 'x86_64',
-  'slemicro51_minion' => 'x86_64',
-  'slemicro51_ssh_minion' => 'x86_64',
   'slemicro52_minion' => 'x86_64',
   'slemicro52_ssh_minion' => 'x86_64',
   'slemicro53_minion' => 'x86_64',
@@ -910,11 +894,6 @@ CHANNEL_TO_SYNC_BY_OS_PRODUCT_VERSION = {
         opensuse-sle-15.6-updates-aarch64
         managertools-sle15-pool-aarch64-opensuse-15.6
         managertools-sle15-updates-aarch64-opensuse-15.6
-      ],
-    'suse-microos-5.1' => # CHECKED
-      %w[
-        suse-microos-5.1-pool-x86_64
-        suse-microos-5.1-updates-x86_64
       ],
     'suse-microos-5.2' => # CHECKED
       %w[
@@ -1262,12 +1241,6 @@ CHANNEL_TO_SYNC_BY_OS_PRODUCT_VERSION = {
         opensuse_micro5_5-uyuni-client-x86_64
         opensuse_micro5_5-uyuni-client-devel-x86_64
       ],
-    'suse-microos-5.1' => # CHECKED
-      %w[
-        suse-microos-5.1-pool-x86_64
-        suse-microos-5.1-updates-x86_64
-        suse-microos-5.1-devel-uyuni-client-x86_64
-      ],
     'suse-microos-5.2' => # CHECKED
       %w[
         suse-microos-5.2-pool-x86_64
@@ -1605,9 +1578,6 @@ TIMEOUT_BY_CHANNEL_NAME = {
   'suse-manager-retail-branch-server-5.0-updates-x86_64' => 60,
   'suse-manager-retail-branch-server-5.0-updates-x86_64-sp6' => 60,
   'suse-multi-linux-manager-retail-branch-server-sle-5.1-updates-x86_64-sp7' => 60, # for sles15sp7
-  'suse-microos-5.1-devel-uyuni-client-x86_64' => 120,
-  'suse-microos-5.1-pool-x86_64' => 120,
-  'suse-microos-5.1-updates-x86_64' => 1080,
   'suse-microos-5.2-devel-uyuni-client-x86_64' => 120,
   'suse-microos-5.2-pool-x86_64' => 60,
   'suse-microos-5.2-updates-x86_64' => 120,
