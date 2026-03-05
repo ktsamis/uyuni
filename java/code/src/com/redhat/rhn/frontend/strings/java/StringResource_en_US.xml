@@ -9607,9 +9607,6 @@ Alternatively, you will want to download &lt;strong&gt;Incremental Channel Conte
       <trans-unit id="diskcheckwarning" xml:space="preserve">
         <source>Disk Check</source>
       </trans-unit>
-      <trans-unit id="dbdiskcheckwarning" xml:space="preserve">
-        <source>Database Disk Check</source>
-      </trans-unit>
       <trans-unit id="subscriptionwarning" xml:space="preserve">
         <source>Subscription Warning</source>
       </trans-unit>
@@ -9865,7 +9862,7 @@ For a detailed analysis, please refer to the log files.</source>
         <source>You are running out of space on your @@PRODUCT_NAME@@ {0}. This is {1}</source>
       </trans-unit>
       <trans-unit id="notification.diskcheck.details">
-        <source>You are running out of space on your @@PRODUCT_NAME@@ {0}. This is {1}. If you run out of disk space, @@PRODUCT_NAME@@ will stop running, and this could lead to a loss of data. @@PRODUCT_NAME@@ will showdown automatically.</source>
+        <source>You are running out of space on your @@PRODUCT_NAME@@ {0}. This is {1}. If you run out of disk space, @@PRODUCT_NAME@@ will stop running, and this could lead to a loss of data. @@PRODUCT_NAME@@ will shutdown automatically.</source>
       </trans-unit>
       <trans-unit id="notification.endoflife.expiring.summary">
         <source>@@PRODUCT_NAME@@ {0} is approaching end of life</source>

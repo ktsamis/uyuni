@@ -17,6 +17,7 @@ export const renderer = (
     loginLength,
     passwordLength,
     diskspaceSeverity,
+    dbDiskspaceSeverity,
     sccForwardWarning,
   }
 ) => {
@@ -35,6 +36,7 @@ export const renderer = (
         loginLength={loginLength}
         passwordLength={passwordLength}
         diskspaceSeverity={diskspaceSeverity}
+        dbDiskspaceSeverity={dbDiskspaceSeverity}
         sccForwardWarning={sccForwardWarning}
       />,
       elementToRender

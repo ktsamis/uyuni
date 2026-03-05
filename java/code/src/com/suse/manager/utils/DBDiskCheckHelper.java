@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 SUSE LLC
+ * Copyright (c) 2026 SUSE LLC
  *
  * This software is licensed to you under the GNU General Public License,
  * version 2 (GPLv2). There is NO WARRANTY for this software, express or
@@ -28,7 +28,8 @@ public class DBDiskCheckHelper extends DiskCheckHelper {
     /**
      * Executes the SQL function and returns the result as an exit code.
      * @return the value returned from the database query.
-     * @throws IOException when https://bugzilla.suse.com/show_bug.cgi?id=1253153 a database error occurs.
+     * @throws IOException when a database error occurs.
+     * @see <a href="https://bugzilla.suse.com/show_bug.cgi?id=1253153">Bug 1253153</a>
      */
     @Override
     protected int performCheck() throws IOException, InterruptedException {
