@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022--2025 SUSE LLC
+ * Copyright (c) 2026 SUSE LLC
  *
  * This software is licensed to you under the GNU General Public License,
  * version 2 (GPLv2). There is NO WARRANTY for this software, express or
@@ -42,15 +42,12 @@ public class DiskCheck implements NotificationData {
 
     @Override
     public NotificationSeverity getSeverity() {
-        if (this.severity.equals(DiskCheckSeverity.CRITICAL)) {
-            return NotificationSeverity.ERROR;
-        }
-
-        if (this.severity.equals(DiskCheckSeverity.ALERT)) {
-            return NotificationSeverity.WARNING;
-        }
-        // anything else is informational
-        return NotificationSeverity.INFO;
+        return switch (this.severity) {
+            case CRITICAL -> NotificationSeverity.ERROR;
+            case ALERT -> NotificationSeverity.WARNING;
+            // anything else is informational
+            default -> NotificationSeverity.INFO;
+        };
     }
 
     @Override

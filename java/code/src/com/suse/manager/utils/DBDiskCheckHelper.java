@@ -7,10 +7,6 @@
  * FOR A PARTICULAR PURPOSE. You should have received a copy of GPLv2
  * along with this software; if not, see
  * http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
- *
- * Red Hat trademarks are not licensed under GPLv2. No permission is
- * granted to use or replicate Red Hat trademarks that are incorporated
- * in this software or its documentation.
  */
 
 package com.suse.manager.utils;
@@ -36,19 +32,8 @@ public class DBDiskCheckHelper extends DiskCheckHelper {
      */
     @Override
     protected int performCheck() throws IOException, InterruptedException {
-        try {
-            Object result = HibernateFactory.getSession()
-                    .createNativeQuery("SELECT get_pgsql_disk_severity()")
-                    .getSingleResult();
-
-            if (result instanceof Number) {
-                return ((Number) result).intValue();
-            }
-            throw new IOException("Database did not return a numeric value.");
-        }
-        catch (Exception e) {
-            // Wrapping Hibernate exceptions into IOException to match the parent signature
-            throw new IOException("Failed to execute database disk check", e);
-        }
+        return HibernateFactory.getSession()
+        .createNativeQuery("SELECT get_pgsql_disk_severity()", Integer.class)
+        .getSingleResult();
     }
 }

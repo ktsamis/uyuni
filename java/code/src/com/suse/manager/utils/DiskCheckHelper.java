@@ -61,7 +61,7 @@ public class DiskCheckHelper {
      * @throws InterruptedException when the process is interrupted while waiting for a result from the script.
      */
     protected int performCheck() throws IOException, InterruptedException {
-        final Process process = Runtime.getRuntime().exec(new String[]{DISKCHECK_SCRIPT, "-c"});
+        final Process process = Runtime.getRuntime().exec(new String[]{DISKCHECK_SCRIPT});
         return process.waitFor();
     }
 }

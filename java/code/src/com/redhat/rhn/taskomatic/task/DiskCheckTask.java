@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009--2016 Red Hat, Inc.
+ * Copyright (c) 2026 SUSE LLC
  *
  * This software is licensed to you under the GNU General Public License,
  * version 2 (GPLv2). There is NO WARRANTY for this software, express or
@@ -28,9 +28,9 @@ import com.suse.manager.utils.DiskCheckSeverity;
 import org.quartz.JobExecutionContext;
 
 /**
- * SessionCleanup
- * Deletes orphan uuids from rhnVirtualInstance table
- * Deletes duplicated uuids for same system id from rhnVirtualInstances
+ * DiskCheckTask
+ * Periodically checks server and database disk usage and creates
+ * notifications when usage reaches the alert threshold.
  */
 public class DiskCheckTask extends RhnJavaJob {
 
@@ -61,7 +61,7 @@ public class DiskCheckTask extends RhnJavaJob {
 
         final DBDiskCheckHelper dbDiskCheckHelper = new DBDiskCheckHelper();
         DiskCheckSeverity dbDiskCheckSeverity = dbDiskCheckHelper.executeDiskCheck();
-        if (dbDiskCheckSeverity.compareTo(DiskCheckSeverity.ALERT) >= 0) {
+        if (dbDiskCheckSeverity.needsAttention()) {
             NotificationMessage notification = UserNotificationFactory.createNotificationMessage(
                 new DiskCheck("database", dbDiskCheckSeverity));
             UserNotificationFactory.storeNotificationMessageFor(notification, RoleFactory.ORG_ADMIN);

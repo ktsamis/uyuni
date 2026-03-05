@@ -8,15 +8,11 @@ DB_CRIT=${DISKTHRESHOLD:-95}
 DB_WARN=${DISKCHECKALERT:-90}
 
 run_sql() {
-    psql -v ON_ERROR_STOP=1 \
-        -h localhost \
-        -p "${PGPORT:-5432}" \
-        -U "$POSTGRES_USER" \
-        --no-password --no-psqlrc -d susemanager
+    PGHOST= PGHOSTADDR= psql -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" --no-password --no-psqlrc -d susemanager "$@"
 }
 
 cat << EOF | run_sql
-CREATE OR REPLACE FUNCTION get_pgsql_disk_severity()
+CREATE OR REPLACE FUNCTION get_pgsql_disk_usage_percent()
 RETURNS integer
 SECURITY DEFINER
 AS
