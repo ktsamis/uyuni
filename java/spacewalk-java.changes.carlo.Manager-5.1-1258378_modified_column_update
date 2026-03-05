@@ -1,0 +1,2 @@
+- Fix updating "modified" column in TaskoRun and TaskoSchedule
+  (bsc#1258378)
