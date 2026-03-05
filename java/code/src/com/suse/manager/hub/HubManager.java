@@ -1119,6 +1119,9 @@ public class HubManager {
                 server.setMgrServerInfo(mgrServerInfo);
             }
 
+            // PERIPHERAL_SERVER entitlement is no longer used
+            systemEntitlementManagerIn.removeServerEntitlement(server, EntitlementManager.PERIPHERAL_SERVER);
+
             if (saltServer.isPresent() && foreignServer.isPresent()) {
                 LOG.info("Found both SALT and FOREIGN system for {}. Deleting FOREIGN system {}.",
                         serverName, foreignServer.get().getId());
