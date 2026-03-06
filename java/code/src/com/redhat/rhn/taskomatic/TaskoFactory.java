@@ -94,6 +94,7 @@ public class TaskoFactory extends HibernateFactory {
      * @param taskoRun run to save
      */
     public static void save(TaskoRun taskoRun) {
+        taskoRun.setModified(new Date());
         singleton.saveObject(taskoRun);
     }
 
@@ -118,6 +119,7 @@ public class TaskoFactory extends HibernateFactory {
      * @param taskoSchedule schedule to save
      */
     public static void save(TaskoSchedule taskoSchedule) {
+        taskoSchedule.setModified(new Date());
         singleton.saveObject(taskoSchedule);
     }
 
@@ -126,6 +128,7 @@ public class TaskoFactory extends HibernateFactory {
      * @param taskoTemplate run to save
      */
     public static void save(TaskoTemplate taskoTemplate) {
+        //no need to set modified date: method used in test only
         singleton.saveObject(taskoTemplate);
     }
 
@@ -142,6 +145,7 @@ public class TaskoFactory extends HibernateFactory {
      * @param taskoBunch run to save
      */
     public static void save(TaskoBunch taskoBunch) {
+        //no need to set modified date: method used in test only
         singleton.saveObject(taskoBunch);
     }
 
@@ -158,6 +162,7 @@ public class TaskoFactory extends HibernateFactory {
      * @param taskoTask run to save
      */
     public static void save(TaskoTask taskoTask) {
+        //no need to set modified date: method used in test only
         singleton.saveObject(taskoTask);
     }
 
