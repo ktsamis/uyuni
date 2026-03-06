@@ -46,4 +46,4 @@ RUN echo "${PRODUCT_VERSION}.%RELEASE%" > /etc/uyuni-image-ref
 ENTRYPOINT ["/uyuni-entrypoint.sh"]
 
 CMD ["postgres"]
-HEALTHCHECK --interval=10s --start-period=10s --timeout=5s --retries=1 CMD ["/usr/bin/healthcheck.sh"]
+HEALTHCHECK --interval=10s --start-period=10s --timeout=5s --retries=3 CMD ["/usr/bin/healthcheck.sh"]
