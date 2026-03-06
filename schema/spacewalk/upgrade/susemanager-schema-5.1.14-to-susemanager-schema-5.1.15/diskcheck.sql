@@ -27,3 +27,7 @@ INSERT INTO rhnTaskoSchedule (id, job_label, bunch_id, active_from, cron_expr)
          (SELECT id FROM rhnTaskoBunch WHERE name='diskcheck-task-bunch'),
          current_timestamp, '0 0 * * * ?' FROM dual
   WHERE NOT EXISTS (SELECT 1 FROM rhnTaskoSchedule WHERE job_label = 'diskcheck-task-queue-default');
+
+INSERT INTO RHNINFOPANE(ID, LABEL, ACL)
+  SELECT sequence_nextval('rhn_info_pane_id_seq'), 'disk-check-warning', null FROM dual
+  WHERE NOT EXISTS (SELECT 1 FROM RHNINFOPANE WHERE label = 'disk-check-warning');

@@ -26,7 +26,7 @@ export const getGlobalMessages = (
     const severity_messages = {
       undefined: Messages.info(
         t(
-          "Unable to validate the disk space availability on Server. Please contact your system admistrator if this problem persists."
+          "Unable to validate the disk space availability on Server. Please contact your system administrator if this problem persists."
         )
       ),
       misconfiguration: Messages.warning(
@@ -58,7 +58,7 @@ export const getGlobalMessages = (
     const severity_messages = {
       undefined: Messages.info(
         t(
-          "Unable to validate the disk space availability on Database. Please contact your system admistrator if this problem persists."
+          "Unable to validate the disk space availability on Database. Please contact your system administrator if this problem persists."
         )
       ),
       misconfiguration: Messages.warning(
