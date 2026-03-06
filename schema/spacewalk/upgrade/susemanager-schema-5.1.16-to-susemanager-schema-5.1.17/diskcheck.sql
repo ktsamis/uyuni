@@ -12,6 +12,10 @@
 INSERT INTO rhnTaskoBunch (id, name, description, org_bunch)
   SELECT sequence_nextval('rhn_tasko_bunch_id_seq'), 'diskcheck-task-bunch', 'Schedules a disk check on server and DB', null FROM dual
   WHERE NOT EXISTS (SELECT 1 FROM rhnTaskoBunch WHERE name = 'diskcheck-task-bunch');
+
+INSERT INTO rhnTaskoTask (id, name, class)
+  SELECT sequence_nextval('rhn_tasko_task_id_seq'), 'diskcheck-task', 'com.redhat.rhn.taskomatic.task.DiskCheckTask' FROM dual
+  WHERE NOT EXISTS (SELECT 1 FROM rhnTaskoTask WHERE name = 'diskcheck-task');
   
 INSERT INTO rhnTaskoTemplate (id, bunch_id, task_id, ordering, start_if)
   SELECT sequence_nextval('rhn_tasko_template_id_seq'),

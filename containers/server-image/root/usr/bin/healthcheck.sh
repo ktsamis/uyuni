@@ -7,7 +7,7 @@ check_manager_login() {
     local attempt=1
 
     while [ "$attempt" -le "$attempts" ]; do
-        if curl --noproxy localhost --fail --silent --show-error --connect-timeout 1 --max-time 1 \
+        if curl --noproxy localhost --fail --silent --show-error --connect-timeout 10 --max-time 20 \
             http://localhost/rhn/manager/login > /dev/null; then
             return 0
         fi
