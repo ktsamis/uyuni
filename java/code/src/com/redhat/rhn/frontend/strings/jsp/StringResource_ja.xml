@@ -3949,12 +3949,12 @@ button below, and &lt;b&gt;will be unable to log back in&lt;/b&gt;.</source>
         </context-group>
         <target>バグ要約は 4000 文字を超えることはできません。</target>
       </trans-unit>
-      <trans-unit id="errata.edit.error.idLength" xml:space="preserve">
+      <trans-unit id="errata.edit.error.idLength" xml:space="preserve" approved="yes">
         <source>Bug Id cannot be greater than 18 characters.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/errata/manage/Edit.do</context>
         </context-group>
-        <target>バグ ID は 18 文字を超えることはできません。</target>
+        <target state="final">バグ ID は 18 文字を超えることはできません。</target>
       </trans-unit>
       <trans-unit id="errata.channels.updatechannels" xml:space="preserve">
         <source>Update Channels</source>
@@ -10393,9 +10393,9 @@ Please note that some manual configuration of these scripts may still be require
           <context context-type="sourcefile">/rhn/systems/ssm/kickstart/KickstartableSystems.do</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="ssm.kickstartable-systems.jsp.ip-tooltip" xml:space="preserve">
+      <trans-unit id="ssm.kickstartable-systems.jsp.ip-tooltip" xml:space="preserve" approved="yes">
         <source>If there is no organization default profile specified for this organization, an autoinstallation will not get scheduled for systems that do not fall under an ip range.</source>
-        <target>この組織に指定されたデフォルトの組織プロファイルがない場合は、IP 範囲に属さないシステムに対して自動インストールがスケジュールされません。</target>
+        <target state="final">この組織に指定されたデフォルトの組織プロファイルがない場合は、IP 範囲に属さないシステムに対して自動インストールがスケジュールされません。</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/ssm/kickstart/KickstartableSystems.do</context>
         </context-group>
@@ -11567,9 +11567,9 @@ Please note that some manual configuration of these scripts may still be require
           <context context-type="sourcefile">/rhn/kickstart/KickstartSystemDetailsEdit</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="kickstart.postnetconn.bondoptionstip.jsp.label" xml:space="preserve">
+      <trans-unit id="kickstart.postnetconn.bondoptionstip.jsp.label" xml:space="preserve" approved="yes">
         <source>You can input a space-separated list of any valid "bonding" kernel module options. Common options include mode=[0,1,2] (0 is round-robin, 1 is active-backup, 2 is balance-xor) and miimon=100</source>
-        <target>スペース区切りで "bonding" カーネルモジュールに対するオプション一覧を記述することができます。一般的なオプションとしては、 mode=[0,1,2] (0: ラウンドロビン, 1: アクティブ-バックアップ, 2: バランス型 XOR) や miimon=100 などがあります</target>
+        <target state="final">スペース区切りで "bonding" カーネルモジュールに対するオプション一覧を記述することができます。一般的なオプションとしては、 mode=[0,1,2] (0: ラウンドロビン, 1: アクティブ-バックアップ, 2: バランス型 XOR) や miimon=100 などがあります</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/kickstart/KickstartSystemDetailsEdit</context>
         </context-group>
@@ -11791,12 +11791,12 @@ Please note that some manual configuration of these scripts may still be require
         </context-group>
         <target>ディストリビューションを削除</target>
       </trans-unit>
-      <trans-unit id="keys.jsp.nokeys" xml:space="preserve">
+      <trans-unit id="keys.jsp.nokeys" xml:space="preserve" approved="yes">
         <source>No public keys or ssl certs defined.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/keys/CryptoKeysList.do</context>
         </context-group>
-        <target>公開鍵または SSL 証明書が設定されていません。</target>
+        <target state="final">公開鍵または SSL 証明書が設定されていません。</target>
       </trans-unit>
       <trans-unit id="keys.jsp.summary" xml:space="preserve">
         <source>
@@ -14989,9 +14989,9 @@ the &lt;strong&gt;@@ENTERPRISE_LINUX_NAME@@ System Administration Guide.&lt;/str
           <context context-type="sourcefile">Diff of OpenSCAP XCCDF scans</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="scapdiff.jsp.instructions" xml:space="preserve">
+      <trans-unit id="scapdiff.jsp.instructions" xml:space="preserve" approved="yes">
         <source>Specify Id of scans (the xid).</source>
-        <target>スキャンの ID を指定してください (xid)。</target>
+        <target state="final">スキャンの ID を指定してください (xid)。</target>
         <context-group name="ctx">
           <context context-type="sourcefile">Diff of OpenSCAP XCCDF scans</context>
         </context-group>
@@ -16439,9 +16439,9 @@ the &lt;strong&gt;@@ENTERPRISE_LINUX_NAME@@ System Administration Guide.&lt;/str
           <context context-type="sourcefile">/rhn/configuration/system/Summary.do</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="summary.jsp.okAlt" xml:space="preserve">
+      <trans-unit id="summary.jsp.okAlt" xml:space="preserve" approved="yes">
         <source>okay</source>
-        <target>OK</target>
+        <target state="final">OK</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/configuration/system/Summary.do</context>
         </context-group>
@@ -16673,9 +16673,9 @@ the &lt;strong&gt;@@ENTERPRISE_LINUX_NAME@@ System Administration Guide.&lt;/str
         </context-group>
         <target>{0} ファイル、{1} ディレクトリ、{2} シンボリックリンク</target>
       </trans-unit>
-      <trans-unit id="channelOverview.jsp.state.channel.numfiles" xml:space="preserve">
+      <trans-unit id="channelOverview.jsp.state.channel.numfiles" xml:space="preserve" approved="yes">
         <source>{0} sls, {1} files</source>
-        <target>{0} 個の SLS, {1} 個のファイル</target>
+        <target state="final">{0} 個の SLS, {1} 個のファイル</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/configuration/ChannelOverview.do</context>
           <context context-type="paramnotes">"36 files, 2 directories, 0 symlinks"</context>
@@ -17911,19 +17911,19 @@ centrally-managed configuration channel, {2}; below is a list of systems you may
         <target>&lt;strong&gt;ヒント:&lt;/strong&gt; user_u:role_r:type_t:s0-s15:c0.c1024 などの SELinux コンテキストを入力します (注記: すべての部分を入力する必要はありません)</target>
       </trans-unit>
       <!-- form error messages -->
-      <trans-unit id="config-file-form.error.user-invalid" xml:space="preserve">
+      <trans-unit id="config-file-form.error.user-invalid" xml:space="preserve" approved="yes">
         <source>User must be a valid Linux user name or user id, of 32 characters or less.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/configuration/file/FileDetails.do</context>
         </context-group>
-        <target>ユーザーは 32 文字以下の有効な Linux ユーザー名またはユーザー ID でなければなりません。</target>
+        <target state="final">ユーザーは 32 文字以下の有効な Linux ユーザー名またはユーザー ID でなければなりません。</target>
       </trans-unit>
-      <trans-unit id="config-file-form.error.group-invalid" xml:space="preserve">
+      <trans-unit id="config-file-form.error.group-invalid" xml:space="preserve" approved="yes">
         <source>Group must be a valid Linux group name or group id, of 32 characters or less.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/configuration/file/FileDetails.do</context>
         </context-group>
-        <target>グループは 32 文字以下の有効な Linux グループ名またはグループ ID でなければなりません。</target>
+        <target state="final">グループは 32 文字以下の有効な Linux グループ名またはグループ ID でなければなりません。</target>
       </trans-unit>
       <trans-unit id="config-file-form.error.mode-invalid" xml:space="preserve">
         <source>Permissions must be a valid Linux permissions set (4 octal digits)</source>
@@ -22169,12 +22169,12 @@ the &lt;a href="/rhn/kickstart/ActivationKeysList.do?ksid={0}"&gt;Activation Key
         </context-group>
         <target>ベースソフトウェアチャンネル</target>
       </trans-unit>
-      <trans-unit id="kickstart.channel.virtCpu.jsp" xml:space="preserve">
+      <trans-unit id="kickstart.channel.virtCpu.jsp" xml:space="preserve" approved="yes">
         <source>Cpus</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/virtualization/ProvisionVirtualizationWizard.do</context>
         </context-group>
-        <target>CPU</target>
+        <target state="final">CPU</target>
       </trans-unit>
       <trans-unit id="kickstart.channel.virtMemory.jsp" xml:space="preserve">
         <source>Memory</source>
@@ -23106,12 +23106,12 @@ The Tree Path, Base Channel, and Installer Generation should always match. This 
         </context-group>
         <target>仮想システムハードウェアのオーバーライド</target>
       </trans-unit>
-      <trans-unit id="virtualization.provision.override.jsp.goto.advanced.options" xml:space="preserve">
+      <trans-unit id="virtualization.provision.override.jsp.goto.advanced.options" xml:space="preserve" approved="yes">
         <source>By default virtual guest settings like memory, cpu and storage allocations will be inherited from your autoinstallation profile. If you want to override these settings click on &lt;strong&gt;{0}&lt;/strong&gt; button below.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/virtualization/ProvisionVirtualizationWizard.do</context>
         </context-group>
-        <target>デフォルトでは、メモリ、CPU、ストレージ割り当てなどの仮想ゲストの設定は自動インストールプロファイルより継承されます。これらの設定を上書きるには、以下の &lt;strong&gt;{0}&lt;/strong&gt; ボタンをクリックしてください。</target>
+        <target state="final">デフォルトでは、メモリ、CPU、ストレージ割り当てなどの仮想ゲストの設定は自動インストールプロファイルより継承されます。これらの設定を上書きるには、以下の &lt;strong&gt;{0}&lt;/strong&gt; ボタンをクリックしてください。</target>
       </trans-unit>
       <trans-unit id="virtualization.provision.first.jsp.guest_name.header" xml:space="preserve">
         <source>Guest Name:</source>
@@ -23148,9 +23148,9 @@ The Tree Path, Base Channel, and Installer Generation should always match. This 
           <context context-type="sourcefile">/rhn/systems/details/virtualization/ProvisionVirtualizationWizard.do</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="virtualization.provision.first.jsp.memory_allocation.message" xml:space="preserve">
+      <trans-unit id="virtualization.provision.first.jsp.memory_allocation.message" xml:space="preserve" approved="yes">
         <source>Size in megabytes out of {0} total megabytes available on {1}</source>
-        <target>メガバイト単位でのサイズ ({1} では合計 {0} MB が利用可能)</target>
+        <target state="final">メガバイト単位でのサイズ ({1} では合計 {0} MB が利用可能)</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/virtualization/ProvisionVirtualizationWizard.do</context>
         </context-group>
@@ -23721,9 +23721,9 @@ The Tree Path, Base Channel, and Installer Generation should always match. This 
         </context-group>
         <target>システム情報</target>
       </trans-unit>
-      <trans-unit id="sdc.details.overview.minionId" xml:space="preserve">
+      <trans-unit id="sdc.details.overview.minionId" xml:space="preserve" approved="yes">
         <source>Minion Id:</source>
-        <target>minion ID:</target>
+        <target state="final">minion ID:</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/systems/details/Overview.do</context>
         </context-group>
@@ -24466,12 +24466,12 @@ The Tree Path, Base Channel, and Installer Generation should always match. This 
           <context context-type="sourcefile">/systems/details/Activation.do</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="sdc.details.activation.summary" xml:space="preserve">
+      <trans-unit id="sdc.details.activation.summary" xml:space="preserve" approved="yes">
         <source>With a system profile specific activation key, this system can be re-registered with the same id, history, groups, and channels (unless the system's base channel changes).</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/systems/details/Activation.do</context>
         </context-group>
-        <target state="translated">システムプロファイル固有のアクティベーションキーを使用することで、このシステムを同じ ID と履歴、グループとチャンネルで再登録を行なうことができます (ただし、システムのベースチャンネルが変更された場合を除きます) 。</target>
+        <target state="final">システムプロファイル固有のアクティベーションキーを使用することで、このシステムを同じ ID と履歴、グループとチャンネルで再登録を行なうことができます (ただし、システムのベースチャンネルが変更された場合を除きます) 。</target>
       </trans-unit>
       <trans-unit id="sdc.details.activation.key" xml:space="preserve">
         <source>Key:</source>
@@ -24522,12 +24522,12 @@ The Tree Path, Base Channel, and Installer Generation should always match. This 
         </context-group>
         <target>システム:</target>
       </trans-unit>
-      <trans-unit id="sdc.details.hardware.dmi_bios" xml:space="preserve">
+      <trans-unit id="sdc.details.hardware.dmi_bios" xml:space="preserve" approved="yes">
         <source>Bios:</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/systems/details/SystemHardware.do</context>
         </context-group>
-        <target>BIOS:</target>
+        <target state="final">BIOS:</target>
       </trans-unit>
       <trans-unit id="sdc.details.hardware.dmi_asset_tag" xml:space="preserve">
         <source>Asset Tag:</source>
@@ -24641,9 +24641,9 @@ The Tree Path, Base Channel, and Installer Generation should always match. This 
           <context context-type="sourcefile">/systems/details/SystemHardware.do</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="sdc.details.hardware.machine_id_empty_warning" xml:space="preserve">
+      <trans-unit id="sdc.details.hardware.machine_id_empty_warning" xml:space="preserve" approved="yes">
         <source>This system does not have a machine id. This is needed in the event of re-registering it as a Salt minion. Make sure the system has the latest version of the client tools installed and use the Schedule Hardware Refresh button bellow to fill the machine id.</source>
-        <target>このシステムにはマシン ID がありません。これは Salt minion として再登録を行なう場合に必要となります。システムに対して最新のクライアントツールがインストールされているかどうか、およびマシン ID の更新を行なうためのハードウェア更新スケジュールボタンを使用しているかどうかをご確認ください。</target>
+        <target state="final">このシステムにはマシン ID がありません。これは Salt minion として再登録を行なう場合に必要となります。システムに対して最新のクライアントツールがインストールされているかどうか、およびマシン ID の更新を行なうためのハードウェア更新スケジュールボタンを使用しているかどうかをご確認ください。</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/systems/details/SystemHardware.do</context>
         </context-group>
@@ -25841,9 +25841,9 @@ given channel.</source>
         <source>Basic setup and configuration with @@PRODUCT_NAME@@</source>
         <target>@@PRODUCT_NAME@@ の基本的なセットアップと設定</target>
       </trans-unit>
-      <trans-unit id="iprange.emptylist" xml:space="preserve">
+      <trans-unit id="iprange.emptylist" xml:space="preserve" approved="yes">
         <source>No Ip Ranges Found</source>
-        <target>IP 範囲は見つかりませんでした</target>
+        <target state="final">IP 範囲は見つかりませんでした</target>
       </trans-unit>
       <trans-unit id="package.jsp.emptylist" xml:space="preserve">
         <source>This channel contains no packages.</source>
@@ -26281,21 +26281,21 @@ given channel.</source>
         <source>The file you requested could not be downloaded, likely due to one of the following reasons:</source>
         <target>要求されたファイルをダウンロードできませんでした。以下のいずれかの理由が考えられます。</target>
       </trans-unit>
-      <trans-unit id="baddownload.jsp.reason1" xml:space="preserve">
+      <trans-unit id="baddownload.jsp.reason1" xml:space="preserve" approved="yes">
         <source>The url has expired.</source>
-        <target>URL が無効です。</target>
+        <target state="final">URL が無効です。</target>
       </trans-unit>
-      <trans-unit id="baddownload.jsp.reason2" xml:space="preserve">
+      <trans-unit id="baddownload.jsp.reason2" xml:space="preserve" approved="yes">
         <source>The url has been modified.</source>
-        <target>URL が変更されました。</target>
+        <target state="final">URL が変更されました。</target>
       </trans-unit>
       <trans-unit id="baddownload.jsp.reason3" xml:space="preserve">
         <source>The @@PRODUCT_NAME@@ server does not have read permissions on the specified file.</source>
         <target>@@PRODUCT_NAME@@ サーバが、指定されたファイルに対して読み取り許可を持っていません。</target>
       </trans-unit>
-      <trans-unit id="baddownload.jsp.retry" xml:space="preserve">
+      <trans-unit id="baddownload.jsp.retry" xml:space="preserve" approved="yes">
         <source>Please revisit the page you received this url from to receive a new one.</source>
-        <target>この URL を受け取ったページに再びご覧になり、新しい URL を受け取ってください。</target>
+        <target state="final">この URL を受け取ったページに再びご覧になり、新しい URL を受け取ってください。</target>
       </trans-unit>
       <trans-unit id="package.jsp.alt" xml:space="preserve">
         <source>package</source>
@@ -26361,9 +26361,9 @@ given channel.</source>
         <source>Package Group</source>
         <target>パッケージグループ</target>
       </trans-unit>
-      <trans-unit id="package.jsp.rpmversion" xml:space="preserve">
+      <trans-unit id="package.jsp.rpmversion" xml:space="preserve" approved="yes">
         <source>Rpm Version</source>
-        <target>RPM バージョン</target>
+        <target state="final">RPM バージョン</target>
       </trans-unit>
       <trans-unit id="package.jsp.path" xml:space="preserve">
         <source>File System Path</source>
