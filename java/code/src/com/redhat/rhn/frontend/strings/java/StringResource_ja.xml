@@ -1788,16 +1788,16 @@
         </context-group>
         <target>XCCDF ドキュメントへのパス</target>
       </trans-unit>
-      <trans-unit id="first" xml:space="preserve">
+      <trans-unit id="first" xml:space="preserve" approved="yes">
         <source>First Scan Id</source>
-        <target>1 番目のスキャン ID</target>
+        <target state="final">1 番目のスキャン ID</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/audit/scap/Diff.do</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="second" xml:space="preserve">
+      <trans-unit id="second" xml:space="preserve" approved="yes">
         <source>Second Scan Id</source>
-        <target>2 番目のスキャン ID</target>
+        <target state="final">2 番目のスキャン ID</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/audit/scap/Diff.do</context>
         </context-group>
@@ -2500,12 +2500,12 @@ and try again.
         </context-group>
         <target>スニペットの削除</target>
       </trans-unit>
-      <trans-unit id="kickstart.iprange.url" xml:space="preserve">
+      <trans-unit id="kickstart.iprange.url" xml:space="preserve" approved="yes">
         <source>New systems can be autoinstalled based upon their ip address by appending &lt;code&gt;{0}&lt;/code&gt; to the kernel parameters for an autoinstallation.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/kickstart/KickstartIpRangeEdit</context>
         </context-group>
-        <target>自動インストール用のカーネルパラメータに &lt;code&gt;{0}&lt;/code&gt; を追加すると、その IP アドレスに基づいて新しいシステムを自動インストールすることができます。</target>
+        <target state="final">自動インストール用のカーネルパラメータに &lt;code&gt;{0}&lt;/code&gt; を追加すると、その IP アドレスに基づいて新しいシステムを自動インストールすることができます。</target>
       </trans-unit>
       <trans-unit id="kickstart.partition.success" xml:space="preserve">
         <source>Kickstart profile options updated successfully.</source>
@@ -6134,12 +6134,12 @@ user before attempting to deactivate their account.</source>
         </context-group>
         <target>SSL</target>
       </trans-unit>
-      <trans-unit id="crypto.key.nokey" xml:space="preserve">
+      <trans-unit id="crypto.key.nokey" xml:space="preserve" approved="yes">
         <source>No file contents found. Please select a proper key file from your local machine to upload.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/keys/CryptoKeysCreate.do</context>
         </context-group>
-        <target>GPL/SSL キーコンテンツがありません。</target>
+        <target state="final">ファイルの内容が見つかりません。ローカルマシンから適切なキーファイルを選択してアップロードしてください。</target>
       </trans-unit>
       <trans-unit id="crypto.key.success" xml:space="preserve">
         <source>Key updated.</source>
@@ -6266,12 +6266,12 @@ Follow this url to see the full list of inactive systems:
 次の URL より休止中のシステムの一覧を確認してください:
 {1}</target>
       </trans-unit>
-      <trans-unit id="taskomatic.daily.sid" xml:space="preserve">
+      <trans-unit id="taskomatic.daily.sid" xml:space="preserve" approved="yes">
         <source>System Id</source>
         <context-group name="ctx">
           <context context-type="sourcefile">Daily Summary Email</context>
         </context-group>
-        <target>システム ID</target>
+        <target state="final">システム ID</target>
       </trans-unit>
       <trans-unit id="taskomatic.daily.systemname" xml:space="preserve">
         <source>System Name</source>
@@ -7076,19 +7076,19 @@ Follow this url to see the full list of inactive systems:
         <target>設定チャンネルの詳細</target>
       </trans-unit>
       <!-- config-file form-bean I18N -->
-      <trans-unit id="cffUid" xml:space="preserve">
+      <trans-unit id="cffUid" xml:space="preserve" approved="yes">
         <source>User name or id</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/configuration/file/FileDetails.do</context>
         </context-group>
-        <target>ユーザー名または ID</target>
+        <target state="final">ユーザー名または ID</target>
       </trans-unit>
-      <trans-unit id="cffGid" xml:space="preserve">
+      <trans-unit id="cffGid" xml:space="preserve" approved="yes">
         <source>Group name or id</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/configuration/file/FileDetails.do</context>
         </context-group>
-        <target>グループ名または ID</target>
+        <target state="final">グループ名または ID</target>
       </trans-unit>
       <trans-unit id="cffPermissions" xml:space="preserve">
         <source>File permissions setting</source>
@@ -8632,9 +8632,9 @@ Follow this url to see the full list of inactive systems:
         <source>The server is not configured to support PAM authentication. Refer to the reference guide for instructions on how to set up PAM.</source>
         <target>サーバーは PAM 認証をサポートするよう設定されていません。PAM の設定手順についてはリファレンスガイドを参照してください。</target>
       </trans-unit>
-      <trans-unit id="api.org.migrationtosameorg" xml:space="preserve">
+      <trans-unit id="api.org.migrationtosameorg" xml:space="preserve" approved="yes">
         <source>User cannot migrate a system where the origination and destination organizations are the same.  Org Id: {0}, System Id: {1}.</source>
-        <target state="translated">移行元組織と移行先組織が同じ場合はシステムを移行できません。組織 ID: {0}、システム ID: {1}。</target>
+        <target state="final">移行元組織と移行先組織が同じ場合はシステムを移行できません。組織 ID: {0}、システム ID: {1}。</target>
       </trans-unit>
       <trans-unit id="api.org.nosuchorg" xml:space="preserve">
         <source>No such organization: {0}</source>
@@ -8744,9 +8744,9 @@ Follow this url to see the full list of inactive systems:
         <source>Multiple base channels selected for subscription.  The channels {0} and {1} were both selected for subscription, but a system can only be subscribed to a single base channel.</source>
         <target state="translated">サブスクリプションに対して複数のベースチャンネルが選択されています。{0} と {1} の両方のチャンネルがサブスクリプションに対して選択されましたが、システムは 1 つのベースチャンネルに対してのみサブスクライブできます。</target>
       </trans-unit>
-      <trans-unit id="api.channel.invalidchannellist" xml:space="preserve">
+      <trans-unit id="api.channel.invalidchannellist" xml:space="preserve" approved="yes">
         <source>The channel list provided is invalid.  It must contain a list of channel labels or ids, but not a mixture of both.</source>
-        <target state="translated">提供されたチャンネルリストは有効ではありません。チャンネルリストにはチャンネルラベルまたは ID をリストしますが、両方が混在してはなりません。</target>
+        <target state="final">提供されたチャンネルリストは有効ではありません。チャンネルリストにはチャンネルラベルまたは ID をリストしますが、両方が混在してはなりません。</target>
       </trans-unit>
       <trans-unit id="channel.invalidchannelarch" xml:space="preserve">
         <source>The channel arch specified ({0}) is invalid.</source>
@@ -9024,16 +9024,16 @@ Follow this url to see the full list of inactive systems:
           <context context-type="sourcefile">/rhn/systems/Search</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="systemIdForCsv" xml:space="preserve">
+      <trans-unit id="systemIdForCsv" xml:space="preserve" approved="yes">
         <source>System Id</source>
-        <target>システム ID</target>
+        <target state="final">システム ID</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/VirtualList</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="hostSystemIdForCsv" xml:space="preserve">
+      <trans-unit id="hostSystemIdForCsv" xml:space="preserve" approved="yes">
         <source>Host System Id</source>
-        <target>ホストシステム ID</target>
+        <target state="final">ホストシステム ID</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/VirtualList</context>
         </context-group>
@@ -9320,17 +9320,17 @@ Follow this url to see the full list of inactive systems:
             ソフトウェアチャンネルに含まれないものがあります。削除を実行すると、このシステムをこのスナップショットや
             以前のスナップショットにロールバックすることができなくなります。</target>
       </trans-unit>
-      <trans-unit id="list.filter.iprange" xml:space="preserve">
+      <trans-unit id="list.filter.iprange" xml:space="preserve" approved="yes">
         <source>Single Ip Address</source>
-        <target>単一の IP アドレス</target>
+        <target state="final">単一の IP アドレス</target>
       </trans-unit>
-      <trans-unit id="api.kickstart.iprange.duplicate" xml:space="preserve">
+      <trans-unit id="api.kickstart.iprange.duplicate" xml:space="preserve" approved="yes">
         <source>The Ip Range specified, {0}, conflicts with an existing Ip Range.</source>
-        <target>指定された IP の範囲 {0} は、既存の IP 範囲と競合します。</target>
+        <target state="final">指定された IP の範囲 {0} は、既存の IP 範囲と競合します。</target>
       </trans-unit>
-      <trans-unit id="api.kickstart.ip.invalid" xml:space="preserve">
+      <trans-unit id="api.kickstart.ip.invalid" xml:space="preserve" approved="yes">
         <source>The Ip Address specified, {0}, is not valid..</source>
-        <target>指定された IP アドレス {0} は無効です。</target>
+        <target state="final">指定された IP アドレス {0} は無効です。</target>
       </trans-unit>
       <trans-unit id="api.kickstart.filelist.exists" xml:space="preserve">
         <source>A file list with label {0} already exists.</source>
@@ -9677,17 +9677,17 @@ Follow this url to see the full list of inactive systems:
         <source>The repository label '{0}' is already in use, please choose a different label</source>
         <target>リポジトリーラベル '{0}' はすでに使用中です。別のラベルを選択してください</target>
       </trans-unit>
-      <trans-unit id="edit.channel.repo.invalidrepotype" xml:space="preserve">
+      <trans-unit id="edit.channel.repo.invalidrepotype" xml:space="preserve" approved="yes">
         <source>The repository type '{0}' is invalid or already in use with given url, please choose a different type</source>
-        <target>リポジトリの種類 '{0}' は正しくないか、既に指定した URL で使用されています。別の種類を選択してください</target>
+        <target state="final">リポジトリの種類 '{0}' は正しくないか、既に指定した URL で使用されています。別の種類を選択してください</target>
       </trans-unit>
-      <trans-unit id="edit.channel.repo.repourlinuse" xml:space="preserve">
+      <trans-unit id="edit.channel.repo.repourlinuse" xml:space="preserve" approved="yes">
         <source>There's already a defined repository with given url, please reuse it.</source>
-        <target>特定の URL を持つ定義済みのリポジトリーがすでにあります。そのリポジトリーを再利用してください。</target>
+        <target state="final">特定の URL を持つ定義済みのリポジトリーがすでにあります。そのリポジトリーを再利用してください。</target>
       </trans-unit>
-      <trans-unit id="edit.channel.repo.repourlinvalid" xml:space="preserve">
+      <trans-unit id="edit.channel.repo.repourlinvalid" xml:space="preserve" approved="yes">
         <source>The given url is invalid. Please enter an url with valid syntax (e.g. specify the protocol).</source>
-        <target>指定した URL は正しくありません。正しい書式 (プロトコルなど) で URL を指定してください。</target>
+        <target state="final">指定した URL は正しくありません。正しい書式 (プロトコルなど) で URL を指定してください。</target>
       </trans-unit>
       <trans-unit id="edit.channel.repo.clientcertmissing" xml:space="preserve">
         <source>Please set SSL Client Certificate, if you've set SSL Client Key.</source>
@@ -10479,9 +10479,9 @@ Alternatively, you will want to download &lt;strong&gt;Incremental Channel Conte
         <source>Channel &lt;a href="/rhn/channels/ChannelDetail.do?cid={0}"&gt;{1}&lt;/a&gt; sync completed</source>
         <target>チャンネル &lt;a href="/rhn/channels/ChannelDetail.do?cid={0}"&gt;{1}&lt;/a&gt; の同期が完了しました</target>
       </trans-unit>
-      <trans-unit id="notification.onboardingfailed" xml:space="preserve">
+      <trans-unit id="notification.onboardingfailed" xml:space="preserve" approved="yes">
         <source>Error registering minion id: {0}</source>
-        <target>minion ID の登録時にエラー: {0}</target>
+        <target state="final">minion ID の登録時にエラー: {0}</target>
       </trans-unit>
       <trans-unit id="notification.bootstraprepofailed" xml:space="preserve">
         <source>Error generating bootstrap repo for: {0}</source>
@@ -10634,13 +10634,13 @@ Alternatively, you will want to download &lt;strong&gt;Incremental Channel Conte
         <source>Calendar '{0}' does not exist</source>
         <target state="translated">カレンダー '{0}' は存在していません</target>
       </trans-unit>
-      <trans-unit id="maintenance.schedule.id.not.exists" xml:space="preserve">
+      <trans-unit id="maintenance.schedule.id.not.exists" xml:space="preserve" approved="yes">
         <source>Schedule with id '{0}' does not exist</source>
-        <target state="translated">ID '{0}' のスケジュールは存在していません</target>
+        <target state="final">ID '{0}' のスケジュールは存在していません</target>
       </trans-unit>
-      <trans-unit id="maintenance.calendar.id.not.exists" xml:space="preserve">
+      <trans-unit id="maintenance.calendar.id.not.exists" xml:space="preserve" approved="yes">
         <source>Calendar with id '{0}' does not exist</source>
-        <target state="translated">ID '{0}' のカレンダーは存在していません</target>
+        <target state="final">ID '{0}' のカレンダーは存在していません</target>
       </trans-unit>
       <trans-unit id="maintenance.action.reschedule.error.cancel" xml:space="preserve">
         <source>An error occured trying to cancel affected actions for schedule '{0}'</source>
