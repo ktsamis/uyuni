@@ -10,7 +10,7 @@ import { useExpanded } from "./useExpanded";
 
 type ArrayElement<A> = A extends readonly (infer T)[] ? T : never;
 function hasChildRows(item: any): item is { children: any[] } {
- return "children" in item && Array.isArray(item.children) && item.children.length > 0;
+  return "children" in item && Array.isArray(item.children) && item.children.length > 0;
 }
 
 export type TableLoadInfo = {
@@ -269,7 +269,7 @@ export const Table = forwardRef<TableRef, TableProps>((props, ref) => {
                 "children" in item &&
                 expanded.has(props.identifier(item)) &&
                 item.children.map((childItem, childIndex) => renderRow(childItem, childIndex, nestingLevel + 1))}
-            </React.Fragment>
+            </Fragment>
           );
         };
 
