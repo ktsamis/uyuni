@@ -446,6 +446,11 @@ DATA = {
         "PKGLIST": PKGLIST15_SALT + PKGLIST15_X86_ARM,
         "DEST": DOCUMENT_ROOT + "/pub/repositories/sle/15/4/bootstrap/",
     },
+    "OES25.4": {
+        "PDID": -51,
+        "PKGLIST": PKGLIST15_SALT + PKGLIST15_X86_ARM,
+        "DEST": DOCUMENT_ROOT + "/pub/repositories/sle/15/7/bootstrap/",
+    },
     "SLE-15-aarch64": {
         "PDID": [1589, 3052],
         "BETAPDID": [3056],
