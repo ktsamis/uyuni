@@ -1480,6 +1480,13 @@ DATA = {
         "DEST": DOCUMENT_ROOT + "/pub/repositories/raspbian/12/bootstrap/",
         "TYPE": "deb",
     },
+    "raspberrypios-12-arm64": {
+        "PDID": [-48, 3029],
+        "BETAPDID": [3031],
+        "PKGLIST": PKGLISTRASPBERRYPIOS12,
+        "DEST": DOCUMENT_ROOT + "/pub/repositories/debian/12/bootstrap/",
+        "TYPE": "deb",
+    },
     "openeuler22.03-x86_64-uyuni": {
         "BASECHANNEL": "openeuler2203-x86_64",
         "PKGLIST": OPENEULER,
@@ -1501,12 +1508,5 @@ DATA = {
         "BETAPDID": [3042],
         "PKGLIST": OPENEULER,
         "DEST": DOCUMENT_ROOT + "/pub/repositories/openEuler/24.03/bootstrap/",
-    },
-    "raspberrypios12-arm64": {
-        "PDID": [-48, 3029],
-        "BETAPDID": [3031],
-        "PKGLIST": PKGLISTRASPBERRYPIOS12,
-        "DEST": DOCUMENT_ROOT + "/pub/repositories/raspbian/12/bootstrap/",
-        "TYPE": "deb",
-    },
+    }
 }
