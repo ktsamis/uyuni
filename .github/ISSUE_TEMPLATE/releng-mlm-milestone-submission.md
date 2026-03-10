@@ -29,20 +29,28 @@ Add any additional bugzilla report, PR, or EPIC that must be included in this re
 
 You can also create sub-issues if preferred, but the needed information must be mentioned in this section for having an overview of still pending changes that could block the release.
 
-# TODO some days before
+# TODO some days before "Last day for Changes"
 
-Add more tasks if needed.
+Add more tasks if needed
+
+- [ ] Ask the Doc Squad to submit an update of the doc package to the `Devel:Galaxy:Manager:Head` project 1 day after "Last day for Changes", and ask them to warn the translators so they can start their work. A Merge Request for the [documentation.suse.com repository](https://gitlab.suse.de/susedoc/docserv-external-tree-suma) should get created a few days before the release
+- [ ] Request a Snapshot refresh at the "buildops" Team (https://gitlab.suse.de/buildops/release-support/-/issues)
+- [ ] Ask the Ion Squad to promote all salt versions that have updates, including bundle (maybe multiple times - latest on the "Last day for Changes")
+
+
+# TODO after "Last day for Changes"
+
+Add more tasks if needed
 
 - [ ] Lock the `uyuni-project/uyuni:master` and `uyuni-project/uyuni-tools:main` branches
 - [ ] Send an email to galaxy-devel@suse.de informing that branches `uyuni-project/uyuni:master` and `uyuni-project/uyuni-tools:main` are locked, and adjust the topic on the slack [#team-multi-linux-manager](https://app.slack.com/client/T02863RC2AC/C02D78LLS04) channel
-- [ ] Ask the Doc Squad to submit an update of the doc package to the `Devel:Galaxy:Manager:Head` project, and ask them to warn the translators so they can start their work. A Merge Request for the [documentation.suse.com repository](https://gitlab.suse.de/susedoc/docserv-external-tree-suma) should get created a few days before the release
 - [ ] After the branch freeze, ask [Orion](https://suse.slack.com/archives/C02DDMY6R0R) to prepare the PR for the code translations. If nobody from Orion is available, ask @parlt91. They will add us as reviewers.
-- [ ] Confirm that the SR for the documentation is merged, and translators warned
+- [ ] Confirm that the SR for the documentation is available and merged, and translators warned
 - [ ] Merge the PR for the translations with the option `Merge pull request`
-- [ ] Ask the Ion Squad to promote all salt versions that have updates, including bundle
 - [ ] Quick review changelogs with `tito-wrapper`, and request changes if needed
 - [ ] Adjust `web.version` in `web/conf/rhn_web.conf` for `master` to match the Milestone (for example `5.1.0 Alpha1`)
 - [ ] Check all the [tests](https://ci.suse.de/view/Manager/view/Manager-Head/): everything should be green, or otherwise submission must be approved by QA
+- [ ] Create the JIRA ticket, with placeholders for the IDs
 
 # TODO during the submission window
 
@@ -53,8 +61,8 @@ Add more tasks if needed (for example, asking Maintenace to change the channel d
 - [ ] Check if schema migration directories exist between older and newer SUSE Manager version (more at https://github.com/SUSE/spacewalk/wiki/Maintenance-Update-procedure)
 - [ ] Push changes to `master` and `main`
 - [ ] Tag everything with `tito tag --use-release=0`
-- [ ] For all the packages with changes at `Devel:Galaxy:Manager:Head`, `Devel:Galaxy:Manager:Head:Other` and `Devel:Galaxy:Manager:Head:Kit` submit SRs to the GA codestream, and ping autobuild for review
-- [ ] Create the JIRA ticket, with placeholders for the IDs
+- [ ] For all the packages with changes at `Devel:Galaxy:Manager:Main` and `Devel:Galaxy:Manager:Head:Kit` submit SRs to the GA codestream, and ping autobuild for review
+      For all packages managed with the GIT Workflow create a PR. (See [Submit server and proxy](https://confluence.suse.com/spaces/SUSEMANAGER/pages/1082228986/Submission+of+new+major+versions+Alpha+Beta+RC+GMC#Submissionofnewmajorversions(Alpha%2CBeta%2CRC%2CGMC)-Submitserverandproxy) and [Client Tools](https://confluence.suse.com/spaces/SUSEMANAGER/pages/1082228986/Submission+of+new+major+versions+Alpha+Beta+RC+GMC#Submissionofnewmajorversions(Alpha%2CBeta%2CRC%2CGMC)-ClientTools)
 - [ ] Prepare the submissions with `mu-massive-task` or `patch-creator` for the client tools, salt and salt bundle. For any new packages that will be added to the codestreams, fetch the groups which will maintain them (one per package) and document this at the release card.
 - [ ] Add the IDs (and notes, if any), to the JIRA ticket, and ping the Maintenace Team at [#discuss-multi-linux-manager-maintenance](https://app.slack.com/client/T02863RC2AC/C02DEF2U0E5)
 - [ ] Once autobuild approves all MRs, create the `Manager-X.Y-MILESTONE` branches on both `uyuni-project/uyuni` and `uyuni-project/uyuni-tools` (for example `Manager-5.1-Alpha1`) and push them.
