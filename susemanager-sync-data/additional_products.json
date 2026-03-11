@@ -1,5 +1,137 @@
 [
     {
+        "id" : -60,
+        "name" : "Debian",
+        "identifier" : "Debian-Client",
+        "former_identifier" : "",
+        "version" : "13",
+        "release_type" : null,
+        "arch" : "arm64",
+        "friendly_name" : "Debian 13 arm64",
+        "product_class" : "SLE-M-T",
+        "cpe" : null,
+        "free" : true,
+        "description" : null,
+        "release_stage" : "released",
+        "eula_url" : "",
+        "product_type" : "base",
+        "offline_predecessor_ids" : [
+        ],
+        "online_predecessor_ids" : [
+        ],
+        "shortname" : null,
+        "recommended" : false,
+        "extensions" : [
+        ],
+        "repositories" : [
+            {
+                "id" : -781,
+                "url" : "http://deb.debian.org/debian/dists/trixie/main/binary-arm64/",
+                "name" : "debian-13-pool",
+                "distro_target" : "arm64",
+                "description" : "Debian 13 (trixie) pool for arm64",
+                "enabled" : true,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -782,
+                "url" : "http://deb.debian.org/debian/dists/trixie-updates/main/binary-arm64/",
+                "name" : "debian-13-main-updates",
+                "distro_target" : "arm64",
+                "description" : "Debian 13 (trixie) ARM64 Main Updates",
+                "enabled" : true,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -783,
+                "url" : "http://security.debian.org/debian-security/dists/trixie-security/updates/main/binary-arm64/",
+                "name" : "debian-13-main-security",
+                "distro_target" : "arm64",
+                "description" : "Debian 13 (trixie) ARM64 Main Security",
+                "enabled" : true,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
+        "id" : -59,
+        "name" : "Debian",
+        "identifier" : "Debian-Client",
+        "former_identifier" : "",
+        "version" : "13",
+        "release_type" : null,
+        "arch" : "amd64",
+        "friendly_name" : "Debian 13",
+        "product_class" : "SLE-M-T",
+        "cpe" : null,
+        "free" : true,
+        "description" : null,
+        "release_stage" : "released",
+        "eula_url" : "",
+        "product_type" : "base",
+        "offline_predecessor_ids" : [
+        ],
+        "online_predecessor_ids" : [
+        ],
+        "shortname" : null,
+        "recommended" : false,
+        "extensions" : [
+        ],
+        "repositories" : [
+            {
+                "id" : -778,
+                "url" : "http://deb.debian.org/debian/dists/trixie/main/binary-amd64/",
+                "name" : "debian-13-pool",
+                "distro_target" : "amd64",
+                "description" : "Debian 13 (trixie) pool for amd64",
+                "enabled" : true,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "amd64"
+                ]
+            },
+            {
+                "id" : -779,
+                "url" : "http://deb.debian.org/debian/dists/trixie-updates/main/binary-amd64/",
+                "name" : "debian-13-main-updates",
+                "distro_target" : "amd64",
+                "description" : "Debian 13 (trixie) AMD64 Main Updates",
+                "enabled" : true,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "amd64"
+                ]
+            },
+            {
+                "id" : -780,
+                "url" : "http://security.debian.org/debian-security/dists/trixie-security/updates/main/binary-amd64/",
+                "name" : "debian-13-main-security",
+                "distro_target" : "amd64",
+                "description" : "Debian 13 (trixie) AMD64 Main Security",
+                "enabled" : true,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "amd64"
+                ]
+            }
+        ]
+    },
+    {
         "id" : -51,
         "name" : "Open Enterprise Server",
         "identifier" : "OES",
