@@ -1532,9 +1532,15 @@ DATA = {
         "TYPE": "deb",
     },
     "debian13-amd64": {
-        # TODO: Use the right PDIDs
-        #"PDID": [-43, 3028],
-        #"BETAPDID": [3030],
+        "PDID": [-59, 3365],
+        "BETAPDID": [3367],
+        "PKGLIST": PKGLISTDEBIAN13,
+        "DEST": DOCUMENT_ROOT + "/pub/repositories/debian/13/bootstrap/",
+        "TYPE": "deb",
+    },
+    "debian13-aarch64": {
+        "PDID": [-60, 3366],
+        "BETAPDID": [3368],
         "PKGLIST": PKGLISTDEBIAN13,
         "DEST": DOCUMENT_ROOT + "/pub/repositories/debian/13/bootstrap/",
         "TYPE": "deb",
