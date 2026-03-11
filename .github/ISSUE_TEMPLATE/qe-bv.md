@@ -39,7 +39,8 @@ assignees: ''
 
 ## Legend
 
-- Selected checkbox means, we tested it and we are done with this
+- Selected checkbox means, we tested it and the testing is completed with no
+  pending blockers to be verified as fixed in a resubmission
 - :white_check_mark: : Test/verification was successful
 - :x: : Test/verification was not successful
 - :test_tube: : Test failed due to test suite issue but succeed manually
