@@ -14,8 +14,6 @@
  */
 package com.redhat.rhn.taskomatic.task;
 
-import com.redhat.rhn.common.conf.ConfigDefaults;
-import com.redhat.rhn.common.localization.LocalizationService;
 import com.redhat.rhn.domain.notification.NotificationMessage;
 import com.redhat.rhn.domain.notification.UserNotificationFactory;
 import com.redhat.rhn.domain.notification.types.DiskCheck;
@@ -45,18 +43,12 @@ public class DiskCheckTask extends RhnJavaJob {
     @Override
     public void execute(JobExecutionContext context) {
         final DiskCheckHelper diskCheckHelper = new DiskCheckHelper();
-        LocalizationService ls = LocalizationService.getInstance();
         DiskCheckSeverity diskCheckSeverity = diskCheckHelper.executeDiskCheck();
 
         if (diskCheckSeverity.compareTo(DiskCheckSeverity.ALERT) >= 0) {
             NotificationMessage notification = UserNotificationFactory.createNotificationMessage(
                 new DiskCheck("system", diskCheckSeverity));
             UserNotificationFactory.storeNotificationMessageFor(notification, RoleFactory.ORG_ADMIN);
-
-            String subject =  diskCheckSeverity + ": System Disk Check Status from " +
-                ConfigDefaults.get().getJavaHostname();
-            String body = ls.getMessage("notification.diskcheck.details", "System", diskCheckSeverity);
-            TaskHelper.sendCustomEmail(null, subject, body);
         }
 
         final DBDiskCheckHelper dbDiskCheckHelper = new DBDiskCheckHelper();
@@ -65,10 +57,6 @@ public class DiskCheckTask extends RhnJavaJob {
             NotificationMessage notification = UserNotificationFactory.createNotificationMessage(
                 new DiskCheck("database", dbDiskCheckSeverity));
             UserNotificationFactory.storeNotificationMessageFor(notification, RoleFactory.ORG_ADMIN);
-            String subject =  dbDiskCheckSeverity + ": Database Disk Check Status from " +
-                ConfigDefaults.get().getJavaHostname();
-            String body = ls.getMessage("notification.diskcheck.details", "Database", dbDiskCheckSeverity);
-            TaskHelper.sendCustomEmail(null, subject, body);
         }
     }
 
