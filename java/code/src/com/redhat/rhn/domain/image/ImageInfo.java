@@ -33,6 +33,7 @@ import org.hibernate.annotations.Type;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -99,7 +100,7 @@ public class ImageInfo extends BaseDomainHelper {
     /**
      * @return the org
      */
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     public Org getOrg() {
         return org;
     }
@@ -107,7 +108,7 @@ public class ImageInfo extends BaseDomainHelper {
     /**
      * @return the image arch
      */
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "image_arch_id")
     public ServerArch getImageArch() {
         return imageArch;
@@ -157,7 +158,7 @@ public class ImageInfo extends BaseDomainHelper {
     /**
      * @return the image profile
      */
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "profile_id")
     public ImageProfile getProfile() {
         return profile;
@@ -166,7 +167,7 @@ public class ImageInfo extends BaseDomainHelper {
     /**
      * @return the image store
      */
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "store_id")
     public ImageStore getStore() {
         return store;
@@ -175,7 +176,7 @@ public class ImageInfo extends BaseDomainHelper {
     /**
      * @return the build server
      */
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "build_server_id")
     public MinionServer getBuildServer() {
         return buildServer;
@@ -184,7 +185,7 @@ public class ImageInfo extends BaseDomainHelper {
     /**
      * @return the build action
      */
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "build_action_id")
     public ImageBuildAction getBuildAction() {
         return buildAction;
@@ -200,7 +201,7 @@ public class ImageInfo extends BaseDomainHelper {
     /**
      * @return the inspect action
      */
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "inspect_action_id")
     public ImageInspectAction getInspectAction() {
         return inspectAction;
@@ -232,7 +233,7 @@ public class ImageInfo extends BaseDomainHelper {
     /**
      * @return the channels
      */
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "suseImageInfoChannel",
                joinColumns = { @JoinColumn(name = "image_info_id") },
                inverseJoinColumns = { @JoinColumn(name = "channel_id") })
@@ -243,7 +244,7 @@ public class ImageInfo extends BaseDomainHelper {
     /**
      * @return the installed installedProducts
      */
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "suseImageInfoInstalledProduct",
                joinColumns = { @JoinColumn(name = "image_info_id") },
                inverseJoinColumns = { @JoinColumn(name = "installed_product_id") })
@@ -297,7 +298,7 @@ public class ImageInfo extends BaseDomainHelper {
     /**
      * @return the pillar
      */
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pillar_id")
     public Pillar getPillar() {
         return pillar;
@@ -309,7 +310,7 @@ public class ImageInfo extends BaseDomainHelper {
         return deltaSourceFor;
     }
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "target_image_id", updatable = false)
     public Set<DeltaImageInfo> getDeltaTargetFor() {
         return deltaTargetFor;
@@ -318,6 +319,7 @@ public class ImageInfo extends BaseDomainHelper {
     /**
      * @return build log
      */
+    @Basic(fetch = FetchType.LAZY)
     @Column(name = "log")
     public String getBuildLog() {
         return buildLog;

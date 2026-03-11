@@ -84,7 +84,7 @@ public abstract class ImageProfile extends BaseDomainHelper {
     /**
      * @return the org
      */
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     public Org getOrg() {
         return org;
     }
@@ -92,7 +92,7 @@ public abstract class ImageProfile extends BaseDomainHelper {
     /**
      * @return the token
      */
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     public Token getToken() {
         return token;
     }
@@ -100,7 +100,7 @@ public abstract class ImageProfile extends BaseDomainHelper {
     /**
      * @return the targetStore
      */
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "target_store_id")
     public ImageStore getTargetStore() {
         return targetStore;

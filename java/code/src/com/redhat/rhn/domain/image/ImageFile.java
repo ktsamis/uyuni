@@ -24,6 +24,7 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -68,7 +69,7 @@ public class ImageFile extends BaseDomainHelper {
     /**
      * @return the image info
      */
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "image_info_id", nullable = false)
     public ImageInfo getImageInfo() {
         return imageInfo;
