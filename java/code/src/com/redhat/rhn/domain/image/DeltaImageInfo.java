@@ -43,7 +43,7 @@ public class DeltaImageInfo extends BaseDomainHelper {
      * @return the source image info
      */
     @Id
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "source_image_id", nullable = false)
     public ImageInfo getSourceImageInfo() {
         return sourceImageInfo;
@@ -60,7 +60,7 @@ public class DeltaImageInfo extends BaseDomainHelper {
      * @return the target image info
      */
     @Id
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "target_image_id", nullable = false)
     public ImageInfo getTargetImageInfo() {
         return targetImageInfo;
