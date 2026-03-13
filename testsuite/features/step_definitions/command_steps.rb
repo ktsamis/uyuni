@@ -1072,7 +1072,7 @@ end
 
 When(/^I apply a Program Temporary Fix to the containerized server$/) do
   node = get_target('server')
-  node.run('mgradm support ptf podman --ptf 30284 --user a127499', timeout: 180, runs_in_container: false)
+  node.run('mgradm support ptf podman --ptf 31240 --user a127499', timeout: 180, runs_in_container: false)
 end
 
 Then(/^I expect "([^"]*)" container to be healthy within (\d+) seconds$/) do |container, timeout|

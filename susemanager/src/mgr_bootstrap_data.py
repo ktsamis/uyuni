@@ -446,6 +446,11 @@ DATA = {
         "PKGLIST": PKGLIST15_SALT + PKGLIST15_X86_ARM,
         "DEST": DOCUMENT_ROOT + "/pub/repositories/sle/15/4/bootstrap/",
     },
+    "OES25.4": {
+        "PDID": -51,
+        "PKGLIST": PKGLIST15_SALT + PKGLIST15_X86_ARM,
+        "DEST": DOCUMENT_ROOT + "/pub/repositories/sle/15/7/bootstrap/",
+    },
     "SLE-15-aarch64": {
         "PDID": [1589, 3052],
         "BETAPDID": [3056],
@@ -1480,6 +1485,13 @@ DATA = {
         "DEST": DOCUMENT_ROOT + "/pub/repositories/raspbian/12/bootstrap/",
         "TYPE": "deb",
     },
+    "raspberrypios-12-arm64": {
+        "PDID": [-48, 3029],
+        "BETAPDID": [3031],
+        "PKGLIST": PKGLISTRASPBERRYPIOS12,
+        "DEST": DOCUMENT_ROOT + "/pub/repositories/debian/12/bootstrap/",
+        "TYPE": "deb",
+    },
     "openeuler22.03-x86_64-uyuni": {
         "BASECHANNEL": "openeuler2203-x86_64",
         "PKGLIST": OPENEULER,
@@ -1501,12 +1513,5 @@ DATA = {
         "BETAPDID": [3042],
         "PKGLIST": OPENEULER,
         "DEST": DOCUMENT_ROOT + "/pub/repositories/openEuler/24.03/bootstrap/",
-    },
-    "raspberrypios12-arm64": {
-        "PDID": [-48, 3029],
-        "BETAPDID": [3031],
-        "PKGLIST": PKGLISTRASPBERRYPIOS12,
-        "DEST": DOCUMENT_ROOT + "/pub/repositories/raspbian/12/bootstrap/",
-        "TYPE": "deb",
-    },
+    }
 }

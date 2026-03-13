@@ -1,8 +1,21 @@
 <!--
-SPDX-FileCopyrightText: 2025 SUSE LLC
+SPDX-FileCopyrightText: 2026 SUSE LLC
 
 SPDX-License-Identifier: Apache-2.0
 -->
+
+  ## IMPORTANT 📌
+
+**There are no more MUs scheduled for SUSE Manager 4.3 LTS**
+
+For now on, only the following changes are accepted in the `Manager-4.3` branch:
+
+- Bugfixes for L3 that were specifically reported for 4.3
+- Security fixes that we must release for 4.3
+
+Nothing else should be merged in `Manager-4.3` anymore.
+
+In case of doubts, please reach out to @rjmateus or @admd before proceeding with the merge.
 
 ## What does this PR change?
 

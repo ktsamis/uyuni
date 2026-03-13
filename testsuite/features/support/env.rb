@@ -1,4 +1,4 @@
-# Copyright (c) 2010-2025 SUSE LLC
+# Copyright (c) 2010-2026 SUSE LLC
 # Licensed under the terms of the MIT license.
 
 require 'English'
@@ -505,14 +505,6 @@ end
 
 Before('@slemicro') do |scenario|
   skip_this_scenario unless scenario.location.file.include? 'slemicro'
-end
-
-Before('@slemicro51_minion') do
-  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['slemicro51_minion']
-end
-
-Before('@slemicro51_ssh_minion') do
-  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['slemicro51_ssh_minion']
 end
 
 Before('@slemicro52_minion') do
