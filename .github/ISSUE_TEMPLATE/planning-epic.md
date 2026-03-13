@@ -50,6 +50,7 @@ An Epic should
 - [ ] Code is **reviewed** and approved by at least one other developer
 - [ ] **Unit tests** are written and passing
 - [ ] **Basic Cucumber tests** written by developers as part of the code changes PR (add QE in the PR)
+- [ ] Do a pre-validation of the used licenses
 - [ ] Code is **merged** into the main or a released branch
 - [ ] (OPTIONAL) **Performance metrics** are within acceptable limits
 
