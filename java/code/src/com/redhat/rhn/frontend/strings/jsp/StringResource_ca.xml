@@ -29868,32 +29868,32 @@ lt;/pgt;
         <source>CA Certificates Update</source>
         <target state="translated">Actualització de certificats de CA</target>
       </trans-unit>
-    <trans-unit id="pkg.lock.message.lockerror" xml:space="preserve">
+      <trans-unit id="pkg.lock.message.lockerror" xml:space="preserve">
         <source>Failed to lock selected packages. Can't lock multiple versions of the same package.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/packages/LockPackages.do</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">No s'han pogut blocar els paquets seleccionats. No es poden blocar diverses versions del mateix paquet.</target>
+      </trans-unit>
       <trans-unit id="system.event.actionId" xml:space="preserve">
-          <source>Action ID</source>
+        <source>Action ID</source>
         <context-group name="ctx">
           <context context-type="sourcefile">System Events Pages</context>
         </context-group>
-        <target state="new"/>
-  </trans-unit>
-        <trans-unit id="channel.jsp.sync.status.ready" xml:space="preserve">
+        <target state="translated">ID de l'acció</target>
+      </trans-unit>
+      <trans-unit id="channel.jsp.sync.status.ready" xml:space="preserve">
         <source> Completed </source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated"> Completat </target>
+      </trans-unit>
       <trans-unit id="channel.jsp.sync.status.syncing" xml:space="preserve">
         <source> In Progress </source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated"> En curs </target>
+      </trans-unit>
       <trans-unit id="channel.jsp.sync.status.created" xml:space="preserve">
         <source> New Created </source>
-      <target state="new"/>
-  </trans-unit>
-      </body>
+        <target state="translated"> Creat nou </target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
