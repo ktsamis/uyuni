@@ -11,6 +11,7 @@
 
 import os
 import json
+import threading
 from flask import Flask, abort
 from spacewalk.server import rhnSQL
 from spacewalk.common.rhnConfig import initCFG
@@ -23,6 +24,7 @@ from spacewalk.common.rhnConfig import initCFG
 # cli.show_server_banner = lambda *_: None
 
 app = Flask(__name__)
+db_lock = threading.Lock()
 
 if os.environ.get("TESTING", "0") != "1":
     initCFG("server.susemanager")
@@ -31,9 +33,10 @@ if os.environ.get("TESTING", "0") != "1":
 
 @app.route("/")
 def index():
-    result = rhnSQL.fetchone_dict(
-        rhnSQL.Statement("select '1' || '2' || '3' as testing from dual")
-    )
+    with db_lock:
+        result = rhnSQL.fetchone_dict(
+            rhnSQL.Statement("select '1' || '2' || '3' as testing from dual")
+        )
     if result:
         return "online"
     abort(503)  # Service Unavailable
@@ -54,7 +57,8 @@ _query_metering_data = rhnSQL.Statement(
 
 @app.route("/metering")
 def metering():
-    h = rhnSQL.prepare(_query_metering_data)
-    h.execute()
-    result = h.fetchall_dict() or []
+    with db_lock:
+        h = rhnSQL.prepare(_query_metering_data)
+        h.execute()
+        result = h.fetchall_dict() or []
     return json.dumps({"usage_metrics": result})
