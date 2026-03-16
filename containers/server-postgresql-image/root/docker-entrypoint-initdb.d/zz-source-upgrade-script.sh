@@ -5,14 +5,14 @@
 
 set -Eeo pipefail
 
-UPGDB_DIR="/docker-entrypoint-upgdb.d"
+UPGRADE_HOOKS_DIR="/docker-entrypoint-upgdb.d"
 
-if [ ! -d "$UPGDB_DIR" ]; then
-    echo "Upgrade scripts directory $UPGDB_DIR not found, skipping."
+if [ ! -d "$UPGRADE_HOOKS_DIR" ]; then
+    echo "Upgrade scripts directory $UPGRADE_HOOKS_DIR not found, skipping."
     exit 0
 fi
 
-for f in $(find "$UPGDB_DIR" -maxdepth 1 -type f | sort); do
+for f in $(find "$UPGRADE_HOOKS_DIR" -maxdepth 1 -type f | sort); do
     case "$f" in
         *.sh)
             echo "Running upgrade script: $f"

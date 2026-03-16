@@ -18,7 +18,11 @@ set -Eeo pipefail
 UPSTREAM_ENTRYPOINT="/usr/local/bin/docker-entrypoint.sh"
 IMAGE_REF_FILE="/etc/uyuni-image-ref"
 PGDATA="${PGDATA:-/var/lib/pgsql/data}"
-UPGDB_DIR="/docker-entrypoint-upgdb.d"
+UPGRADE_HOOKS_DIR="/docker-entrypoint-upgdb.d"
+
+log() {
+    echo "[ENTRYPOINT] $*" >&2
+}
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -53,7 +57,7 @@ stored_image_ref() {
 save_image_ref() {
     local ref_path="$PGDATA/.uyuni-image-ref"
     current_image_ref > "$ref_path"
-    echo "Stored image ref: $(cat "$ref_path")"
+    log "Stored image ref: $(cat "$ref_path")"
 }
 
 # ---------------------------------------------------------------------------
@@ -62,18 +66,18 @@ save_image_ref() {
 # ---------------------------------------------------------------------------
 
 run_upgrade_scripts() {
-    if [ ! -d "$UPGDB_DIR" ]; then
-        echo "No $UPGDB_DIR directory found, skipping upgrade scripts."
+    if [ ! -d "$UPGRADE_HOOKS_DIR" ]; then
+        echo "No $UPGRADE_HOOKS_DIR directory found, skipping upgrade scripts."
         return
     fi
 
     local files=()
     while IFS= read -r -d '' f; do
         files+=("$f")
-    done < <(find "$UPGDB_DIR" -maxdepth 1 -type f -print0 | sort -z)
+    done < <(find "$UPGRADE_HOOKS_DIR" -maxdepth 1 -type f -print0 | sort -z)
 
     if [ "${#files[@]}" -eq 0 ]; then
-        echo "No upgrade scripts found in $UPGDB_DIR, nothing to do."
+        log "No upgrade scripts found in $UPGRADE_HOOKS_DIR, nothing to do."
         return
     fi
 
@@ -82,7 +86,7 @@ run_upgrade_scripts() {
     pg_port="${PGPORT:-5432}"
 
     echo "Starting temporary postgres server for upgrade scripts..."
-    PGUSER="${PGUSER:-${POSTGRES_USER:-postgres}}" \
+    PGUSER="${PGUSER:-${POSTGRES_USER:-postgres}}" NOTIFY_SOCKET='' \
         pg_ctl -D "$PGDATA" -o "-c listen_addresses='localhost' -p ${pg_port}" -w start
 
     local attempts=30
@@ -97,19 +101,13 @@ run_upgrade_scripts() {
     done
 
     if [ "$attempt" -gt "$attempts" ]; then
-        echo "Temporary postgres did not become ready for upgrades."
+        log "Temporary postgres did not become ready for upgrades."
         pg_ctl -D "$PGDATA" status || true
         return 1
     fi
 
     local f
     for f in "${files[@]}"; do
-        if ! pg_isready --host localhost --port "$pg_port" --username "$pg_user" > /dev/null 2>&1; then
-            echo "Temporary postgres is not ready before running: $f"
-            pg_ctl -D "$PGDATA" status || true
-            return 1
-        fi
-
         case "$f" in
             *.sh)
                 if [ -x "$f" ]; then
@@ -140,34 +138,22 @@ run_upgrade_scripts() {
     PGUSER="${PGUSER:-postgres}" pg_ctl -D "$PGDATA" -m fast -w stop
 }
 
-log() {
-    echo "[ENTRYPOINT] $*" >&2
-}
-
 main() {
     if [ $# -eq 0 ]; then set -- postgres; fi
     if [ "${1:0:1}" = '-' ]; then set -- postgres "$@"; fi
-
-    if [ "$(id -u)" = '0' ]; then
-        log "Running as root, dropping privileges to postgres..."
-        if command -v setpriv > /dev/null; then
-            exec setpriv --reuid=postgres --regid=postgres --clear-groups -- "$BASH_SOURCE" "$@"
-        elif command -v runuser > /dev/null; then
-            exec runuser -u postgres -- "$BASH_SOURCE" "$@"
-        else
-            exec su -p -s /bin/bash postgres -c "$BASH_SOURCE $*"
-        fi
-    fi
 
     if [ "$1" != 'postgres' ]; then
         exec "$@"
     fi
 
     if ! db_already_exists; then
-        log "No existing database found – running initial setup."
-        mkdir -p "$PGDATA"
-        log "Delegating to upstream entrypoint: $UPSTREAM_ENTRYPOINT"
+        log "No existing database found – running upstream entrypoint: $UPSTREAM_ENTRYPOINT"
         exec "$UPSTREAM_ENTRYPOINT" "$@"
+    fi
+
+    if [ "$(id -u)" = '0' ]; then
+        log "Running as root, dropping privileges to postgres..."
+        exec setpriv --reuid=postgres --regid=postgres --clear-groups -- "$BASH_SOURCE" "$@"
     fi
 
     local current stored

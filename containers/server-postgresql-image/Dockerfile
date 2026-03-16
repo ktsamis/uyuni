@@ -41,7 +41,7 @@ LABEL org.uyuni.version="${PRODUCT_VERSION}"
 RUN /usr/sbin/groupmod -g 999 postgres && \
     /usr/sbin/usermod -u 999 -g 999 postgres
 
-RUN echo "${PRODUCT_VERSION}.%RELEASE%" > /etc/uyuni-image-ref
+RUN echo "${REFERENCE_PREFIX}/server-postgresql:${PRODUCT_VERSION}.%RELEASE%" > /etc/uyuni-image-ref
 
 ENTRYPOINT ["/uyuni-entrypoint.sh"]
 

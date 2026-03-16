@@ -58,7 +58,6 @@ function updateSeverity {
 
 # Main script
 
-CHECKONLY=false
 CHECKSEVERITY=0
 
 ensureSpacewalkRunning

@@ -30,7 +30,6 @@ if [ $DISK_EXIT_CODE -eq 3 ]; then
 fi
 
 if [ -f "$MANAGER_COMPLETE" ]; then
-    set -e
     /usr/bin/systemctl is-active multi-user.target
     salt-call --local --no-color status.ping_master localhost |grep -q True
     if ! check_manager_login; then
