@@ -44,7 +44,7 @@ General template for new joiners of the SUSE Multi-Linux team.
   - Lists at [suse.com](https://lists.suse.com/mailman/listinfo)  (whatever is interesting for the user, such as for example `sle-security-updates`, `sle-container-updates`, or `suma-updates`)
 - [ ] Slack
   - [ ] Update workflows (daily standup, meetings, etc.)
-  - [ ] Add to groups (left menu -> `...` -> `People` -> `User Groups`)
+  - [ ] Add to groups (left menu -> `Home` -> `Directories` -> `User Groups`)
     - [ ] `multi-linux-manager-engineers`
     - [ ] Squad specific group
 - [ ] Add the user to the Google [SUSE Multi-Linux Team](https://groups.google.com/a/suse.com/g/multi-linux-all/members) and squad groups (if available), to get access to the calendar (PHP, Retrospective, and all other events), and to emails send to the mailing list for the group

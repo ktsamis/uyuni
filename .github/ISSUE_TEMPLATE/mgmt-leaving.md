@@ -55,7 +55,7 @@ General template for leavers of the SUSE Multi-Linux team.
   - [ ] uyuni announce as [user](https://lists.opensuse.org/manage/lists/announce.lists.uyuni-project.org/members/member/) (to prevent bounces later), and maybe [moderator](https://lists.opensuse.org/manage/lists/announce.lists.uyuni-project.org/members/moderator/) and [owner](https://lists.opensuse.org/manage/lists/announce.lists.uyuni-project.org/members/owner/)
 - [ ] Slack
   - [ ] Update workflows (daily standup, meetings, etc.)
-  - [ ] Remove from groups (left menu -> `Directories` -> `User Groups`)
+  - [ ] Remove from groups (left menu -> `Home` -> `Directories` -> `User Groups`)
     - [ ] `multi-linux-manager-engineers`
     - [ ] `multi-linux-manager-infra`, if leaver is part of the [Infra squad](https://confluence.suse.com/display/SUSEMANAGER/Squads%2C+People+and+Topics)
     - [ ] `multi-linux-manager-coordinators`, if leaver is a [squad coordinator](https://confluence.suse.com/display/SUSEMANAGER/Squads%2C+People+and+Topics)
