@@ -206,6 +206,45 @@ PKGLISTRASPBERRYPIOS12 = [
     "venv-salt-minion",
 ]
 
+PKGLISTRASPBERRYPIOS13 = [
+    # gnupg dependencies
+    "dirmngr",
+    "gnupg",
+    "gnupg-l10n",
+    "gnupg-utils",
+    "gpg",
+    "gpg-agent",
+    "gpg-wks-client",
+    "gpgconf",
+    "gpgsm",
+    "gpgv",
+    "libassuan9",
+    "libffi8",
+    "libgcrypt20",
+    "libgnutls30t64",
+    "libgpg-error-l10n",
+    "libgpg-error0",
+    "libgpm2",
+    "libidn2-0",
+    "libksba8",
+    "libldap-common",
+    "libldap2",
+    "libncursesw6",
+    "libnpth0t64",
+    "libp11-kit0",
+    "libreadline8t64",
+    "libsasl2-2",
+    "libsasl2-modules",
+    "libsasl2-modules-db",
+    "libtasn1-6",
+    "libunistring5",
+    "pinentry-curses",
+    "readline-common",
+    # end of gnupg dependencies
+    "logrotate",
+    "venv-salt-minion",
+]
+
 DATA = {
     "SLE-12-ppc64le": {
         "PDID": [1116, 3045],
@@ -1551,15 +1590,22 @@ DATA = {
         "DEST": DOCUMENT_ROOT + "/pub/repositories/debian/13/bootstrap/",
         "TYPE": "deb",
     },
+    "raspberrypios-13-arm64": {
+        "PDID": [-61, 3366],
+        "BETAPDID": [3368],
+        "PKGLIST": PKGLISTRASPBERRYPIOS13,
+        "DEST": DOCUMENT_ROOT + "/pub/repositories/debian/13/bootstrap/",
+        "TYPE": "deb",
+    },
     "raspberrypios-13-arm64-uyuni": {
         "BASECHANNEL": "raspberrypios-13-pool-arm64-uyuni",
-        "PKGLIST": PKGLISTDEBIAN13,
+        "PKGLIST": PKGLISTRASPBERRYPIOS13,
         "DEST": DOCUMENT_ROOT + "/pub/repositories/debian/13/bootstrap/",
         "TYPE": "deb",
     },
     "raspberrypios-13-armhf-uyuni": {
         "BASECHANNEL": "raspberrypios-13-pool-armhf-uyuni",
-        "PKGLIST": PKGLISTDEBIAN13,
+        "PKGLIST": PKGLISTRASPBERRYPIOS13,
         "DEST": DOCUMENT_ROOT + "/pub/repositories/raspbian/13/bootstrap/",
         "TYPE": "deb",
     },

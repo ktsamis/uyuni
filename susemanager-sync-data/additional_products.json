@@ -1,5 +1,254 @@
 [
     {
+        "id" : -61,
+        "name" : "RaspberryPiOS",
+        "identifier" : "RaspberryPi-Client",
+        "former_identifier" : "",
+        "version" : "13",
+        "release_type" : null,
+        "arch" : "arm64",
+        "friendly_name" : "Raspberry Pi OS 13 (Tech Preview)",
+        "product_class" : "SLE-M-T-BETA",
+        "cpe" : null,
+        "free" : true,
+        "description" : null,
+        "release_stage" : "beta",
+        "eula_url" : "",
+        "product_type" : "base",
+        "offline_predecessor_ids" : [
+        ],
+        "online_predecessor_ids" : [
+            -48
+        ],
+        "shortname" : null,
+        "recommended" : false,
+        "extensions" : [
+        ],
+        "repositories" : [
+            {
+                "id" : -784,
+                "url" : "http://deb.debian.org/debian/dists/trixie/main/binary-arm64/",
+                "name" : "raspberrypios-13-pool",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) main for ARM64",
+                "enabled" : true,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -785,
+                "url" : "http://deb.debian.org/debian/dists/trixie-updates/main/binary-arm64/",
+                "name" : "raspberrypios-13-main-updates",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Main Updates",
+                "enabled" : true,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -786,
+                "url" : "http://security.debian.org/debian-security/dists/trixie-security/updates/main/binary-arm64/",
+                "name" : "raspberrypios-13-main-security",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Main Security",
+                "enabled" : true,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -787,
+                "url" : "http://deb.debian.org/debian/dists/trixie/contrib/binary-arm64/",
+                "name" : "raspberrypios-13-contrib",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Contrib",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -788,
+                "url" : "http://deb.debian.org/debian/dists/trixie/non-free/binary-arm64/",
+                "name" : "raspberrypios-13-non-free",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Non-free",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -789,
+                "url" : "http://deb.debian.org/debian/dists/trixie/non-free-firmware/binary-arm64/",
+                "name" : "raspberrypios-13-non-free-firmware",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Non-free-firmware",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -790,
+                "url" : "http://deb.debian.org/debian/dists/trixie-updates/contrib/binary-arm64/",
+                "name" : "raspberrypios-13-contrib-updates",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Contrib Updates",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -791,
+                "url" : "http://deb.debian.org/debian/dists/trixie-updates/non-free/binary-arm64/",
+                "name" : "raspberrypios-13-non-free-updates",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Non-free Updates",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -792,
+                "url" : "http://deb.debian.org/debian/dists/trixie-updates/non-free-firmware/binary-arm64/",
+                "name" : "raspberrypios-13-non-free-firmware-updates",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Non-free-firmware Updates",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -793,
+                "url" : "http://deb.debian.org/debian-security/dists/trixie-security/updates/contrib/binary-arm64/",
+                "name" : "raspberrypios-13-contrib-security",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Contrib Security",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -794,
+                "url" : "http://deb.debian.org/debian-security/dists/trixie-security/updates/non-free/binary-arm64/",
+                "name" : "raspberrypios-13-non-free-security",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Non-free Security",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -795,
+                "url" : "http://deb.debian.org/debian-security/dists/trixie-security/updates/non-free-firmware/binary-arm64/",
+                "name" : "raspberrypios-13-non-free-firmware-security",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Non-free-firmware Security",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -796,
+                "url" : "http://deb.debian.org/debian/dists/trixie-backports/main/binary-arm64/",
+                "name" : "raspberrypios-13-main-backports",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Main Backports",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -797,
+                "url" : "http://deb.debian.org/debian/dists/trixie-backports/contrib/binary-arm64/",
+                "name" : "raspberrypios-13-contrib-backports",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Contrib Backports",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -798,
+                "url" : "http://deb.debian.org/debian/dists/trixie-backports/non-free/binary-arm64/",
+                "name" : "raspberrypios-13-non-free-backports",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Non-free Backports",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -799,
+                "url" : "http://deb.debian.org/debian/dists/trixie-backports/non-free-firmware/binary-arm64/",
+                "name" : "raspberrypios-13-non-free-firmware-backports",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Non-free-firmware Backports",
+                "enabled" : false,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            },
+            {
+                "id" : -800,
+                "url" : "https://archive.raspberrypi.com/debian/dists/trixie/main/binary-arm64/",
+                "name" : "raspberrypios-13-raspberry",
+                "distro_target" : "arm64",
+                "description" : "Raspberry Pi OS 13 (trixie) ARM64 Raspberry",
+                "enabled" : true,
+                "autorefresh" : false,
+                "installer_updates" : false,
+                "arch" : [
+                    "arm64"
+                ]
+            }
+        ]
+    },
+    {
         "id" : -60,
         "name" : "Debian",
         "identifier" : "Debian-Client",
