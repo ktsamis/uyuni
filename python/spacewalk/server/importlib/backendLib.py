@@ -295,17 +295,11 @@ class TableLookup(BaseTableLookup):
         self.queryTemplate = "select * from %s where %s%s"
 
     def _buildQuery(self, key):
-        if self.__class__.__name__ == "TableLookup":
-            return self.queryTemplate % (
-                self.table.name,
-                self.whereclauses[key],
-                self.table.select_extension,
-            )
-        else:
-            return self.queryTemplate % (
-                self.table.name,
-                self.whereclauses[key],
-            )
+        return self.queryTemplate % (
+            self.table.name,
+            self.whereclauses[key],
+            self.table.select_extension,
+        )
 
 
 # pylint: disable-next=missing-class-docstring
@@ -445,10 +439,16 @@ class TableUpdate(BaseTableLookup):
 
 
 # pylint: disable-next=missing-class-docstring
-class TableDelete(TableLookup):
+class TableDelete(BaseTableLookup):
     def __init__(self, table, dbmodule):
-        TableLookup.__init__(self, table, dbmodule)
+        BaseTableLookup.__init__(self, table, dbmodule)
         self.queryTemplate = "delete from %s where %s"
+
+    def _buildQuery(self, key):
+        return self.queryTemplate % (
+            self.table.name,
+            self.whereclauses[key],
+        )
 
     def query(self, values):
         # Build the values hash
