@@ -2483,6 +2483,16 @@ INSERT INTO access.endpointNamespace (namespace_id, endpoint_id)
     ON CONFLICT DO NOTHING;
 INSERT INTO access.endpointNamespace (namespace_id, endpoint_id)
     SELECT ns.id, ep.id FROM access.namespace ns, access.endpoint ep
+    WHERE ns.namespace = 'systems.ssm' AND ns.access_mode = 'R'
+    AND ep.endpoint = '/ssm/ViewLogDetails.do' AND ep.http_method = 'GET'
+    ON CONFLICT DO NOTHING;
+INSERT INTO access.endpointNamespace (namespace_id, endpoint_id)
+    SELECT ns.id, ep.id FROM access.namespace ns, access.endpoint ep
+    WHERE ns.namespace = 'systems.ssm' AND ns.access_mode = 'R'
+    AND ep.endpoint = '/ssm/ViewLogDetails.do' AND ep.http_method = 'POST'
+    ON CONFLICT DO NOTHING;
+INSERT INTO access.endpointNamespace (namespace_id, endpoint_id)
+    SELECT ns.id, ep.id FROM access.namespace ns, access.endpoint ep
     WHERE ns.namespace = 'systems.list' AND ns.access_mode = 'R'
     AND ep.endpoint = '/systems/ssm/ListSystems.do' AND ep.http_method = 'GET'
     ON CONFLICT DO NOTHING;
