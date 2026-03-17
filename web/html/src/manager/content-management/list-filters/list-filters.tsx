@@ -243,7 +243,7 @@ const ListFilters = (props: Props) => {
         title={t("Delete Filter")}
         content={
           <span>
-            {t("Are you sure you want to delete filter")} <strong>{filterToDelete?.filter_name}</strong>?
+            {t("Are you sure you want to delete the filter")} <strong>{filterToDelete?.filter_name}</strong>?
           </span>
         }
         item={filterToDelete}
