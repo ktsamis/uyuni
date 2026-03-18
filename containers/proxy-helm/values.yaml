@@ -54,7 +54,7 @@ services:
     ## Ref: https://kubernetes.io/docs/concepts/services-networking/service/
     ## For NodePort, all ports are moved to +30000, except salt ports 32405 and 32406. See below
     ##
-    type: LoadBalancer
+    type: ClusterIP
 
     ## NodePort service ports
     ## Only used if type is NodePort
