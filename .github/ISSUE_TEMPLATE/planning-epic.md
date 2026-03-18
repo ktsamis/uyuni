@@ -50,6 +50,8 @@ An Epic should
 - [ ] Code is **reviewed** and approved by at least one other developer
 - [ ] **Unit tests** are written and passing
 - [ ] **Basic Cucumber tests** written by developers as part of the code changes PR (add QE in the PR)
+- [ ] Do a pre-validation of the used licenses submitting the source as submit request to the IBS project [Devel:Galaxy:Manager:legal-reviews](https://build.suse.de/project/show/Devel:Galaxy:Manager:legal-reviews). The project description explains what to do.
+- [ ] In case of changes to existing sources or for new spec files, ensure the URL tag in the spec file exists and is updated
 - [ ] Code is **merged** into the main or a released branch
 - [ ] (OPTIONAL) **Performance metrics** are within acceptable limits
 
