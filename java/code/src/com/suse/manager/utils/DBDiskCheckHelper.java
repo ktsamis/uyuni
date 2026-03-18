@@ -13,28 +13,33 @@ package com.suse.manager.utils;
 
 import com.redhat.rhn.common.hibernate.HibernateFactory;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.Savepoint;
+import java.sql.Statement;
 
 /**
- * Class to execute a check of the available disk space using a sql function
+ * Class to execute a check of the available disk space using a sql function.
+ * Uses a JDBC savepoint so that a failure does not poison the Hibernate transaction.
  */
 public class DBDiskCheckHelper extends DiskCheckHelper {
 
-    private static final Logger LOG = LogManager.getLogger(DBDiskCheckHelper.class);
-
     /**
-     * Executes the SQL function and returns the result as an exit code.
-     * @return the value returned from the database query.
-     * @throws IOException when a database error occurs.
-     * @see <a href="https://bugzilla.suse.com/show_bug.cgi?id=1253153">Bug 1253153</a>
+     * {@inheritDoc}
      */
     @Override
-    protected int performCheck() throws IOException, InterruptedException {
-        return HibernateFactory.getSession()
-        .createNativeQuery("SELECT get_pgsql_disk_severity()", Integer.class)
-        .getSingleResult();
+    protected int performCheck() {
+        return HibernateFactory.getSession().doReturningWork(connection -> {
+            Savepoint sp = connection.setSavepoint();
+            try (Statement stmt = connection.createStatement();
+                 ResultSet rs = stmt.executeQuery("SELECT get_pgsql_disk_severity()")) {
+                rs.next();
+                connection.releaseSavepoint(sp);
+                return rs.getInt(1);
+            }
+            catch (Exception e) {
+                connection.rollback(sp);
+                throw e;
+            }
+        });
     }
 }
