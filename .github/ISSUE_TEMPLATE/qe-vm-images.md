@@ -49,8 +49,9 @@ installation is enough.
   - [ ] SelfInstall-Build
   - [ ] Raw-Build
 - [ ] s390
-  - [ ]  qcow2 under KVM
-  - [ ]  Raw DASD under z/VM
+  - [ ] qcow2 under KVM
+  - [ ] Raw ECKD DASD under z/VM
+  - [ ] Raw FBA DASD under z/VM
 - [ ] PowerPC
   - [ ] Raw 4096
   - [ ] ISO self install 4096
