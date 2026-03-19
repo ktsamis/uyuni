@@ -9668,6 +9668,9 @@ For a detailed analysis, please refer to the log files.</source>
       <trans-unit id="notification.proxybackupnominion" xml:space="preserve">
         <source>No system with {0} name</source>
       </trans-unit>
+      <trans-unit id="pxeeventfailed" xml:space="preserve">
+        <source>Processing of a PXE event failed</source>
+      </trans-unit>
       <trans-unit id="notification.pxeeventfailed" xml:space="preserve">
         <source>Processing of a PXE event for the minion {0} failed</source>
       </trans-unit>
