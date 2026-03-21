@@ -1259,6 +1259,8 @@ class RepoSync(object):
                 existing_errata, notice["version"], updated_date, e["packages"]
             )
         ):
+            # We have it already. Save the name for later use
+            self.all_errata.add(patch_name)
             return None
 
         e["errata_from"] = notice["from"]
