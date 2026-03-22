@@ -1259,6 +1259,11 @@ class RepoSync(object):
                 existing_errata, notice["version"], updated_date, e["packages"]
             )
         ):
+            # We already have this erratum and it does not need an update.
+            # Track its advisory name in self.all_errata so that later strict-mode
+            # cleanup logic does not delete errata that were present in the channel
+            # before the current sync run.
+            self.all_errata.add(patch_name)
             return None
 
         e["errata_from"] = notice["from"]
