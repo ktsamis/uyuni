@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Mar 23 08:26:56 CET 2026 - marina.latini@suse.com
+
+- version 5.1.13
+  * Allow LDAP users that are not visible to pam_unix (bsc#1256791)
+
+-------------------------------------------------------------------
 Sat Jan 17 00:57:53 CET 2026 - marina.latini@suse.com
 
 - version 5.1.12
