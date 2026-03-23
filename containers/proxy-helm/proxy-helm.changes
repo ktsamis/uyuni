@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Mar 23 08:14:04 CET 2026 - marina.latini@suse.com
+
+- version 5.1.12
+  * Use ClusterIP by default for proxy services (bsc#1258111)
+
+-------------------------------------------------------------------
 Sat Jan 17 00:43:51 CET 2026 - marina.latini@suse.com
 
 - version 5.1.11

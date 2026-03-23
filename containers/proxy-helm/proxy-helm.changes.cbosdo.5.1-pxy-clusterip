@@ -1,1 +1,0 @@
-- Use ClusterIP by default for proxy services (bsc#1258111)
