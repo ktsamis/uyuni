@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Mon Mar 23 08:33:23 CET 2026 - marina.latini@suse.com
+
+- version 5.1.9-0
+  * Add bootstrap repo definition and spacewalk-common-channels
+    for RHEL10 clones
+  * Add Debian 13 and Raspberry Pi OS 13 repositories
+
+-------------------------------------------------------------------
 Sat Jan 17 01:26:28 CET 2026 - marina.latini@suse.com
 
 - version 5.1.8-0
