@@ -1,4 +1,43 @@
 -------------------------------------------------------------------
+Mon Mar 23 08:47:29 CET 2026 - marina.latini@suse.com
+
+- version 5.1.24-0
+  * Removed the expensive diff column (bsc#1256044)
+  * Add Action ID info to the Systems event history page
+  * Knowledgebase menu updated to point to new URL. (bsc#1250557)
+  * Fix updating "modified" column in TaskoRun and TaskoSchedule
+    (bsc#1258378)
+  * Fix SSO metadata response in XML format
+  * Fix SQL grammar for rescheduling actions (bsc#1257022)
+  * Add OpenID Connect login endpoint for MCP security integration
+  * Block multiple versions of the same package from being
+    locked (bsc#1246315)
+  * Use PackageEvr instead of string for fix_version (bsc#1252638)
+  * Commit DB changes before refreshing pillar for SSH push minions
+    (bsc#1253712)
+  * Fix return type for sync.content.listProducts (bsc#1256422)
+  * Fix SCC cache lookup when username have special chars
+  * Use Hub URL for SCC lookup when server is a HUB and Peripheral
+    at same time
+  * Do not load additional repos in peripheral server (bsc#1257967)
+  * Fix Debian repos sync in peripheral (bsc#1257647)
+  * Fix API docs for several hub endpoints (bsc#1256493)
+  * Fix permission check when assigning system groups to a user
+    (bsc#1257674)
+  * Remove hub register API method
+  * Improve performance by using lazy fetch for ImageDetails
+    and related classes (bsc#1252548)
+  * Allow @ for user name on bootstrapping with web UI (bsc#1254629)
+  * Optimize schedule queries for performance (bsc#1257621,
+    bsc#1259127)
+  * Add RBAC endpoint mappings (bsc#1257760)
+  * Add support for Debian 13
+  * Allow read-only users to call logout (bsc#1259471)
+  * Fix migration of peripheral servers to ISSv3
+  * Add listPeripheralServers API method
+  * Add all vendor repo channels to hub access token(bsc#1259230)
+
+-------------------------------------------------------------------
 Wed Feb 04 13:29:10 CET 2026 - michael.calmer@suse.com
 
 - version 5.1.23-0
