@@ -1,4 +1,25 @@
 -------------------------------------------------------------------
+Mon Mar 23 08:35:52 CET 2026 - marina.latini@suse.com
+
+- version 5.1.15-0
+  * Add RBAC mappings for affected systems link in SSM patches page
+    (bsc#1256590)
+  * Add OpenID Connect login endpoint for MCP security integration
+  * Refactor oval related tables (bsc#1252638)
+  * Add hubsync endpoints to repo-sync Debian repos in peripheral
+    (bsc#1257647)
+  * Remove hub register API method
+  * Endpoint table cleanup
+  * Remove truncated invalid errata (bsc#1259057)
+  * Fix schema migration for (bsc#1244321)
+  * Add indexes to improve schedule queries performance
+    (bsc#1257621, bsc#1259127)
+  * Add RBAC endpoint mappings (bsc#1257760)
+  * Restrict software management access only to channel admin
+    (bsc#1259416)
+  * Add missing SSM-related RBAC endpoints (bsc#1259519)
+
+-------------------------------------------------------------------
 Sat Jan 17 00:37:53 CET 2026 - marina.latini@suse.com
 
 - version 5.1.14-0
