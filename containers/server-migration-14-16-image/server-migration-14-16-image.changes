@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Mon Mar 23 08:27:33 CET 2026 - marina.latini@suse.com
+
+- version 5.1.12
+  * Image rebuilt to the newest version with updated dependencies
+    for SUSE Multi-Linux Manager 5.1.3
+
+-------------------------------------------------------------------
 Sat Jan 17 00:58:36 CET 2026 - marina.latini@suse.com
 
 - version 5.1.11
