@@ -1,4 +1,16 @@
 -------------------------------------------------------------------
+Mon Mar 23 08:39:08 CET 2026 - marina.latini@suse.com
+
+- version 5.1.15-0
+  * Fix wrong Raspberry Pi OS 12 bootstrap repo creation
+    (bsc#1252867)
+  * Add OES25.4 support (bsc#1249675)
+  * Add bootstrap repo definition and spacewalk-common-channels
+    for RHEL10 clones
+  * Add bootstrap repositories for Debian 13 and
+    Raspberry Pi OS 13
+
+-------------------------------------------------------------------
 Sat Jan 17 01:27:48 CET 2026 - marina.latini@suse.com
 
 - version 5.1.14-0
