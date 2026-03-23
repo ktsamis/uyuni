@@ -1,4 +1,16 @@
 -------------------------------------------------------------------
+Mon Mar 23 08:40:00 CET 2026 - marina.latini@suse.com
+
+- version 5.1.19-0
+  * Refined UI spacing and alignment in password policy form
+  * Improved form alerts auto-scroll to top on submit
+  * CLM filter page UI improvement (bsc#1253034)
+  * Fix inconsistent YAML HTML rendering and
+    add ID to generated textarea (bsc#1258168)
+  * Enable editing of null variables in Ansible WebUI
+    (bsc#1258017)
+
+-------------------------------------------------------------------
 Thu Feb 12 11:01:26 WET 2026 - psuarezhernandez@suse.com
 
 - version 5.1.18-0
