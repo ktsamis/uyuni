@@ -95,7 +95,7 @@ public class KickstartFormatter {
     {"pyOpenSSL", "rhnlib", "libxml2-python", "libxml2"};
     public static final String[] FRESH_PKG_NAMES_RHEL8 =
     {"rhn-client-tools", "dnf-plugin-spacewalk", "rhnlib", "spacewalk-koan"};
-    public static final String[] FRESH_PKG_NAMES_RHEL8_FOR_SALT = {"salt-minion"};
+    public static final String[] FRESH_PKG_NAMES_RHEL8_FOR_SALT = {"venv-salt-minion"};
     private static final String REMOTE_CMD =
         "mkdir -p /etc/sysconfig/rhn/allowed-actions/script" + NEWLINE +
         "touch /etc/sysconfig/rhn/allowed-actions/script/run";
