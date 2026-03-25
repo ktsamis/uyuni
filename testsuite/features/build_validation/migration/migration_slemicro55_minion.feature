@@ -1,7 +1,8 @@
-# Copyright (c) 2025 SUSE LLC
+# Copyright (c) 2025-2026 SUSE LLC
 # Licensed under the terms of the MIT license.
 
 @slemicro55_minion
+# SL Micro 6.1 is reposynched even if there is no SL Micro 6.1 minion deployed
 Feature: Migrate a SLE Micro 5.5 Salt minion to SL Micro 6.1
 
   Scenario: Log in as admin user
