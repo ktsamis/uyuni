@@ -323,11 +323,7 @@ public class KickstartScheduleCommandTest extends BaseKickstartCommandTestCase {
         cmd.setProfileType(profileType);
         cmd.setServerProfileId(otherServerId);
         cmd.setProfileId(profileId);
-        ValidatorError ve = cmd.store();
-        assertEquals("kickstart.schedule.noup2date", ve.getKey());
-        PackageManagerTest.
-        addUp2dateToSystemAndChannel(user, server,
-                KickstartScheduleCommand.UP2DATE_VERSION, c);
+        assertNull(cmd.store());
         assertCmdSuccess(cmd);
         assertCmdSuccess(cmd);
 
