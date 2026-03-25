@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Wed Mar 25 14:17:07 CET 2026 - marina.latini@suse.com
+
+- version 5.1.16-0
+  * Re-apply missing schema update scripts (bsc#1259590)
+
+-------------------------------------------------------------------
 Mon Mar 23 08:35:52 CET 2026 - marina.latini@suse.com
 
 - version 5.1.15-0
