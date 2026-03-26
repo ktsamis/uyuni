@@ -1,4 +1,4 @@
-# Copyright 2021-2025 SUSE LLC
+# Copyright 2021-2026 SUSE LLC
 # Licensed under the terms of the MIT license.
 
 require 'net/http'
@@ -144,7 +144,7 @@ end
 Then(/^the "([^"]*)" host should be present on private network$/) do |host|
   node = get_target('proxy')
   output, return_code = node.run("ping -n -c 1 -I #{node.private_interface} #{net_prefix}#{PRIVATE_ADDRESSES[host]}")
-  raise SystemCallError, "Terminal #{host} does not answer on eth1: #{output}" unless return_code.zero?
+  raise SystemCallError, "Terminal #{host} does not answer on #{node.private_interface}: #{output}" unless return_code.zero?
 end
 
 Then(/^name resolution should work on private network$/) do
@@ -166,7 +166,7 @@ Then(/^name resolution should work on private network$/) do
 end
 
 When(/^I restart the network on the PXE boot minion$/) do
-  execute_expect_command_proxy('pxeboot_minion', 'restart-network-pxeboot.exp', 'eth1')
+  execute_expect_command_proxy('pxeboot_minion', 'restart-network-pxeboot.exp')
 end
 
 When(/^I reboot the (Retail|Cobbler) terminal "([^"]*)" through the interface "([^"]*)"$/) do |context, host, interface|
@@ -182,15 +182,17 @@ When(/^I reboot the (Retail|Cobbler) terminal "([^"]*)" through the interface "(
   end
   mac = mac.tr(':', '')
   hex = (("#{mac[0..5]}fffe#{mac[6..11]}").to_i(16) ^ 0x0200000000000000).to_s(16)
-  ipv6 = "fe80::#{hex[0..3]}:#{hex[4..7]}:#{hex[8..11]}:#{hex[12..15]}%#{interface}"
+
+  proxy = get_target('proxy')
+  ipv6 = "fe80::#{hex[0..3]}:#{hex[4..7]}:#{hex[8..11]}:#{hex[12..15]}%#{proxy.private_interface}"
   log "Rebooting #{ipv6}..."
   file = 'reboot-pxeboot.exp'
   source = "#{File.dirname(__FILE__)}/../upload_files/#{file}"
   dest = "/tmp/#{file}"
-  success = file_inject(get_target('proxy'), source, dest)
+  success = file_inject(proxy, source, dest)
   raise ScriptError, 'File injection failed' unless success
 
-  get_target('proxy').run("expect -f /tmp/#{file} #{ipv6} #{context}")
+  proxy.run("expect -f /tmp/#{file} #{ipv6} #{context}")
 end
 
 When(/^I create the bootstrap script for "([^"]+)" hostname and "([^"]*)" activation key on "([^"]*)"$/) do |hostname, key, host|
@@ -206,7 +208,7 @@ When(/^I create the bootstrap script for "([^"]+)" hostname and "([^"]*)" activa
 end
 
 When(/^I bootstrap pxeboot minion via bootstrap script on the proxy$/) do
-  execute_expect_command_proxy('pxeboot_minion', 'bootstrap-pxeboot.exp', 'eth1')
+  execute_expect_command_proxy('pxeboot_minion', 'bootstrap-pxeboot.exp')
 end
 
 When(/^I accept key of pxeboot minion in the Salt master$/) do
@@ -226,7 +228,7 @@ When(/^I install the GPG key of the test packages repository on the PXE boot min
 end
 
 When(/^I wait until Salt client is inactive on the PXE boot minion$/) do
-  execute_expect_command_proxy('pxeboot_minion', 'wait-end-of-cleanup-pxeboot.exp', 'eth1')
+  execute_expect_command_proxy('pxeboot_minion', 'wait-end-of-cleanup-pxeboot.exp')
 end
 
 When(/^I prepare the retail configuration file on server$/) do
