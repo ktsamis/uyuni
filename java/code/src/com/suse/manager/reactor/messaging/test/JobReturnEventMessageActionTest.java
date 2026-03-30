@@ -2386,4 +2386,25 @@ public class JobReturnEventMessageActionTest extends JMockBaseTestCaseWithUser {
         assertDoesNotThrow(() ->
                 saltUtils.updateServerAction(saDiff, 0L, true, "", dummyJsonResult, dummyFunction, null));
     }
+
+    @Test
+    public void testSles16VerifyJobReturnIsProcessedWithoutError() throws Exception {
+        MinionServer minion = MinionServerFactoryTest.createTestMinionServer(user);
+        minion.setMinionId("192.168.101.240");
+        ServerFactory.save(minion);
+
+        Action applyStatesAction = ActionFactoryTest.createAction(user, ActionFactory.TYPE_APPLY_STATES);
+        ServerAction sa = ActionFactoryTest.createServerAction(minion, applyStatesAction);
+        applyStatesAction.addServerAction(sa);
+
+        Optional<JobReturnEvent> event = JobReturnEvent.parse(
+                getJobReturnEvent("sles16.verify.job.return.json", applyStatesAction.getId()));
+        assertTrue(event.isPresent(), "sles16 verify fixture must parse cleanly");
+
+        JobReturnEventMessage message = new JobReturnEventMessage(event.get());
+        JobReturnEventMessageAction messageAction = new JobReturnEventMessageAction(saltServerActionService, saltUtils);
+
+        assertDoesNotThrow(() -> messageAction.execute(message),
+                "Sles16 verify job return must be handled without throwing");
+    }
 }

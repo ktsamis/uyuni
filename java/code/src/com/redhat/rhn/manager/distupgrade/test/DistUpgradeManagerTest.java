@@ -76,11 +76,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import com.redhat.rhn.domain.server.MinionServer;
+import com.redhat.rhn.domain.server.test.MinionServerFactoryTest;
 
 /**
  * Tests for {@link DistUpgradeManager} methods.
@@ -1006,5 +1015,296 @@ public class DistUpgradeManagerTest extends BaseTestCaseWithUser {
 
         assertNotNull(targetProductSets);
         assertEquals(0, targetProductSets.size());
+    }
+
+    private static SUSEProduct buildSlesProduct(String name, String version, boolean base) {
+        SUSEProduct p = new SUSEProduct(name);
+        p.setVersion(version);
+        p.setBase(base);
+        p.setProductId(42L);
+        p.setFriendlyName(name + " " + version);
+        return p;
+    }
+
+    private static JsonObject buildVerifySuccessResult(String comment) {
+        JsonObject state = new JsonObject();
+        state.addProperty("result", true);
+        state.addProperty("comment", comment);
+        JsonObject root = new JsonObject();
+        root.add("sles16_migration_success", state);
+        return root;
+    }
+
+    private static JsonObject buildVerifyFailureResult(String comment) {
+        JsonObject state = new JsonObject();
+        state.addProperty("result", false);
+        state.addProperty("comment", comment);
+        JsonObject root = new JsonObject();
+        root.add("sles16_migration_failed", state);
+        return root;
+    }
+
+    private static JsonObject buildUnrelatedStateResult() {
+        JsonObject state = new JsonObject();
+        state.addProperty("result", true);
+        JsonObject root = new JsonObject();
+        root.add("some_other_state", state);
+        return root;
+    }
+
+
+ 
+    @Test
+    public void testIsSles15To16MigrationTrue() {
+        SUSEProduct from = buildSlesProduct("sles", "15.7", true);
+        SUSEProduct to   = buildSlesProduct("sles", "16.0", true);
+        DistUpgradeActionDetails details = new DistUpgradeActionDetails();
+        details.setProductUpgrades(Set.of(new SUSEProductUpgrade(from, to)));
+        assertTrue(details.isSles15To16Migration());
+    }
+
+    @Test
+    public void testIsVerificationStateResultTrueForSuccess() {
+        assertTrue(DistUpgradeAction.isMajorMigrationVerificationResult(
+                buildVerifySuccessResult("SLES 16 migration completed successfully")));
+    }
+
+    @Test
+    public void testIsVerificationStateResultTrueForFailure() {
+        assertTrue(DistUpgradeAction.isMajorMigrationVerificationResult(
+                buildVerifyFailureResult("SLES 16 migration may have failed")));
+    }
+
+    @Test
+    public void testIsVerificationStateResultFalseForUnrelatedResult() {
+        assertFalse(DistUpgradeAction.isMajorMigrationVerificationResult(buildUnrelatedStateResult()));
+    }
+
+    @Test
+    public void testIsVerificationStateResultFalseForNull() {
+        assertFalse(DistUpgradeAction.isMajorMigrationVerificationResult(null));
+    }
+
+    @Test
+    public void testIsVerificationStateResultFalseForNonObject() {
+        assertFalse(DistUpgradeAction.isMajorMigrationVerificationResult(
+                JsonParser.parseString("\"not-an-object\"")));
+    }
+    
+    @Test
+    public void testHandleVerificationResultSuccess() throws Exception {
+        MinionServer minion = MinionServerFactoryTest.createTestMinionServer(user);
+        DistUpgradeAction dupAction = (DistUpgradeAction) ActionFactoryTest.createAction(
+                user, ActionFactory.TYPE_DIST_UPGRADE);
+        dupAction.setDetailsMap(new HashMap<>());
+        ServerAction sa = ActionFactoryTest.createServerAction(minion, dupAction);
+        dupAction.addServerAction(sa);
+        DistUpgradeActionDetails det = new DistUpgradeActionDetails();
+        det.setServer(minion);
+        det.setDryRun(false);
+        dupAction.setDetails(det);
+
+        String comment = "SLES 16 migration completed successfully\nCurrent OS: SLES 16.0";
+        sa.setStatusPickedUp();
+        dupAction.handleUpdateServerAction(sa, buildVerifySuccessResult(comment), null);
+
+        assertTrue(sa.isStatusCompleted(), "Verify success must set action COMPLETED");
+        assertNotNull(sa.getCompletionTime(), "Completion time must be set");
+        assertTrue(sa.getResultMsg().contains(comment), "Result must include Salt comment");
+        assertTrue(sa.getResultMsg().contains("zypper packages --orphaned"),
+                "Result must include post-migration recommendations");
+    }
+
+    @Test
+    public void testHandleVerificationResultFailure() throws Exception {
+        MinionServer minion = MinionServerFactoryTest.createTestMinionServer(user);
+        DistUpgradeAction dupAction = (DistUpgradeAction) ActionFactoryTest.createAction(
+                user, ActionFactory.TYPE_DIST_UPGRADE);
+        dupAction.setDetailsMap(new HashMap<>());
+        ServerAction sa = ActionFactoryTest.createServerAction(minion, dupAction);
+        dupAction.addServerAction(sa);
+        DistUpgradeActionDetails det = new DistUpgradeActionDetails();
+        det.setServer(minion);
+        det.setDryRun(false);
+        dupAction.setDetails(det);
+
+        sa.setStatusPickedUp();
+        dupAction.handleUpdateServerAction(sa,
+                buildVerifyFailureResult("SLES 16 migration may have failed"), null);
+
+        assertTrue(sa.isStatusFailed(), "Verify failure must set action FAILED");
+        assertNotNull(sa.getCompletionTime(), "Completion time must be set on failure");
+        assertTrue(sa.getResultMsg().contains("failed"));
+    }
+
+    // -- handleUpdateServerAction(): initial migration keeps action In Progress
+
+    @Test
+    public void testInitialMigrationStateKeepsActionInProgress() throws Exception {
+        MinionServer minion = MinionServerFactoryTest.createTestMinionServer(user);
+        DistUpgradeAction dupAction = (DistUpgradeAction) ActionFactoryTest.createAction(
+                user, ActionFactory.TYPE_DIST_UPGRADE);
+        dupAction.setDetailsMap(new HashMap<>());
+        ServerAction sa = ActionFactoryTest.createServerAction(minion, dupAction);
+        dupAction.addServerAction(sa);
+
+        DistUpgradeActionDetails det = new DistUpgradeActionDetails();
+        det.setServer(minion);
+        det.setDryRun(false);
+        det.setProductUpgrades(Set.of(new SUSEProductUpgrade(
+                buildSlesProduct("sles", "15.7", true),
+                buildSlesProduct("sles", "16.0", true))));
+        dupAction.setDetails(det);
+
+        // Simulate SaltUtils prematurely marking the action complete
+        sa.setStatusCompleted();
+
+        // A non-verify result (e.g. the initial sles16.sls state completing)
+        dupAction.handleUpdateServerAction(sa, buildUnrelatedStateResult(), null);
+
+        assertTrue(sa.isStatusPickedUp(),
+                "Action must be reset to In Progress while minion is offline after migration start");
+    }
+
+    /**
+     * ActionManager.scheduleDistUpgrade() must pass forcePackageListRefresh=false to Taskomatic
+     * for a SLES 15->16 cross-major migration.
+     *
+     * This is critical: the minion reboots offline during the DMS migration. Any package
+     * refresh triggered beforehand would fail or produce stale data. The flag is suppressed
+     * and will be triggered manually once the minion reconnects and verification passes.
+     */
+    @Test
+    public void testScheduleDistUpgradeSles16DoesNotForcePackageListRefresh() throws Exception {
+        // Set up a SLES 15 -> 16 migration — products that satisfy isSles15To16Migration()
+        SUSEProduct sles15 = buildSlesProduct("sles", "15.7", true);
+        SUSEProduct sles16 = buildSlesProduct("sles", "16.0", true);
+
+        MinionServer minion = MinionServerFactoryTest.createTestMinionServer(user);
+        Channel subscribedChannel = ChannelFactoryTest.createTestChannel(user);
+        minion.addChannel(subscribedChannel);
+
+        DistUpgradeActionDetails det = new DistUpgradeActionDetails();
+        det.setServer(minion);
+        det.setDryRun(false);
+        det.setAllowVendorChange(false);
+        det.setProductUpgrades(Set.of(new SUSEProductUpgrade(sles15, sles16)));
+
+        Channel sles16Channel = ChannelFactoryTest.createTestChannel(user);
+        DistUpgradeChannelTask subscribeTask = new DistUpgradeChannelTask();
+        subscribeTask.setChannel(sles16Channel);
+        subscribeTask.setTask(DistUpgradeChannelTask.SUBSCRIBE);
+        det.addChannelTask(subscribeTask);
+
+        Map<Long, DistUpgradeActionDetails> detailsMap = Map.of(minion.getId(), det);
+
+        // Capture the forcePackageListRefresh argument passed to Taskomatic
+        TaskomaticApi taskomaticMock = context.mock(TaskomaticApi.class, "taskomaticSles16Test");
+        ActionManager.setTaskomaticApi(taskomaticMock);
+
+        // The key assertion: must call scheduleActionExecution(action, false) for SLES16 migrations
+        context.checking(new Expectations() { {
+            oneOf(taskomaticMock).scheduleActionExecution(
+                    with(any(Action.class)),
+                    with(equal(false)));
+        } });
+
+        List<DistUpgradeAction> actions = ActionManager.scheduleDistUpgrade(
+                user, new Date(), null, false, detailsMap);
+
+        assertFalse(actions.isEmpty(), "Should have scheduled at least one action");
+    }
+
+    private JsonElement loadSles16VerifySuccessFixture() {
+        try (var reader = new java.io.InputStreamReader(
+                getClass().getResourceAsStream(
+                        "/com/suse/manager/reactor/messaging/test/sles16_verify_success.json"))) {
+            return JsonParser.parseReader(reader);
+        }
+        catch (java.io.IOException e) {
+            throw new RuntimeException("Failed to load sles16_verify_success.json fixture", e);
+        }
+    }
+
+    @Test
+    public void testIsVerificationStateResultWithRealFullStateKey() {
+        JsonElement result = loadSles16VerifySuccessFixture();
+        assertTrue(DistUpgradeAction.isMajorMigrationVerificationResult(result),
+                "The real full state key must be detected as a verify result");
+    }
+
+    @Test
+    public void testIsVerificationStateResultFalseForRealInitialMigrationResult() {
+        JsonObject rebootState = new JsonObject();
+        rebootState.addProperty("result", true);
+        rebootState.addProperty("comment", "Command \"/usr/sbin/shutdown -r +1\" run");
+
+        JsonObject markerState = new JsonObject();
+        markerState.addProperty("result", true);
+        markerState.addProperty("comment", "File /var/lib/uyuni/sles16_migration_started updated");
+
+        JsonObject result = new JsonObject();
+        result.add("cmd_|-sles16_migration_reboot_|-/usr/sbin/shutdown -r +1_|-run", rebootState);
+        result.add("file_|-sles16_migration_marker_|-/var/lib/uyuni/sles16_migration_started_|-managed",
+                markerState);
+
+        assertFalse(DistUpgradeAction.isMajorMigrationVerificationResult(result),
+                "The initial sles16.sls result must NOT be detected as a verify result");
+    }
+
+    @Test
+    public void testHandleVerificationResultSuccessWithRealFixture() throws Exception {
+        MinionServer minion = MinionServerFactoryTest.createTestMinionServer(user);
+        DistUpgradeAction dupAction = (DistUpgradeAction) ActionFactoryTest.createAction(
+                user, ActionFactory.TYPE_DIST_UPGRADE);
+        dupAction.setDetailsMap(new HashMap<>());
+        ServerAction sa = ActionFactoryTest.createServerAction(minion, dupAction);
+        dupAction.addServerAction(sa);
+        DistUpgradeActionDetails det = new DistUpgradeActionDetails();
+        det.setServer(minion);
+        det.setDryRun(false);
+        dupAction.setDetails(det);
+
+        sa.setStatusPickedUp();
+        dupAction.handleUpdateServerAction(sa, loadSles16VerifySuccessFixture(), null);
+
+        assertTrue(sa.isStatusCompleted(),
+                "Real verify success result must set action to COMPLETED");
+        assertNotNull(sa.getCompletionTime());
+
+        String msg = sa.getResultMsg();
+        assertTrue(msg.contains("SLES 16 migration completed successfully"),
+                "Result message must contain the real Salt comment prefix");
+        assertTrue(msg.contains("Current OS: SLES 16.0"),
+                "Result message must contain the OS version from the real comment");
+        assertTrue(msg.contains("zypper packages --orphaned"),
+                "Result message must include post-migration recommendations");
+    }
+    @Test
+    public void testHandleVerificationExtractsMessageFallbackWhenNoComment() throws Exception {
+        MinionServer minion = MinionServerFactoryTest.createTestMinionServer(user);
+        DistUpgradeAction dupAction = (DistUpgradeAction) ActionFactoryTest.createAction(
+                user, ActionFactory.TYPE_DIST_UPGRADE);
+        dupAction.setDetailsMap(new HashMap<>());
+        ServerAction sa = ActionFactoryTest.createServerAction(minion, dupAction);
+        dupAction.addServerAction(sa);
+        DistUpgradeActionDetails det = new DistUpgradeActionDetails();
+        det.setServer(minion);
+        det.setDryRun(false);
+        dupAction.setDetails(det);
+
+        JsonObject stateNoComment = new JsonObject();
+        stateNoComment.addProperty("result", false);
+        JsonObject noCommentResult = new JsonObject();
+        noCommentResult.add(
+                "test_|-sles16_migration_failed_|-sles16_migration_failed_|-configurable_test_state",
+                stateNoComment);
+
+        sa.setStatusPickedUp();
+        dupAction.handleUpdateServerAction(sa, noCommentResult, null);
+
+        assertTrue(sa.isStatusFailed(), "Missing comment must still fail the action");
+        assertTrue(sa.getResultMsg().contains("Migration verification finished"),
+                "Fallback message must be used when 'comment' field is absent");
     }
 }
