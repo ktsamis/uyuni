@@ -446,6 +446,9 @@ public class SPMigrationAction extends RhnAction {
 
     /**
      * Identify the extensions which don't have successors and set that information in the request.
+     * For SLES 16.x migration targets where source is SLES 15, skips the missing successors check and instead sets
+     * the hasSLES16Target flag to trigger the pre-flight checklist in the UI.
+     * OUT: MISSING_SUCCESSOR_EXTENSIONS or hasSLES16Target
      * @param request
      * @param sourceProducts installed or selected products
      * @param targetProducts target products
@@ -455,11 +458,23 @@ public class SPMigrationAction extends RhnAction {
         Set<SUSEProduct> missingSuccessors = new HashSet<>();
 
         DistUpgradeManager.removeIncompatibleTargets(sourceProducts, targetProducts, missingSuccessors);
-        request.setAttribute(MISSING_SUCCESSOR_EXTENSIONS, missingSuccessors.stream()
-            .map(SUSEProduct::getFriendlyName)
-            .toList());
+        boolean isSLES15Source = sourceProducts
+                .map(SUSEProductSet::getBaseProduct)
+                .filter(Objects::nonNull)
+                .map(SUSEProduct::isSles15)
+                .orElse(false);
+        boolean isSLES16Target = targetProducts.stream()
+                .map(SUSEProductSet::getBaseProduct)
+                .anyMatch(p -> p != null && p.isSles16());
+        // Skip the successors warning for specific SLES 15 -> 16 migrations, show the pre-flight checklist instead
+        if (isSLES15Source && isSLES16Target) {
+            request.setAttribute("hasSLES16Target", true);
+        }
+        else {
+            request.setAttribute(MISSING_SUCCESSOR_EXTENSIONS, missingSuccessors.stream()
+                    .map(SUSEProduct::getFriendlyName).toList());
+        }
     }
-
     /**
      * Find the destination given the current page and the dispatch string.
      * The order of actions is: TARGET -> SETUP -> CONFIRM -> SCHEDULE.
