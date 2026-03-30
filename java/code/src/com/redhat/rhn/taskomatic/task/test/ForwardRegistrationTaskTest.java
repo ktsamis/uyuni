@@ -87,6 +87,9 @@ import org.apache.http.message.BasicStatusLine;
 import org.apache.http.util.EntityUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.io.IOException;
 import java.net.URI;
@@ -101,6 +104,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -239,6 +243,10 @@ public class ForwardRegistrationTaskTest extends BaseTestCaseWithUser {
         @Override
         public Optional<SCCCredentials> getSCCCredentials() {
             return super.getSCCCredentials();
+        }
+        @Override
+        public Optional<SCCCredentials> getSCCCredentialsPeripheralCase(IssHub hub) {
+            return super.getSCCCredentialsPeripheralCase(hub);
         }
     }
 
@@ -680,6 +688,42 @@ public class ForwardRegistrationTaskTest extends BaseTestCaseWithUser {
                     testSystems.stream().filter(i -> i.getOptCredentials().isPresent()).count(),
                     "no new systems should have credentials");
             return this;
+        }
+    }
+
+    private static Stream<Arguments> provideHubUrls() {
+        return Stream.of(
+                Arguments.of("hub1.fqdn.addr", "https://hub1.fqdn.addr", true),
+                Arguments.of("hub2.fqdn.addr", "http://hub2.fqdn.addr", true),
+                Arguments.of("hub3.fqdn.addr", "hub3.fqdn.addr", true),
+                Arguments.of("hub4.fqdn.addr", "ftp://hub4.fqdn.addr", false),
+                Arguments.of("hub5.fqdn.addr", "wronghub5.fqdn.addr", false)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideHubUrls")
+    public void matchHubSccCredentials(String hubFqdn, String hubUrl, boolean matchSucceed) {
+        MockCredentialsSCCTaskManager mockSccTaskManager = new MockCredentialsSCCTaskManager();
+        //
+        SCCCredentials sccCredentialsHubHttps =
+                CredentialsFactory.createSCCCredentials(PERIPHERAL_USERNAME, PERIPHERAL_PASSWD);
+        sccCredentialsHubHttps.setUrl(hubUrl);
+        CredentialsFactory.storeCredentials(sccCredentialsHubHttps);
+        //
+        IssHub hub = new IssHub(hubFqdn, "");
+        //
+
+        Optional<SCCCredentials> sccCredentialsMatch = mockSccTaskManager.getSCCCredentialsPeripheralCase(hub);
+
+        if (matchSucceed) {
+            assertTrue(sccCredentialsMatch.isPresent());
+            assertEquals(hubUrl, sccCredentialsMatch.get().getUrl());
+            assertEquals(PERIPHERAL_USERNAME, sccCredentialsMatch.get().getUsername());
+            assertEquals(PERIPHERAL_PASSWD, sccCredentialsMatch.get().getPassword());
+        }
+        else {
+            assertTrue(sccCredentialsMatch.isEmpty());
         }
     }
 
