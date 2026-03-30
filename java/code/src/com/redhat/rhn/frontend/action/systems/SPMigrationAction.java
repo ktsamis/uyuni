@@ -60,6 +60,7 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.SortedMap;
@@ -223,17 +224,21 @@ public class SPMigrationAction extends RhnAction {
             // flag to know if we are going back or forward in the setup wizard
             goBack = dispatch.equals(LocalizationService.getInstance().getMessage(GO_BACK));
 
+            Optional<SUSEProduct> sourceProduct = minion.flatMap(MinionServer::getInstalledProductSet)
+                    .map(SUSEProductSet::getBaseProduct);
+
+            Optional<SUSEProduct> targetProduct = Optional.ofNullable(targetBaseProduct)
+                    .map(SUSEProductFactory::getProductById);
+
             // flag to know if we should show the dry-run button or not
-            String bpProductClass = minion.map(m -> m.getInstalledProductSet()
-                    .map(i -> i.getBaseProduct().getChannelFamily().getLabel())
-                    .orElse("")).orElse("");
+            String bpProductClass = sourceProduct.map(p -> p.getChannelFamily().getLabel()).orElse("");
+            String tgtProductClass = targetProduct.map(s -> s.getChannelFamily().getLabel()).orElse("");
 
-            String tgtProductClass = Optional.ofNullable(targetBaseProduct)
-                    .map(SUSEProductFactory::getProductById)
-                    .map(s -> s.getChannelFamily().getLabel())
-                    .orElse("");
+            boolean isSles15Source = sourceProduct.map(SUSEProduct::isSles15).orElse(false);
+            boolean isSLES16Target = targetProduct.map(SUSEProduct::isSles16).orElse(false);
+            boolean isMajorJump15To16 = isSles15Source && isSLES16Target;
 
-            hasDryRun = !isRedHatMinion && bpProductClass.equals(tgtProductClass);
+            hasDryRun = !isRedHatMinion && bpProductClass.equals(tgtProductClass) && !isMajorJump15To16;
             request.setAttribute(HAS_DRYRUN_CAPABLITY, hasDryRun);
 
         }
@@ -441,7 +446,6 @@ public class SPMigrationAction extends RhnAction {
 
     /**
      * Identify the extensions which don't have successors and set that information in the request.
-     * OUT: MISSING_SUCESSOR_EXTENSIONS
      * @param request
      * @param sourceProducts installed or selected products
      * @param targetProducts target products
