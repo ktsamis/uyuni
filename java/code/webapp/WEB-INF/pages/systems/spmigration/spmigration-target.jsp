@@ -71,7 +71,27 @@
                     <bean:message key="spmigration.jsp.error.updatestack-update-needed" />
                 </div>
             </c:if>
-
+            <%-- SLES 16 pre-flight checklist — shown only when SLES 16.0 is a migration target --%>
+               <c:if test="${hasSLES16Target}">
+                <div class="alert alert-warning">
+                    <h4><bean:message key="spmigration.sles16.preflight.title" /></h4>
+                    <strong><bean:message key="spmigration.sles16.preflight.required" /></strong>
+                    <ul>
+                        <li><bean:message key="spmigration.sles16.preflight.patch.title" /></li>
+                        <li><bean:message key="spmigration.sles16.preflight.repos.title" /></li>
+                        <li><bean:message key="spmigration.sles16.preflight.multiversion.title" /></li>
+                        <li><bean:message key="spmigration.sles16.preflight.partition.title" /></li>
+                        <li><bean:message key="spmigration.sles16.preflight.diskspace.title" /></li>
+                    </ul>
+                    <strong><bean:message key="spmigration.sles16.preflight.recommended" /></strong>
+                    <ul>
+                        <li><bean:message key="spmigration.sles16.preflight.ssh.title" /></li>
+                        <li><bean:message key="spmigration.sles16.preflight.kvmguests.title" /></li>
+                        <li><bean:message key="spmigration.sles16.preflight.network.title" /></li>
+                        <li><bean:message key="spmigration.sles16.preflight.selinux.title" /></li>
+                    </ul>
+                </div>
+            </c:if>
             <html:form method="post" styleId="migrationForm"
                 action="/systems/details/SPMigration.do?sid=${system.id}">
                 <div class="form-horizontal">
