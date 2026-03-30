@@ -25018,6 +25018,42 @@ given channel.</source>
       <trans-unit id="spmigration.jsp.allow.vendor.change">
         <source>Allow Vendor Change</source>
       </trans-unit>
+      <trans-unit id="spmigration.sles16.preflight.title" xml:space="preserve">
+        <source>Before Migrating to SLES 16.0 — Please Verify</source>
+      </trans-unit>
+      <trans-unit id="spmigration.sles16.preflight.required" xml:space="preserve">
+        <source>Required</source>
+      </trans-unit>
+      <trans-unit id="spmigration.sles16.preflight.recommended" xml:space="preserve">
+        <source>Recommended</source>
+      </trans-unit>
+      <trans-unit id="spmigration.sles16.preflight.patch.title" xml:space="preserve">
+        <source>System is fully up to date</source>
+      </trans-unit>
+      <trans-unit id="spmigration.sles16.preflight.repos.title" xml:space="preserve">
+        <source>Local or private repositories and services are disabled</source>
+      </trans-unit>
+      <trans-unit id="spmigration.sles16.preflight.multiversion.title" xml:space="preserve">
+        <source>Multiversion kernel configuration is correct</source>
+      </trans-unit>
+      <trans-unit id="spmigration.sles16.preflight.partition.title" xml:space="preserve">
+        <source>OS resides on a single partition</source>
+      </trans-unit>
+      <trans-unit id="spmigration.sles16.preflight.diskspace.title" xml:space="preserve">
+        <source>Sufficient disk space is available</source>
+      </trans-unit>
+      <trans-unit id="spmigration.sles16.preflight.ssh.title" xml:space="preserve">
+        <source>Ensure SSH key-based access is available for at least one user. If root login is required, create /etc/ssh/sshd_config.d/50-permit-root-login.conf with: PermitRootLogin yes</source>
+      </trans-unit>
+      <trans-unit id="spmigration.sles16.preflight.kvmguests.title" xml:space="preserve">
+        <source>KVM guests are shut down (if applicable)</source>
+      </trans-unit>
+      <trans-unit id="spmigration.sles16.preflight.network.title" xml:space="preserve">
+        <source>Network configuration will be migrated from wicked to NetworkManager</source>
+      </trans-unit>
+      <trans-unit id="spmigration.sles16.preflight.selinux.title" xml:space="preserve">
+        <source>AppArmor profiles will be migrated to SELinux</source>
+      </trans-unit>
       <trans-unit id="spmigration.jsp.error.targetProductSelectedEmpty" xml:space="preserve">
         <source>Please select one target product to migrate</source>
       </trans-unit>
