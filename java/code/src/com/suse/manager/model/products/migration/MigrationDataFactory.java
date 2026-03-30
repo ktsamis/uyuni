@@ -196,7 +196,8 @@ public class MigrationDataFactory {
      */
     public MigrationTarget toMigrationTarget(SUSEProductSet targetProductSet) {
         MigrationProduct targetProduct = toMigrationProduct(targetProductSet);
-        List<String> missingChannels = Collections.unmodifiableList(targetProductSet.getMissingChannels());
+        List<String> missingChannels = targetProductSet.getMissingChannels() == null ?
+                Collections.emptyList() : Collections.unmodifiableList(targetProductSet.getMissingChannels());
 
         // Get the unique serialized id of the product set
         String serializedId = targetProductSet.getSerializedProductIDs();
