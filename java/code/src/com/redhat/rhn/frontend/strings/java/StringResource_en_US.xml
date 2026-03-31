@@ -8168,6 +8168,10 @@ Follow this url to see the full list of inactive systems:
         <source>ARM64 Debian</source>
         <target>ARM64 Debian</target>
       </trans-unit>
+      <trans-unit id="ARMHF Debian" xml:space="preserve">
+        <source>ARMHF Debian</source>
+        <target>ARMHF Debian</target>
+      </trans-unit>
       <trans-unit id="armel-deb" xml:space="preserve">
         <source>ARMEL Debian</source>
         <target>ARMEL Debian</target>

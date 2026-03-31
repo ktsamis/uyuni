@@ -24163,6 +24163,9 @@ given channel.</source>
       <trans-unit id="task.status.clear-log-history" xml:space="preserve">
         <source>Clean Log History</source>
       </trans-unit>
+      <trans-unit id="task.status.clm-channel-diff" xml:space="preserve">
+        <source>CLM Channel Comparison</source>
+      </trans-unit>
       <trans-unit id="task.status.cobbler-sync" xml:space="preserve">
         <source>Cobbler Sync</source>
       </trans-unit>
