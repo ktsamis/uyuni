@@ -358,6 +358,4 @@ done
 
 do_setup
 
-systemctl --quiet enable spacewalk-diskcheck.timer 2>&1
-
 # vim: set expandtab:
