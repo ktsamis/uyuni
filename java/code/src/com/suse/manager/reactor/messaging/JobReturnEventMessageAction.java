@@ -434,7 +434,8 @@ public class JobReturnEventMessageAction implements MessageAction {
             Object mods = argMap.get("mods");
             if (SLES16_VERIFY_STATE.equals(mods)) {
                 return true;
-            } else if (mods instanceof List<?> modsList) {
+            }
+            else if (mods instanceof List<?> modsList) {
                 return modsList.contains(SLES16_VERIFY_STATE);
             }
         }
@@ -461,20 +462,17 @@ public class JobReturnEventMessageAction implements MessageAction {
                 // Find the SLES 15.x -> 16.x migration action
                 ActionFactory.listServerActionsForServer(minion, ActionFactory.ALL_PENDING_STATUSES)
                     .stream()
-                    .filter(sa -> sa.getParentAction() instanceof DistUpgradeAction dup
-                                  && dup.getDetails(minion.getId()) != null
-                                  && dup.getDetails(minion.getId()).isSles15To16Migration())
+                    .filter(sa -> sa.getParentAction() instanceof DistUpgradeAction dup &&
+                      dup.getDetails(minion.getId()) != null && dup.getDetails(minion.getId()).isSles15To16Migration())
                     .findFirst()
                     .ifPresentOrElse(
                         sa -> {
                             DistUpgradeAction dupAction = (DistUpgradeAction) sa.getParentAction();
                             LOG.info("SLES 16 verify: Found pending migration {} for minion {}. Updating...",
                                      dupAction.getId(), minionId);
-
                             // Delegate the actual result parsing back to the Action class
                             dupAction.handleUpdateServerAction(sa, result, null);
                             ActionFactory.save(sa);
-
                             LOG.info("SLES 16: Migration action {} for {} updated to: {}",
                                      dupAction.getId(), minionId, sa.getStatus().getName());
                         },

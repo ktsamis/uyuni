@@ -105,22 +105,22 @@ export const MigrationConfirmScheduleForm: React.FC<Props> = ({
         {/* SLES 16 pre-flight checklist — shown only for SLES 15 → 16 migrations */}
         {migrationSource?.name?.includes("SUSE Linux Enterprise Server 15") &&
           migrationTarget.name?.includes("SUSE Linux Enterprise Server 16") && (
-          <div className="alert alert-warning">
-            <strong>{t("Before Migrating to SLES 16 — Please ensure")}</strong>
-            <ul>
-              <li>{t("System is fully up to date")}</li>
-              <li>{t("Sufficient disk space is available")}</li>
-              <li>
-                {t(
-                  "Ensure SSH key-based access is available for at least one user. If root login is required, create /etc/ssh/sshd_config.d/50-permit-root-login.conf with: PermitRootLogin yes"
-                )}
-              </li>
-              <li>{t("KVM guests are shut down (if applicable)")}</li>
-              <li>{t("Network configuration will be migrated from wicked to NetworkManager")}</li>
-              <li>{t("AppArmor profiles will be migrated to SELinux")}</li>
-            </ul>
-          </div>
-        )}
+            <div className="alert alert-warning">
+              <strong>{t("Before Migrating to SLES 16 — Please ensure")}</strong>
+              <ul>
+                <li>{t("System is fully up to date")}</li>
+                <li>{t("Sufficient disk space is available")}</li>
+                <li>
+                  {t(
+                    "Ensure SSH key-based access is available for at least one user. If root login is required, create /etc/ssh/sshd_config.d/50-permit-root-login.conf with: PermitRootLogin yes"
+                  )}
+                </li>
+                <li>{t("KVM guests are shut down (if applicable)")}</li>
+                <li>{t("Network configuration will be migrated from wicked to NetworkManager")}</li>
+                <li>{t("AppArmor profiles will be migrated to SELinux")}</li>
+              </ul>
+            </div>
+          )}
         {hasDryRunCapability && (
           <Messages
             items={MessagesUtils.warning(

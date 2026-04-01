@@ -21,16 +21,16 @@ import com.redhat.rhn.common.messaging.EventMessage;
 import com.redhat.rhn.common.messaging.MessageAction;
 import com.redhat.rhn.common.messaging.MessageQueue;
 import com.redhat.rhn.common.util.StringUtil;
+import com.redhat.rhn.domain.action.ActionFactory;
+import com.redhat.rhn.domain.action.dup.DistUpgradeAction;
+import com.redhat.rhn.domain.action.dup.DistUpgradeActionDetails;
+import com.redhat.rhn.domain.action.server.ServerAction;
 import com.redhat.rhn.domain.notification.NotificationMessage;
 import com.redhat.rhn.domain.notification.UserNotificationFactory;
 import com.redhat.rhn.domain.notification.types.OnboardingFailed;
 import com.redhat.rhn.domain.org.Org;
 import com.redhat.rhn.domain.org.OrgFactory;
 import com.redhat.rhn.domain.role.RoleFactory;
-import com.redhat.rhn.domain.action.ActionFactory;
-import com.redhat.rhn.domain.action.dup.DistUpgradeAction;
-import com.redhat.rhn.domain.action.dup.DistUpgradeActionDetails;
-import com.redhat.rhn.domain.action.server.ServerAction;
 import com.redhat.rhn.domain.server.ContactMethod;
 import com.redhat.rhn.domain.server.ManagedServerGroup;
 import com.redhat.rhn.domain.server.MinionServer;
@@ -389,7 +389,7 @@ public class RegisterMinionEventMessageAction implements MessageAction {
 
     /**
      * Trigger SLES 16 post-migration verification if a qualifying migration is pending.
-     * This runs automatically when a minion reconnects. The 'sles16_verify' state 
+     * This runs automatically when a minion reconnects. The 'sles16_verify' state
      * independently checks for the presence of the migration marker file.
      * @param minion the minion server instance
      */

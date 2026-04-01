@@ -4,7 +4,7 @@
 
 {% set migration_log = '' %}
 {% if salt['file.file_exists']('/var/log/distro_migration.log') %}
-{% set migration_log = salt['cmd.run']('tail -50 /var/log/distro_migration.log', python_shell=False) %}
+{% set migration_log = salt['cmd.run']('tail -200 /var/log/distro_migration.log', python_shell=False) %}
 {% endif %}
 
 {% if grains['osfullname']|upper == 'SLES' and grains['osmajorrelease']|int == 16 %}

@@ -1800,9 +1800,7 @@ public class ActionManager extends BaseManager {
         // Check if this is a SLES 15 -> SLES 16 migration to determine if package list should be refreshed
         boolean isSles15To16Migration = detailsMap.values().stream()
         .anyMatch(DistUpgradeActionDetails::isSles15To16Migration);
-
         boolean forcePackageListRefresh = !dryRun && !isSles15To16Migration;
-    
         taskomaticApi.scheduleActionExecution(action, forcePackageListRefresh);
         return List.of(action);
     }
