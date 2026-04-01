@@ -6,14 +6,14 @@ SPDX-License-Identifier: Apache-2.0
 
   ## IMPORTANT 📌
 
-**There are no more MUs scheduled for SUSE Manager 4.3 LTS**
-
-For now on, only the following changes are accepted in the `Manager-4.3` branch:
-
+ONLY the following changes are accepted in the `Manager-4.3` branch:
 - Bugfixes for L3 that were specifically reported for 4.3
 - Security fixes that we must release for 4.3
 
-Nothing else should be merged in `Manager-4.3` anymore.
+ONLY the following changes are accepted in the `Manager-5.0` branch:
+- Bugfixes for L3 that do not require big refactors (if they come as backport from 5.1)
+- Bugfixes for special priorities that do not require big refactors (if they come as backport from 5.1)
+- Security fixes that we must release for 5.0
 
 In case of doubts, please reach out to @rjmateus or @admd before proceeding with the merge.
 
