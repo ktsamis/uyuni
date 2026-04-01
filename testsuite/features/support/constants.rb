@@ -403,7 +403,7 @@ LABEL_BY_BASE_CHANNEL = {
     'SLE-Product-SLES15-SP5-Pool for x86_64' => 'sle-product-sles15-sp5-pool-x86_64',
     'SLE-Product-SLES15-SP6-Pool for x86_64' => 'sle-product-sles15-sp6-pool-x86_64',
     'SLE-Product-SLES15-SP7-Pool for x86_64' => 'sle-product-sles15-sp7-pool-x86_64',
-    'SLE-Product-SLES-16.0 for x86_64' => 'sle-product-sles-16.0-pool-x86_64',
+    'SLE-Product-SLES-16.0 for x86_64' => 'sle-product-sles-16.0-x86_64',
     'SLE-Product-SLES15-SP5-Pool for s390x' => 'sle-product-sles15-sp5-pool-s390x',
     'SUSE-MicroOS-5.2-Pool for x86_64' => 'suse-microos-5.2-pool-x86_64',
     'SLE-Micro-5.3-Pool for x86_64' => 'sle-micro-5.3-pool-x86_64',
@@ -437,7 +437,7 @@ LABEL_BY_BASE_CHANNEL = {
     'SLE-Product-SLES15-SP5-Pool for x86_64' => 'sle-product-sles15-sp5-pool-x86_64',
     'SLE-Product-SLES15-SP6-Pool for x86_64' => 'sle-product-sles15-sp6-pool-x86_64',
     'SLE-Product-SLES15-SP7-Pool for x86_64' => 'sle-product-sles15-sp7-pool-x86_64',
-    'SLE-Product-SLES-16.0 for x86_64' => 'sle-product-sles-16.0-pool-x86_64',
+    'SLE-Product-SLES-16.0 for x86_64' => 'sle-product-sles-16.0-x86_64',
     'SLE-Product-SLES15-SP5-Pool for s390x' => 'sle-product-sles15-sp5-pool-s390x',
     'SUSE-MicroOS-5.2-Pool for x86_64' => 'suse-microos-5.2-pool-x86_64',
     'SLE-Micro-5.3-Pool for x86_64' => 'sle-micro-5.3-pool-x86_64',
@@ -551,7 +551,7 @@ PARENT_CHANNEL_LABEL_TO_SYNC_BY_BASE_CHANNEL = {
     'SLE-Product-SLES15-SP5-Pool for x86_64' => 'sle-product-sles15-sp5-pool-x86_64',
     'SLE-Product-SLES15-SP6-Pool for x86_64' => 'sle-product-sles15-sp6-pool-x86_64',
     'SLE-Product-SLES15-SP7-Pool for x86_64' => 'sle-product-sles15-sp7-pool-x86_64',
-    'SLE-Product-SLES-16.0 for x86_64' => 'sle-product-sles-16.0-pool-x86_64',
+    'SLE-Product-SLES-16.0 for x86_64' => 'sle-product-sles-16.0-x86_64',
     'SUSE-MicroOS-5.2-Pool for x86_64' => 'suse-microos-5.2-pool-x86_64',
     'SLE-Micro-5.3-Pool for x86_64' => 'sle-micro-5.3-pool-x86_64',
     'SLE-Micro-5.4-Pool for x86_64' => 'sle-micro-5.4-pool-x86_64',
@@ -585,7 +585,7 @@ PARENT_CHANNEL_LABEL_TO_SYNC_BY_BASE_CHANNEL = {
     'SLE-Product-SLES15-SP5-Pool for x86_64' => 'sle-product-sles15-sp5-pool-x86_64',
     'SLE-Product-SLES15-SP6-Pool for x86_64' => 'sle-product-sles15-sp6-pool-x86_64',
     'SLE-Product-SLES15-SP7-Pool for x86_64' => 'sle-product-sles15-sp7-pool-x86_64',
-    'SLE-Product-SLES-16.0 for x86_64' => 'sle-product-sles-16.0-pool-x86_64',
+    'SLE-Product-SLES-16.0 for x86_64' => 'sle-product-sles-16.0-x86_64',
     'SUSE-MicroOS-5.2-Pool for x86_64' => 'suse-microos-5.2-pool-x86_64',
     'SLE-Micro-5.3-Pool for x86_64' => 'sle-micro-5.3-pool-x86_64',
     'SLE-Micro-5.4-Pool for x86_64' => 'sle-micro-5.4-pool-x86_64',
@@ -879,6 +879,11 @@ CHANNEL_TO_SYNC_BY_OS_PRODUCT_VERSION = {
         sle-module-systems-management-15-sp7-pool-x86_64
         sle-module-systems-management-15-sp7-updates-x86_64
       ],
+    'sles16' =>
+      %w[
+        sle-product-sles-16.0-x86_64
+        multi-linux-managertools-sle-16-x86_64
+      ],
     'slesforsap15-sp5' =>
       %w[
         managertools-sle15-pool-x86_64-sap-sp5
@@ -943,6 +948,11 @@ CHANNEL_TO_SYNC_BY_OS_PRODUCT_VERSION = {
         managertools-sle15-pool-aarch64-opensuse-15.6
         managertools-sle15-updates-aarch64-opensuse-15.6
       ],
+    'leap16.0-aarch64' =>
+      %w[
+        opensuse-leap-16.0-aarch64
+        multi-linux-managertools-sle-16-aarch64-opensuse-16.0
+      ],
     'suse-microos-5.2' => # CHECKED
       %w[
         suse-microos-5.2-pool-x86_64
@@ -972,6 +982,11 @@ CHANNEL_TO_SYNC_BY_OS_PRODUCT_VERSION = {
       %w[
         sl-micro-6.1-pool-x86_64
         managertools-sl-micro-6.1-x86_64
+      ],
+    'sl-micro-6.2' =>
+      %w[
+        sl-micro-6.2-pool-x86_64
+        multi-linux-managertools-sle-16-x86_64-6.2
       ],
     'ubuntu-2204' =>
       %w[
@@ -1278,6 +1293,11 @@ CHANNEL_TO_SYNC_BY_OS_PRODUCT_VERSION = {
         opensuse_leap15_6-aarch64-sle-updates
         opensuse_leap15_6-aarch64-updates
         opensuse_leap15_6-uyuni-client-devel-aarch64
+      ],
+    'leap16.0-aarch64' =>
+      %w[
+        opensuse-leap-16.0-aarch64
+        multi-linux-managertools-sle-16-aarch64-opensuse-16.0
       ],
     'leap-micro5.5-x86_64' => # CHECKED
       %w[
