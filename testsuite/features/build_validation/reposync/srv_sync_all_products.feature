@@ -185,6 +185,24 @@ Feature: Synchronize products in the products page of the Setup Wizard
     When I use spacewalk-common-channel to add channel "sles15-sp7-devel-uyuni-client" with arch "x86_64"
     And I wait until the channel "sles15-sp7-devel-uyuni-client-x86_64" has been synced
 
+@susemanager
+@sle160_minion
+  Scenario: Add SUSE Linux Enterprise Server 16.0
+    Given I am authorized for the "Admin" section
+    When I follow the left menu "Admin > Setup Wizard > Products"
+    And I wait until I do not see "currently running" text
+    And I wait until I do not see "Loading" text
+    And I enter "SUSE Linux Enterprise Server 16.0" as the filtered product description
+    And I wait until I see "SUSE Linux Enterprise Server 16.0 x86_64" text
+    And I open the sub-list of the product "SUSE Linux Enterprise Server 16.0 x86_64"
+    When I select "SUSE Linux Enterprise Server 16.0 x86_64" as a product
+    Then I should see the "SUSE Linux Enterprise Server 16.0 x86_64" selected
+    And I should see the "SUSE Multi-Linux Manager Client Tools for SLE 16 x86_64" selected
+    When I click the Add Product button
+    And I wait until I see "Selected channels/products were scheduled successfully for syncing." text
+    And I wait until I see "SUSE Linux Enterprise Server 16.0 x86_64" product has been added
+    And I wait until all synchronized channels for "sles16" have finished
+
 @uyuni
 @sle160_minion
   Scenario: Add SUSE Linux Enterprise Server 16.0 Uyuni Client tools
@@ -407,12 +425,6 @@ Feature: Synchronize products in the products page of the Setup Wizard
     When I use spacewalk-common-channel to add channel "sl-micro-6.1-devel-uyuni-client" with arch "x86_64"
     And I wait until the channel "sl-micro-6.1-devel-uyuni-client-x86_64" has been synced
 
-@uyuni
-@slmicro62_minion
-  Scenario: Add SUSE Linux Micro 6.2 Uyuni Client tools
-    When I use spacewalk-common-channel to add channel "sl-micro-6.2-devel-uyuni-client" with arch "x86_64"
-    And I wait until the channel "sl-micro-6.2-devel-uyuni-client-x86_64" has been synced
-
 @susemanager
 @slmicro62_minion
   Scenario: Add SUSE Linux Micro 6.2
@@ -430,6 +442,12 @@ Feature: Synchronize products in the products page of the Setup Wizard
     And I wait until I see "Selected channels/products were scheduled successfully for syncing." text
     And I wait until I see "SUSE Linux Micro 6.2 x86_64" product has been added
     And I wait until all synchronized channels for "sl-micro-6.2" have finished
+
+@uyuni
+@slmicro62_minion
+  Scenario: Add SUSE Linux Micro 6.2 Uyuni Client tools
+    When I use spacewalk-common-channel to add channel "sl-micro-6.2-devel-uyuni-client" with arch "x86_64"
+    And I wait until the channel "sl-micro-6.2-devel-uyuni-client-x86_64" has been synced
 
 @susemanager
 @opensuse156arm_minion
@@ -787,24 +805,6 @@ Feature: Synchronize products in the products page of the Setup Wizard
     And I wait until I see "Selected channels/products were scheduled successfully for syncing." text
     And I wait until I see "SUSE Linux Enterprise Server 15 SP7 x86_64" product has been added
     And I wait until all synchronized channels for "sles15-sp7" have finished
-
-@susemanager
-@sle160_minion
-  Scenario: Add SUSE Linux Enterprise Server 16.0
-    Given I am authorized for the "Admin" section
-    When I follow the left menu "Admin > Setup Wizard > Products"
-    And I wait until I do not see "currently running" text
-    And I wait until I do not see "Loading" text
-    And I enter "SUSE Linux Enterprise Server 16.0" as the filtered product description
-    And I wait until I see "SUSE Linux Enterprise Server 16.0 x86_64" text
-    And I open the sub-list of the product "SUSE Linux Enterprise Server 16.0 x86_64"
-    When I select "SUSE Linux Enterprise Server 16.0 x86_64" as a product
-    Then I should see the "SUSE Linux Enterprise Server 16.0 x86_64" selected
-    And I should see the "SUSE Multi-Linux Manager Client Tools for SLE 16 x86_64" selected
-    When I click the Add Product button
-    And I wait until I see "Selected channels/products were scheduled successfully for syncing." text
-    And I wait until I see "SUSE Linux Enterprise Server 16.0 x86_64" product has been added
-    And I wait until all synchronized channels for "sles16" have finished
 
 @susemanager
 @proxy
