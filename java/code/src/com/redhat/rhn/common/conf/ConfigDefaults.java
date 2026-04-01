@@ -348,11 +348,6 @@ public class ConfigDefaults {
     public static final String SINGLE_SIGN_ON_ENABLED = "java.sso";
 
     /**
-     * List of distributions for which use salt for registration in kickstart
-     */
-    public static final String SALT_ENABLED_KICKSTART_INSTALL_TYPES = "salt_enabled_kickstart_install_types";
-
-    /**
      * Allows to publish erratas into the configured vendor channels via the api
      */
     public static final String ALLOW_ADDING_PATCHES_VIA_API = "java.allow_adding_patches_via_api";
@@ -1193,14 +1188,6 @@ public class ConfigDefaults {
      */
     public boolean isSingleSignOnEnabled() {
         return Config.get().getBoolean(SINGLE_SIGN_ON_ENABLED);
-    }
-
-    /**
-     * Returns list of install type labels for which use salt for registration in kickstart profile.
-     * @return list of distributions
-     */
-    public List<String> getUserSelectedSaltInstallTypeLabels() {
-        return Config.get().getList(SALT_ENABLED_KICKSTART_INSTALL_TYPES);
     }
 
     /**
