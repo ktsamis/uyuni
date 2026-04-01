@@ -483,12 +483,28 @@ Before('@sle15sp7_ssh_minion') do
   skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['sle15sp7_ssh_minion']
 end
 
+Before('@sle160_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['sle160_minion']
+end
+
+Before('@sle160_ssh_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['sle160_ssh_minion']
+end
+
 Before('@opensuse156arm_minion') do
   skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['opensuse156arm_minion']
 end
 
 Before('@opensuse156arm_ssh_minion') do
   skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['opensuse156arm_ssh_minion']
+end
+
+Before('@opensuse160arm_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['opensuse160arm_minion']
+end
+
+Before('@opensuse160arm_ssh_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['opensuse160arm_ssh_minion']
 end
 
 Before('@sle15sp5s390_minion') do
@@ -553,6 +569,14 @@ end
 
 Before('@slmicro61_ssh_minion') do
   skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['slmicro61_ssh_minion']
+end
+
+Before('@slmicro62_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['slmicro62_minion']
+end
+
+Before('@slmicro62_ssh_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['slmicro62_ssh_minion']
 end
 
 Before('@sle15sp6_buildhost') do
