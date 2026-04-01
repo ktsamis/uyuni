@@ -59,6 +59,7 @@ import com.redhat.rhn.domain.kickstart.KickstartFactory;
 import com.redhat.rhn.domain.org.CustomDataKey;
 import com.redhat.rhn.domain.org.Org;
 import com.redhat.rhn.domain.org.OrgFactory;
+import com.redhat.rhn.domain.product.SUSEProduct;
 import com.redhat.rhn.domain.product.SUSEProductSet;
 import com.redhat.rhn.domain.product.Tuple2;
 import com.redhat.rhn.domain.rhnpackage.Package;
@@ -195,6 +196,7 @@ import com.suse.manager.model.attestation.CoCoAttestationResult;
 import com.suse.manager.model.attestation.CoCoEnvironmentType;
 import com.suse.manager.model.attestation.ServerCoCoAttestationConfig;
 import com.suse.manager.model.attestation.ServerCoCoAttestationReport;
+import com.suse.manager.model.products.migration.MigrationDataFactory;
 import com.suse.manager.webui.services.pillar.MinionPillarManager;
 import com.suse.manager.webui.utils.gson.BootstrapParameters;
 import com.suse.manager.xmlrpc.NoSuchHistoryEventException;
@@ -7992,6 +7994,17 @@ public class SystemHandler extends BaseHandler {
                 throw new FaultException(-1, "productMigrationNoTarget",
                         "Target not available, the following channels are not synced: " +
                         targetProducts.getMissingChannelsMessage());
+            }
+
+            // Validate dry-run capability
+            if (dryRun) {
+                boolean isRedHat = "RedHat".equals(server.getOsFamily());
+                SUSEProduct sourceBase = installedProducts.map(SUSEProductSet::getBaseProduct).orElse(null);
+                SUSEProduct targetBase = targetProducts.getBaseProduct();
+                if (!MigrationDataFactory.computeHasDryRunCapability(isRedHat, sourceBase, targetBase)) {
+                    throw new FaultException(-1, "dryRunNotSupported",
+                            "Dry run is not supported for this product migration.");
+                }
             }
 
             // See if vendor channels are matching the given base channel

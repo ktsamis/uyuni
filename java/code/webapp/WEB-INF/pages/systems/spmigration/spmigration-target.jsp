@@ -71,20 +71,13 @@
                     <bean:message key="spmigration.jsp.error.updatestack-update-needed" />
                 </div>
             </c:if>
-            <%-- SLES 16 pre-flight checklist — shown only when SLES 16.0 is a migration target --%>
+            <%-- SLES 16 pre-flight checklist — shown only when source is SLES 15 and target is SLES 16.0 --%>
                <c:if test="${hasSLES16Target}">
                 <div class="alert alert-warning">
-                    <h4><bean:message key="spmigration.sles16.preflight.title" /></h4>
-                    <strong><bean:message key="spmigration.sles16.preflight.required" /></strong>
+                    <strong><bean:message key="spmigration.sles16.preflight.title" /></strong>
                     <ul>
                         <li><bean:message key="spmigration.sles16.preflight.patch.title" /></li>
-                        <li><bean:message key="spmigration.sles16.preflight.repos.title" /></li>
-                        <li><bean:message key="spmigration.sles16.preflight.multiversion.title" /></li>
-                        <li><bean:message key="spmigration.sles16.preflight.partition.title" /></li>
                         <li><bean:message key="spmigration.sles16.preflight.diskspace.title" /></li>
-                    </ul>
-                    <strong><bean:message key="spmigration.sles16.preflight.recommended" /></strong>
-                    <ul>
                         <li><bean:message key="spmigration.sles16.preflight.ssh.title" /></li>
                         <li><bean:message key="spmigration.sles16.preflight.kvmguests.title" /></li>
                         <li><bean:message key="spmigration.sles16.preflight.network.title" /></li>

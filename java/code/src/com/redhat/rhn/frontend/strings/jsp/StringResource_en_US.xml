@@ -25019,25 +25019,10 @@ given channel.</source>
         <source>Allow Vendor Change</source>
       </trans-unit>
       <trans-unit id="spmigration.sles16.preflight.title" xml:space="preserve">
-        <source>Before Migrating to SLES 16.0 — Please Verify</source>
-      </trans-unit>
-      <trans-unit id="spmigration.sles16.preflight.required" xml:space="preserve">
-        <source>Required</source>
-      </trans-unit>
-      <trans-unit id="spmigration.sles16.preflight.recommended" xml:space="preserve">
-        <source>Recommended</source>
+        <source>Before Migrating to SLES 16 — Please ensure</source>
       </trans-unit>
       <trans-unit id="spmigration.sles16.preflight.patch.title" xml:space="preserve">
         <source>System is fully up to date</source>
-      </trans-unit>
-      <trans-unit id="spmigration.sles16.preflight.repos.title" xml:space="preserve">
-        <source>Local or private repositories and services are disabled</source>
-      </trans-unit>
-      <trans-unit id="spmigration.sles16.preflight.multiversion.title" xml:space="preserve">
-        <source>Multiversion kernel configuration is correct</source>
-      </trans-unit>
-      <trans-unit id="spmigration.sles16.preflight.partition.title" xml:space="preserve">
-        <source>OS resides on a single partition</source>
       </trans-unit>
       <trans-unit id="spmigration.sles16.preflight.diskspace.title" xml:space="preserve">
         <source>Sufficient disk space is available</source>

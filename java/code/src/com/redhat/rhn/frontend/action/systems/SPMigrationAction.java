@@ -231,14 +231,8 @@ public class SPMigrationAction extends RhnAction {
                     .map(SUSEProductFactory::getProductById);
 
             // flag to know if we should show the dry-run button or not
-            String bpProductClass = sourceProduct.map(p -> p.getChannelFamily().getLabel()).orElse("");
-            String tgtProductClass = targetProduct.map(s -> s.getChannelFamily().getLabel()).orElse("");
-
-            boolean isSles15Source = sourceProduct.map(SUSEProduct::isSles15).orElse(false);
-            boolean isSLES16Target = targetProduct.map(SUSEProduct::isSles16).orElse(false);
-            boolean isMajorJump15To16 = isSles15Source && isSLES16Target;
-
-            hasDryRun = !isRedHatMinion && bpProductClass.equals(tgtProductClass) && !isMajorJump15To16;
+            hasDryRun = MigrationDataFactory.computeHasDryRunCapability(
+                    isRedHatMinion, sourceProduct.orElse(null), targetProduct.orElse(null));
             request.setAttribute(HAS_DRYRUN_CAPABLITY, hasDryRun);
 
         }
