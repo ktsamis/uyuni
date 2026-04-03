@@ -86,6 +86,7 @@ import com.redhat.rhn.domain.server.Note;
 import com.redhat.rhn.domain.server.Pillar;
 import com.redhat.rhn.domain.server.PushClient;
 import com.redhat.rhn.domain.server.Server;
+import com.redhat.rhn.domain.server.ServerConstants;
 import com.redhat.rhn.domain.server.ServerFQDN;
 import com.redhat.rhn.domain.server.ServerFactory;
 import com.redhat.rhn.domain.server.ServerSnapshot;
@@ -7998,7 +7999,7 @@ public class SystemHandler extends BaseHandler {
 
             // Validate dry-run capability
             if (dryRun) {
-                boolean isRedHat = "RedHat".equals(server.getOsFamily());
+                boolean isRedHat = ServerConstants.REDHAT.equals(server.getOsFamily());
                 SUSEProduct sourceBase = installedProducts.map(SUSEProductSet::getBaseProduct).orElse(null);
                 SUSEProduct targetBase = targetProducts.getBaseProduct();
                 if (!MigrationDataFactory.computeHasDryRunCapability(isRedHat, sourceBase, targetBase)) {

@@ -25,6 +25,7 @@ import com.redhat.rhn.domain.product.SUSEProductSet;
 import com.redhat.rhn.domain.rhnpackage.PackageFactory;
 import com.redhat.rhn.domain.server.MinionServer;
 import com.redhat.rhn.domain.server.Server;
+import com.redhat.rhn.domain.server.ServerConstants;
 import com.redhat.rhn.domain.user.User;
 import com.redhat.rhn.frontend.dto.EssentialChannelDto;
 import com.redhat.rhn.manager.channel.ChannelManager;
@@ -90,7 +91,7 @@ public class MigrationDataFactory {
 
         // Check if any system in the batch is a RedHat minion
         boolean hasRedHatMinion = serverList.stream()
-            .anyMatch(server -> "RedHat".equals(server.getOsFamily()));
+            .anyMatch(server -> ServerConstants.REDHAT.equals(server.getOsFamily()));
 
         var migrationTargets = targetSets.stream()
             .map(targetSet -> toMigrationTarget(targetSet, sourceProductSet, hasRedHatMinion))
@@ -142,7 +143,8 @@ public class MigrationDataFactory {
         var targetSet = DistUpgradeManager.getTargetProductSets(user, serverList, sourceSet).stream()
             .filter(productSet -> targetBaseProduct.getId() == productSet.getBaseProduct().getId())
             .findFirst()
-            .orElseThrow(() -> new IllegalArgumentException(""));
+            .orElseThrow(() -> new IllegalArgumentException(
+                    "No matching target product set found for base product: " + targetBaseProduct.getFriendlyName()));
 
         var systemsData = serverList.stream()
             .map(server -> toSystemData(server, sourceSet.map(SUSEProductSet::getBaseProduct), List.of(targetSet)))
@@ -254,11 +256,7 @@ public class MigrationDataFactory {
             return false;
         }
         // 3. Block SLES 15 -> 16 major jump (DMS is destructive, dry-run is technically impossible)
-        boolean isMajorJump15To16 = sourceBase.isSles15() && targetBase.isSles16();
-        if (isMajorJump15To16) {
-            return false;
-        }
-        return true;
+        return !(sourceBase.isSles15() && targetBase.isSles16());
     }
 
     /**

@@ -115,7 +115,6 @@ public class RegisterMinionEventMessageAction implements MessageAction {
 
     private static final String FQDN = "fqdn";
     private static final String TERMINALS_GROUP_NAME = "TERMINALS";
-    private static final String SLES16_VERIFY_STATE = "distupgrade.sles16_verify";
 
     /**
      * Constructor taking a {@link SystemQuery} instance.
@@ -418,7 +417,7 @@ public class RegisterMinionEventMessageAction implements MessageAction {
             MessageQueue.publish(new ApplyStatesEventMessage(
                 minion.getId(),
                 false,
-                SLES16_VERIFY_STATE
+                ApplyStatesEventMessage.DISTUPGRADE_SLES16_VERIFY
             ));
         }
         catch (Exception e) {
@@ -438,7 +437,7 @@ public class RegisterMinionEventMessageAction implements MessageAction {
     private boolean isSles15To16Migration(ServerAction sa, MinionServer minion) {
         if (sa.getParentAction() instanceof DistUpgradeAction dup) {
             DistUpgradeActionDetails details = dup.getDetails(minion.getId());
-            return details != null && details.isSles15To16Migration();
+            return (details != null) && details.isSles15To16Migration();
         }
         return false;
     }

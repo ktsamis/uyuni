@@ -99,7 +99,7 @@ export const MigrationConfirmScheduleForm: React.FC<Props> = ({
             onActionChainChanged={(actionChain) => setSelectedActionChain(actionChain ? actionChain : undefined)}
             onDateTimeChanged={setSelectedEarliest}
             systemIds={systemsData.map((system) => system.id)}
-            actionType="coco.attestation"
+            actionType="distupgrade.upgrade"
           />
         </FormGroup>
         {/* SLES 16 pre-flight checklist — shown only for SLES 15 → 16 migrations */}

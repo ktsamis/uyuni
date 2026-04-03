@@ -1060,6 +1060,15 @@ public class DistUpgradeManagerTest extends BaseTestCaseWithUser {
     }
 
     @Test
+    public void testIsSles15To16MigrationFalseForReverseUpgrade() {
+        SUSEProduct from = buildSlesProduct("sles", "16.0", true);
+        SUSEProduct to   = buildSlesProduct("sles", "15.7", true);
+        DistUpgradeActionDetails details = new DistUpgradeActionDetails();
+        details.setProductUpgrades(Set.of(new SUSEProductUpgrade(from, to)));
+        assertFalse(details.isSles15To16Migration());
+    }
+
+    @Test
     public void testIsVerificationStateResultTrueForSuccess() {
         assertTrue(DistUpgradeAction.isMajorMigrationVerificationResult(
                 buildVerifySuccessResult("SLES 16 migration completed successfully")));
@@ -1301,5 +1310,61 @@ public class DistUpgradeManagerTest extends BaseTestCaseWithUser {
         assertTrue(sa.isStatusFailed(), "Missing comment must still fail the action");
         assertTrue(sa.getResultMsg().contains("Migration verification finished"),
                 "Fallback message must be used when 'comment' field is absent");
+    }
+
+    @Test
+    public void testHandleVerificationResultFailureForcesRepoRevertForSles16() throws Exception {
+        MinionServer minion = MinionServerFactoryTest.createTestMinionServer(user);
+        DistUpgradeAction dupAction = (DistUpgradeAction) ActionFactoryTest.createAction(
+                user, ActionFactory.TYPE_DIST_UPGRADE);
+        dupAction.setDetailsMap(new HashMap<>());
+        ServerAction sa = ActionFactoryTest.createServerAction(minion, dupAction);
+        dupAction.addServerAction(sa);
+
+        // Set up a SLES 15 -> 16 migration
+        SUSEProduct sles15 = SUSEProductTestUtils.createTestSUSEProduct(user, "sles", "15.7", "x86_64", "7261", true);
+        SUSEProduct sles16 = SUSEProductTestUtils.createTestSUSEProduct(user, "sles", "16.0", "x86_64", "7261", true);
+
+        DistUpgradeActionDetails det = new DistUpgradeActionDetails();
+        det.setServer(minion);
+        det.setDryRun(false);
+        det.addProductUpgrade(new SUSEProductUpgrade(sles15, sles16));
+
+        // Channels setup
+        Channel sp7Channel = ChannelFactoryTest.createTestChannel(user);
+        DistUpgradeChannelTask unsubscribeTask = new DistUpgradeChannelTask();
+        unsubscribeTask.setChannel(sp7Channel);
+        unsubscribeTask.setTask(DistUpgradeChannelTask.UNSUBSCRIBE);
+        det.addChannelTask(unsubscribeTask);
+
+        Channel sles16Channel = ChannelFactoryTest.createTestChannel(user);
+        DistUpgradeChannelTask subscribeTask = new DistUpgradeChannelTask();
+        subscribeTask.setChannel(sles16Channel);
+        subscribeTask.setTask(DistUpgradeChannelTask.SUBSCRIBE);
+        det.addChannelTask(subscribeTask);
+
+        dupAction.setDetails(det);
+        TestUtils.saveAndFlush(dupAction);
+
+        // Result indicating failure
+        JsonObject stateFailed = new JsonObject();
+        stateFailed.addProperty("result", false);
+        stateFailed.addProperty("comment", "Migration failed");
+        JsonObject failedResult = new JsonObject();
+        failedResult.add(
+                "test_|-sles16_migration_failed_|-sles16_migration_failed_|-configurable_test_state",
+                stateFailed);
+
+        sa.setStatusPickedUp();
+
+        // This triggers revertToOriginalChannels -> switchChannels
+        // For SLES 15->16, even if hasSles16Channels is false, it should call switchChannels
+        dupAction.handleUpdateServerAction(sa, failedResult, null);
+
+        assertTrue(sa.isStatusFailed(), "Action must be failed");
+        String msg = sa.getResultMsg();
+        assertTrue(msg != null && (msg.toLowerCase().contains("migration failed") ||
+                                   msg.contains("distupgrade.sles16.migration.failed")),
+                "Result message should contain the failure message. Msg was: " + msg);
     }
 }

@@ -11,6 +11,7 @@ sles16_migration_package:
 sles16_migration_target_repos:
   file.managed:
     - name: /etc/zypp/repos.d/susemanager:sles16-migration.repo
+    - mode: '0600'
     - contents: |
         # SLES 16 target repos for DMS - managed by Uyuni
         {% for chan in pillar.get('sles16_target_channels', []) %}
