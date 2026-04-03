@@ -293,7 +293,7 @@ public class SUSEProduct extends BaseDomainHelper implements Serializable {
      */
     public boolean isSles16() {
         return isBase() && "sles".equalsIgnoreCase(getName()) &&
-               getVersion() != null && getVersion().startsWith("16.");
+               getVersion() != null && getVersion().startsWith("16");
     }
 
     /**
@@ -302,7 +302,7 @@ public class SUSEProduct extends BaseDomainHelper implements Serializable {
      */
     public boolean isSles15() {
         return isBase() && "sles".equalsIgnoreCase(getName()) &&
-               getVersion() != null && getVersion().startsWith("15.");
+               getVersion() != null && getVersion().startsWith("15");
     }
     /**
      * Is the product free?

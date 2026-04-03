@@ -338,19 +338,8 @@ public class DistUpgradeAction extends Action {
 
             List<Channel> subscribedChannels = channelTaskMap.get(true);   // SLES 16
             List<Channel> unsubscribedChannels = channelTaskMap.get(false); // SP7
-
-            // Only revert if SLES 16 channels are currently assigned
-            boolean hasSles16Channels = minion.getChannels().stream()
-              .anyMatch(subscribedChannels::contains);
-
-            if (hasSles16Channels) {
-                LOG.info("Reverting channels to SP7 after failed SLES 16 migration on server: {}",
-                  minion.getId());
-                switchChannels(minion, unsubscribedChannels, subscribedChannels, true);
-            }
-            else {
-                LOG.debug("Channels already on SP7, no revert needed for server: {}", minion.getId());
-            }
+            // Applying the channel state to sync repo files between Server and the minion
+            switchChannels(minion, unsubscribedChannels, subscribedChannels, true);
         });
     }
 
