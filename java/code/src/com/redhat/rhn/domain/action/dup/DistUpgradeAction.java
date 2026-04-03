@@ -205,6 +205,15 @@ public class DistUpgradeAction extends Action {
     }
 
     /**
+     * Helper to determine if this action is a SLES 15 to 16 migration.
+     * @return true if it is
+     */
+    public boolean isSles15To16Migration() {
+        return getDetailsMap().values().stream()
+                .anyMatch(DistUpgradeActionDetails::isSles15To16Migration);
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override

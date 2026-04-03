@@ -232,8 +232,9 @@ public class JobReturnEventMessageAction implements MessageAction {
                     earliest = Date.from(Instant.now().plusSeconds(60));
                 }
                 Optional<User> scheduler = Optional.empty();
+                Optional<Action> action = Optional.empty();
                 if (actionId.isPresent()) {
-                    Optional<Action> action = Optional.ofNullable(ActionFactory.lookupById(actionId.get()));
+                    action = Optional.ofNullable(ActionFactory.lookupById(actionId.get()));
                     if (action.isPresent()) {
                         scheduler = Optional.ofNullable(action.get().getSchedulerUser());
                         if (action.get().getActionType().equals(ActionFactory.TYPE_DIST_UPGRADE)) {
@@ -243,7 +244,16 @@ public class JobReturnEventMessageAction implements MessageAction {
                         }
                     }
                 }
-                schedulePackageRefresh(scheduler, jobReturnEvent.getMinionId(), earliest);
+
+                boolean isSles15To16Migration = action
+                        .filter(a -> a instanceof DistUpgradeAction)
+                        .map(a -> (DistUpgradeAction) a)
+                        .map(DistUpgradeAction::isSles15To16Migration)
+                        .orElse(false);
+                // No package refresh needed for SLES 15 -> 16 migration
+                if (!isSles15To16Migration) {
+                    schedulePackageRefresh(scheduler, jobReturnEvent.getMinionId(), earliest);
+                }
             }
 
             // find and update the original pending DistUpgradeAction.
