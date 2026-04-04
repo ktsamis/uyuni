@@ -7572,6 +7572,7 @@ public class SystemHandler extends BaseHandler {
      *          #struct_end()
      *      #array_end()
      */
+    @ReadOnly
     public List<Map<String, Object>> listMigrationTargetsWithChannels(User loggedInUser, Integer sid) {
         List<Map<String, Object>> returnList = new ArrayList<>();
         Server server = lookupServer(loggedInUser, sid);
