@@ -7,13 +7,13 @@
 @slmicro62_ssh_minion
 Feature: Bootstrap a SL Micro 6.2 Salt SSH minion
 
-  Scenario: Clean up sumaform leftovers on a SL Micro SSH 6.2 SSH minion
+  Scenario: Clean up sumaform leftovers on a SL Micro 6.2 Salt SSH minion
     When I perform a full salt minion cleanup on "slmicro62_ssh_minion"
 
   Scenario: Log in as admin user
     Given I am authorized for the "Admin" section
 
-  Scenario: Bootstrap a SL Micro 6.2 SSH minion
+  Scenario: Bootstrap a SL Micro 6.2 system managed via salt-ssh
     When I follow the left menu "Systems > Bootstrapping"
     Then I should see a "Bootstrap Minions" text
     When I check "manageWithSSH"
@@ -26,7 +26,7 @@ Feature: Bootstrap a SL Micro 6.2 Salt SSH minion
     And I wait until onboarding is completed for "slmicro62_ssh_minion"
 
 @proxy
-  Scenario: Check connection from SL Micro 6.2 minion to proxy
+  Scenario: Check connection from SL Micro 6.2 SSH minion to proxy
     Given I am on the Systems overview page of this "slmicro62_ssh_minion"
     When I follow "Details" in the content area
     And I follow "Connection" in the content area

@@ -7,7 +7,7 @@
 @slmicro62_minion
 Feature: Bootstrap a SL Micro 6.2 Salt minion
 
-  Scenario: Clean up sumaform leftovers on a SL Micro 6.2 minion
+  Scenario: Clean up sumaform leftovers on a SL Micro 6.2 Salt minion
     When I perform a full salt minion cleanup on "slmicro62_minion"
     And I reboot the "slmicro62_minion" host through SSH, waiting until it comes back
 

@@ -1227,6 +1227,11 @@ CHANNEL_TO_SYNC_BY_OS_PRODUCT_VERSION = {
         sle-module-systems-management-15-sp7-pool-x86_64
         sle-module-systems-management-15-sp7-updates-x86_64
       ],
+    'sles16' =>
+      %w[
+        sle-product-sles-16.0-x86_64
+        sles16-devel-uyuni-client-x86_64
+      ],
     'slesforsap15-sp5' =>
       %w[
         sle-module-basesystem15-sp5-pool-x86_64-sap
@@ -1467,6 +1472,9 @@ TIMEOUT_BY_CHANNEL_NAME = {
   'managertools-sle15-updates-x86_64-sp7' => 60,
   'managertools-ubuntu2204-updates-amd64' => 60,
   'managertools-ubuntu2404-updates-amd64' => 60,
+  'multi-linux-managertools-sle-16-aarch64-opensuse-16.0' => 60,
+  'multi-linux-managertools-sle-16-x86_64' => 60,
+  'multi-linux-managertools-sle-16-x86_64-6.2' => 60,
   'opensuse-backports-15.6-updates-aarch64' => 300,
   'opensuse_leap15_6-aarch64' => 10_020,
   'opensuse_leap15_6-aarch64-backports-updates' => 420,
@@ -1476,6 +1484,7 @@ TIMEOUT_BY_CHANNEL_NAME = {
   'opensuse_leap15_6-aarch64-updates' => 60,
   'opensuse-leap-15.6-pool-aarch64' => 4500,
   'opensuse-leap-15.6-updates-aarch64' => 60,
+  'opensuse-leap-16.0-aarch64' => 4500,
   'opensuse_leap15_6-uyuni-client-devel-aarch64' => 120,
   'opensuse_leap15_6-uyuni-client-devel-x86_64' => 120,
   'opensuse_leap15_6-uyuni-client-x86_64' => 120,
@@ -1485,6 +1494,7 @@ TIMEOUT_BY_CHANNEL_NAME = {
   'opensuse_leap15_6-x86_64-non-oss-updates' => 120,
   'opensuse_leap15_6-x86_64-sle-updates' => 5400,
   'opensuse_leap15_6-x86_64-updates' => 60,
+  'opensuse_leap16_0-aarch64' => 4500,
   'opensuse_micro5_5-uyuni-client-devel-x86_64' => 120,
   'opensuse_micro5_5-uyuni-client-x86_64' => 120,
   'opensuse_micro5_5-x86_64' => 240,
@@ -1624,6 +1634,7 @@ TIMEOUT_BY_CHANNEL_NAME = {
   'sles15-sp5-devel-uyuni-client-x86_64' => 120,
   'sles15-sp6-devel-uyuni-client-x86_64' => 120,
   'sles15-sp7-devel-uyuni-client-x86_64' => 120,
+  'sles16-devel-uyuni-client-x86_64' => 120,
   'sll-9-updates-x86_64' => 2580,
   'sll-as-9-updates-x86_64' => 2460,
   'sll-cb-9-updates-x86_64' => 2160,
@@ -1633,7 +1644,8 @@ TIMEOUT_BY_CHANNEL_NAME = {
   'sl-micro-6.1-devel-uyuni-client-x86_64' => 120,
   'sl-micro-6.1-pool-x86_64' => 300,
   'managertools-sl-micro-6.1-x86_64' => 60,
-  'multi-linux-managertools-sle-16-x86_64' => 60,
+  'sl-micro-6.2-devel-uyuni-client-x86_64' => 120,
+  'sl-micro-6.2-pool-x86_64' => 300,
   'suse-manager-proxy-5.0-pool-x86_64' => 60,
   'suse-manager-proxy-5.0-pool-x86_64-sp6' => 60,
   'suse-multi-linux-manager-proxy-5.1-x86_64' => 60, # for slmicro6.1
