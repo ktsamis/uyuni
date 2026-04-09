@@ -299,8 +299,8 @@ BASE_CHANNEL_BY_CLIENT = {
     'debian12_ssh_minion' => 'debian-12-pool for amd64',
     'opensuse156arm_minion' => 'openSUSE-Leap-15.6-Pool for aarch64',
     'opensuse156arm_ssh_minion' => 'openSUSE-Leap-15.6-Pool for aarch64',
-    'opensuse160arm_minion' => 'openSUSE-Leap-16.0-Pool for aarch64',
-    'opensuse160arm_ssh_minion' => 'openSUSE-Leap-16.0-Pool for aarch64',
+    'opensuse160arm_minion' => 'openSUSE-Leap-16.0 for aarch64',
+    'opensuse160arm_ssh_minion' => 'openSUSE-Leap-16.0 for aarch64',
     'sle15sp5s390_minion' => 'SLE-Product-SLES15-SP5-Pool for s390x',
     'sle15sp5s390_ssh_minion' => 'SLE-Product-SLES15-SP5-Pool for s390x',
     'salt_migration_minion' => 'SLE-Product-SLES15-SP5-Pool for x86_64'
@@ -426,7 +426,7 @@ LABEL_BY_BASE_CHANNEL = {
     'ubuntu-2404-amd64-main for amd64' => 'ubuntu-2404-amd64-main-amd64',
     'debian-12-pool for amd64' => 'debian-12-pool-amd64',
     'openSUSE-Leap-15.6-Pool for aarch64' => 'opensuse-leap-15.6-pool-aarch64',
-    'openSUSE-Leap-16.0-Pool for aarch64' => 'opensuse-leap-16.0-pool-aarch64'
+    'openSUSE-Leap-16.0 for aarch64' => 'opensuse-leap-16.0-aarch64'
   },
   'Uyuni' => {
     'openSUSE Leap 15.6 (x86_64)' => 'opensuse_leap15_6-x86_64',
@@ -499,7 +499,7 @@ CHANNEL_LABEL_TO_SYNC_BY_BASE_CHANNEL = {
     'ubuntu-2404-amd64-main for amd64' => 'ubuntu-24.04-amd64',
     'debian-12-pool for amd64' => 'debian12-amd64',
     'openSUSE-Leap-15.6-Pool for aarch64' => 'openSUSE-Leap-15.6-aarch64',
-    'openSUSE-Leap-16.0-Pool for aarch64' => 'openSUSE-Leap-16.0-aarch64'
+    'openSUSE-Leap-16.0 for aarch64' => 'openSUSE-Leap-16.0-aarch64'
   },
   'Uyuni' => {
     'openSUSE Leap 15.6 (x86_64)' => 'openSUSE-Leap-15.6-x86_64-uyuni',
@@ -574,7 +574,7 @@ PARENT_CHANNEL_LABEL_TO_SYNC_BY_BASE_CHANNEL = {
     'ubuntu-2404-amd64-main for amd64' => nil,
     'debian-12-pool for amd64' => 'debian-12-pool-amd64',
     'openSUSE-Leap-15.6-Pool for aarch64' => nil,
-    'openSUSE-Leap-16.0-Pool for aarch64' => nil
+    'openSUSE-Leap-16.0 for aarch64' => nil
   },
   'Uyuni' => {
     'openSUSE Leap 15.6 (x86_64)' => nil,
