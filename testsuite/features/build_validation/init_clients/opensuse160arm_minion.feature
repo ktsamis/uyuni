@@ -2,15 +2,15 @@
 # Licensed under the terms of the MIT license.
 
 @opensuse160arm_minion
-Feature: Bootstrap a openSUSE 16.0 ARM Salt minion
+Feature: Bootstrap an openSUSE 16.0 ARM Salt minion
 
-  Scenario: Clean up sumaform leftovers on a openSUSE 16.0 ARM Salt minion
+  Scenario: Clean up sumaform leftovers on an openSUSE 16.0 ARM Salt minion
     When I perform a full salt minion cleanup on "opensuse160arm_minion"
 
   Scenario: Log in as admin user
     Given I am authorized for the "Admin" section
 
-  Scenario: Bootstrap a openSUSE 16.0 ARM minion
+  Scenario: Bootstrap an openSUSE 16.0 ARM minion
     When I follow the left menu "Systems > Bootstrapping"
     Then I should see a "Bootstrap Minions" text
     When I enter the hostname of "opensuse160arm_minion" as "hostname"

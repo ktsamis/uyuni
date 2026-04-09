@@ -2,15 +2,15 @@
 # Licensed under the terms of the MIT license.
 
 @opensuse160arm_ssh_minion
-Feature: Bootstrap a openSUSE 16.0 ARM Salt SSH minion
+Feature: Bootstrap an openSUSE 16.0 ARM Salt SSH minion
 
-  Scenario: Clean up sumaform leftovers on a openSUSE 16.0 ARM Salt SSH minion
+  Scenario: Clean up sumaform leftovers on an openSUSE 16.0 ARM Salt SSH minion
     When I perform a full salt minion cleanup on "opensuse160arm_ssh_minion"
 
   Scenario: Log in as admin user
     Given I am authorized for the "Admin" section
 
-  Scenario: Bootstrap a openSUSE 16.0 ARM system managed via salt-ssh
+  Scenario: Bootstrap an openSUSE 16.0 ARM system managed via salt-ssh
     When I follow the left menu "Systems > Bootstrapping"
     Then I should see a "Bootstrap Minions" text
     When I check "manageWithSSH"

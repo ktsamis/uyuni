@@ -185,7 +185,6 @@ Feature: Synchronize products in the products page of the Setup Wizard
     When I use spacewalk-common-channel to add channel "sles15-sp7-devel-uyuni-client" with arch "x86_64"
     And I wait until the channel "sles15-sp7-devel-uyuni-client-x86_64" has been synced
 
-@susemanager
 @sle160_minion
   Scenario: Add SUSE Linux Enterprise Server 16.0
     Given I am authorized for the "Admin" section
@@ -197,7 +196,6 @@ Feature: Synchronize products in the products page of the Setup Wizard
     And I open the sub-list of the product "SUSE Linux Enterprise Server 16.0 x86_64"
     When I select "SUSE Linux Enterprise Server 16.0 x86_64" as a product
     Then I should see the "SUSE Linux Enterprise Server 16.0 x86_64" selected
-    And I should see the "SUSE Multi-Linux Manager Client Tools for SLE 16 x86_64" selected
     When I click the Add Product button
     And I wait until I see "Selected channels/products were scheduled successfully for syncing." text
     And I wait until I see "SUSE Linux Enterprise Server 16.0 x86_64" product has been added
@@ -435,7 +433,7 @@ Feature: Synchronize products in the products page of the Setup Wizard
     And I enter "SUSE Linux Micro 6.2" as the filtered product description
     And I wait until I see "SUSE Linux Micro 6.2 x86_64" text
     When I open the sub-list of the product "SUSE Linux Micro 6.2 x86_64"
-    When I select "SUSE Linux Micro 6.2 x86_64" as a product
+    And I select "SUSE Linux Micro 6.2 x86_64" as a product
     Then I should see the "SUSE Linux Micro 6.2 x86_64" selected
     And I should see the "SUSE Multi-Linux Manager Client Tools for SLE 16 x86_64" selected
     When I click the Add Product button
