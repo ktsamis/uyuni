@@ -398,10 +398,8 @@ public class KickstartFactory extends HibernateFactory {
      * used if you want to save the KickstartData and associate the
      *
      * @param ksdataIn Kickstart Data to be stored in db
-     * @param ksession KickstartSession to associate with this save.
      */
-    public static void saveKickstartData(KickstartData ksdataIn,
-            KickstartSession ksession) {
+    public static void saveKickstartData(KickstartData ksdataIn) {
         log.debug("saveKickstartData: {}", ksdataIn.getLabel());
         singleton.saveObject(ksdataIn);
         String fileData = null;
@@ -413,7 +411,7 @@ public class KickstartFactory extends HibernateFactory {
         else {
             log.debug("saveKickstartData wizard.  use object");
             KickstartFormatter formatter = new KickstartFormatter(
-                    KickstartUrlHelper.COBBLER_SERVER_VARIABLE, ksdataIn, ksession);
+                    KickstartUrlHelper.COBBLER_SERVER_VARIABLE, ksdataIn);
             fileData = formatter.getFileData();
         }
         Profile p = Profile.lookupById(CobblerXMLRPCHelper.getAutomatedConnection(),
@@ -439,14 +437,6 @@ public class KickstartFactory extends HibernateFactory {
             path = p.getKickstart();
         }
         return path;
-    }
-
-    /**
-     *
-     * @param ksdataIn Kickstart Data to be stored in db
-     */
-    public static void saveKickstartData(KickstartData ksdataIn) {
-        saveKickstartData(ksdataIn, null);
     }
 
     /**

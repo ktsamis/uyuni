@@ -141,7 +141,6 @@ public class KickstartFormatter {
     private final KickstartData ksdata;
     private final String ksHost;
     private final User user;
-    private KickstartSession session;
     private int postLogPostfix;
     private int preLogPostfix;
 
@@ -157,18 +156,6 @@ public class KickstartFormatter {
         this.user = UserFactory.findRandomOrgAdmin(this.ksdata.getOrg());
         this.postLogPostfix = 1;
         this.preLogPostfix = 1;
-    }
-
-    /**
-     * Constructor with KickstartSession.
-     * @param hostIn that is kickstarting from
-     * @param ksdataIn that is is to be 'formatted' for output
-     * @param sessionIn associated with the formatting.
-     */
-    public KickstartFormatter(String hostIn, KickstartData ksdataIn,
-            KickstartSession sessionIn) {
-        this(hostIn, ksdataIn);
-        this.session = sessionIn;
     }
 
     private void addLogBegin(StringBuilder buff, String logFile, String interpreter) {

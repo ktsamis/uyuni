@@ -1364,14 +1364,10 @@ public class KickstartData {
     /**
      * Return the string containing the kickstart file
      * @param host the kickstart host
-     * @param session the kickstart session,
-     *               can be null if the data
-     *               is not part of a session
      * @return String containing kickstart file
      */
-    public String getFileData(String host,
-            KickstartSession session) {
-        KickstartFormatter formatter = new KickstartFormatter(host, this, session);
+    public String getFileData(String host) {
+        KickstartFormatter formatter = new KickstartFormatter(host, this);
         return formatter.getFileData();
     }
 
