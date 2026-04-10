@@ -1,6 +1,6 @@
 ---
 name: QE - Testing new operating systems
-about: Use this template for testing new operating systems
+about: Use this template for manually testing new operating systems
 title: "Test X on Y"
 labels: ["qe-squad","manual tests"]
 projects: ["SUSE/32"]
@@ -28,6 +28,9 @@ This manually tests X for Y.
 
 - [ ] Wait until the submissions are ready
 - [ ] Install and setup a testing environment with the correct version
+- [ ] Verify if the new OS appear in the webUI under Admin -> Product Wizard
+  - if not, get in touch with Orion so they reach out to SCC and make them available there, or we get a special
+    `product-tree.json` file from Orion with the updated content that we can then use on our mirror. See [here](https://confluence.suse.com/x/t4C9dQ)
 - [ ] Open the MLM documentation
 
 ### Tests
