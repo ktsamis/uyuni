@@ -19,6 +19,10 @@ Freeze:
 Submission: 
 Release: 
 
+# Jira
+
+- 
+
 # Procedure
 
 https://confluence.suse.com/pages/viewpage.action?pageId=1082228986
@@ -33,9 +37,11 @@ You can also create sub-issues if preferred, but the needed information must be 
 
 Add more tasks if needed
 
+- [ ] Create the JIRA ticket, with placeholders for the IDs
 - [ ] Ask the Doc Squad to submit an update of the doc package to the `Devel:Galaxy:Manager:Head` project 1 day after "Last day for Changes", and ask them to warn the translators so they can start their work. A Merge Request for the [documentation.suse.com repository](https://gitlab.suse.de/susedoc/docserv-external-tree-suma) should get created a few days before the release
 - [ ] Request a Snapshot refresh at the "buildops" Team (https://gitlab.suse.de/buildops/release-support/-/issues)
 - [ ] Ask the Ion Squad to promote all salt versions that have updates, including bundle (maybe multiple times - latest on the "Last day for Changes")
+- [ ] Adjust `web.version` in `web/conf/rhn_web.conf` for `master` to match the Milestone (for example `5.1.0 Alpha1`)
 
 
 # TODO after "Last day for Changes"
@@ -48,9 +54,7 @@ Add more tasks if needed
 - [ ] Confirm that the SR for the documentation is available and merged, and translators warned
 - [ ] Merge the PR for the translations with the option `Merge pull request`
 - [ ] Quick review changelogs with `tito-wrapper`, and request changes if needed
-- [ ] Adjust `web.version` in `web/conf/rhn_web.conf` for `master` to match the Milestone (for example `5.1.0 Alpha1`)
 - [ ] Check all the [tests](https://ci.suse.de/view/Manager/view/Manager-Head/): everything should be green, or otherwise submission must be approved by QA
-- [ ] Create the JIRA ticket, with placeholders for the IDs
 
 # TODO during the submission window
 
