@@ -309,6 +309,18 @@ When(/^I click on "([^"]*)"$/) do |text|
 end
 
 #
+# Click on an accordion panel-heading button containing the given text.
+# Waits for the full button structure (including the chevron icon) to be present,
+# which confirms the React component is fully mounted with its onClick handler bound.
+#
+When(/^I click on the inventory accordion for "([^"]*)"$/) do |text|
+  xpath = "//button[contains(@class, 'panel-heading') " \
+          "and .//i[contains(@class, 'fa-chevron-right')] " \
+          "and contains(., '#{text}')]"
+  find(:xpath, xpath, wait: DEFAULT_TIMEOUT).click
+end
+
+#
 # Click on a button which appears inside of <div> with
 # the given "id"
 When(/^I click on "([^"]*)" in element "([^"]*)"$/) do |text, element_id|
