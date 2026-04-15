@@ -9,7 +9,7 @@ RUN zypper --non-interactive install --download-only --force --no-recommends pos
     mkdir -p /opt/contrib /opt/results && \
     find /var/cache/zypp/packages \( -name postgresql16-contrib* -o -name tar* -o -name gzip* \) -exec cp {} /opt/contrib \; && \
     cd /opt/contrib && rpm2cpio postgresql16-contrib.rpm | cpio -idmv && rpm2cpio tar*.rpm | cpio -idmv && rpm2cpio gzip*.rpm | cpio -idmv && \
-    find . -name pg_trgm* -exec cp --parents {} opt/results/ \; && \
+    find . -name pg_trgm* -exec cp --parents {} /opt/results/ \; && \
     cp --parents usr/bin/tar usr/bin/gzip /opt/results/
 
 FROM $PG_BASE
