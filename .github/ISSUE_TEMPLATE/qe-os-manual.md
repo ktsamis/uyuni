@@ -41,11 +41,8 @@ This manually tests X for Y.
 - [ ] create activation keys for Minion and SSH Minion
 - [ ] install a VM from the official ISO for <>
 
-#### Bootstrap via the the [bootstrap script](https://documentation.suse.com/multi-linux-manager/5.1/en/docs/client-configuration/registration-bootstrap.html)
+#### Bootstrap via the [bootstrap script](https://documentation.suse.com/multi-linux-manager/5.1/en/docs/client-configuration/registration-bootstrap.html)
 
-- [ ] onboard it as SSH Minion
-- [ ] do the [usual smoke tests](https://github.com/uyuni-project/uyuni/blob/master/testsuite/features/build_validation/smoke_tests/smoke_tests.template)
-- [ ] delete it (and do a manual Salt cleanup on the VM)
 - [ ] onboard it as Minion
 - [ ] do the [usual smoke tests](https://github.com/uyuni-project/uyuni/blob/master/testsuite/features/build_validation/smoke_tests/smoke_tests.template)
 
