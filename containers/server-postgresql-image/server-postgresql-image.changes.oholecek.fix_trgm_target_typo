@@ -1,2 +1,0 @@
-- Corretly install pg_trgm extension to absolute path
-  (bsc#1262136)

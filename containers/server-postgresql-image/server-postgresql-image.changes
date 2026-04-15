@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Wed Apr 15 16:44:17 CEST 2026 - marina.latini@suse.com
+
+- version 5.1.11
+  * Correctly install pg_trgm extension to absolute path
+    (bsc#1262136)
+
+-------------------------------------------------------------------
 Mon Mar 23 08:28:30 CET 2026 - marina.latini@suse.com
 
 - version 5.1.10
