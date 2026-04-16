@@ -1,0 +1,2 @@
+- Reapply some RBAC migrations that were not properly applied
+  (bsc#1262136)
