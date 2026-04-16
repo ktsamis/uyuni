@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Thu Apr 16 17:19:50 CEST 2026 - marina.latini@suse.com
+
+- version 5.1.17-0
+  * Re-apply some RBAC migrations that were not properly applied
+    (bsc#1262136)
+
+-------------------------------------------------------------------
 Wed Mar 25 14:17:07 CET 2026 - marina.latini@suse.com
 
 - version 5.1.16-0
