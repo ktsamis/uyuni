@@ -9,6 +9,10 @@
 -- http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 --
 
+-- Set POST instead of GET
+DELETE FROM access.endpoint WHERE endpoint = '/manager/api/oidcLogin' AND http_method = 'GET'
+    AND EXISTS (SELECT 1 FROM access.endpoint WHERE endpoint = '/manager/api/oidcLogin' AND http_method = 'POST');
+UPDATE access.endpoint SET http_method = 'POST' WHERE endpoint = '/manager/api/oidcLogin' AND http_method = 'GET';
 INSERT INTO access.endpoint (class_method, endpoint, http_method, scope, auth_required)
-    SELECT '', '/manager/api/oidcLogin', 'GET', 'A', False
-    WHERE NOT EXISTS (SELECT 1 FROM access.endpoint WHERE endpoint = '/manager/api/oidcLogin' AND http_method = 'GET');
+    SELECT '', '/manager/api/oidcLogin', 'POST', 'A', False
+    WHERE NOT EXISTS (SELECT 1 FROM access.endpoint WHERE endpoint = '/manager/api/oidcLogin' AND http_method = 'POST');
