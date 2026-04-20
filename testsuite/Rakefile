@@ -1,4 +1,4 @@
-# Copyright (c) 2013-2024 SUSE LLC.
+# Copyright (c) 2013-2026 SUSE LLC.
 # Licensed under the terms of the MIT license.
 
 require 'rake'
@@ -89,8 +89,8 @@ namespace :parallel do
       cucumber_error = nil
       begin
         sh "bundle exec parallel_cucumber -n 6 -o '#{cucumber_opts}' #{features}"
-      rescue => cucumber_error # rubocop:disable Naming/RescuedExceptionsVariableName
-        nil
+      rescue RuntimeError => e
+        cucumber_error = e
       ensure
         ENV['SCREENSHOT_DIR'] = old_screenshot_dir
       end
