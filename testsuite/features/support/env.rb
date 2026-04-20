@@ -100,6 +100,7 @@ def capybara_register_driver
         --js-flags=--max-old-space-size=2048
         --no-sandbox
         --disable-notifications
+        --log-level=3
       ]
     )
     chrome_options.args << '--headless=new' unless $debug_mode
