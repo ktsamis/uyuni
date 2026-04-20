@@ -20,9 +20,6 @@ type Props = {
  * Link to launch a modal dialog
  */
 export function ModalLink(props: Props) {
-  const margin = props.text ? "" : " no-margin";
-  const icon = props.icon && <i className={"fa " + props.icon + margin} />;
-
   return (
     <Button
       id={props.id}
