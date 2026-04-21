@@ -23,6 +23,12 @@ Add any additional bugzilla report, PR, or EPIC that must be included in this re
 
 You can also create sub-issues if preferred, but the needed information must be mentioned in this section for having an overview of still pending changes that could block the release.
 
+# Artifacts
+
+Add doc and web page PRs which needs to be merged at release time
+
+- 
+
 # ToDo some days before
 
 Add more tasks if needed.
@@ -58,7 +64,7 @@ Add more tasks if needed.
 - [ ] Merge the release notes PR, submit the release notes to [systemsmanagement:Uyuni:Master](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Master)
 - [ ] Prepare the PR for the [website repository, master branch](https://github.com/uyuni-project/uyuni-project.github.io), including announcement at the main page, updates to the stable page, news page, new doc folder (PDFs) with doc and release notes.
 - [ ] Prepare the email announcement and the X announcement, add them as comments to this card.
-- [ ] Prepare a new [snapshot](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Snapshots) as OBS subproject of `systemsmanagement:Uyuni:Snapshots`, following the naming schema `systemsmanagement:Uyuni:Snapshots:YYYY.MM`. You can use [systemsmanagement:Uyuni:Snapshots:2025.07](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Snapshots:2025.07) as base (even better if you use the snapshot for the most recent release), but make sure you adjust the meta configuration to match the version and the expect OS version used as base OS.
+- [ ] Prepare a new [snapshot](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Snapshots) as OBS subproject of `systemsmanagement:Uyuni:Snapshots`, following the naming schema `systemsmanagement:Uyuni:Snapshots:YYYY.MM` (Use `obs_subproject_creator.py` from uyuni-releng-tools). You can use [systemsmanagement:Uyuni:Snapshots:2025.07](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Snapshots:2025.07) as base (even better if you use the snapshot for the most recent release), but make sure you adjust the meta configuration to match the version and the expect OS version used as base OS.
 - [ ] Modify the [meta configuration](https://build.opensuse.org/projects/systemsmanagement:Uyuni:Stable/meta) for `systemsmanagement:Uyuni:Stable`, so the promotion is done against the new Snapshot.
 
 # ToDo during release day
