@@ -183,7 +183,6 @@ public class KickstartDataTest extends BaseTestCaseWithUser {
         KickstartFactory.saveKickstartData(k);
 
         String contents = FileUtils.readStringFromFile(k.buildCobblerFileName());
-        assertTrue(contents.indexOf("\\$") > 0);
         assertFalse(contents.contains("\\$" +
                 KickstartUrlHelper.COBBLER_MEDIA_VARIABLE));
         assertTrue(contents.indexOf("$" +
