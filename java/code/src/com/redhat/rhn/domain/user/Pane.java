@@ -36,6 +36,7 @@ public class Pane implements Serializable {
     public static final String PENDING_ACTIONS = "pending-actions";
     public static final String RECENTLY_REGISTERED_SYSTEMS = "recently-registered-systems";
     public static final String SUBSCRIPTION_WARNING = "subscription-warning";
+    public static final String DISK_CHECK_WARNING = "disk-check-warning";
 
     public static final String[] ALL_PANES = { TASKS, CRITICAL_SYSTEMS, SYSTEM_GROUPS,
             LATEST_ERRATA, INACTIVE_SYSTEMS, PENDING_ACTIONS, RECENTLY_REGISTERED_SYSTEMS, SUBSCRIPTION_WARNING };

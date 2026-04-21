@@ -15,16 +15,22 @@
 #
 
 run_sql() {
-    PGHOST= PGHOSTADDR= psql -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" --no-password --no-psqlrc -d susemanager "$@"
+  PGHOST= PGHOSTADDR= psql -v ON_ERROR_STOP=1 \
+    -p "${PGPORT:-5432}" \
+    -U "$POSTGRES_USER" \
+    --no-password --no-psqlrc -d susemanager "$@"
 }
 
 cat << EOF | run_sql
+do \$\$ begin
 create type evr_t as (
         epoch           varchar(16),
         version         varchar(512),
         release         varchar(512),
         type            varchar(10)
 );
+exception when duplicate_object then null;
+end \$\$;
 
 create or replace function evr_t(e varchar, v varchar, r varchar, t varchar)
 returns evr_t as \$\$
@@ -95,6 +101,8 @@ begin
 end;
 \$\$ language plpgsql immutable strict;
 
+-- operators: idempotent via do blocks
+do \$\$ begin
 create operator < (
   leftarg = evr_t,
   rightarg = evr_t,
@@ -104,7 +112,10 @@ create operator < (
   restrict = scalarltsel,
   join = scalarltjoinsel
 );
+exception when duplicate_object or duplicate_function then null;
+end \$\$;
 
+do \$\$ begin
 create operator <= (
   leftarg = evr_t,
   rightarg = evr_t,
@@ -114,7 +125,10 @@ create operator <= (
   restrict = scalarltsel,
   join = scalarltjoinsel
 );
+exception when duplicate_object or duplicate_function then null;
+end \$\$;
 
+do \$\$ begin
 create operator = (
   leftarg = evr_t,
   rightarg = evr_t,
@@ -124,7 +138,10 @@ create operator = (
   restrict = eqsel,
   join = eqjoinsel
 );
+exception when duplicate_object or duplicate_function then null;
+end \$\$;
 
+do \$\$ begin
 create operator >= (
   leftarg = evr_t,
   rightarg = evr_t,
@@ -134,7 +151,10 @@ create operator >= (
   restrict = scalargtsel,
   join = scalargtjoinsel
 );
+exception when duplicate_object or duplicate_function then null;
+end \$\$;
 
+do \$\$ begin
 create operator > (
   leftarg = evr_t,
   rightarg = evr_t,
@@ -144,7 +164,10 @@ create operator > (
   restrict = scalargtsel,
   join = scalargtjoinsel
 );
+exception when duplicate_object or duplicate_function then null;
+end \$\$;
 
+do \$\$ begin
 create operator <> (
   leftarg = evr_t,
   rightarg = evr_t,
@@ -154,8 +177,10 @@ create operator <> (
   restrict = eqsel,
   join = eqjoinsel
 );
+exception when duplicate_object or duplicate_function then null;
+end \$\$;
 
-
+do \$\$ begin
 create operator class evr_t_ops
 default for type evr_t using btree as
   operator 1 <,
@@ -165,6 +190,8 @@ default for type evr_t using btree as
   operator 5 >,
   function 1 evr_t_compare( evr_t, evr_t )
 ;
+exception when duplicate_object or duplicate_function then null;
+end \$\$;
 
 create or replace function evr_t_as_vre( a evr_t ) returns varchar as \$\$
 begin
@@ -198,9 +225,12 @@ begin
 end;
 \$\$ language plpgsql immutable strict;
 
+do \$\$ begin
 create aggregate max (
   sfunc=evr_t_larger,
   basetype=evr_t,
   stype=evr_t
 );
+exception when duplicate_object or duplicate_function then null;
+end \$\$;
 EOF
