@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014--2025 SUSE LLC
+ * Copyright (c) 2014--2026 SUSE LLC
  *
  * This software is licensed to you under the GNU General Public License,
  * version 2 (GPLv2). There is NO WARRANTY for this software, express or
@@ -219,5 +219,48 @@ public class ProxySettingsManagerTest extends RhnBaseTestCase {
         assertEquals("/dev/null", cmdArgs[7]);
 
         assertEquals("UYUNICFG_PWD_PLACEHOLDER=", configCommand.getFirstEnvironmentVar());
+    }
+
+    @Test
+    public void testSanitizeInput() {
+        // chars " and \ are accepted
+        assertEquals("\"\\", ProxySettingsManager.sanitizeInput("\"\\"));
+
+        // set of accepted printable chars
+        assertEquals("!#$%&’()*+,-./:;<=>?@[]^_`{|}~",
+                ProxySettingsManager.sanitizeInput("!#$%&’()*+,-./:;<=>?@[]^_`{|}~"));
+
+        // standard ascii chars
+        assertEquals("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                ProxySettingsManager.sanitizeInput("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"));
+
+        // remove tab and newline
+        assertEquals("", ProxySettingsManager.sanitizeInput("\r\n\t"));
+
+        //remove control chars
+        StringBuilder builder = new StringBuilder();
+        for (char ch = 0; ch < 32; ch++) {
+            builder.append(ch);
+        }
+        builder.append((char) 127);
+        assertEquals("", ProxySettingsManager.sanitizeInput(builder.toString()));
+
+        assertEquals("Kind of string!",
+                ProxySettingsManager.sanitizeInput("\n\nKind \n\n\n\tof string!\n\t"));
+    }
+
+    @Test
+    public void testSanitizeSettingsInput() {
+
+        ProxySettingsDto settings = new ProxySettingsDto();
+        settings.setHostname("one\ntwo\nthree");
+        settings.setUsername("@my+user^name%$\tone\ntwo");
+        settings.setPassword("!#$%&’()pass\"word\\");
+
+        ProxySettingsManager.sanitizeInput(settings);
+
+        assertEquals("onetwothree", settings.getHostname());
+        assertEquals("@my+user^name%$onetwo", settings.getUsername());
+        assertEquals("!#$%&’()pass\"word\\", settings.getPassword());
     }
 }
