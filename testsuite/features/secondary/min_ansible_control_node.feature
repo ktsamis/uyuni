@@ -64,7 +64,7 @@ Feature: Operate an Ansible control node in a normal minion
     And I follow "Inventories" in the content area
     And I wait until I see "/srv/playbooks/orion_dummy/hosts" text
     And I click on the inventory accordion for "/srv/playbooks/orion_dummy/hosts"
-    Then I wait until I see "myself" text, refreshing the page
+    Then I wait until I see "myself" text
 
   Scenario: Discover playbooks and display them
     Given I am on the Systems overview page of this "sle_minion"
