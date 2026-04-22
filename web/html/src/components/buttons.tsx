@@ -10,7 +10,6 @@ type BaseProps = {
   text?: React.ReactNode;
   /** Text to display on the button. */
   children?: React.ReactNode;
-
   /**
    * FontAwesome icon class of the button. Can also include additional FA classes
    * (sizing, animation etc.).
@@ -316,7 +315,7 @@ export class DropdownButton extends _ButtonBase<DropdownProps> {
           id={this.props.id}
           type="button"
           title={this.props.title}
-          className={"dropdown-toggle btn " + this.props.className}
+          className={"dropdown-toggle dropdown-custom btn " + this.props.className}
           onClick={this.props.handler}
           data-bs-toggle="dropdown"
           disabled={this.props.disabled}
