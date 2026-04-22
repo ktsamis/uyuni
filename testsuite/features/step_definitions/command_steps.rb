@@ -1096,10 +1096,11 @@ end
 When(/^I obtain and extract the supportconfig from the server$/) do
   supportconfig_path = '/root/server-supportconfig.tar.gz'
   test_runner_file = '/root/server-supportconfig.tar.gz'
+  localhost = get_target('localhost')
   get_target('server').scp_download(supportconfig_path, test_runner_file)
-  `rm -rf /root/server-supportconfig`
-  `mkdir /root/server-supportconfig && tar xzvf /root/server-supportconfig.tar.gz -C /root/server-supportconfig`
-  `mv /root/server-supportconfig/scc_*/ /root/server-supportconfig/uyuni-server-supportconfig/`
+  localhost.run('rm -rf /root/server-supportconfig')
+  localhost.run('mkdir /root/server-supportconfig && tar xzvf /root/server-supportconfig.tar.gz -C /root/server-supportconfig')
+  localhost.run('mv /root/server-supportconfig/scc_*/*/ /root/server-supportconfig/uyuni-server-supportconfig/')
 end
 
 When(/^I remove the autoinstallation files from the server$/) do
@@ -1875,5 +1876,5 @@ end
 
 Then(/^I remove test supportconfig on "([^"]*)"$/) do |host|
   node = get_target(host)
-  node.run('rm /root/server-supportconfig -rf')
+  node.run('rm -rf /root/server-supportconfig')
 end
