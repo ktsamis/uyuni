@@ -1099,9 +1099,7 @@ When(/^I obtain and extract the supportconfig from the server$/) do
   get_target('server').scp_download(supportconfig_path, test_runner_file)
   `rm -rf /root/server-supportconfig`
   `mkdir /root/server-supportconfig && tar xzvf /root/server-supportconfig.tar.gz -C /root/server-supportconfig`
-  `mv /root/server-supportconfig/scc_* /root/server-supportconfig/test-server`
-  `tar xJvf /root/server-supportconfig/test-server/*supportconfig.txz -C /root/server-supportconfig`
-  `mv /root/server-supportconfig/scc_suse_*/ /root/server-supportconfig/uyuni-server-supportconfig/`
+  `mv /root/server-supportconfig/scc_*/ /root/server-supportconfig/uyuni-server-supportconfig/`
 end
 
 When(/^I remove the autoinstallation files from the server$/) do
