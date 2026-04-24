@@ -6,7 +6,8 @@ const CsvLink = (props) => (
   <div className="spacewalk-csv-download">
     <LinkButton
       className="btn btn-default"
-      href={"/rhn/manager/subscription-matching/" + props.name} data-senna-off="true"
+      href={"/rhn/manager/subscription-matching/" + props.name}
+      data-senna-off="true"
       text={t("Download CSV")}
       icon="spacewalk-icon-download-csv"
     />

@@ -615,15 +615,17 @@ class ImageViewList extends React.Component<ImageViewListProps, ImageViewListSta
     }
 
     const obsoleteFilter = (
-      <label>
-        <input
-          name="obsoleteFilter"
-          type="checkbox"
-          checked={this.state.showObsolete}
-          onChange={this.showObsoleteChanged}
-        />{" "}
-        <span>{t("Show obsolete")}</span>
-      </label>
+      <div className="d-flex ms-3">
+        <label>
+          <input
+            name="obsoleteFilter"
+            type="checkbox"
+            checked={this.state.showObsolete}
+            onChange={this.showObsoleteChanged}
+          />{" "}
+          <span>{t("Show obsolete")}</span>
+        </label>
+      </div>
     );
 
     return (
@@ -638,6 +640,7 @@ class ImageViewList extends React.Component<ImageViewListProps, ImageViewListSta
           selectedItems={this.state.selectedItems}
           onSelect={this.handleSelectItems}
           additionalFilters={[obsoleteFilter]}
+          searchPanelInline
         >
           <Column columnKey="type" comparator={Utils.sortByText} header={t("Type")} cell={(row) => typeMap[row.type]} />
           <Column columnKey="name" comparator={Utils.sortByText} header={t("Name")} cell={(row) => row.name} />

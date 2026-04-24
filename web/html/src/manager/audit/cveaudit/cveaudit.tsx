@@ -336,7 +336,7 @@ class CVEAudit extends React.Component<Props, State> {
                   "&statuses=" +
                   this.state.statuses
                 }
-                text= {t("Download CSV")}
+                text={t("Download CSV")}
                 data-senna-off="true"
                 className="btn btn-default"
                 icon="spacewalk-icon-download-csv"
