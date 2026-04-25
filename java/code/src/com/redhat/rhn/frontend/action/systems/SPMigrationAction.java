@@ -42,6 +42,7 @@ import com.redhat.rhn.manager.errata.ErrataManager;
 import com.redhat.rhn.manager.rhnpackage.PackageManager;
 
 import com.suse.manager.maintenance.NotInMaintenanceModeException;
+import com.suse.manager.model.products.migration.MigrationDataFactory;
 
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.logging.log4j.LogManager;
