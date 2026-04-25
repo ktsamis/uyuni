@@ -2393,9 +2393,14 @@ public class JobReturnEventMessageActionTest extends JMockBaseTestCaseWithUser {
         minion.setMinionId("192.168.101.240");
         ServerFactory.save(minion);
 
-        Action applyStatesAction = ActionFactoryTest.createAction(user, ActionFactory.TYPE_APPLY_STATES);
-        ServerAction sa = ActionFactoryTest.createServerAction(minion, applyStatesAction);
-        applyStatesAction.addServerAction(sa);
+        ActionManager.setTaskomaticApi(getTaskomaticApi());
+        ApplyStatesAction applyStatesAction = ActionManager.scheduleApplyStates(
+                user, List.of(minion.getId()),
+                List.of(ApplyStatesEventMessage.DISTUPGRADE_SLES16_VERIFY), new Date());
+        applyStatesAction = HibernateFactory.reload(applyStatesAction);
+        ServerAction sa = applyStatesAction.getServerActions().stream()
+                .filter(a -> a.getServer().getId().equals(minion.getId()))
+                .findFirst().orElseThrow();
 
         Optional<JobReturnEvent> event = JobReturnEvent.parse(
                 getJobReturnEvent("sles16.verify.job.return.json", applyStatesAction.getId()));

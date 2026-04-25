@@ -1155,9 +1155,9 @@ public class DistUpgradeManagerTest extends BaseTestCaseWithUser {
         DistUpgradeActionDetails det = new DistUpgradeActionDetails();
         det.setServer(minion);
         det.setDryRun(false);
-        det.setProductUpgrades(Set.of(new SUSEProductUpgrade(
+        det.addProductUpgrade(new SUSEProductUpgrade(
                 buildSlesProduct("sles", "15.7", true),
-                buildSlesProduct("sles", "16.0", true))));
+                buildSlesProduct("sles", "16.0", true)));
         dupAction.setDetails(det);
 
         // Simulate SaltUtils prematurely marking the action complete
@@ -1192,7 +1192,7 @@ public class DistUpgradeManagerTest extends BaseTestCaseWithUser {
         det.setServer(minion);
         det.setDryRun(false);
         det.setAllowVendorChange(false);
-        det.setProductUpgrades(Set.of(new SUSEProductUpgrade(sles15, sles16)));
+        det.addProductUpgrade(new SUSEProductUpgrade(sles15, sles16));
 
         Channel sles16Channel = ChannelFactoryTest.createTestChannel(user);
         DistUpgradeChannelTask subscribeTask = new DistUpgradeChannelTask();
@@ -1222,7 +1222,7 @@ public class DistUpgradeManagerTest extends BaseTestCaseWithUser {
     private JsonElement loadSles16VerifySuccessFixture() {
         try (var reader = new java.io.InputStreamReader(
                 getClass().getResourceAsStream(
-                        "/com/suse/manager/reactor/messaging/sles16_verify_success.json"))) {
+                        "/com/suse/manager/reactor/messaging/test/sles16_verify_success.json"))) {
             return JsonParser.parseReader(reader);
         }
         catch (java.io.IOException e) {
