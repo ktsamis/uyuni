@@ -21,6 +21,7 @@ import com.redhat.rhn.common.messaging.EventMessage;
 import com.redhat.rhn.common.messaging.MessageAction;
 import com.redhat.rhn.common.messaging.MessageQueue;
 import com.redhat.rhn.common.util.StringUtil;
+import com.redhat.rhn.domain.action.Action;
 import com.redhat.rhn.domain.action.ActionFactory;
 import com.redhat.rhn.domain.action.dup.DistUpgradeAction;
 import com.redhat.rhn.domain.action.dup.DistUpgradeActionDetails;
@@ -435,7 +436,8 @@ public class RegisterMinionEventMessageAction implements MessageAction {
      * @return true if the server action is a pending SLES 15 -> SLES 16 migration for the given minion
      */
     private boolean isSles15To16Migration(ServerAction sa, MinionServer minion) {
-        if (sa.getParentAction() instanceof DistUpgradeAction dup) {
+        Action action = HibernateFactory.unproxy(sa.getParentAction());
+        if (action instanceof DistUpgradeAction dup) {
             DistUpgradeActionDetails details = dup.getDetails(minion.getId());
             return (details != null) && details.isSles15To16Migration();
         }
