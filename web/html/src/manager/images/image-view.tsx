@@ -817,13 +817,6 @@ class ImageViewDetails extends React.Component<ImageViewDetailsProps> {
             ) : null,
           ]}
         />
-        <Button
-          text={t("Back")}
-          icon="fa-chevron-left"
-          title={t("Back")}
-          className="btn-default"
-          handler={this.props.onCancel}
-        />
       </div>
     );
   }
