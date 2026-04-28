@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: Spacewalk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-20 17:53+0200\n"
-"PO-Revision-Date: 2026-04-28 14:04+0000\n"
+"PO-Revision-Date: 2026-04-28 15:04+0000\n"
 "Last-Translator: sorau <sorau@proton.me>\n"
 "Language-Team: French <https://l10n.opensuse.org/projects/uyuni/backend-5-1/fr/>\n"
 "Language: fr\n"
@@ -1042,7 +1042,7 @@ msgstr ""
 #: ../satellite_tools/messages.py:80
 #, fuzzy, python-format
 msgid "    Extinct package:  %s"
-msgstr "Paquet attendu, pas : %s"
+msgstr "    Paquet attendu, pas : %s"
 
 #: ../satellite_tools/messages.py:81
 #, python-format
@@ -1109,9 +1109,8 @@ msgid "   * WARNING: this may be a slow process."
 msgstr "   * AVERTISSEMENT : cette action pourrait prendre du temps."
 
 #: ../satellite_tools/messages.py:97
-#, fuzzy
 msgid "Linking packages to channels"
-msgstr "Canaux de base conflictuels"
+msgstr "Lier des paquets à des canaux"
 
 #: ../satellite_tools/messages.py:98
 #, python-format
