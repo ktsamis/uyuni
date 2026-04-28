@@ -2,7 +2,7 @@
 name: QE - Build Validation
 about: QE - Use this template for a new build validation
 title: "BV "
-labels: ["qe-squad", "build validation", "high-priority"]
+labels: ["qe-squad", "build validation", "epics"]
 projects: ["SUSE/32"]
 assignees: ''
 
