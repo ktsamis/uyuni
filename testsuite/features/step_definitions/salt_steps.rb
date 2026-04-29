@@ -453,7 +453,8 @@ When(/^I see "([^"]*)" fingerprint$/) do |host|
   node = get_target(host)
   salt_call = use_salt_bundle ? 'venv-salt-call' : 'salt-call'
   output, _code = node.run("#{salt_call} --local key.finger")
-  fing = output.split("\n")[1].strip!
+  fing = output.split("\n")[1]&.strip
+  raise ScriptError, 'Fingerprint line not found in salt-call output' if fing.nil?
   raise ScriptError, "Text: #{fing} not found" unless check_text?(fing)
 end
 
