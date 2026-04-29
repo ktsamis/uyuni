@@ -277,11 +277,11 @@ end
 Then(/^I should see the power is "([^"]*)"$/) do |status|
   within(:xpath, '//*[@for=\'powerStatus\']/..') do
     repeat_until_timeout(message: "power is not #{status}") do
-      break if check_text_and_catch_request_timeout_popup?(status)
+      break if check_text?(status)
 
       find(:xpath, '//button[@value="Get status"]').click
     end
-    raise ScriptError, "Power status #{status} not found" unless check_text_and_catch_request_timeout_popup?(status)
+    raise ScriptError, "Power status #{status} not found" unless check_text?(status)
   end
 end
 
