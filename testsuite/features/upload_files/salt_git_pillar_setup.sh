@@ -45,7 +45,7 @@ EOF
 
 	# Start SSHd service
 	ssh-keygen -A
-	/usr/sbin/sshd -D &
+	systemctl start sshd
 
 	mkdir -p /etc/salt/master.d/
 	cat << 'EOF' > /etc/salt/master.d/zz-testing-gitpillar.conf
@@ -67,6 +67,6 @@ if [ "$1" == "clean" ]; then
 	rm /etc/salt/master.d/zz-testing-gitpillar.conf
 	cp /root/.ssh/authorized_keys_backup_gitpillar /root/.ssh/authorized_keys
 	rm /root/.ssh/authorized_keys_backup_gitpillar
-	pkill sshd
+	systemctl stop sshd
 	systemctl restart salt-master salt-api
 fi
