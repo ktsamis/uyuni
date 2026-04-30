@@ -1100,7 +1100,11 @@ When(/^I obtain and extract the supportconfig from the server$/) do
   get_target('server').scp_download(supportconfig_path, test_runner_file)
   localhost.run('rm -rf /root/server-supportconfig')
   localhost.run('mkdir /root/server-supportconfig && tar xzvf /root/server-supportconfig.tar.gz -C /root/server-supportconfig')
-  localhost.run('mv /root/server-supportconfig/scc_*/*/ /root/server-supportconfig/uyuni-server-supportconfig/')
+  localhost.run('mv /root/server-supportconfig/scc_*/uyuni-server-container-*/ /root/server-supportconfig/uyuni-server-supportconfig')
+  file_count, _code = localhost.run('ls /root/server-supportconfig/uyuni-server-supportconfig/ | wc -l', check_errors: false)
+  raise 'Extracted supportconfig is empty or inaccessible' unless file_count.strip.to_i.positive?
+
+  add_context(:supportconfig_path, '/root/server-supportconfig/uyuni-server-supportconfig')
 end
 
 When(/^I remove the autoinstallation files from the server$/) do
@@ -1841,9 +1845,19 @@ When(/^I start the health check tool with supportconfig "([^"]*)" on "([^"]*)"$/
   node.run("mgr-health-check -v -s #{supportconfig} start", check_errors: true, verbose: true)
 end
 
-When(/^I stop health check tool on "([^"]*)"$/) do |host|
+When(/^I start the health check tool with the extracted supportconfig on "([^"]*)"$/) do |host|
+  supportconfig_path = get_context(:supportconfig_path)
+  raise 'No supportconfig path in context - did the extraction step succeed?' if supportconfig_path.nil? || supportconfig_path.empty?
+
   node = get_target(host)
-  node.run('mgr-health-check stop', check_errors: true, verbose: true)
+  node.run("mgr-health-check -v -s #{supportconfig_path} start", check_errors: true, verbose: true)
+end
+
+When(/^I stop the health check tool on "([^"]*)"$/) do |host|
+  node = get_target(host)
+  node.run('mgr-health-check stop', check_errors: false, verbose: true)
+  node.run('podman rm -f health_check_loki health_check_promtail health_check_supportconfig_exporter health-check-grafana', check_errors: false)
+  node.run('podman network rm -f health-check-network', check_errors: false)
 end
 
 Then(/^the word "([^']*)" does not occur more than (\d+) times in "(.*)" on "([^"]*)"$/) do |word, threshold, path, host|
@@ -1869,12 +1883,29 @@ Then(/^I check that the health check tool exposes metrics on "([^"]*)"$/) do |ho
   node.run("curl -s localhost:9000/metrics.json | python3 -c 'import sys, json; print(json.load(sys.stdin).keys())'", check_errors: true, verbose: true)
 end
 
-Then(/^I check that the health check tool (is|is not) running on "([^"]*)"$/) do |action, host|
+Then(/^the health check tool should expose the expected metrics on "([^"]*)"$/) do |host|
+  node = get_target(host)
+  expected_keys = %w[java_config config apache postgresql hw memory disk salt_configuration salt_keys salt_jobs misc]
+  output, _code = node.run("curl -s localhost:9000/metrics.json | python3 -c 'import sys, json; [print(k) for k in json.load(sys.stdin).keys()]'", check_errors: true, verbose: true)
+  actual_keys = output.strip.split("\n")
+  missing_keys = expected_keys - actual_keys
+  raise "Health check metrics missing expected keys: #{missing_keys.join(', ')}" unless missing_keys.empty?
+end
+
+Then(/^the health check Grafana dashboard should be accessible on "([^"]*)"$/) do |host|
+  node = get_target(host)
+  http_code, code = node.run("curl -s -o /dev/null -w '%{http_code}' localhost:3000", check_errors: false)
+  raise "Grafana dashboard not accessible: curl failed with exit code #{code}" unless code.zero?
+  raise "Grafana dashboard not accessible: expected HTTP 200, got #{http_code.strip}" unless http_code.strip == '200'
+end
+
+Then(/^the health check tool (should be|should not be) running on "([^"]*)"$/) do |action, host|
   node = get_target(host)
   node.run("test $(podman ps | grep health-check | wc -l) == #{action == 'is' ? '4' : '0'}", check_errors: true, verbose: true)
 end
 
-Then(/^I remove test supportconfig on "([^"]*)"$/) do |host|
+When(/^I remove test supportconfig on "([^"]*)"$/) do |host|
   node = get_target(host)
   node.run('rm -rf /root/server-supportconfig')
+  node.run('rm -rf /root/server-supportconfig.tar.gz')
 end
