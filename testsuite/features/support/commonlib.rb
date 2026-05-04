@@ -602,6 +602,14 @@ def channel_timeout(channel)
   timeout
 end
 
+# This method calculates the timeout needed for channels still waiting to solve dependencies
+#
+# @param channels [Array<String>] List of channel names that still need solving
+# @return [Integer] Total timeout in seconds for these channels
+def calculate_remaining_channels_timeout(channels)
+  channels.reduce(0) { |acc, elem| acc + channel_timeout(elem) }
+end
+
 # Verifies that a list of channels has downloaded all delivered packages,
 # blocking until completion or until the global timeout budget is exhausted.
 #
@@ -657,9 +665,9 @@ def wait_for_channels(channels, label, margin: 900)
   end
 end
 
-# This method checks if the synchronization for the given channel is completed
+# This method checks if the channel with the given label has been fully synced
 #
-# @param channel_name [String] the channel to check
+# @param channel_name [String] the label of the channel to check
 # @return [Boolean] true if the synchronization is completed, false otherwise
 def channel_packages_are_downloaded?(channel_name)
   if channel_name.include?('custom_channel')
@@ -668,7 +676,18 @@ def channel_packages_are_downloaded?(channel_name)
     return true if $custom_repositories[client].nil? && client != 'monitoring_server'
   end
   log_tmp_file = '/tmp/reposync.log'
-  get_target('server').extract('/var/log/rhn/reposync.log', log_tmp_file)
+  # Copy reposync logs to /tmp/ to prevent race condition and error when calling .extract()
+  # if the reposync log file is being updated during the underlying "mgrctl cp" call:
+  #
+  # https://github.com/uyuni-project/uyuni-tools/issues/772
+  #
+  # INF Starting mgrctl cp server:/var/log/rhn/reposync.log /tmp/reposync.log
+  # INF Error: 1 error occurred:
+  #  * copying from container: copier: get: "/var/log/rhn/reposync.log": copying /var/log/rhn/reposync.log: archive/tar: write too long
+  # (ScriptError)
+  #
+  get_target('server').run('cp /var/log/rhn/reposync.log /tmp/testsuite_reposync_check.log')
+  get_target('server').extract('/tmp/testsuite_reposync_check.log', log_tmp_file)
   unless File.exist?(log_tmp_file) && !File.empty?(log_tmp_file)
     log "DEBUG: Log file #{log_tmp_file} is missing or empty."
     return false
