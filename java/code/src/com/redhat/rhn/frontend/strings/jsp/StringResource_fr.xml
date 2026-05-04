@@ -23774,7 +23774,7 @@ Le chemin d'arborescence, le RPM Kickstart, le canal de base, et la génération
         <context-group name="ctx">
           <context context-type="sourcefile">/systems/details/Overview.do</context>
         </context-group>
-        <target>Bâtiment</target>
+        <target state="translated">Compilation</target>
       </trans-unit>
       <trans-unit id="sdc.details.overview.updatesavailable" xml:space="preserve">
         <source>Software Updates Available</source>
@@ -24041,7 +24041,7 @@ Le chemin d'arborescence, le RPM Kickstart, le canal de base, et la génération
         <context-group name="ctx">
           <context context-type="sourcefile">/systems/details/Edit.do</context>
         </context-group>
-        <target>Bâtiment :</target>
+        <target state="translated">Compilation :</target>
       </trans-unit>
       <trans-unit id="sdc.details.edit.room" xml:space="preserve">
         <source>Room:</source>
@@ -27071,7 +27071,7 @@ canal  {0}. Les systèmes abonnés vont perdre leur accès aux paquetages spéci
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/ScheduleDetail.do</context>
         </context-group>
-        <target>Nom de la programmation</target>
+        <target state="translated">Nom du calendrier</target>
       </trans-unit>
       <trans-unit id="schedule.edit.jsp.bunch" xml:space="preserve">
         <source>Bunch</source>
