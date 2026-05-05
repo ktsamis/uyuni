@@ -6664,7 +6664,7 @@ organisation. Vous pouvez accorder ou retirer le rôle d'administrateur d'organi
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/SystemGroupList</context>
         </context-group>
-        <target>Mises à jour d'errata disponibles</target>
+        <target state="translated">Mises à jour disponibles</target>
       </trans-unit>
       <trans-unit id="grouplist.jsp.noerrata" xml:space="preserve">
         <source>No applicable updates</source>
@@ -6672,7 +6672,7 @@ organisation. Vous pouvez accorder ou retirer le rôle d'administrateur d'organi
           <context context-type="sourcefile">/rhn/systems/SystemGroupList</context>
           <context context-type="sourcefile">/rhn/frontend/dto/SystemGroupOverview</context>
         </context-group>
-        <target>Aucun errata applicable</target>
+        <target state="translated">Aucune mise à jour disponible</target>
       </trans-unit>
       <trans-unit id="grouplist.jsp.intersection" xml:space="preserve">
         <source>Work With Intersection</source>
@@ -22629,7 +22629,7 @@ Le chemin d'arborescence, le RPM Kickstart, le canal de base, et la génération
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/virtualization/VirtualGuestsList.do</context>
         </context-group>
-        <target>Aucun système virtuel.</target>
+        <target state="translated">Pas de systèmes virtuels.</target>
       </trans-unit>
       <trans-unit id="virtualguestslist.jsp.disabled_checkbox_title" xml:space="preserve">
         <source>Cannot select system</source>
@@ -22671,7 +22671,7 @@ Le chemin d'arborescence, le RPM Kickstart, le canal de base, et la génération
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/virtualization/VirtualGuestsList.do</context>
         </context-group>
-        <target>Mémoire courante</target>
+        <target state="translated">Mémoire actuelle</target>
       </trans-unit>
       <trans-unit id="virtualguestslist.jsp.vcpus" xml:space="preserve">
         <source>vCPUs</source>
