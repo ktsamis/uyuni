@@ -13,9 +13,16 @@ INSERT INTO access.namespace (namespace, access_mode, description)
     SELECT 'salt.remote_commands', 'W', 'Execute remote commands on systems'
     WHERE NOT EXISTS (SELECT 1 FROM access.namespace WHERE namespace = 'salt.remote_commands' AND access_mode = 'W');
 
-UPDATE access.endpointNamespace
-SET namespace_id = (SELECT id FROM access.namespace WHERE namespace = 'salt.remote_commands' AND access_mode = 'W')
-WHERE endpoint_id = (SELECT id FROM access.endpoint WHERE endpoint = '/manager/systems/cmd' AND http_method = 'GET');
+DELETE FROM access.endpointNamespace
+WHERE
+    namespace_id = (SELECT id FROM access.namespace WHERE namespace = 'salt.keys' AND access_mode = 'W') AND
+    endpoint_id = (SELECT id FROM access.endpoint WHERE endpoint = '/manager/systems/cmd' AND http_method = 'GET');
+
+INSERT INTO access.endpointNamespace (namespace_id, endpoint_id)
+    SELECT ns.id, ep.id FROM access.namespace ns, access.endpoint ep
+    WHERE ns.namespace = 'salt.remote_commands' AND ns.access_mode = 'W'
+    AND ep.endpoint = '/manager/systems/cmd' AND ep.http_method = 'GET'
+    ON CONFLICT DO NOTHING;
 
 -- Permit to all access groups
 INSERT INTO access.accessGroupNamespace
