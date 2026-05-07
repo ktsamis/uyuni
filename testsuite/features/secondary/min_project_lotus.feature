@@ -97,7 +97,7 @@ Feature: Project Lotus
     And I enter "ptf-30961-3-0" as the filtered package name
     And I click on the filter button
     And I check "ptf-30961-3-0" in the list
-    And I click on "Install Selected Packages"
+    And I click on "Install Packages"
     And I click on "Confirm"
     Then I should see a "1 package install has been scheduled for" text
     And I wait until event "Package Install/Upgrade scheduled" is completed
@@ -118,7 +118,7 @@ Feature: Project Lotus
   Scenario: Cleanup: Delete custom channel for PTFs
     When I follow the left menu "Software > Manage > Channels"
     And I follow "Custom Channel for SLES15SP7 PTFs"
-    And I follow "Delete software channel"
+    And I follow "Delete Channel"
     And I check "unsubscribeSystems"
     And I click on "Delete Channel"
     Then I should see a "Channel Custom Channel for SLES15SP7 PTFs has been deleted" text
