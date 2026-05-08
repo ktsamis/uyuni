@@ -2491,7 +2491,7 @@ a skúste to znova.
       </trans-unit>
       <trans-unit id="toolbar.delete.snippets" xml:space="preserve">
         <source>Delete Snippet</source>
-        <target state="needs-adaptation">vymazať úryvok</target>
+        <target state="translated">Vymazať úryvok</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/kickstart/cobbler/CobblerSnippetEdit</context>
         </context-group>
@@ -12074,37 +12074,37 @@ Ak chcete túto situáciu napraviť, pridajte prihlasovacie údaje SCC &lt;a hre
         </context-group>
         <target state="translated">Riadenie prístupu</target>
       </trans-unit>
-    <trans-unit id="Add address" xml:space="preserve">
+      <trans-unit id="Add address" xml:space="preserve">
         <source>Add address</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/Addresses</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Pridať adresu</target>
+      </trans-unit>
       <trans-unit id="Edit" xml:space="preserve">
         <source>Edit</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/Addresses</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Upraviť</target>
+      </trans-unit>
       <trans-unit id="ARMHF Debian" xml:space="preserve">
         <source>ARMHF Debian</source>
         <target>ARMHF Debian</target>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="diskcheckwarning" xml:space="preserve">
         <source>Disk Check</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Kontrola diskov</target>
+      </trans-unit>
       <trans-unit id="notification.diskcheck.summary" xml:space="preserve">
         <source>You are running out of space on your @@PRODUCT_NAME@@ {0}. This is {1}</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Na vašom @@PRODUCT_NAME@@ {0} dochádza miesto. Je to {1}</target>
+      </trans-unit>
       <trans-unit id="notification.diskcheck.details" xml:space="preserve">
         <source>You are running out of space on your @@PRODUCT_NAME@@ {0}. This is {1}. If you run out of disk space, @@PRODUCT_NAME@@ will stop running, and this could lead to a loss of data. @@PRODUCT_NAME@@ will shutdown automatically.</source>
-      <target state="new"/>
-  </trans-unit>
-      </body>
+        <target state="translated">Na vašom @@PRODUCT_NAME@@ {0} dochádza miesto. Je to {1}. Ak vám dôjde miesto na disku, @@PRODUCT_NAME@@ prestane fungovať, čo môže viesť k strate dát. @@PRODUCT_NAME@@ sa automaticky vypne.</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
