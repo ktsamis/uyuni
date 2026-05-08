@@ -338,13 +338,6 @@
         </context-group>
         <target>Не заповнено поле адреси</target>
       </trans-unit>
-      <trans-unit id="Fill in this address" xml:space="preserve">
-        <source>Fill in this address</source>
-        <context-group name="ctx">
-          <context context-type="sourcefile">/rhn/users/Addresses</context>
-        </context-group>
-        <target>Заповніть поле цієї адреси</target>
-      </trans-unit>
       <trans-unit id="Advanced Search" xml:space="preserve">
         <source>Advanced Search</source>
         <context-group name="ctx">
@@ -600,13 +593,6 @@
           <context context-type="sourcefile">Navigation Menu</context>
         </context-group>
         <target>Дистрибутиви</target>
-      </trans-unit>
-      <trans-unit id="Edit this address" xml:space="preserve">
-        <source>Edit this address</source>
-        <context-group name="ctx">
-          <context context-type="sourcefile">/rhn/users/Addresses</context>
-        </context-group>
-        <target>Редагувати цю адресу</target>
       </trans-unit>
       <trans-unit id="Errata" xml:space="preserve">
         <source>Patches</source>
@@ -2314,11 +2300,11 @@ and try again.
         </context-group>
       </trans-unit>
       <trans-unit id="toolbar.delete.snippets" xml:space="preserve">
-        <source>delete snippet</source>
+        <source>Delete Snippet</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/kickstart/cobbler/CobblerSnippetEdit</context>
         </context-group>
-        <target>вилучити фрагмент</target>
+        <target state="needs-adaptation">вилучити фрагмент</target>
       </trans-unit>
       <trans-unit id="kickstart.iprange.url" xml:space="preserve">
         <source>New systems can be autoinstalled based upon their ip address by appending &lt;code&gt;{0}&lt;/code&gt; to the kernel parameters for an autoinstallation.</source>
@@ -6126,12 +6112,6 @@ Follow this url to see the full list of inactive systems:
           <context context-type="sourcefile">/rhn/kickstart/ScheduleKickstart.do</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="kickstart.schedule.noup2date" xml:space="preserve">
-        <source>An autoinstallation was not scheduled for &lt;strong&gt;&lt;a href="/rhn/systems/details/Overview.do?sid={0}"&gt;{1}&lt;/a&gt;&lt;/strong&gt; because the package profile did not contain the 'up2date' package. An update of that system's package profile may be required.</source>
-        <context-group name="ctx">
-          <context context-type="sourcefile">/rhn/kickstart/ScheduleKickstart.do</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="kickstart.session.newsession" xml:space="preserve">
         <source>A new autoinstall session was initiated for this system.</source>
         <context-group name="ctx">
@@ -6158,12 +6138,6 @@ Follow this url to see the full list of inactive systems:
       </trans-unit>
       <trans-unit id="kickstart.session.newprofile" xml:space="preserve">
         <source>Profile for autoinstall session {0}.</source>
-        <context-group name="ctx">
-          <context context-type="sourcefile">/rhn/kickstart/ScheduleKickstart.do</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="kickstart.schedule.noup2dateinchannel" xml:space="preserve">
-        <source>We require version {0} or greater of up2date in order to kickstart a system. &lt;strong&gt;{2}&lt;/strong&gt; has {1} installed but we could not find a version of up2date in this system's channels to upgrade it to the required version or above.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/kickstart/ScheduleKickstart.do</context>
         </context-group>
@@ -11022,6 +10996,37 @@ To amend this situation, please add SCC credentials &lt;a href="/rhn/admin/setup
         <context-group name="ctx">
           <context context-type="sourcefile">Navigation Menu</context>
         </context-group>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="Add address" xml:space="preserve">
+        <source>Add address</source>
+        <context-group name="ctx">
+          <context context-type="sourcefile">/rhn/users/Addresses</context>
+        </context-group>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="Edit" xml:space="preserve">
+        <source>Edit</source>
+        <context-group name="ctx">
+          <context context-type="sourcefile">/rhn/users/Addresses</context>
+        </context-group>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="ARMHF Debian" xml:space="preserve">
+        <source>ARMHF Debian</source>
+        <target>ARMHF Debian</target>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="diskcheckwarning" xml:space="preserve">
+        <source>Disk Check</source>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="notification.diskcheck.summary" xml:space="preserve">
+        <source>You are running out of space on your @@PRODUCT_NAME@@ {0}. This is {1}</source>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="notification.diskcheck.details" xml:space="preserve">
+        <source>You are running out of space on your @@PRODUCT_NAME@@ {0}. This is {1}. If you run out of disk space, @@PRODUCT_NAME@@ will stop running, and this could lead to a loss of data. @@PRODUCT_NAME@@ will shutdown automatically.</source>
       <target state="new"/>
   </trans-unit>
       </body>
