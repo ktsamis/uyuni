@@ -1,4 +1,4 @@
-# Copyright (c) 2021-2025 SUSE LLC
+# Copyright (c) 2021-2026 SUSE LLC
 # Licensed under the terms of the MIT license.
 
 # skip if container because we do not have a domain name and the
@@ -118,7 +118,7 @@ Feature: Maintenance windows
     And I enter "virgo-dummy" as the filtered package name
     And I click on the filter button
     And I check "virgo-dummy" in the list
-    And I click on "Install Selected Packages"
+    And I click on "Install Packages"
     And I select the next maintenance window
     And I click on "Confirm"
     Then I should see a "1 package install has been scheduled for" text
@@ -149,7 +149,7 @@ Feature: Maintenance windows
     And I click the "singleschedule" item delete button
     Then I should see a "Delete maintenance schedule" text
     When I click on the red confirmation button
-    And I wait until I see "singleschedule' has been deleted." text
+    And I wait until I see "Schedule 'singleschedule' has been deleted." text
 
   Scenario: Delete maintenance calendars
     When I follow the left menu "Schedule > Maintenance Windows > Calendars"

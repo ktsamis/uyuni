@@ -132,31 +132,14 @@ def repeat_until_timeout(timeout: DEFAULT_TIMEOUT, retries: nil, message: nil, r
 end
 
 #
-# Checks if the specified text is visible on the page and catches a request timeout popup if it appears.
+# Checks if the specified text is visible on the page.
 #
 # @param text1 [String] The first text to check for visibility.
 # @param text2 [String, nil] The second text to check for visibility (optional).
 # @param timeout [Integer] The maximum time to wait for the text to become visible (default: Capybara.default_max_wait_time).
-# @return [Boolean] Returns true if the text is visible or the request timeout popup is caught, false otherwise.
-def check_text_and_catch_request_timeout_popup?(text1, text2: nil, timeout: Capybara.default_max_wait_time)
-  return has_text?(text1, wait: timeout) || (!text2.nil? && has_text?(text2, wait: timeout)) unless $catch_timeout_message
-
-  start_time = Time.now
-  repeat_until_timeout(message: "'#{text1}' still not visible", timeout: DEFAULT_TIMEOUT) do
-    while Time.now - start_time <= timeout
-      return true if has_text?(text1, wait: 4)
-      return true if !text2.nil? && has_text?(text2, wait: 4)
-
-      next unless has_text?('Request has timed out', wait: 0)
-
-      log 'Request timeout found, performing reload'
-      click_button('reload the page')
-      start_time = Time.now
-      raise "Request timeout message still present after #{Capybara.default_max_wait_time} seconds." unless has_no_text?('Request has timed out')
-
-    end
-    return false
-  end
+# @return [Boolean] Returns true if the text is visible, false otherwise.
+def check_text?(text1, text2: nil, timeout: Capybara.default_max_wait_time)
+  has_text?(text1, wait: timeout) || (!text2.nil? && has_text?(text2, wait: timeout))
 end
 
 # Formats the detail message with optional last result and report result.
@@ -619,6 +602,14 @@ def channel_timeout(channel)
   timeout
 end
 
+# This method calculates the timeout needed for channels still waiting to solve dependencies
+#
+# @param channels [Array<String>] List of channel names that still need solving
+# @return [Integer] Total timeout in seconds for these channels
+def calculate_remaining_channels_timeout(channels)
+  channels.reduce(0) { |acc, elem| acc + channel_timeout(elem) }
+end
+
 # Verifies that a list of channels has downloaded all delivered packages,
 # blocking until completion or until the global timeout budget is exhausted.
 #
@@ -674,9 +665,9 @@ def wait_for_channels(channels, label, margin: 900)
   end
 end
 
-# This method checks if the synchronization for the given channel is completed
+# This method checks if the channel with the given label has been fully synced
 #
-# @param channel_name [String] the channel to check
+# @param channel_name [String] the label of the channel to check
 # @return [Boolean] true if the synchronization is completed, false otherwise
 def channel_packages_are_downloaded?(channel_name)
   if channel_name.include?('custom_channel')
@@ -685,7 +676,18 @@ def channel_packages_are_downloaded?(channel_name)
     return true if $custom_repositories[client].nil? && client != 'monitoring_server'
   end
   log_tmp_file = '/tmp/reposync.log'
-  get_target('server').extract('/var/log/rhn/reposync.log', log_tmp_file)
+  # Copy reposync logs to /tmp/ to prevent race condition and error when calling .extract()
+  # if the reposync log file is being updated during the underlying "mgrctl cp" call:
+  #
+  # https://github.com/uyuni-project/uyuni-tools/issues/772
+  #
+  # INF Starting mgrctl cp server:/var/log/rhn/reposync.log /tmp/reposync.log
+  # INF Error: 1 error occurred:
+  #  * copying from container: copier: get: "/var/log/rhn/reposync.log": copying /var/log/rhn/reposync.log: archive/tar: write too long
+  # (ScriptError)
+  #
+  get_target('server').run('cp /var/log/rhn/reposync.log /tmp/testsuite_reposync_check.log')
+  get_target('server').extract('/tmp/testsuite_reposync_check.log', log_tmp_file)
   unless File.exist?(log_tmp_file) && !File.empty?(log_tmp_file)
     log "DEBUG: Log file #{log_tmp_file} is missing or empty."
     return false
@@ -940,4 +942,26 @@ def latest_package(packages)
       [Gem::Version.new('0.0.0'), Gem::Version.new('0')]
     end
   end
+end
+
+# Retrieves the environment variable name for a given host, with fallback support
+#
+# This function checks if the primary environment variable (from ENV_VAR_BY_HOST)
+# is set. If not, it falls back to an alternative environment variable name.
+# Useful for scenarios where a host may be aliased or mapped to a different
+# environment variable when the primary one is unavailable.
+#
+# @param host_key [String] The key in ENV_VAR_BY_HOST (e.g., 'sle_minion')
+# @param fallback_var [String] The fallback environment variable name to use if the primary variable is not set (e.g., 'SLE15SP7_MINION')
+# @return [String] The environment variable name that is set, or the fallback if the primary is not set
+#
+# @example
+#   env_var = get_env_var_with_fallback('sle_minion', 'SLE15SP7_MINION')
+#   # Returns 'MINION' if ENV['MINION'] is set, otherwise 'SLE15SP7_MINION'
+#
+# @raise [KeyError] If host_key does not exist in ENV_VAR_BY_HOST
+#
+def get_env_var_with_fallback(host_key, fallback_var)
+  env_var_name = ENV_VAR_BY_HOST[host_key]
+  ENV.key?(env_var_name) ? env_var_name : fallback_var
 end

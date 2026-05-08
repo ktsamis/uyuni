@@ -39,7 +39,7 @@ TMPDIR="/var/spacewalk/tmp"
 
 MANAGER_COMPLETE="/root/.MANAGER_SETUP_COMPLETE"
 
-REPORT_DB_CA_CERT="/etc/pki/trust/anchors/LOCAL-RHN-ORG-TRUSTED-SSL-CERT"
+REPORT_DB_CA_CERT="/etc/pki/trust/anchors/DB-RHN-ORG-TRUSTED-SSL-CERT"
 
 function help() {
     echo "
@@ -357,7 +357,5 @@ do
 done
 
 do_setup
-
-systemctl --quiet enable spacewalk-diskcheck.timer 2>&1
 
 # vim: set expandtab:

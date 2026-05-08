@@ -17,9 +17,7 @@ General template for leavers of the SUSE Multi-Linux team.
 
 - [ ] **General SUSE Procedure:** Team Lead to review the [team members leaving the company](https://sites.google.com/suse.com/resources/team-leader-quick-links), in particular the `Information Guide when a Team Member is Leaving`. Those documents contain information about everything that needs to be returned, and things to be done by the team lead and the team member (not just hardware!)
 - [ ] **Exit interview:** Conduct an [exit interview](https://en.wikipedia.org/wiki/Exit_interview) and store the notes at [Confluence](https://confluence.suse.com/display/SUSEMANAGER/Exit+Interviews)
-- [ ] **Hardware:** 
-  - [ ] Does this person have access to something special which also needs to get transferred to another person? (SSH access to a server, permissions to special pages on wikis, Confluence, resources in the cloud, etc.)
-  - [ ] Did IT create a ticket and sent an email to the leaver, explaining how to return their personal hardware?
+- [ ] **Hardware:** Does this person have access to something special which also needs to get transferred to another person? (SSH access to a server, permissions to special pages on wikis, Confluence, resources in the cloud, VMs, Raspberry Pi hardware, etc.)
 - [ ] **Bugzilla:** Remind the person to remove all ["watches"](https://bugzilla.suse.com/userprefs.cgi?tab=email) in Bugzilla before leaving
 - [ ] **Bugzilla:** Review the [responsibles for the bugzilla team accounts](https://confluence.suse.com/display/IAM/5.+UCS+Role+Model+and+Entitlements+Management#id-5.UCSRoleModelandEntitlementsManagement-Bot/Serviceentitlements) and nominate a new one if needed
 - [ ] **Packages:** Run `OUSER=<LEAVER>; osc search -i ${OUSER}; osc -A https://api.suse.de maintainer -U ${OUSER}` (replace `<LEAVER>` with the leaver's username), and if the person is a bugowner of any package, look for a new bugowner (ideally a group, not a single person, home projects can be ignored)
@@ -65,9 +63,7 @@ General template for leavers of the SUSE Multi-Linux team.
   - [ ] Multi-Linux Team Review Meeting
   - [ ] Priorities, Help and Planning (PHP)
   - [ ] Multi-Linux Team Retrospective
-- [ ] Hardware
-  - [ ] Confirm collection of the remaining equipment, as explained via ticket created ahead of the termination date.
-  - [ ] Are there somewhere machines (e.g. RPI) or VMs around managed by this person? Stop them or transfer the management to other team members
+- [ ] Hardware: Are there somewhere machines (e.g. RPI) or VMs around managed by this person? Stop them, and remove them after a few days.
 - [ ] Cloud resources (accounts for each cloud at the [Landing Zones](https://confluence.suse.com/display/CCOE/Cloud+Landing+Zone+Access#CloudLandingZoneAccess-OktaGroupNaming/PermissionScheme#Roles) confluence page).
   - [ ] AWS
   - [ ] Azure

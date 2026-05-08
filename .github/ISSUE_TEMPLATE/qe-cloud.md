@@ -1,8 +1,8 @@
 ---
 name: QE - Public Cloud images
 about: QE - Use this template for testing public cloud images
-title: "PAYG/BYOS "
-labels: ["qe-squad", "manual tests", "suma payg", "public cloud", "manual tests"]
+title: "Test PAYG/BYOS images for 5.x"
+labels: ["qe-squad", "manual tests", "suma payg", "public cloud"]
 projects: ["SUSE/32"]
 assignees: ''
 

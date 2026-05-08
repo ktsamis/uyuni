@@ -14,12 +14,13 @@
 # This provides "git_pillar_foobar: 12345" as part of the pillar data
 # for all minions and master.
 #
+set -e
 
 GIT_REPO="/tmp/test_salt_git_pillar.git"
 
 if [ "$1" == "setup" ]; then
 	echo "Setting up git_pillar environment and restarting Salt master and Salt API"
-	zypper in -y git-core
+	zypper in -y git-core || zypper in -y git
 	mkdir $GIT_REPO
 	cd $GIT_REPO
 	git init
@@ -38,13 +39,15 @@ EOF
 	git commit -m "initial commit"
 
 	# Store Salt SSH key as authorized for user root
+	touch /root/.ssh/authorized_keys
 	cp /root/.ssh/authorized_keys /root/.ssh/authorized_keys_backup_gitpillar
 	cat /var/lib/salt/.ssh/mgr_ssh_id.pub >> /root/.ssh/authorized_keys
 
 	# Start SSHd service
 	ssh-keygen -A
-	/usr/sbin/sshd -D &
+	systemctl start sshd
 
+	mkdir -p /etc/salt/master.d/
 	cat << 'EOF' > /etc/salt/master.d/zz-testing-gitpillar.conf
 ext_pillar:
   - suma_minion: True
@@ -64,6 +67,6 @@ if [ "$1" == "clean" ]; then
 	rm /etc/salt/master.d/zz-testing-gitpillar.conf
 	cp /root/.ssh/authorized_keys_backup_gitpillar /root/.ssh/authorized_keys
 	rm /root/.ssh/authorized_keys_backup_gitpillar
-	pkill sshd
+	systemctl stop sshd
 	systemctl restart salt-master salt-api
 fi

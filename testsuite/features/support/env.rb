@@ -2,6 +2,7 @@
 # Licensed under the terms of the MIT license.
 
 require 'English'
+require 'fileutils'
 require 'rubygems'
 require 'tmpdir'
 require 'base64'
@@ -72,7 +73,6 @@ $is_containerized_server = %w[k3s podman].include? ENV.fetch('CONTAINER_RUNTIME'
 $is_transactional_server = transactional_system?('server', runs_in_container: false)
 $is_using_build_image = ENV.fetch('IS_USING_BUILD_IMAGE', false)
 $is_using_scc_repositories = (ENV.fetch('IS_USING_SCC_REPOSITORIES', 'False') != 'False')
-$catch_timeout_message = (ENV.fetch('CATCH_TIMEOUT_MESSAGE', 'False') == 'True')
 $beta_enabled = (ENV.fetch('BETA_ENABLED', 'False') == 'True')
 $api_protocol = ENV.fetch('API_PROTOCOL', nil) if ENV['API_PROTOCOL'] # force the API protocol to be used. You can use 'http' or 'xmlrpc'
 
@@ -87,6 +87,18 @@ end
 # Fix a problem with minitest and cucumber options passed through rake
 MultiTest.disable_autorun
 
+# WORKAROUND: Chrome 134+ raises UnknownError ("Node with given id does not belong to the document")
+# via CDP when a full page navigation invalidates DOM node references mid-wait.
+# Capybara's synchronize() only retries on errors in invalid_element_errors, which does not include
+# UnknownError, so the error surfaces as a hard crash. Extending the driver makes it retryable.
+module CapybaraUnknownErrorRetry
+  # Adds UnknownError to the list of errors that Capybara retries on during synchronize().
+  # Chrome 134+ raises UnknownError via CDP when a page navigation invalidates DOM node references.
+  def invalid_element_errors
+    super | [Selenium::WebDriver::Error::UnknownError]
+  end
+end
+
 # register chromedriver in headless mode
 def capybara_register_driver
   Capybara.register_driver :selenium_chrome_headless do |app|
@@ -100,6 +112,7 @@ def capybara_register_driver
         --js-flags=--max-old-space-size=2048
         --no-sandbox
         --disable-notifications
+        --log-level=3
       ]
     )
     chrome_options.args << '--headless=new' unless $debug_mode
@@ -111,7 +124,10 @@ def capybara_register_driver
     chrome_options.add_preference('unhandledPromptBehavior', 'accept')
     chrome_options.add_preference('unexpectedAlertBehaviour', 'accept')
 
-    Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options, http_client: client)
+    # WORKAROUND: Chrome 134+ raises UnknownError ("Node with given id does not belong to the document")
+    driver = Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options, http_client: client)
+    driver.extend(CapybaraUnknownErrorRetry)
+    driver
   end
 end
 
@@ -155,10 +171,22 @@ After do |scenario|
         Capybara.current_session.driver.quit
         visit Capybara.app_host
         log 'Web driver has been restarted'
-      elsif web_session_is_active?
-        handle_screenshot_and_relog(scenario, current_epoch)
       else
-        warn 'There is no active web session; unable to take a screenshot or relog.'
+        # web_session_is_active? can raise WebDriverError if the session went stale
+        # after a long-running step (e.g. bootstrap timeout). Rescue it so the After
+        # hook does not fail and swallow the screenshot opportunity.
+        session_active =
+          begin
+            web_session_is_active?
+          rescue Selenium::WebDriver::Error::WebDriverError => e
+            log "WebDriver session went stale when checking for active session: #{e.message}"
+            false
+          end
+        if session_active
+          handle_screenshot_and_relog(scenario, current_epoch)
+        else
+          warn 'There is no active web session; unable to take a screenshot or relog.'
+        end
       end
     ensure
       print_server_logs
@@ -183,8 +211,9 @@ end
 
 # Take a screenshot and try to log back at suse manager server
 def handle_screenshot_and_relog(scenario, current_epoch)
-  Dir.mkdir('screenshots') unless File.directory?('screenshots')
-  path = "screenshots/#{scenario.name.tr(' ./', '_')}.png"
+  screenshot_dir = ENV.fetch('SCREENSHOT_DIR', 'screenshots')
+  FileUtils.mkdir_p(screenshot_dir)
+  path = "#{screenshot_dir}/#{scenario.name.tr(' ./', '_')}.png"
   begin
     click_details_if_present
     page.driver.browser.save_screenshot(path)
@@ -316,27 +345,33 @@ Before('@run_if_proxy_not_transactional_or_sles15sp7_minion') do
 end
 
 Before('@sle_minion') do
-  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['sle_minion']
+  env_var_name = get_env_var_with_fallback('sle_minion', 'SLE15SP7_MINION')
+  skip_this_scenario unless ENV.key?(env_var_name)
 end
 
 Before('@rhlike_minion') do
-  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['rhlike_minion']
+  env_var_name = get_env_var_with_fallback('rhlike_minion', 'ROCKY8_MINION')
+  skip_this_scenario unless ENV.key?(env_var_name)
 end
 
 Before('@deblike_minion') do
-  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['deblike_minion']
+  env_var_name = get_env_var_with_fallback('deblike_minion', 'UBUNTU2404_MINION')
+  skip_this_scenario unless ENV.key?(env_var_name)
 end
 
 Before('@pxeboot_minion') do
-  skip_this_scenario unless $pxeboot_mac
+  mac_address = $pxeboot_mac || $sle15sp7_terminal_mac
+  skip_this_scenario unless mac_address
 end
 
 Before('@ssh_minion') do
-  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['ssh_minion']
+  env_var_name = get_env_var_with_fallback('ssh_minion', 'SLE15SP7_MINION')
+  skip_this_scenario unless ENV.key?(env_var_name)
 end
 
 Before('@build_host') do
-  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['build_host']
+  env_var_name = get_env_var_with_fallback('build_host', 'SLE15SP7_BUILDHOST')
+  skip_this_scenario unless ENV.key?(env_var_name)
 end
 
 Before('@alma8_minion') do
@@ -483,12 +518,28 @@ Before('@sle15sp7_ssh_minion') do
   skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['sle15sp7_ssh_minion']
 end
 
+Before('@sle160_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['sle160_minion']
+end
+
+Before('@sle160_ssh_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['sle160_ssh_minion']
+end
+
 Before('@opensuse156arm_minion') do
   skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['opensuse156arm_minion']
 end
 
 Before('@opensuse156arm_ssh_minion') do
   skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['opensuse156arm_ssh_minion']
+end
+
+Before('@opensuse160arm_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['opensuse160arm_minion']
+end
+
+Before('@opensuse160arm_ssh_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['opensuse160arm_ssh_minion']
 end
 
 Before('@sle15sp5s390_minion') do
@@ -553,6 +604,14 @@ end
 
 Before('@slmicro61_ssh_minion') do
   skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['slmicro61_ssh_minion']
+end
+
+Before('@slmicro62_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['slmicro62_minion']
+end
+
+Before('@slmicro62_ssh_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['slmicro62_ssh_minion']
 end
 
 Before('@sle15sp6_buildhost') do

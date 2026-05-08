@@ -102,6 +102,13 @@ Feature: Manage a group of systems and the Systems Set Manager
     And I wait until event "Patch Update: andromeda-dummy-6789 - Test update for andromeda-dummy scheduled by admin" is completed
 
 @skip_if_github_validation
+  Scenario: Pre-requisite: re-select sle_minion in SSM for package operations
+    When I follow the left menu "Systems > System Groups"
+    And I click on "Use in SSM" in row "new-systems-group"
+    Then I should see a "Selected Systems List" text
+    And I should see "sle_minion" as link
+
+@skip_if_github_validation
   Scenario: Delete a package from systems in the SSM
     When I follow the left menu "Systems > System Set Manager > Overview"
     And I follow "Packages"
@@ -110,9 +117,16 @@ Feature: Manage a group of systems and the Systems Set Manager
     And I enter "virgo-dummy" as the filtered package name
     And I click on the filter button until page does contain "virgo-dummy-2.0-1.1" text
     And I check "virgo-dummy-2.0-1.1" in the list
-    And I click on "Remove Selected Packages"
+    And I click on "Remove Packages"
     And I click on "Confirm"
     Then I should see a "Package removals are being scheduled, it may take several minutes for this to complete." text
+
+@skip_if_github_validation
+  Scenario: Pre-requisite: re-select sle_minion in SSM for package install
+    When I follow the left menu "Systems > System Groups"
+    And I click on "Use in SSM" in row "new-systems-group"
+    Then I should see a "Selected Systems List" text
+    And I should see "sle_minion" as link
 
 @skip_if_github_validation
   Scenario: Install a package to systems in the SSM
@@ -126,7 +140,7 @@ Feature: Manage a group of systems and the Systems Set Manager
     And I enter "virgo-dummy" as the filtered package name
     And I click on the filter button until page does contain "virgo-dummy-2.0-1.1" text
     When I check "virgo-dummy-2.0-1.1" in the list
-    And I click on "Install Selected Packages"
+    And I click on "Install Packages"
     And I click on "Confirm"
     Then I should see a "Package installations are being scheduled, it may take several minutes for this to complete." text
 
@@ -181,7 +195,7 @@ Feature: Manage a group of systems and the Systems Set Manager
     Given I am on the Systems overview page of this "sle_minion"
     When I follow "Groups"
     And I check "new-systems-group" in the list
-    And I click on "Leave Selected Groups"
+    And I click on "Leave Groups"
     Then I should see a "1 system groups removed." text
 
   # Red Hat-like minion is intentionally not removed from group
