@@ -2386,4 +2386,30 @@ public class JobReturnEventMessageActionTest extends JMockBaseTestCaseWithUser {
         assertDoesNotThrow(() ->
                 saltUtils.updateServerAction(saDiff, 0L, true, "", dummyJsonResult, dummyFunction, null));
     }
+
+    @Test
+    public void testSles16VerifyJobReturnIsProcessedWithoutError() throws Exception {
+        MinionServer minion = MinionServerFactoryTest.createTestMinionServer(user);
+        minion.setMinionId("192.168.101.240");
+        ServerFactory.save(minion);
+
+        ActionManager.setTaskomaticApi(getTaskomaticApi());
+        ApplyStatesAction applyStatesAction = ActionManager.scheduleApplyStates(
+                user, List.of(minion.getId()),
+                List.of(ApplyStatesEventMessage.DISTUPGRADE_SLES16_VERIFY), new Date());
+        applyStatesAction = HibernateFactory.reload(applyStatesAction);
+        ServerAction sa = applyStatesAction.getServerActions().stream()
+                .filter(a -> a.getServer().getId().equals(minion.getId()))
+                .findFirst().orElseThrow();
+
+        Optional<JobReturnEvent> event = JobReturnEvent.parse(
+                getJobReturnEvent("sles16.verify.job.return.json", applyStatesAction.getId()));
+        assertTrue(event.isPresent(), "sles16 verify fixture must parse cleanly");
+
+        JobReturnEventMessage message = new JobReturnEventMessage(event.get());
+        JobReturnEventMessageAction messageAction = new JobReturnEventMessageAction(saltServerActionService, saltUtils);
+
+        assertDoesNotThrow(() -> messageAction.execute(message),
+                "Sles16 verify job return must be handled without throwing");
+    }
 }
