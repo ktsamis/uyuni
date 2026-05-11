@@ -2484,7 +2484,7 @@ lt;/divgt;
       </trans-unit>
       <trans-unit id="toolbar.delete.snippets" xml:space="preserve">
         <source>Delete Snippet</source>
-        <target state="needs-adaptation">suprimeix el fragment</target>
+        <target state="translated">Suprimeix el fragment</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/kickstart/cobbler/CobblerSnippetEdit</context>
         </context-group>
@@ -12074,37 +12074,37 @@ Per a esmenar aquesta situació, afegiu credencials SCC lt;a href""/rhn/admin/se
         </context-group>
         <target state="translated">Control d'accés</target>
       </trans-unit>
-    <trans-unit id="Add address" xml:space="preserve">
+      <trans-unit id="Add address" xml:space="preserve">
         <source>Add address</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/Addresses</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Afegeix-hi una adreça</target>
+      </trans-unit>
       <trans-unit id="Edit" xml:space="preserve">
         <source>Edit</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/Addresses</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Edita</target>
+      </trans-unit>
       <trans-unit id="ARMHF Debian" xml:space="preserve">
         <source>ARMHF Debian</source>
         <target>ARMHF Debian</target>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="diskcheckwarning" xml:space="preserve">
         <source>Disk Check</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Comprovació del disc</target>
+      </trans-unit>
       <trans-unit id="notification.diskcheck.summary" xml:space="preserve">
         <source>You are running out of space on your @@PRODUCT_NAME@@ {0}. This is {1}</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Us quedeu sense espai a @@PRODUCT_NAME@@ {0}. Això és {1}</target>
+      </trans-unit>
       <trans-unit id="notification.diskcheck.details" xml:space="preserve">
         <source>You are running out of space on your @@PRODUCT_NAME@@ {0}. This is {1}. If you run out of disk space, @@PRODUCT_NAME@@ will stop running, and this could lead to a loss of data. @@PRODUCT_NAME@@ will shutdown automatically.</source>
-      <target state="new"/>
-  </trans-unit>
-      </body>
+        <target state="translated">Us quedeu sense espai a @@PRODUCT_NAME@@ {0}. Això és {1}. Si us quedeu sense espai al disc, @@PRODUCT_NAME@@ deixarà de funcionar i això podria provocar una pèrdua de dades. @@PRODUCT_NAME@@ s'apagarà automàticament.</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
