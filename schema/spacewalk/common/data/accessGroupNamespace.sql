@@ -1267,3 +1267,10 @@ INSERT INTO access.accessGroupNamespace
         'api.virtualhostmanager.list_virtual_host_managers'
     )
     ON CONFLICT DO NOTHING;
+
+-- New API endpoint system.list_migration_targets_with_channels
+INSERT INTO access.accessGroupNamespace (group_id, namespace_id)
+    SELECT ag.id, ns.id
+    FROM access.accessGroup ag, access.namespace ns
+    WHERE ns.namespace = 'api.system.list_migration_targets_with_channels' AND ns.access_mode = 'R'
+    ON CONFLICT (group_id, namespace_id) DO NOTHING;
