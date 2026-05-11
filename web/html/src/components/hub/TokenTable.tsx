@@ -136,15 +136,14 @@ export class TokenTable extends React.Component<Props, State> {
             <Button
               icon={row.valid ? "fa-ban" : "fa-check"}
               className="btn-default"
+              title={row.valid ? t("Invalidate") : t("Validate")}
               handler={() =>
                 // If the token is used, ask for confirmation. Otherwise, directly toggle the validity
                 row.hubId !== null || row.peripheralId !== null
                   ? this.setState({ confirmValidityDialog: true, selectedRow: row })
                   : this.onToggleValidity(row)
               }
-            >
-              {row.valid ? t("Invalidate") : t("Validate")}
-            </Button>
+            ></Button>
             {this.state.selectedRow && (
               <DangerDialog
                 id="confirm-validity-modal"
@@ -165,29 +164,26 @@ export class TokenTable extends React.Component<Props, State> {
           </>
         )}
         {this.props.allowDeletion && (
-          <>
-            <Button
-              disabled={row.hubId !== null || row.peripheralId !== null}
-              title={this.getDeleteTitle(row)}
-              className="btn-default"
-              icon="fa-trash"
-              handler={() => this.setState({ confirmDeleteDialog: true, selectedRow: row })}
-            >
-              {t("Delete")}
-              {this.state.selectedRow && (
-                <DangerDialog
-                  id="confirm-deletion-modal"
-                  isOpen={this.state.confirmDeleteDialog}
-                  title={t("Confirm access token deletion")}
-                  content={<div>{t("Are you sure you want to delete this token. It is currently not used.")}</div>}
-                  onConfirm={() => this.state.selectedRow && this.onDelete(this.state.selectedRow)}
-                  onClose={() => this.setState({ confirmDeleteDialog: false, selectedRow: undefined })}
-                  submitText={t("Delete")}
-                  submitIcon="fa-trash"
-                />
-              )}
-            </Button>
-          </>
+          <Button
+            disabled={row.hubId !== null || row.peripheralId !== null}
+            title={this.getDeleteTitle(row)}
+            className="btn-default"
+            icon="fa-trash"
+            handler={() => this.setState({ confirmDeleteDialog: true, selectedRow: row })}
+          >
+            {this.state.selectedRow && (
+              <DangerDialog
+                id="confirm-deletion-modal"
+                isOpen={this.state.confirmDeleteDialog}
+                title={t("Confirm access token deletion")}
+                content={<div>{t("Are you sure you want to delete this token. It is currently not used.")}</div>}
+                onConfirm={() => this.state.selectedRow && this.onDelete(this.state.selectedRow)}
+                onClose={() => this.setState({ confirmDeleteDialog: false, selectedRow: undefined })}
+                submitText={t("Delete")}
+                submitIcon="fa-trash"
+              />
+            )}
+          </Button>
         )}
       </div>
     );
