@@ -2093,7 +2093,7 @@ button below, and &lt;b&gt;will be unable to log back in&lt;/b&gt;.</source>
       </trans-unit>
       <trans-unit id="userdetails.jsp.noemailaddress" xml:space="preserve">
         <source>Add Email Address</source>
-        <target state="needs-adaptation">Cap adreça electrònica</target>
+        <target state="translated">Afegeix-hi una adreça electrònica</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/UserDetails</context>
         </context-group>
@@ -7090,14 +7090,14 @@ Secció "Roles" de la pestanya "Detalls" en els perfils dels usuaris individuals
       </trans-unit>
       <trans-unit id="systems.groups.jsp.remove" xml:space="preserve">
         <source>Leave Groups</source>
-        <target state="needs-adaptation">Deixa els grups seleccionats</target>
+        <target state="translated">Deixa els grups</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/groups/* pages</context>
         </context-group>
       </trans-unit>
       <trans-unit id="systems.groups.jsp.add" xml:space="preserve">
         <source>Join Groups</source>
-        <target state="needs-adaptation">Uneix-te als grups seleccionats</target>
+        <target state="translated">Uneix-te als grups</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/groups/* pages</context>
         </context-group>
@@ -7258,7 +7258,7 @@ Secció "Roles" de la pestanya "Detalls" en els perfils dels usuaris individuals
       </trans-unit>
       <trans-unit id="systemgroup.details.editproperties" xml:space="preserve">
         <source>Edit System Group Properties</source>
-        <target state="needs-adaptation">Edita aquestes propietats</target>
+        <target state="translated">Edita les propietats del grup del sistema</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/groups/* pages</context>
         </context-group>
@@ -8147,7 +8147,7 @@ Secció "Roles" de la pestanya "Detalls" en els perfils dels usuaris individuals
       </trans-unit>
       <trans-unit id="installpkgs.jsp.installpackages" xml:space="preserve">
         <source>Install Packages</source>
-        <target state="needs-adaptation">Instal·la els paquets seleccionats</target>
+        <target state="translated">Instal·la els paquets</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/packages/InstallPackages</context>
         </context-group>
@@ -14073,7 +14073,7 @@ el lt;stronggt;ENTERENTERPRISELINUXNAME Guide Guia d'administració del sistema.
       </trans-unit>
       <trans-unit id="activation-key.groups.jsp.add" xml:space="preserve">
         <source>Join Groups</source>
-        <target state="needs-adaptation">Uneix-te als grups seleccionats</target>
+        <target state="translated">Uneix-te als grups</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/activationkeys/groups/* pages</context>
         </context-group>
@@ -14558,14 +14558,14 @@ el lt;stronggt;ENTERENTERPRISELINUXNAME Guide Guia d'administració del sistema.
       </trans-unit>
       <trans-unit id="system.audit.listscap.jsp.removebut" xml:space="preserve">
         <source>Remove</source>
-        <target state="needs-adaptation">Elimina les exploracions seleccionades</target>
+        <target state="translated">Suprimeix</target>
         <context-group name="ctx">
           <context context-type="sourcefile">View of SCAP scans for given system</context>
         </context-group>
       </trans-unit>
       <trans-unit id="system.audit.listscap.jsp.diffbut" xml:space="preserve">
         <source>Compare</source>
-        <target state="needs-adaptation">Compara les exploracions seleccionades</target>
+        <target state="translated">Compara</target>
         <context-group name="ctx">
           <context context-type="sourcefile">View of SCAP scans for given system</context>
         </context-group>
@@ -15463,7 +15463,7 @@ el lt;stronggt;ENTERENTERPRISELINUXNAME Guide Guia d'administració del sistema.
       </trans-unit>
       <trans-unit id="system.event.pending.headerPending" xml:space="preserve">
         <source>You may cancel events for this system by selecting them and clicking the &lt;strong&gt;Cancel Events&lt;/strong&gt; button.</source>
-        <target state="needs-adaptation">Podeu cancel·lar esdeveniments per a aquest sistema seleccionant-los i fent clic al botó lt;stronggt;Cancel·la els esdeveniments seleccionatslt;/stronggt;.</target>
+        <target state="translated">Podeu cancel·lar esdeveniments per a aquest sistema seleccionant-los i fent clic al botó <strong>Cancel·la esdeveniments</strong>.</target>
         <context-group name="ctx">
           <context context-type="sourcefile">System Events Pages</context>
         </context-group>
@@ -29894,53 +29894,49 @@ lt;/pgt;
         <source> New Created </source>
         <target state="translated"> Creat nou </target>
       </trans-unit>
-    <trans-unit id="preferences.disk-check-warning.name" xml:space="preserve">
+      <trans-unit id="preferences.disk-check-warning.name" xml:space="preserve">
         <source>Disk Check Warning</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/UserPreferences</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="preferences.disk-check-warning.description" xml:space="preserve">
         <source> Show disk space warning when running low.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/UserPreferences</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
-
-
- 
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="sdc.details.overview.subscribedchannels.edit" xml:space="preserve">
         <source>Edit Subscribed Channels</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/systems/details/Overview.do</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="sdc.details.overview.sysproperties.edit" xml:space="preserve">
         <source>Edit System Properties</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/systems/details/Overview.do</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="bunch.jsp.description.diskcheck-task-bunch" xml:space="preserve">
         <source>Schedule a disk check</source>
-            <context-group name="ctx">
+        <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/BunchDetail.do</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="task.status.clm-channel-diff" xml:space="preserve">
         <source>CLM Channel Comparison</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="task.status.diskcheck-task" xml:space="preserve">
         <source>Disk Check Actions</source>
-      <target state="new"/>
-  </trans-unit>
-
-      </body>
+        <target state="new"/>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
