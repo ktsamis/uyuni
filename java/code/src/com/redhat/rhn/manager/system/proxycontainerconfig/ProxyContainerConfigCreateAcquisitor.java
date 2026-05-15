@@ -89,14 +89,22 @@ public class ProxyContainerConfigCreateAcquisitor implements ProxyContainerConfi
         Set<String> fqdns = new HashSet<>();
         fqdns.add(context.getProxyFqdn());
 
+        Set<String> certNames;
         SSLCertPair proxyCertKey = context.getProxyCertKey();
         if (proxyCertKey != null && proxyCertKey.getCertificate() != null) {
             // Get the cnames from the certificate using openssl
-            fqdns.addAll(context.getCertManager().getNamesFromSslCert(proxyCertKey.getCertificate()));
+            certNames = context.getCertManager().getNamesFromSslCert(proxyCertKey.getCertificate());
+        }
+        else if (context.getCertData() != null) {
+            certNames = context.getCertData().getAllCnames();
         }
         else {
-            fqdns.addAll(context.getCertData().getAllCnames());
+            certNames = Set.of();
         }
+        // Filter out SANs which are definitely not FQDN - without any .
+        fqdns.addAll(certNames.stream()
+                .filter(name -> name != null && name.contains("."))
+                .collect(Collectors.toSet()));
 
         Server proxySystem = getOrCreateProxySystem(
                 context.getSystemEntitlementManager(),
@@ -161,7 +169,7 @@ public class ProxyContainerConfigCreateAcquisitor implements ProxyContainerConfi
 
             // Add the FQDNs as some may not be already known
             server.getFqdns().addAll(fqdns.stream()
-                    .filter(fqdn -> !fqdn.contains("*"))
+                    .filter(fqdn -> fqdn != null && !fqdn.contains("*") && fqdn.contains("."))
                     .map(fqdn -> new ServerFQDN(server, fqdn)).collect(Collectors.toList()));
 
             systemEntitlementManager.addEntitlementToServer(server, EntitlementManager.PROXY);
@@ -173,7 +181,7 @@ public class ProxyContainerConfigCreateAcquisitor implements ProxyContainerConfi
         server.setName(proxyName);
         server.setHostname(proxyName);
         server.getFqdns().addAll(fqdns.stream()
-                .filter(fqdn -> !fqdn.contains("*"))
+                .filter(fqdn -> fqdn != null && !fqdn.contains("*") && fqdn.contains("."))
                 .map(fqdn -> new ServerFQDN(server, fqdn)).collect(Collectors.toList()));
         server.setOrg(creator.getOrg());
         server.setCreator(creator);
