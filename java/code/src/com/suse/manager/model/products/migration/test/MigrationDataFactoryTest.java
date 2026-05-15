@@ -30,6 +30,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 public class MigrationDataFactoryTest extends RhnBaseTestCase {
 
@@ -80,7 +81,8 @@ public class MigrationDataFactoryTest extends RhnBaseTestCase {
 
         productSet.addMissingChannels(List.of("containers-pool", "containers-updates"));
 
-        MigrationTarget migrationTarget = migrationDataFactory.toMigrationTarget(productSet);
+        var sourceSet = Optional.of(new SUSEProductSet(baseProduct, List.of()));
+        MigrationTarget migrationTarget = migrationDataFactory.toMigrationTarget(productSet, sourceSet, false);
 
         assertEquals(productSet.getSerializedProductIDs(), migrationTarget.id());
         assertEquals(List.of("containers-pool", "containers-updates"), migrationTarget.missingChannels());

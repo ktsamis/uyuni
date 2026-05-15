@@ -356,7 +356,7 @@ public class PackagesHandler extends BaseHandler {
      * @apidoc.returntype #return_int_success()
      */
     public int removePackage(User loggedInUser, Integer pid) throws FaultException {
-        if (!loggedInUser.hasRole(RoleFactory.ORG_ADMIN)) {
+        if (!loggedInUser.hasRole(RoleFactory.CHANNEL_ADMIN)) {
             throw new PermissionCheckFailureException();
         }
         Package pkg = lookupPackage(loggedInUser, pid);
@@ -391,7 +391,7 @@ public class PackagesHandler extends BaseHandler {
      * @apidoc.returntype #return_int_success()
      */
     public int removeSourcePackage(User loggedInUser, Integer psid) throws FaultException {
-        if (!loggedInUser.hasRole(RoleFactory.ORG_ADMIN)) {
+        if (!loggedInUser.hasRole(RoleFactory.CHANNEL_ADMIN)) {
             throw new PermissionCheckFailureException();
         }
         PackageSource pkg = PackageFactory.lookupPackageSourceByIdAndOrg(

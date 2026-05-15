@@ -42,6 +42,7 @@ import com.redhat.rhn.manager.errata.ErrataManager;
 import com.redhat.rhn.manager.rhnpackage.PackageManager;
 
 import com.suse.manager.maintenance.NotInMaintenanceModeException;
+import com.suse.manager.model.products.migration.MigrationDataFactory;
 
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.logging.log4j.LogManager;
@@ -60,6 +61,7 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.SortedMap;
@@ -223,17 +225,14 @@ public class SPMigrationAction extends RhnAction {
             // flag to know if we are going back or forward in the setup wizard
             goBack = dispatch.equals(LocalizationService.getInstance().getMessage(GO_BACK));
 
+            Optional<SUSEProduct> sourceProduct = minion.flatMap(MinionServer::getInstalledProductSet)
+                    .map(SUSEProductSet::getBaseProduct);
+
+            Optional<SUSEProduct> targetProduct = Optional.ofNullable(targetBaseProduct)
+                    .map(SUSEProductFactory::getProductById);
             // flag to know if we should show the dry-run button or not
-            String bpProductClass = minion.map(m -> m.getInstalledProductSet()
-                    .map(i -> i.getBaseProduct().getChannelFamily().getLabel())
-                    .orElse("")).orElse("");
-
-            String tgtProductClass = Optional.ofNullable(targetBaseProduct)
-                    .map(SUSEProductFactory::getProductById)
-                    .map(s -> s.getChannelFamily().getLabel())
-                    .orElse("");
-
-            hasDryRun = !isRedHatMinion && bpProductClass.equals(tgtProductClass);
+            hasDryRun = MigrationDataFactory.computeHasDryRunCapability(
+                    isRedHatMinion, sourceProduct.orElse(null), targetProduct.orElse(null));
             request.setAttribute(HAS_DRYRUN_CAPABLITY, hasDryRun);
 
         }
@@ -441,7 +440,9 @@ public class SPMigrationAction extends RhnAction {
 
     /**
      * Identify the extensions which don't have successors and set that information in the request.
-     * OUT: MISSING_SUCESSOR_EXTENSIONS
+     * For SLES 16.x migration targets where source is SLES 15, skips the missing successors check and instead sets
+     * the hasSLES16Target flag to trigger the pre-flight checklist in the UI.
+     * OUT: MISSING_SUCCESSOR_EXTENSIONS or hasSLES16Target
      * @param request
      * @param sourceProducts installed or selected products
      * @param targetProducts target products
@@ -451,11 +452,23 @@ public class SPMigrationAction extends RhnAction {
         Set<SUSEProduct> missingSuccessors = new HashSet<>();
 
         DistUpgradeManager.removeIncompatibleTargets(sourceProducts, targetProducts, missingSuccessors);
-        request.setAttribute(MISSING_SUCCESSOR_EXTENSIONS, missingSuccessors.stream()
-            .map(SUSEProduct::getFriendlyName)
-            .toList());
+        boolean isSLES15Source = sourceProducts
+                .map(SUSEProductSet::getBaseProduct)
+                .filter(Objects::nonNull)
+                .map(SUSEProduct::isSles15)
+                .orElse(false);
+        boolean isSLES16Target = targetProducts.stream()
+                .map(SUSEProductSet::getBaseProduct)
+                .anyMatch(p -> p != null && p.isSles16());
+        // Skip the successors warning for specific SLES 15 -> 16 migrations, show the pre-flight checklist instead
+        if (isSLES15Source && isSLES16Target) {
+            request.setAttribute("hasSLES16Target", true);
+        }
+        else {
+            request.setAttribute(MISSING_SUCCESSOR_EXTENSIONS, missingSuccessors.stream()
+                    .map(SUSEProduct::getFriendlyName).toList());
+        }
     }
-
     /**
      * Find the destination given the current page and the dispatch string.
      * The order of actions is: TARGET -> SETUP -> CONFIRM -> SCHEDULE.

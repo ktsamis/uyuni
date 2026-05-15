@@ -53,6 +53,8 @@ import com.redhat.rhn.domain.action.supportdata.SupportDataActionDetails;
 import com.redhat.rhn.domain.channel.Channel;
 import com.redhat.rhn.domain.channel.ChannelFactory;
 import com.redhat.rhn.domain.channel.ChannelFamily;
+import com.redhat.rhn.domain.channel.ChannelFamilyFactory;
+import com.redhat.rhn.domain.channel.PublicChannelFamily;
 import com.redhat.rhn.domain.channel.test.ChannelFactoryTest;
 import com.redhat.rhn.domain.entitlement.Entitlement;
 import com.redhat.rhn.domain.errata.Errata;
@@ -64,7 +66,9 @@ import com.redhat.rhn.domain.kickstart.test.KickstartDataTest;
 import com.redhat.rhn.domain.org.CustomDataKey;
 import com.redhat.rhn.domain.org.Org;
 import com.redhat.rhn.domain.org.test.CustomDataKeyTest;
+import com.redhat.rhn.domain.product.ChannelTemplate;
 import com.redhat.rhn.domain.product.SUSEProduct;
+import com.redhat.rhn.domain.product.SUSEProductChannel;
 import com.redhat.rhn.domain.product.SUSEProductExtension;
 import com.redhat.rhn.domain.product.SUSEProductFactory;
 import com.redhat.rhn.domain.product.test.SUSEProductTestUtils;
@@ -75,6 +79,9 @@ import com.redhat.rhn.domain.rhnpackage.profile.Profile;
 import com.redhat.rhn.domain.rhnpackage.profile.ProfileFactory;
 import com.redhat.rhn.domain.rhnpackage.test.PackageTest;
 import com.redhat.rhn.domain.role.RoleFactory;
+import com.redhat.rhn.domain.scc.SCCCachingFactory;
+import com.redhat.rhn.domain.scc.SCCRepository;
+import com.redhat.rhn.domain.scc.SCCRepositoryNoAuth;
 import com.redhat.rhn.domain.server.CPU;
 import com.redhat.rhn.domain.server.CustomDataValue;
 import com.redhat.rhn.domain.server.Device;
@@ -3829,5 +3836,127 @@ public class SystemHandlerTest extends BaseHandlerTestCase {
         }});
 
         return systemHandler;
+    }
+
+    @Test
+    public void testListMigrationTargetsWithChannels() throws Exception {
+        Map<String, Object> setupData = setupMigrationTargetsWithChannels();
+        Server server = (Server) setupData.get("server");
+        Channel targetAddonChannel = (Channel) setupData.get("targetAddonChannel");
+        Channel targetBaseChannel = (Channel) setupData.get("targetBaseChannel");
+        SUSEProduct targetBaseProduct = (SUSEProduct) setupData.get("targetBaseProduct");
+
+        List<Map<String, Object>> result = handler.listMigrationTargetsWithChannels(admin, server.getId().intValue());
+        assertNotNull(result);
+        assertFalse(result.isEmpty(), "Migration targets should not be empty");
+
+        // 1. Find the target that contains our expected base product
+        Optional<Map<String, Object>> targetOpt = result.stream()
+                .filter(m -> m.get("ident").toString().contains(String.valueOf(targetBaseProduct.getId())))
+                .findFirst();
+        assertTrue(targetOpt.isPresent(), "Migration target with product " + targetBaseProduct.getId() + " not found");
+
+        // 2. Find the channel option for our expected base channel
+        Map<String, Object> target = targetOpt.get();
+        List<Map<String, Object>> channelOptions = (List<Map<String, Object>>) target.get("channel_options");
+        Optional<Map<String, Object>> optionOpt = channelOptions.stream()
+                .filter(o -> targetBaseChannel.getLabel().equals(o.get("base_channel_label")))
+                .findFirst();
+
+        assertTrue(optionOpt.isPresent(), "Channel with base channel " + targetBaseChannel.getLabel() + " not found");
+        Map<String, Object> option = optionOpt.get();
+
+        // 3. Verify the child channels
+        List<Map<String, Object>> children = (List<Map<String, Object>>) option.get("child_channels");
+        boolean found = false;
+        for (Map<String, Object> child : children) {
+            if (child.get("name").equals(targetAddonChannel.getName())) {
+                 assertEquals(targetAddonChannel.getLabel(), child.get("label"));
+                 assertTrue(Boolean.TRUE.equals(child.get("mandatory")), "Channel should be mandatory");
+                 found = true;
+            }
+        }
+        assertTrue(found, "Expected mandatory channel not found in results for the target");
+    }
+
+    private Map<String, Object> setupMigrationTargetsWithChannels() throws Exception {
+        // Setup source products
+        ChannelFamily family = createTestChannelFamily();
+        SUSEProduct sourceBaseProduct = SUSEProductTestUtils.createTestSUSEProduct(family);
+        Channel sourceBaseChannel = SUSEProductTestUtils.createBaseChannelForBaseProduct(sourceBaseProduct, admin);
+        sourceBaseChannel.setChannelArch(ChannelFactory.findArchByLabel("channel-x86_64"));
+        SUSEProduct sourceAddonProduct = SUSEProductTestUtils.createTestSUSEProduct(family);
+        sourceAddonProduct.setBase(false);
+        Server server = ServerFactoryTest.createTestServer(admin);
+
+        Set<InstalledProduct> installedProductSet = new java.util.HashSet<>();
+        installedProductSet.add(SUSEProductTestUtils.getInstalledProduct(sourceBaseProduct));
+        installedProductSet.add(SUSEProductTestUtils.getInstalledProduct(sourceAddonProduct));
+        server.setInstalledProducts(installedProductSet);
+
+        // Setup migration target product + upgrade path
+        SUSEProduct targetBaseProduct = SUSEProductTestUtils.createTestSUSEProduct(family);
+        Channel targetBaseChannel = SUSEProductTestUtils.createBaseChannelForBaseProduct(targetBaseProduct, admin);
+        targetBaseChannel.setChannelArch(ChannelFactory.findArchByLabel("channel-x86_64"));
+        sourceBaseProduct.setUpgrades(Collections.singleton(targetBaseProduct));
+
+        // Setup target addon product + upgrade path
+        SUSEProduct targetAddonProduct = SUSEProductTestUtils.createTestSUSEProduct(family);
+        targetAddonProduct.setBase(false);
+        sourceAddonProduct.setUpgrades(Collections.singleton(targetAddonProduct));
+
+        Channel targetAddonChannel =
+                SUSEProductTestUtils.createChildChannelsForProduct(targetAddonProduct, targetBaseChannel, admin);
+        targetAddonProduct = SUSEProductFactory.getProductById(targetAddonProduct.getId());
+        for (SUSEProductChannel spc : targetAddonProduct.getSuseProductChannels()) {
+            if (spc.getChannel().getId().equals(targetAddonChannel.getId())) {
+                spc.setMandatory(true);
+                SUSEProductFactory.save(spc);
+            }
+        }
+        ChannelFamily cf = targetAddonProduct.getChannelFamily();
+        if (cf.getPublicChannelFamily() == null) {
+             PublicChannelFamily pcf = new PublicChannelFamily();
+             pcf.setChannelFamily(cf);
+             ChannelFamilyFactory.save(pcf);
+             cf.setPublicChannelFamily(pcf);
+             ChannelFamilyFactory.save(cf);
+        }
+        SCCRepository repo = new SCCRepository();
+        repo.setUrl("http://example.com/repo");
+        repo.setName("test-repo");
+        repo.setSccId(12345L);
+        repo.setDescription("Test Repository");
+        repo.setDistroTarget("x86_64");
+        HibernateFactory.getSession().persist(repo);
+        SCCRepositoryNoAuth auth = new SCCRepositoryNoAuth();
+        auth.setRepo(repo);
+        SCCCachingFactory.saveRepositoryAuth(auth);
+
+        repo.getRepositoryAuth().add(auth);
+        ChannelTemplate ct = new ChannelTemplate();
+        ct.setProduct(targetAddonProduct);
+        ct.setChannelLabel(targetAddonChannel.getLabel());
+        ct.setMandatory(true);
+        ct.setRootProduct(targetBaseProduct);
+        ct.setChannelName(targetAddonChannel.getName());
+        ct.setRepository(repo);
+        SUSEProductFactory.save(ct);
+        targetAddonProduct.getChannelTemplates().add(ct);
+        TestUtils.saveAndFlush(targetAddonProduct);
+
+        sourceAddonProduct.setUpgrades(Collections.singleton(targetAddonProduct));
+        SUSEProductExtension productExtension = new SUSEProductExtension(
+                targetBaseProduct, targetAddonProduct, targetBaseProduct, false);
+        TestUtils.saveAndFlush(productExtension);
+
+        SUSEProductTestUtils.populateRepository(targetBaseProduct, targetBaseChannel, targetBaseProduct,
+                targetBaseChannel, admin);
+        Map<String, Object> setupData = new HashMap<>();
+        setupData.put("server", server);
+        setupData.put("targetAddonChannel", targetAddonChannel);
+        setupData.put("targetBaseChannel", targetBaseChannel);
+        setupData.put("targetBaseProduct", targetBaseProduct);
+        return setupData;
     }
 }
