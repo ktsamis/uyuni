@@ -12105,6 +12105,24 @@ Ak chcete túto situáciu napraviť, pridajte prihlasovacie údaje SCC &lt;a hre
         <source>You are running out of space on your @@PRODUCT_NAME@@ {0}. This is {1}. If you run out of disk space, @@PRODUCT_NAME@@ will stop running, and this could lead to a loss of data. @@PRODUCT_NAME@@ will shutdown automatically.</source>
         <target state="translated">Na vašom @@PRODUCT_NAME@@ {0} dochádza miesto. Je to {1}. Ak vám dôjde miesto na disku, @@PRODUCT_NAME@@ prestane fungovať, čo môže viesť k strate dát. @@PRODUCT_NAME@@ sa automaticky vypne.</target>
       </trans-unit>
-    </body>
+    <trans-unit id="distupgrade.sles16.migration.success" xml:space="preserve">
+        <source>SLES 16 migration completed successfully.{0}</source>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="distupgrade.sles16.migration.success.post_steps" xml:space="preserve">
+        <source>Recommended post-migration steps:
+- Check for orphaned/unneeded packages: zypper packages --orphaned --unneeded
+- Check for updated config files: find /etc/ -name '*.rpmnew' -o -name '*.rpmsave'</source>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="distupgrade.sles16.migration.failed" xml:space="preserve">
+        <source>SLES 16 migration failed or result not found.{0}</source>
+      <target state="new"/>
+  </trans-unit>
+      <trans-unit id="pxeeventfailed" xml:space="preserve">
+        <source>Processing of a PXE event failed</source>
+      <target state="new"/>
+  </trans-unit>
+      </body>
   </file>
 </xliff>
