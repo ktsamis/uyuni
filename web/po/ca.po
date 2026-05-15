@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-08 11:28+0200\n"
+"POT-Creation-Date: 2026-05-15 11:54+0200\n"
 "PO-Revision-Date: 2025-07-10 09:59+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/uyuni/web/ca/>\n"
@@ -177,7 +177,7 @@ msgstr "La prova  {identifier} s'executa el dia {date} a les {time}"
 #: ../html/src/manager/content-management/list-filters/templates/live-patching.tsx:121
 #: ../html/src/manager/maintenance/details/schedule-details.tsx:211
 #: ../html/src/manager/minion/packages/package-states.tsx:222
-#: ../html/src/manager/systems/all-list.tsx:108
+#: ../html/src/manager/systems/all-list.tsx:109
 #: ../html/src/manager/systems/list-filter.tsx:43
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:78
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:772
@@ -204,13 +204,13 @@ msgstr "Darrera modificació"
 #: ../html/src/manager/admin/list-payg/list-payg.tsx:85
 #: ../html/src/manager/admin/payg-shared/info/payg-info-view.tsx:18
 #: ../html/src/manager/admin/task-engine-status/taskotop.tsx:232
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:388
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:387
 #: ../html/src/manager/audit/subscription-matching/subscription-matching-pins.tsx:151
 #: ../html/src/manager/content-management/shared/components/panels/environment-lifecycle/environment-view.tsx:57
 #: ../html/src/manager/images/image-view-runtime.tsx:138
 #: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:167
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:782
-#: ../html/src/manager/systems/virtual-list.tsx:94
+#: ../html/src/manager/systems/virtual-list.tsx:93
 msgid "Status"
 msgstr "Estat"
 
@@ -222,11 +222,11 @@ msgstr "Hora de l'autenticació"
 #: ../html/src/components/hub/TokenTable.tsx:104
 #: ../html/src/manager/admin/access-control/access-group-list.tsx:130
 #: ../html/src/manager/admin/access-control/access-group-user.tsx:142
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:425
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:424
 #: ../html/src/manager/content-management/list-filters/list-filters.tsx:209
 #: ../html/src/manager/images/image-profiles.tsx:191
 #: ../html/src/manager/images/image-stores.tsx:193
-#: ../html/src/manager/images/image-view.tsx:684
+#: ../html/src/manager/images/image-view.tsx:687
 #: ../html/src/manager/maintenance/list/calendar-list.tsx:65
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:50
 #: ../html/src/manager/recurring/recurring-actions-list.tsx:200
@@ -240,7 +240,7 @@ msgstr "Accions"
 #: ../html/src/manager/admin/access-control/access-group.tsx:185
 #: ../html/src/manager/admin/setup/products/products-scc-dialog.tsx:197
 #: ../html/src/manager/images/image-view-patches.tsx:87
-#: ../html/src/manager/images/image-view.tsx:690
+#: ../html/src/manager/images/image-view.tsx:693
 #: ../html/src/manager/maintenance/list/calendar-list.tsx:70
 #: ../html/src/manager/maintenance/list/schedule-list.tsx:55
 #: ../html/src/manager/recurring/recurring-actions-list.tsx:205
@@ -278,7 +278,7 @@ msgid "Attested on"
 msgstr "Provat el"
 
 #: ../html/src/components/coco-attestation/CoCoReport.tsx:118
-#: ../html/src/manager/images/image-view.tsx:790
+#: ../html/src/manager/images/image-view.tsx:793
 #: ../html/src/manager/maintenance/details/schedule-details.tsx:54
 msgid "Overview"
 msgstr "Visió"
@@ -381,7 +381,7 @@ msgstr "Esteu segur que voleu {action} el {name} seleccionat? ({count} {name}s s
 #: ../html/src/components/dialog/DangerDialog.tsx:62
 #: ../html/src/components/dialog/LegacyDangerDialog.tsx:28
 #: ../html/src/components/dialog/LegacyDangerDialog.tsx:29
-#: ../html/src/components/hub/AddTokenButton.tsx:154
+#: ../html/src/components/hub/AddTokenButton.tsx:153
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:252
 #: ../html/src/components/hub/ModalEditButton.tsx:87
 #: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:295
@@ -395,10 +395,10 @@ msgstr "Esteu segur que voleu {action} el {name} seleccionat? ({count} {name}s s
 #: ../html/src/manager/content-management/shared/components/panels/build/build.tsx:129
 #: ../html/src/manager/content-management/shared/components/panels/promote/promote.tsx:107
 #: ../html/src/manager/content-management/shared/components/panels/promote/promote.tsx:108
-#: ../html/src/manager/images/image-view-overview.tsx:725
-#: ../html/src/manager/images/image-view-overview.tsx:726
-#: ../html/src/manager/images/image-view-overview.tsx:802
-#: ../html/src/manager/images/image-view-overview.tsx:803
+#: ../html/src/manager/images/image-view-overview.tsx:727
+#: ../html/src/manager/images/image-view-overview.tsx:728
+#: ../html/src/manager/images/image-view-overview.tsx:804
+#: ../html/src/manager/images/image-view-overview.tsx:805
 #: ../html/src/manager/minion/ansible/edit-ansible-path.tsx:20
 #: ../html/src/manager/minion/ansible/edit-ansible-vars-modal.tsx:90
 #: ../html/src/manager/systems/delete-system.tsx:79
@@ -409,14 +409,13 @@ msgstr "Cancel·la"
 #. both the peripheral and the hub are null means the token is not used and we can delete it
 #: ../html/src/components/dialog/DeleteDialog.tsx:29
 #: ../html/src/components/hub/PeripheralsList.tsx:56
-#: ../html/src/components/hub/TokenTable.tsx:176
-#: ../html/src/components/hub/TokenTable.tsx:185
-#: ../html/src/components/hub/TokenTable.tsx:229
+#: ../html/src/components/hub/TokenTable.tsx:182
+#: ../html/src/components/hub/TokenTable.tsx:225
 #: ../html/src/components/large-text-attachment.tsx:206
 #: ../html/src/components/large-text-attachment.tsx:208
 #: ../html/src/components/large-text-attachment.tsx:221
 #: ../html/src/components/panels/CreatorPanel.tsx:97
-#: ../html/src/components/table/Table.tsx:231
+#: ../html/src/components/table/Table.tsx:234
 #: ../html/src/manager/admin/payg/payg.tsx:71
 #: ../html/src/manager/admin/payg/payg.tsx:72
 #: ../html/src/manager/content-management/list-filters/filter-edit.tsx:165
@@ -429,7 +428,7 @@ msgstr "Cancel·la"
 #: ../html/src/manager/images/image-stores.tsx:205
 #: ../html/src/manager/images/image-view.tsx:351
 #: ../html/src/manager/images/image-view.tsx:361
-#: ../html/src/manager/images/image-view.tsx:699
+#: ../html/src/manager/images/image-view.tsx:702
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:44
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:47
 #: ../html/src/manager/maintenance/list/calendar-list.tsx:88
@@ -627,14 +626,14 @@ msgid "Toggle section visibility"
 msgstr "Commuta la visibilitat de la secció"
 
 #: ../html/src/components/hub/AddTokenButton.tsx:66
-#: ../html/src/components/hub/AddTokenButton.tsx:95
-#: ../html/src/components/hub/AddTokenButton.tsx:120
+#: ../html/src/components/hub/AddTokenButton.tsx:94
+#: ../html/src/components/hub/AddTokenButton.tsx:119
 msgid "Issue a new token"
 msgstr "Emet un token nou"
 
 #: ../html/src/components/hub/AddTokenButton.tsx:77
-#: ../html/src/components/hub/AddTokenButton.tsx:103
-#: ../html/src/components/hub/AddTokenButton.tsx:120
+#: ../html/src/components/hub/AddTokenButton.tsx:102
+#: ../html/src/components/hub/AddTokenButton.tsx:119
 msgid "Store an external token"
 msgstr "Emmagatzema un testimoni extern"
 
@@ -642,22 +641,18 @@ msgstr "Emmagatzema un testimoni extern"
 msgid "Add token"
 msgstr "Afegeix un testimoni"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:86
-msgid "Add a new access token"
-msgstr "Afegeix un testimoni d'accés nou"
-
-#: ../html/src/components/hub/AddTokenButton.tsx:128
+#: ../html/src/components/hub/AddTokenButton.tsx:127
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:70
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:229
 msgid "Server FQDN"
 msgstr "Servidor FQDN"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:130
+#: ../html/src/components/hub/AddTokenButton.tsx:129
 #: ../html/src/components/hub/RegisterPeripheralForm.tsx:160
 msgid "e.g. server.domain.com"
 msgstr "p. ex. server.domain.com"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:134
+#: ../html/src/components/hub/AddTokenButton.tsx:133
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:73
 #: ../html/src/components/hub/RegisterPeripheralForm.tsx:164
 #: ../html/src/manager/proxy/container-config.tsx:206
@@ -665,39 +660,39 @@ msgstr "p. ex. server.domain.com"
 msgid "Has to be a valid FQDN address"
 msgstr "Ha de ser una adreça FQDN vàlida"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:139
+#: ../html/src/components/hub/AddTokenButton.tsx:138
 #: ../html/src/components/hub/RegisterPeripheralForm.tsx:184
 msgid "Token"
 msgstr "Testimoni"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:161
+#: ../html/src/components/hub/AddTokenButton.tsx:160
 msgid "Issue"
 msgstr "Incidència"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:161
+#: ../html/src/components/hub/AddTokenButton.tsx:160
 msgid "Store"
 msgstr "Emmagatzema"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:179
+#: ../html/src/components/hub/AddTokenButton.tsx:178
 msgid "New token successfully issued"
 msgstr "El testimoni nou s'ha emès correctament"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:186
+#: ../html/src/components/hub/AddTokenButton.tsx:185
 msgid "The new token was generated successfully. Make sure to copy it now as you will not be able to see this again."
 msgstr "El testimoni nou s'ha generat amb èxit. Assegureu-vos de copiar-lo ara, ja que no podreu tornar a veure-ho."
 
-#: ../html/src/components/hub/AddTokenButton.tsx:200
+#: ../html/src/components/hub/AddTokenButton.tsx:199
 msgid "Copy"
 msgstr "Copia"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:220
+#: ../html/src/components/hub/AddTokenButton.tsx:219
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:178
 #: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:95
 #: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:96
 msgid "Close"
 msgstr "Tanca"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:252
+#: ../html/src/components/hub/AddTokenButton.tsx:251
 msgid "Access token copied to the clipboard"
 msgstr "S'ha copiat el testimoni d'accés al porta-retalls"
 
@@ -841,8 +836,6 @@ msgstr "No hi ha esclaus ISSv1 per migrar."
 
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:211
 #: ../html/src/components/states-picker.tsx:366
-#: ../html/src/manager/images/image-view.tsx:818
-#: ../html/src/manager/images/image-view.tsx:820
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:29
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:31
 #: ../html/src/manager/maintenance/edit/maintenance-windows-edit.tsx:53
@@ -1238,14 +1231,14 @@ msgstr "Filtra per nom"
 #: ../html/src/manager/admin/access-control/access-group-list.tsx:107
 #: ../html/src/manager/admin/access-control/access-group-permissions.tsx:354
 #: ../html/src/manager/admin/access-control/access-group-review.tsx:175
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:408
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:407
 #: ../html/src/manager/content-management/list-filters/list-filters.tsx:180
 #: ../html/src/manager/content-management/list-projects/list-projects.tsx:98
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:132
 #: ../html/src/manager/content-management/shared/components/panels/environment-lifecycle/environment-form.tsx:28
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties-form.tsx:23
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties-view.tsx:40
-#: ../html/src/manager/images/image-view.tsx:643
+#: ../html/src/manager/images/image-view.tsx:646
 #: ../html/src/manager/minion/ansible/variables/boolean-editor.tsx:32
 #: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:75
 #: ../html/src/manager/minion/ansible/variables/list-editor.tsx:36
@@ -1353,7 +1346,7 @@ msgid "Valid"
 msgstr "Vàlid"
 
 #: ../html/src/components/hub/TokenTable.tsx:76
-#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:87
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:91
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:116
 #: ../html/src/manager/systems/coco/ssm-settings.tsx:74
 #: ../html/src/manager/systems/list-filter.tsx:38
@@ -1362,7 +1355,7 @@ msgid "Yes"
 msgstr "Sí"
 
 #: ../html/src/components/hub/TokenTable.tsx:76
-#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:87
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:91
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:116
 #: ../html/src/manager/systems/coco/ssm-settings.tsx:74
 #: ../html/src/manager/systems/list-filter.tsx:39
@@ -1375,7 +1368,7 @@ msgid "Expired"
 msgstr "Caducitat"
 
 #: ../html/src/components/hub/TokenTable.tsx:96
-#: ../html/src/manager/images/image-view.tsx:675
+#: ../html/src/manager/images/image-view.tsx:678
 msgid "Last Modified"
 msgstr "Darrera modificació"
 
@@ -1391,78 +1384,78 @@ msgstr "Sí, expirat <expiration></expiration>"
 msgid "No, expires <expiration></expiration>"
 msgstr "No, expira <expiration></expiration>"
 
-#: ../html/src/components/hub/TokenTable.tsx:146
-#: ../html/src/components/hub/TokenTable.tsx:161
+#: ../html/src/components/hub/TokenTable.tsx:139
+#: ../html/src/components/hub/TokenTable.tsx:160
 msgid "Invalidate"
 msgstr "Invalida"
 
-#: ../html/src/components/hub/TokenTable.tsx:146
-#: ../html/src/components/hub/TokenTable.tsx:161
+#: ../html/src/components/hub/TokenTable.tsx:139
+#: ../html/src/components/hub/TokenTable.tsx:160
 msgid "Validate"
 msgstr "Valida"
 
-#: ../html/src/components/hub/TokenTable.tsx:152
+#: ../html/src/components/hub/TokenTable.tsx:151
 msgid "Confirm access token modification"
 msgstr "Confirmeu la modificació del testimoni d'accés"
 
-#: ../html/src/components/hub/TokenTable.tsx:156
+#: ../html/src/components/hub/TokenTable.tsx:155
 #: ../html/src/manager/maintenance/edit/calendar-edit.tsx:185
 msgid "Confirm if you want to proceed."
 msgstr "Confirmeu si voleu continuar."
 
-#: ../html/src/components/hub/TokenTable.tsx:181
+#: ../html/src/components/hub/TokenTable.tsx:178
 msgid "Confirm access token deletion"
 msgstr "Confirmeu l'eliminació del testimoni d'accés"
 
-#: ../html/src/components/hub/TokenTable.tsx:182
+#: ../html/src/components/hub/TokenTable.tsx:179
 msgid "Are you sure you want to delete this token. It is currently not used."
 msgstr "Esteu segur que voleu suprimir aquest testimoni. Actualment no s'utilitza."
 
-#: ../html/src/components/hub/TokenTable.tsx:221
+#: ../html/src/components/hub/TokenTable.tsx:217
 msgid "This access token cannot be deleted. It is currently used by hub {fqdn}"
 msgstr "Aquest testimoni d'accés no es pot suprimir. Actualment l'utilitza el hub {fqdn}"
 
-#: ../html/src/components/hub/TokenTable.tsx:225
+#: ../html/src/components/hub/TokenTable.tsx:221
 msgid "This access token cannot be deleted. It is currently used by peripheral {fqdn}"
 msgstr "Aquest testimoni d'accés no es pot suprimir. Actualment és utilitzat pel perifèric {fqdn}"
 
 #. token issued for another server currently valid and linked to a hub
-#: ../html/src/components/hub/TokenTable.tsx:236
+#: ../html/src/components/hub/TokenTable.tsx:232
 msgid "Invalidating this access token will prevent the hub {fqdn} from accesssing."
 msgstr "La invalidació d'aquest testimoni d'accés impedirà l'accés al hub {fqdn}."
 
 #. token issued for another server currently valid and linked to a peripheral
-#: ../html/src/components/hub/TokenTable.tsx:239
+#: ../html/src/components/hub/TokenTable.tsx:235
 msgid "Invalidating this access token will prevent the peripheral {fqdn} from accesssing."
 msgstr "La invalidació d'aquest testimoni d'accés impedirà que s'hi accedeixi el perifèric {fqdn}."
 
 #. token issued for another server currently not valid and linked to a hub
-#: ../html/src/components/hub/TokenTable.tsx:242
+#: ../html/src/components/hub/TokenTable.tsx:238
 msgid "Enabling this access token will grant access to the hub {fqdn}."
 msgstr "Si activeu aquest testimoni d'accés, es concedirà accés al hub {fqdn}."
 
 #. token issued for another server currently not valid and linked to a peripheral
-#: ../html/src/components/hub/TokenTable.tsx:245
+#: ../html/src/components/hub/TokenTable.tsx:241
 msgid "Enabling this access token will grant access to the peripheral {fqdn}."
 msgstr "Si activeu aquest testimoni d'accés, es concedirà accés al perifèric {fqdn}."
 
 #. token received from another server currently valid and linked to a hub
-#: ../html/src/components/hub/TokenTable.tsx:248
+#: ../html/src/components/hub/TokenTable.tsx:244
 msgid "Invalidating this access token will prevent access to the hub {fqdn}."
 msgstr "La invalidació d'aquest testimoni d'accés impedirà l'accés al hub {fqdn}."
 
 #. token received from another server currently valid and linked to a peripheral
-#: ../html/src/components/hub/TokenTable.tsx:251
+#: ../html/src/components/hub/TokenTable.tsx:247
 msgid "Invalidating this access token will prevent access to the peripheral {fqdn}."
 msgstr "La invalidació d'aquest testimoni d'accés impedirà l'accés al perifèric {fqdn}."
 
 #. token received from another server currently not valid and linked to a hub
-#: ../html/src/components/hub/TokenTable.tsx:254
+#: ../html/src/components/hub/TokenTable.tsx:250
 msgid "Enabling this access token will restore access to the hub {fqdn}."
 msgstr "Si activeu aquest testimoni d'accés, es restaurarà l'accés al hub {fqdn}."
 
 #. token received from another server currently not valid and linked to a peripheral
-#: ../html/src/components/hub/TokenTable.tsx:257
+#: ../html/src/components/hub/TokenTable.tsx:253
 msgid "Enabling this access token will restore access to the peripheral {fqdn}."
 msgstr "Si activeu aquest testimoni d'accés, es restaurarà l'accés al perifèric {fqdn}."
 
@@ -1748,7 +1741,7 @@ msgid "Target child channels"
 msgstr "no hi ha canals fills"
 
 #: ../html/src/components/product-migration/MigrationChannelsSelectorForm.tsx:189
-#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:85
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:89
 msgid "Allow vendor change"
 msgstr ""
 
@@ -1764,50 +1757,86 @@ msgstr "Torna a la selecció del sistema"
 msgid "Schedule Migration"
 msgstr "Prova de la planificació"
 
-#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:41
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:45
 msgid "Please review your selection and confirm below to schedule the migration."
 msgstr ""
 
-#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:45
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:49
 #: ../html/src/manager/header/search/search.tsx:10
 #: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:104
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:180
 msgid "Systems"
 msgstr "Tipus de sistema"
 
-#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:60
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:64
 #, fuzzy
 #| msgid "Product Description"
 msgid "Product after migration"
 msgstr "Descripció del producte"
 
-#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:66
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:70
 #, fuzzy
 #| msgid "No subscriptions found."
 msgid "Channel subscriptions after migration"
 msgstr "No s'ha trobat cap subscripció."
 
-#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:91
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:95
 msgid "Schedule action for no sooner than"
 msgstr ""
 
-#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:104
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:109
+msgid "Before Migrating to SLES 16 — Please ensure"
+msgstr ""
+
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:111
+#, fuzzy
+#| msgid "System is up to date"
+msgid "System is fully up to date"
+msgstr "El sistema està actualitzat"
+
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:112
+#, fuzzy
+#| msgid "Affected, patch is unavailable"
+msgid "Sufficient disk space is available"
+msgstr "Afectat, el pedaç no està disponible"
+
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:115
+msgid "Ensure SSH key-based access is available for at least one user. If root login is required, create /etc/ssh/sshd_config.d/50-permit-root-login.conf with: PermitRootLogin yes"
+msgstr ""
+
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:118
+msgid "KVM guests are shut down (if applicable)"
+msgstr ""
+
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:119
+msgid "Network configuration will be migrated from wicked to NetworkManager"
+msgstr ""
+
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:120
+msgid "AppArmor profiles will be migrated to SELinux"
+msgstr ""
+
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:128
 msgid "In order to detect any possible problems it is recommended to always do a Dry Run before scheduling the actual Product Migration."
 msgstr ""
 
-#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:114
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:139
 #, fuzzy
 #| msgid "Back to sytem selection"
 msgid "Back to channel selection"
 msgstr "Torna a la selecció del sistema"
 
-#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:121
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:146
 #, fuzzy
 #| msgid " ready to run"
 msgid "Dry run"
 msgstr " llest per a executar"
 
-#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:127
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:149
+msgid "Dry run is not available for this migration"
+msgstr ""
+
+#: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:154
 #: ../html/src/manager/admin/hub/peripherals.tsx:37
 msgid "Migrate"
 msgstr "Migra"
@@ -1831,7 +1860,7 @@ msgstr "Producte"
 msgid "Target Products"
 msgstr "Productes"
 
-#: ../html/src/components/product-migration/MigrationTargetSelectorForm.tsx:84
+#: ../html/src/components/product-migration/MigrationTargetSelectorForm.tsx:87
 #, fuzzy
 #| msgid "Sync Channels"
 msgid "Select Channels"
@@ -2017,7 +2046,7 @@ msgstr "Convidat virtual"
 #: ../html/src/components/systems.tsx:31
 #: ../html/src/manager/systems/list-filter.tsx:8
 #: ../html/src/manager/systems/list-filter.tsx:68
-#: ../html/src/manager/systems/virtual-list.tsx:75
+#: ../html/src/manager/systems/virtual-list.tsx:74
 msgid "Virtual Host"
 msgstr "Amfitrió virtual"
 
@@ -2345,7 +2374,7 @@ msgstr ""
 
 #: ../html/src/manager/admin/access-control/access-group-permissions.tsx:347
 #: ../html/src/manager/admin/task-engine-status/taskotop.tsx:196
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:382
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:381
 #: ../html/src/manager/audit/subscription-matching/subscription-matching-pins.tsx:281
 #: ../html/src/manager/audit/subscription-matching/subscription-matching-unmatched-products.tsx:143
 msgid "Filter by name"
@@ -3331,58 +3360,59 @@ msgstr "Servidors d'auditoria"
 msgid "Audit Images"
 msgstr "Auditoria d'imatges"
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:343
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-util.tsx:9
-#: ../html/src/manager/systems/all-list.tsx:88
-#: ../html/src/manager/systems/virtual-list.tsx:68
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:339
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-util.tsx:13
+#: ../html/src/manager/systems/all-list.tsx:34
+#: ../html/src/manager/systems/all-list.tsx:89
+#: ../html/src/manager/systems/virtual-list.tsx:64
 msgid "Download CSV"
 msgstr "Baixa el CSV"
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:359
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:358
 msgid "MITRE CVE link"
 msgstr "Enllaç CVE del MITRE"
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:370
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:369
 msgid "SUSE Security CVE link"
 msgstr "Enllaç SUSE Security CVE"
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:436
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:504
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:435
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:503
 msgid "No action required"
 msgstr "No cal cap acció"
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:442
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:441
 msgid "Install a new patch on this system."
 msgstr "Instal·la un pedaç nou en aquest sistema."
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:459
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:458
 msgid "Patch available, but system needs to be migrated to a newer Product."
 msgstr "Patch disponible, però el sistema ha de ser migrat a un producte més nou."
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:471
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:470
 msgid "Patch available, but needs to be cloned into Channel."
 msgstr "Patch disponible, però cal clonar-lo a Channel."
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:483
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:482
 msgid "Install a new partial patch on this system."
 msgstr "Instal·la un nou pedaç parcial en aquest sistema."
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:496
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:527
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:530
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:495
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:526
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:529
 msgid "If you see this report a bug."
 msgstr "Si veieu aquest informe d'un error."
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:511
-#: ../html/src/manager/images/image-view-overview.tsx:641
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:510
+#: ../html/src/manager/images/image-view-overview.tsx:642
 msgid "Rebuild"
 msgstr "Reconstrueix"
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:519
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:518
 msgid "Patch available but needs to be cloned into Channel."
 msgstr "Pedaç disponible però cal clonar-lo a Channel."
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:522
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:521
 #: ../html/src/manager/content-management/list-filters/appstreams/select-input.tsx:34
 #: ../html/src/manager/content-management/list-filters/templates/app-streams.tsx:43
 #: ../html/src/manager/content-management/shared/components/panels/sources/sources.tsx:41
@@ -3390,7 +3420,7 @@ msgstr "Pedaç disponible però cal clonar-lo a Channel."
 msgid "Channel"
 msgstr "Canal"
 
-#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:523
+#: ../html/src/manager/audit/cveaudit/cveaudit.tsx:522
 msgid "Errata"
 msgstr "Errata"
 
@@ -3641,19 +3671,19 @@ msgstr "Nom del sistema"
 msgid "Unmatched systems"
 msgstr "Sistemes no coincidents"
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-util.tsx:37
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-util.tsx:42
 msgid "Physical deployment only"
 msgstr "Només desplegament físic"
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-util.tsx:40
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-util.tsx:45
 msgid "Unlimited Virtual Machines"
 msgstr "Màquines virtuals il·limitades"
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-util.tsx:43
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-util.tsx:48
 msgid "1-2 Sockets or 1-2 Virtual Machines"
 msgstr "1-2 sòcols o 1-2 màquines virtuals"
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-util.tsx:46
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-util.tsx:51
 msgid "Per-instance"
 msgstr "Per-instància"
 
@@ -3795,7 +3825,7 @@ msgstr "Epoch"
 #: ../html/src/manager/content-management/shared/components/panels/promote/promote.tsx:80
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties.utils.ts:4
 #: ../html/src/manager/images/image-build.tsx:382
-#: ../html/src/manager/images/image-view.tsx:644
+#: ../html/src/manager/images/image-view.tsx:647
 #: ../html/src/manager/systems/details/mgr-server-info.tsx:87
 msgid "Version"
 msgstr "Versió"
@@ -3832,8 +3862,8 @@ msgstr "Emès"
 #: ../html/src/manager/images/image-build.tsx:414
 #: ../html/src/manager/images/image-profiles.tsx:199
 #: ../html/src/manager/images/image-view-overview.tsx:626
-#: ../html/src/manager/images/image-view-overview.tsx:733
-#: ../html/src/manager/images/image-view.tsx:671
+#: ../html/src/manager/images/image-view-overview.tsx:735
+#: ../html/src/manager/images/image-view.tsx:674
 msgid "Build"
 msgstr "Construeix"
 
@@ -4455,7 +4485,7 @@ msgstr "inclou les recomanades"
 #: ../html/src/manager/content-management/shared/components/panels/sources/sources.tsx:37
 #: ../html/src/manager/images/image-stores.tsx:184
 #: ../html/src/manager/images/image-view-patches.tsx:79
-#: ../html/src/manager/images/image-view.tsx:642
+#: ../html/src/manager/images/image-view.tsx:645
 #: ../html/src/manager/maintenance/edit/schedule-edit.tsx:105
 #: ../html/src/manager/notifications/notifications-list.tsx:139
 #: ../html/src/manager/state/highstate-summary.tsx:77
@@ -4531,17 +4561,17 @@ msgid "Formula saved. Apply the <link>Highstate</link> for the changes to take e
 msgstr "Fórmula desada. Aplica el <link>Highstate</link> perquè els canvis tinguin efecte."
 
 #: ../html/src/manager/header/search/search.tsx:14
-#: ../html/src/manager/images/image-view.tsx:667
-#: ../html/src/manager/images/image-view.tsx:792
-#: ../html/src/manager/systems/all-list.tsx:138
+#: ../html/src/manager/images/image-view.tsx:670
+#: ../html/src/manager/images/image-view.tsx:795
+#: ../html/src/manager/systems/all-list.tsx:139
 #: ../html/src/manager/systems/list-filter.tsx:47
 msgid "Packages"
 msgstr "Paquets"
 
 #: ../html/src/manager/header/search/search.tsx:18
-#: ../html/src/manager/images/image-view.tsx:654
-#: ../html/src/manager/images/image-view.tsx:791
-#: ../html/src/manager/systems/all-list.tsx:125
+#: ../html/src/manager/images/image-view.tsx:657
+#: ../html/src/manager/images/image-view.tsx:794
+#: ../html/src/manager/systems/all-list.tsx:126
 #: ../html/src/manager/systems/list-filter.tsx:46
 msgid "Patches"
 msgstr "Pedaços"
@@ -4846,7 +4876,7 @@ msgid "Are you sure you want to delete selected stores? ({count} stores selected
 msgstr "Esteu segur que voleu suprimir les botigues seleccionades? ({count} botigues seleccionades)"
 
 #: ../html/src/manager/images/image-view-buildlog.tsx:5
-#: ../html/src/manager/images/image-view.tsx:793
+#: ../html/src/manager/images/image-view.tsx:796
 msgid "Build Log"
 msgstr "Registre de muntatge"
 
@@ -4943,7 +4973,7 @@ msgid "Edit store"
 msgstr "Edita la botiga"
 
 #: ../html/src/manager/images/image-view-overview.tsx:465
-#: ../html/src/manager/images/image-view.tsx:751
+#: ../html/src/manager/images/image-view.tsx:754
 #, fuzzy
 #| msgid "Instance is outdated"
 msgid "Instance Details for \"{name}\""
@@ -4987,50 +5017,50 @@ msgid "Build Status"
 msgstr "Estat de la construcció"
 
 #: ../html/src/manager/images/image-view-overview.tsx:632
-#: ../html/src/manager/images/image-view-overview.tsx:810
+#: ../html/src/manager/images/image-view-overview.tsx:812
 msgid "Inspect"
 msgstr "Inspecciona"
 
-#: ../html/src/manager/images/image-view-overview.tsx:642
+#: ../html/src/manager/images/image-view-overview.tsx:643
 msgid "Reschedule the build"
 msgstr "Torna a planificar la construcció"
 
-#: ../html/src/manager/images/image-view-overview.tsx:650
+#: ../html/src/manager/images/image-view-overview.tsx:651
 msgid "Reinspect"
 msgstr "Inspecció"
 
-#: ../html/src/manager/images/image-view-overview.tsx:651
+#: ../html/src/manager/images/image-view-overview.tsx:652
 msgid "Reschedule the inspect"
 msgstr "Torna a planificar la inspecció"
 
-#: ../html/src/manager/images/image-view-overview.tsx:664
+#: ../html/src/manager/images/image-view-overview.tsx:666
 msgid "Custom Image Information"
 msgstr "Informació personalitzada de la imatge"
 
-#: ../html/src/manager/images/image-view-overview.tsx:678
+#: ../html/src/manager/images/image-view-overview.tsx:680
 #: ../html/src/manager/images/image-view.tsx:362
-#: ../html/src/manager/images/image-view.tsx:721
+#: ../html/src/manager/images/image-view.tsx:724
 msgid "Delete Image"
 msgstr "Suprimeix la imatge"
 
-#: ../html/src/manager/images/image-view-overview.tsx:681
-#: ../html/src/manager/images/image-view.tsx:724
+#: ../html/src/manager/images/image-view-overview.tsx:683
+#: ../html/src/manager/images/image-view.tsx:727
 msgid "Are you sure you want to delete image"
 msgstr "Esteu segur que voleu suprimir la imatge"
 
-#: ../html/src/manager/images/image-view-overview.tsx:734
+#: ../html/src/manager/images/image-view-overview.tsx:736
 msgid "Schedule build"
 msgstr "Construcció de la planificació"
 
-#: ../html/src/manager/images/image-view-overview.tsx:766
+#: ../html/src/manager/images/image-view-overview.tsx:768
 msgid "Rebuild Image"
 msgstr "Reconstrueix la imatge"
 
-#: ../html/src/manager/images/image-view-overview.tsx:811
+#: ../html/src/manager/images/image-view-overview.tsx:813
 msgid "Schedule inspect"
 msgstr "Inspecció de la planificació"
 
-#: ../html/src/manager/images/image-view-overview.tsx:837
+#: ../html/src/manager/images/image-view-overview.tsx:839
 msgid "Reinspect Image"
 msgstr "Torna a inspeccionar la imatge"
 
@@ -5145,38 +5175,38 @@ msgid "Unknown"
 msgstr "Desconegut"
 
 #: ../html/src/manager/images/image-view.tsx:605
-#: ../html/src/manager/images/image-view.tsx:794
+#: ../html/src/manager/images/image-view.tsx:797
 msgid "Runtime"
 msgstr "Temps d'execució"
 
-#: ../html/src/manager/images/image-view.tsx:625
+#: ../html/src/manager/images/image-view.tsx:626
 msgid "Show obsolete"
 msgstr "Mostra obsolet"
 
-#: ../html/src/manager/images/image-view.tsx:647
+#: ../html/src/manager/images/image-view.tsx:650
 msgid "Revision"
 msgstr "Revisió"
 
-#: ../html/src/manager/images/image-view.tsx:649
+#: ../html/src/manager/images/image-view.tsx:652
 msgid "(obsolete)"
 msgstr "(obsolet)"
 
-#: ../html/src/manager/images/image-view.tsx:651
-#: ../html/src/manager/systems/all-list.tsx:114
+#: ../html/src/manager/images/image-view.tsx:654
+#: ../html/src/manager/systems/all-list.tsx:115
 #: ../html/src/manager/systems/list-filter.tsx:45
-#: ../html/src/manager/systems/virtual-list.tsx:100
+#: ../html/src/manager/systems/virtual-list.tsx:99
 msgid "Updates"
 msgstr "Actualitzacions"
 
-#: ../html/src/manager/images/image-view.tsx:737
+#: ../html/src/manager/images/image-view.tsx:740
 msgid "Delete Selected Image(s)"
 msgstr "Suprimeix les imatges seleccionades"
 
-#: ../html/src/manager/images/image-view.tsx:741
+#: ../html/src/manager/images/image-view.tsx:744
 msgid "Are you sure you want to delete the selected image?"
 msgstr "Esteu segur que voleu suprimir la imatge seleccionada?"
 
-#: ../html/src/manager/images/image-view.tsx:742
+#: ../html/src/manager/images/image-view.tsx:745
 msgid "Are you sure you want to delete selected images? ({count} images selected)"
 msgstr "Esteu segur que voleu suprimir les imatges seleccionades? ({count} imatges seleccionades)"
 
@@ -6938,44 +6968,44 @@ msgstr "S'ha produït un error en actualitzar la clau d'activació."
 msgid "Activation key has been modified."
 msgstr "S'ha modificat la clau d'activació."
 
-#: ../html/src/manager/systems/all-list.tsx:58
+#: ../html/src/manager/systems/all-list.tsx:59
 msgid " Systems "
 msgstr " Sistemes "
 
-#: ../html/src/manager/systems/all-list.tsx:72
+#: ../html/src/manager/systems/all-list.tsx:73
 msgid "Add a system"
 msgstr "Afegeix un sistema"
 
-#: ../html/src/manager/systems/all-list.tsx:73
+#: ../html/src/manager/systems/all-list.tsx:74
 msgid "Add system"
 msgstr "Afegeix un sistema"
 
-#: ../html/src/manager/systems/all-list.tsx:102
+#: ../html/src/manager/systems/all-list.tsx:103
 msgid "No Systems."
 msgstr "Sense sistemes."
 
-#: ../html/src/manager/systems/all-list.tsx:152
+#: ../html/src/manager/systems/all-list.tsx:153
 #: ../html/src/manager/systems/list-filter.tsx:48
 msgid "Extra Packages"
 msgstr "Paquets extres"
 
-#: ../html/src/manager/systems/all-list.tsx:166
+#: ../html/src/manager/systems/all-list.tsx:167
 #: ../html/src/manager/systems/list-filter.tsx:49
 msgid "Config Diffs"
 msgstr "Diffs de configuració"
 
-#: ../html/src/manager/systems/all-list.tsx:181
+#: ../html/src/manager/systems/all-list.tsx:182
 msgid "Last Checked In"
 msgstr ""
 
-#: ../html/src/manager/systems/all-list.tsx:187
+#: ../html/src/manager/systems/all-list.tsx:188
 #: ../html/src/manager/systems/list-filter.tsx:50
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:143
 #: ../html/src/manager/systems/subscribe-channels/subscribe-channels.tsx:574
 msgid "Base Channel"
 msgstr "Canal base"
 
-#: ../html/src/manager/systems/all-list.tsx:198
+#: ../html/src/manager/systems/all-list.tsx:199
 #: ../html/src/manager/systems/list-filter.tsx:53
 msgid "System Type"
 msgstr "Tipus de sistema"
@@ -7281,7 +7311,7 @@ msgid "Groups"
 msgstr "Grups"
 
 #: ../html/src/manager/systems/list-filter.tsx:69
-#: ../html/src/manager/systems/virtual-list.tsx:83
+#: ../html/src/manager/systems/virtual-list.tsx:82
 msgid "Virtual System"
 msgstr "Sistema virtual"
 
@@ -7587,15 +7617,15 @@ msgstr "No hi ha canals infantils disponibles."
 msgid "Confirm Software Channel Change"
 msgstr "Confirmeu el canvi del canal de programari"
 
-#: ../html/src/manager/systems/virtual-list.tsx:39
+#: ../html/src/manager/systems/virtual-list.tsx:40
 msgid "Virtual Systems"
 msgstr "Sistemes virtuals"
 
-#: ../html/src/manager/systems/virtual-list.tsx:58
+#: ../html/src/manager/systems/virtual-list.tsx:59
 msgid "No Virtual Systems."
 msgstr "Sense sistemes virtuals."
 
-#: ../html/src/manager/systems/virtual-list.tsx:111
+#: ../html/src/manager/systems/virtual-list.tsx:110
 msgid "Base Software Channel"
 msgstr "Canal de programari base"
 
@@ -7717,6 +7747,9 @@ msgstr "Error d'autorització. Torneu a carregar la pàgina o torneu a intentar 
 #: ../html/src/utils/network.ts:100
 msgid "Resource not found."
 msgstr "No s'ha trobat el recurs."
+
+#~ msgid "Add a new access token"
+#~ msgstr "Afegeix un testimoni d'accés nou"
 
 #~ msgid "No hub is currently configured for this server. "
 #~ msgstr "Actualment no hi ha cap hub configurat per a aquest servidor. "
