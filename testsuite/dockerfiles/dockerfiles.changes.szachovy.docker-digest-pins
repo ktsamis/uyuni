@@ -1,0 +1,3 @@
+- Pin Docker base images to SHA256 digests for supply
+  chain security; add checksum verification for SchemaSpy
+  download
