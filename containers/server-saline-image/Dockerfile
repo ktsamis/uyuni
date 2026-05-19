@@ -18,7 +18,7 @@ RUN zypper ref -f && zypper --non-interactive up && \
     rpm -ivh --nodeps $(find /var/cache/zypp/packages/ -type f \
             -name update-alternatives.rpm -o \
             -name python311-base.rpm -o -name 'libpython3_11*.rpm' -o -name 'libopenssl*.rpm' -o -name libexpat1.rpm -o \
-            -name salt.rpm -o -name python311-salt.rpm -o -name python311-tornado.rpm -o \
+            -name salt.rpm -o -name python311-salt.rpm -o -name python311-tornado6.rpm -o \
             -name python311-contextvars.rpm -o -name python311-immutables.rpm -o -name python311-looseversion.rpm -o \
             -name python311-packaging.rpm -o -name python311-distro.rpm -o \
             -name python311-PyYAML.rpm -o -name 'libyaml*.rpm' -o -name python311-Jinja2.rpm -o -name python311-MarkupSafe.rpm -o \
