@@ -29,7 +29,7 @@ public class Pbkdf2Sha256Crypt {
 
     public static final String PREFIX = "$pbkdf2-sha256$";
 
-    // PBKDF2 iteration bounds — must match python/spacewalk/server/rhnUser.py.
+    // PBKDF2 iteration bounds - must match python/spacewalk/server/rhnUser.py.
     private static final int MIN_ITERATIONS = 600_000;
     private static final int MAX_ITERATIONS = 2_000_000;
     private static final int KEY_LENGTH_BITS = 256;
