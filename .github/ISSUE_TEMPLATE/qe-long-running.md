@@ -1,5 +1,5 @@
 ---
-name: QE - Full Build Validation
+name: QE - Long-running environment upgrade
 about: QE - Upgrade of the long-running environment
 title: "Upgrade the X long-running environment"
 labels: ["qe-squad", "build validation", "long-running environment"]
