@@ -78,6 +78,7 @@ RUN echo "rpm.install.excludedocs = yes" >>/etc/zypp/zypp.conf && \
         virtual-host-gatherer-VMware \
         virtual-host-gatherer-libcloud \
         virtualization-formulas \
+        mozilla-nss-sysinit \
         zchunk && \
     systemctl enable prometheus-node_exporter && \
     systemctl enable sssd && \
