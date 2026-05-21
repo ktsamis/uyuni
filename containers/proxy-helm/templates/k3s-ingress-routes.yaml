@@ -57,6 +57,7 @@ spec:
       - name: uyuni-proxy-tcp
         port: 4506
 ---
+{{- if not .Values.tftp.hostNetwork }}
 apiVersion: traefik.io/v1alpha1
 kind: IngressRouteUDP
 metadata:
@@ -69,5 +70,6 @@ spec:
     - services:
       - name: uyuni-proxy-udp
         port: 69
+{{- end }}
 {{- end }}
 
