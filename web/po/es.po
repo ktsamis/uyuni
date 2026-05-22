@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-15 11:54+0200\n"
+"POT-Creation-Date: 2026-05-22 09:57+0200\n"
 "PO-Revision-Date: 2025-06-14 00:59+0000\n"
 "Last-Translator: Fran Serrador <serrador@proton.me>\n"
 "Language-Team: Spanish <https://l10n.opensuse.org/projects/uyuni/web/es/>\n"
@@ -194,7 +194,7 @@ msgid "Environment Type"
 msgstr "Ciclo de vida de entorno"
 
 #: ../html/src/components/coco-attestation/CoCoAttestationTable.tsx:83
-#: ../html/src/components/hub/TokenTable.tsx:89
+#: ../html/src/components/hub/TokenTable.tsx:90
 #: ../html/src/manager/notifications/notifications-list.tsx:151
 msgid "Created"
 msgstr "Creación"
@@ -224,7 +224,7 @@ msgid "Attestation time"
 msgstr "Clave de activación"
 
 #: ../html/src/components/coco-attestation/CoCoAttestationTable.tsx:111
-#: ../html/src/components/hub/TokenTable.tsx:104
+#: ../html/src/components/hub/TokenTable.tsx:105
 #: ../html/src/manager/admin/access-control/access-group-list.tsx:130
 #: ../html/src/manager/admin/access-control/access-group-user.tsx:142
 #: ../html/src/manager/audit/cveaudit/cveaudit.tsx:424
@@ -396,7 +396,7 @@ msgstr "¿Confirma que quiere eliminar las imágenes seleccionadas? (se seleccio
 #: ../html/src/components/dialog/DangerDialog.tsx:62
 #: ../html/src/components/dialog/LegacyDangerDialog.tsx:28
 #: ../html/src/components/dialog/LegacyDangerDialog.tsx:29
-#: ../html/src/components/hub/AddTokenButton.tsx:153
+#: ../html/src/components/hub/AddTokenButton.tsx:160
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:252
 #: ../html/src/components/hub/ModalEditButton.tsx:87
 #: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:295
@@ -424,8 +424,8 @@ msgstr "Cancelar"
 #. both the peripheral and the hub are null means the token is not used and we can delete it
 #: ../html/src/components/dialog/DeleteDialog.tsx:29
 #: ../html/src/components/hub/PeripheralsList.tsx:56
-#: ../html/src/components/hub/TokenTable.tsx:182
-#: ../html/src/components/hub/TokenTable.tsx:225
+#: ../html/src/components/hub/TokenTable.tsx:135
+#: ../html/src/components/hub/TokenTable.tsx:224
 #: ../html/src/components/large-text-attachment.tsx:206
 #: ../html/src/components/large-text-attachment.tsx:208
 #: ../html/src/components/large-text-attachment.tsx:221
@@ -647,13 +647,13 @@ msgstr "Conmutar visibilidad de sección"
 
 #: ../html/src/components/hub/AddTokenButton.tsx:66
 #: ../html/src/components/hub/AddTokenButton.tsx:94
-#: ../html/src/components/hub/AddTokenButton.tsx:119
+#: ../html/src/components/hub/AddTokenButton.tsx:115
 msgid "Issue a new token"
 msgstr ""
 
 #: ../html/src/components/hub/AddTokenButton.tsx:77
 #: ../html/src/components/hub/AddTokenButton.tsx:102
-#: ../html/src/components/hub/AddTokenButton.tsx:119
+#: ../html/src/components/hub/AddTokenButton.tsx:115
 msgid "Store an external token"
 msgstr ""
 
@@ -663,18 +663,18 @@ msgstr ""
 msgid "Add token"
 msgstr "Añadir a:"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:127
+#: ../html/src/components/hub/AddTokenButton.tsx:132
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:70
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:229
 msgid "Server FQDN"
 msgstr ""
 
-#: ../html/src/components/hub/AddTokenButton.tsx:129
+#: ../html/src/components/hub/AddTokenButton.tsx:134
 #: ../html/src/components/hub/RegisterPeripheralForm.tsx:160
 msgid "e.g. server.domain.com"
 msgstr ""
 
-#: ../html/src/components/hub/AddTokenButton.tsx:133
+#: ../html/src/components/hub/AddTokenButton.tsx:138
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:73
 #: ../html/src/components/hub/RegisterPeripheralForm.tsx:164
 #: ../html/src/manager/proxy/container-config.tsx:206
@@ -683,42 +683,42 @@ msgstr ""
 msgid "Has to be a valid FQDN address"
 msgstr "Déjelo vacío para generar una dirección MAC"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:138
+#: ../html/src/components/hub/AddTokenButton.tsx:143
 #: ../html/src/components/hub/RegisterPeripheralForm.tsx:184
 msgid "Token"
 msgstr ""
 
-#: ../html/src/components/hub/AddTokenButton.tsx:160
+#: ../html/src/components/hub/AddTokenButton.tsx:167
 #, fuzzy
 #| msgid "Issued"
 msgid "Issue"
 msgstr "Emisión"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:160
+#: ../html/src/components/hub/AddTokenButton.tsx:167
 msgid "Store"
 msgstr ""
 
-#: ../html/src/components/hub/AddTokenButton.tsx:178
+#: ../html/src/components/hub/AddTokenButton.tsx:182
 #, fuzzy
 msgid "New token successfully issued"
 msgstr "Se eliminó el filtro correctamente"
 
-#: ../html/src/components/hub/AddTokenButton.tsx:185
+#: ../html/src/components/hub/AddTokenButton.tsx:190
 msgid "The new token was generated successfully. Make sure to copy it now as you will not be able to see this again."
 msgstr ""
 
-#: ../html/src/components/hub/AddTokenButton.tsx:199
+#: ../html/src/components/hub/AddTokenButton.tsx:204
 msgid "Copy"
 msgstr ""
 
-#: ../html/src/components/hub/AddTokenButton.tsx:219
+#: ../html/src/components/hub/AddTokenButton.tsx:226
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:178
 #: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:95
 #: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:96
 msgid "Close"
 msgstr ""
 
-#: ../html/src/components/hub/AddTokenButton.tsx:251
+#: ../html/src/components/hub/AddTokenButton.tsx:259
 msgid "Access token copied to the clipboard"
 msgstr ""
 
@@ -1394,24 +1394,24 @@ msgstr ""
 msgid "Confirm Channel Synchronization Changes"
 msgstr ""
 
-#: ../html/src/components/hub/TokenTable.tsx:54
+#: ../html/src/components/hub/TokenTable.tsx:55
 msgid "No tokens available"
 msgstr ""
 
-#: ../html/src/components/hub/TokenTable.tsx:61
+#: ../html/src/components/hub/TokenTable.tsx:62
 #, fuzzy
 msgid "Token type"
 msgstr "Acción"
 
-#: ../html/src/components/hub/TokenTable.tsx:68
+#: ../html/src/components/hub/TokenTable.tsx:69
 msgid "Server"
 msgstr "Servidor"
 
-#: ../html/src/components/hub/TokenTable.tsx:75
+#: ../html/src/components/hub/TokenTable.tsx:76
 msgid "Valid"
 msgstr ""
 
-#: ../html/src/components/hub/TokenTable.tsx:76
+#: ../html/src/components/hub/TokenTable.tsx:77
 #: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:91
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:116
 #: ../html/src/manager/systems/coco/ssm-settings.tsx:74
@@ -1420,7 +1420,7 @@ msgstr ""
 msgid "Yes"
 msgstr "Sí"
 
-#: ../html/src/components/hub/TokenTable.tsx:76
+#: ../html/src/components/hub/TokenTable.tsx:77
 #: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:91
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:116
 #: ../html/src/manager/systems/coco/ssm-settings.tsx:74
@@ -1430,107 +1430,107 @@ msgstr "Sí"
 msgid "No"
 msgstr "Ninguna"
 
-#: ../html/src/components/hub/TokenTable.tsx:82
+#: ../html/src/components/hub/TokenTable.tsx:83
 msgid "Expired"
 msgstr ""
 
-#: ../html/src/components/hub/TokenTable.tsx:96
+#: ../html/src/components/hub/TokenTable.tsx:97
 #: ../html/src/manager/images/image-view.tsx:678
 msgid "Last Modified"
 msgstr "Última modificación"
 
 #: ../html/src/components/hub/TokenTable.tsx:114
-msgid "No, never expires"
+#, fuzzy
+msgid "Confirm access token modification"
+msgstr "Confirmar eliminación"
+
+#: ../html/src/components/hub/TokenTable.tsx:118
+#: ../html/src/manager/maintenance/edit/calendar-edit.tsx:185
+msgid "Confirm if you want to proceed."
 msgstr ""
 
-#: ../html/src/components/hub/TokenTable.tsx:122
-msgid "Yes, expired <expiration></expiration>"
-msgstr ""
-
-#: ../html/src/components/hub/TokenTable.tsx:122
-msgid "No, expires <expiration></expiration>"
-msgstr ""
-
-#: ../html/src/components/hub/TokenTable.tsx:139
-#: ../html/src/components/hub/TokenTable.tsx:160
+#: ../html/src/components/hub/TokenTable.tsx:123
+#: ../html/src/components/hub/TokenTable.tsx:169
 #, fuzzy
 #| msgid "Invalid data"
 msgid "Invalidate"
 msgstr "Datos no válidos"
 
-#: ../html/src/components/hub/TokenTable.tsx:139
-#: ../html/src/components/hub/TokenTable.tsx:160
+#: ../html/src/components/hub/TokenTable.tsx:123
+#: ../html/src/components/hub/TokenTable.tsx:169
 #, fuzzy
 #| msgid "Invalid data"
 msgid "Validate"
 msgstr "Datos no válidos"
 
-#: ../html/src/components/hub/TokenTable.tsx:151
-#, fuzzy
-msgid "Confirm access token modification"
-msgstr "Confirmar eliminación"
-
-#: ../html/src/components/hub/TokenTable.tsx:155
-#: ../html/src/manager/maintenance/edit/calendar-edit.tsx:185
-msgid "Confirm if you want to proceed."
-msgstr ""
-
-#: ../html/src/components/hub/TokenTable.tsx:178
+#: ../html/src/components/hub/TokenTable.tsx:131
 #, fuzzy
 #| msgid "Confirm Deletion"
 msgid "Confirm access token deletion"
 msgstr "Confirmar eliminación"
 
-#: ../html/src/components/hub/TokenTable.tsx:179
+#: ../html/src/components/hub/TokenTable.tsx:132
 #, fuzzy
 msgid "Are you sure you want to delete this token. It is currently not used."
 msgstr "¿Confirma que quiere eliminar el perfil seleccionado?"
 
-#: ../html/src/components/hub/TokenTable.tsx:217
+#: ../html/src/components/hub/TokenTable.tsx:145
+msgid "No, never expires"
+msgstr ""
+
+#: ../html/src/components/hub/TokenTable.tsx:153
+msgid "Yes, expired <expiration></expiration>"
+msgstr ""
+
+#: ../html/src/components/hub/TokenTable.tsx:153
+msgid "No, expires <expiration></expiration>"
+msgstr ""
+
+#: ../html/src/components/hub/TokenTable.tsx:216
 msgid "This access token cannot be deleted. It is currently used by hub {fqdn}"
 msgstr ""
 
-#: ../html/src/components/hub/TokenTable.tsx:221
+#: ../html/src/components/hub/TokenTable.tsx:220
 msgid "This access token cannot be deleted. It is currently used by peripheral {fqdn}"
 msgstr ""
 
 #. token issued for another server currently valid and linked to a hub
-#: ../html/src/components/hub/TokenTable.tsx:232
+#: ../html/src/components/hub/TokenTable.tsx:231
 msgid "Invalidating this access token will prevent the hub {fqdn} from accesssing."
 msgstr ""
 
 #. token issued for another server currently valid and linked to a peripheral
-#: ../html/src/components/hub/TokenTable.tsx:235
+#: ../html/src/components/hub/TokenTable.tsx:234
 msgid "Invalidating this access token will prevent the peripheral {fqdn} from accesssing."
 msgstr ""
 
 #. token issued for another server currently not valid and linked to a hub
-#: ../html/src/components/hub/TokenTable.tsx:238
+#: ../html/src/components/hub/TokenTable.tsx:237
 msgid "Enabling this access token will grant access to the hub {fqdn}."
 msgstr ""
 
 #. token issued for another server currently not valid and linked to a peripheral
-#: ../html/src/components/hub/TokenTable.tsx:241
+#: ../html/src/components/hub/TokenTable.tsx:240
 msgid "Enabling this access token will grant access to the peripheral {fqdn}."
 msgstr ""
 
 #. token received from another server currently valid and linked to a hub
-#: ../html/src/components/hub/TokenTable.tsx:244
+#: ../html/src/components/hub/TokenTable.tsx:243
 msgid "Invalidating this access token will prevent access to the hub {fqdn}."
 msgstr ""
 
 #. token received from another server currently valid and linked to a peripheral
-#: ../html/src/components/hub/TokenTable.tsx:247
+#: ../html/src/components/hub/TokenTable.tsx:246
 msgid "Invalidating this access token will prevent access to the peripheral {fqdn}."
 msgstr ""
 
 #. token received from another server currently not valid and linked to a hub
-#: ../html/src/components/hub/TokenTable.tsx:250
+#: ../html/src/components/hub/TokenTable.tsx:249
 msgid "Enabling this access token will restore access to the hub {fqdn}."
 msgstr ""
 
 #. token received from another server currently not valid and linked to a peripheral
-#: ../html/src/components/hub/TokenTable.tsx:253
+#: ../html/src/components/hub/TokenTable.tsx:252
 msgid "Enabling this access token will restore access to the peripheral {fqdn}."
 msgstr ""
 
@@ -3743,11 +3743,11 @@ msgstr ""
 msgid "Start date"
 msgstr "Fecha de inicio"
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-subscriptions.tsx:124
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-subscriptions.tsx:131
 msgid "No subscriptions found."
 msgstr "No se encontró ninguna suscripción."
 
-#: ../html/src/manager/audit/subscription-matching/subscription-matching-subscriptions.tsx:129
+#: ../html/src/manager/audit/subscription-matching/subscription-matching-subscriptions.tsx:136
 msgid "Your subscriptions"
 msgstr "Sus suscripciones"
 
