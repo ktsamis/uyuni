@@ -112,8 +112,8 @@ cat > "$HBA_FILE" <<EOT
 
 include_if_exists pg_hba_custom.conf
 
-local all all peer
-local replication all peer
+local all all trust
+local replication all trust
 host all all 127.0.0.1/8 scram-sha-256
 host all all ::1/128 scram-sha-256
 EOT
