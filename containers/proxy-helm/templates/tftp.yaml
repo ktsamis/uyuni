@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uyuni-proxy-tftp
+  namespace: "{{ .Release.Namespace }}"
+  labels:
+    app: uyuni-proxy-tftp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uyuni-proxy-tftp
+  template:
+    metadata:
+      labels:
+        app: uyuni-proxy-tftp
+    spec:
+{{- if .Values.registrySecret }}
+      imagePullSecrets:
+        - name: {{ .Values.registrySecret }}
+{{- end }}
+{{- if .Values.tftp.hostNetwork }}
+      dnsPolicy: ClusterFirstWithHostNet
+      hostNetwork: true
+{{- end }}
+      containers:
+        - name: tftpd
+          image: {{ include "deployment.container.image" (dict "name" "proxy-tftpd" "global" .) }}
+          imagePullPolicy: "{{ .Values.pullPolicy }}"
+          volumeMounts:
+          - name: config-volume
+            mountPath: /etc/uyuni/config.yaml
+            subPath: config.yaml
+            readOnly: true
+          ports:
+            - containerPort: 69
+              protocol: UDP
+      volumes:
+        - name: config-volume
+          configMap:
+            name: proxy-configmap
+            items:
+              - key: config.yaml
+                path: config.yaml

@@ -69,10 +69,11 @@ public class OVALCachingFactory extends HibernateFactory {
 
         List<ProductVulnerablePackages> productVulnerablePackages = new ArrayList<>();
         for (DefinitionType definition : rootType.getDefinitions()) {
-            VulnerablePackagesExtractor vulnerablePackagesExtractor =
+            Optional<VulnerablePackagesExtractor> vulnerablePackagesExtractor =
                     VulnerablePackagesExtractors.create(definition, rootType.getOsFamily(), ovalLookupHelper);
 
-            productVulnerablePackages.addAll(vulnerablePackagesExtractor.extract());
+            vulnerablePackagesExtractor.ifPresent(vPackage ->
+                productVulnerablePackages.addAll(vPackage.extract()));
         }
 
         // Clear previous OVAL metadata

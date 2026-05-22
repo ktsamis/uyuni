@@ -1,0 +1,1 @@
+- security(tls): remove TLSv1/TLSv1.1, allow TLSv1.3 for SMTP (bsc#1234567)

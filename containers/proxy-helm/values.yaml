@@ -64,8 +64,13 @@ services:
     nodeport_salta: 32505
     nodeport_saltb: 32506
     nodeport_ssh:   30020
-    nodeport_tfpt:  30069
 
 squid_tuning: ""
 apache_tuning: ""
 ssh_tuning: ""
+
+tftp:
+  ## Use the host network to bypass the Kubernetes network layers.
+  ## This may be needed if not using a LoadBalancer for the TFTP server.
+  ## Note that this may be more complex to manage on multi-node clusters.
+  hostNetwork: false

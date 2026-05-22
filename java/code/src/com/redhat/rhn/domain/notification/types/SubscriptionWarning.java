@@ -10,12 +10,15 @@
  */
 package com.redhat.rhn.domain.notification.types;
 
-import static com.redhat.rhn.common.hibernate.HibernateFactory.getSession;
-
 import com.redhat.rhn.common.localization.LocalizationService;
 
-import java.util.Optional;
+import com.suse.manager.matcher.MatcherJsonIO;
+import com.suse.matcher.json.OutputJson;
 
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
+import java.util.Optional;
 
 public class SubscriptionWarning implements NotificationData {
 
@@ -26,13 +29,30 @@ public class SubscriptionWarning implements NotificationData {
      * @return boolean
      **/
     public boolean expiresSoon() {
-        Optional<Boolean> result = getSession().createNativeQuery(
-        "select exists (select name,  expires_at, status, subtype " +
-                "from susesccsubscription where subtype != 'internal' " +
-                " and ((status = 'ACTIVE' and expires_at < now() + interval '90 day') " +
-                "or (status = 'EXPIRED' and expires_at > now() - interval '30 day')))").uniqueResultOptional();
+        Optional<OutputJson> output = new MatcherJsonIO().getLastMatcherOutput();
+        if (output.isPresent()) {
+            Instant now = Instant.now();
+            Instant ninetyDaysFuture = now.plus(90, ChronoUnit.DAYS);
+            Instant thirtyDaysPast = now.minus(30, ChronoUnit.DAYS);
 
-        return result.orElse(false);
+            return output.get().getSubscriptions().stream()
+                    .anyMatch(s -> {
+                        Date endDate = s.getEndDate();
+                        if (endDate == null) {
+                            return false;
+                        }
+                        Instant end = endDate.toInstant();
+
+                        // Active and expiring soon (within 90 days)
+                        boolean isActiveAndExpiresSoon = end.isAfter(now) && end.isBefore(ninetyDaysFuture);
+
+                        // Expired recently (within 30 days)
+                        boolean isExpiredRecently = end.isBefore(now) && end.isAfter(thirtyDaysPast);
+
+                        return (isActiveAndExpiresSoon || isExpiredRecently);
+                    });
+        }
+        return false;
     }
 
     @Override
