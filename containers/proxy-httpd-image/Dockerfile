@@ -7,15 +7,8 @@ FROM $BASE AS base
 # The name of the package is controlled in the prjconf. This is just the fallback
 ARG PXYRELEASENOTESPKG="release-notes-uyuni-proxy"
 
-ARG PRODUCT_REPO
-
-# Add distro and product repos
-COPY add_repos.sh /usr/bin
-RUN sh add_repos.sh ${PRODUCT_REPO}
-
 # Main packages
-RUN echo "rpm.install.excludedocs = yes" >>/etc/zypp/zypp.conf && \
-    zypper --gpg-auto-import-keys --non-interactive install --auto-agree-with-licenses  \
+RUN    zypper --gpg-auto-import-keys --non-interactive install --auto-agree-with-licenses  \
         spacewalk-proxy-broker \
         spacewalk-proxy-redirect \
         spacewalk-proxy-html \
@@ -30,13 +23,13 @@ RUN echo "rpm.install.excludedocs = yes" >>/etc/zypp/zypp.conf && \
     rm -rf /usr/share/locale \
     rm -rf /var/log/{alternatives.log,lastlog,tallylog,suseconnect.log,zypper.log,zypp/history,YaST2}
 
-
 # Replace mod_log_config.conf so that the logger takes a special var HANDLER_TYPE
 COPY mod_log_config.conf /etc/apache2/mod_log_config.conf
 
 # Additional material
 COPY --chmod=555 uyuni-configure.py /usr/bin/uyuni-configure.py
 
+# LABELS
 ARG PRODUCT=Uyuni
 ARG VENDOR="Uyuni project"
 ARG URL="https://www.uyuni-project.org/"

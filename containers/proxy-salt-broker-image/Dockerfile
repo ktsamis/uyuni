@@ -4,12 +4,6 @@
 ARG BASE=registry.suse.com/bci/bci-base:15.6
 FROM $BASE AS fat
 
-ARG PRODUCT_REPO
-
-# Add distro and product repos
-COPY add_repos.sh /usr/bin
-RUN sh add_repos.sh ${PRODUCT_REPO}
-
 # Main packages
 RUN zypper --gpg-auto-import-keys --non-interactive install --auto-agree-with-licenses \
         spacewalk-proxy-salt \
@@ -17,7 +11,7 @@ RUN zypper --gpg-auto-import-keys --non-interactive install --auto-agree-with-li
         python3-PyYAML \
         python3-pyzmq && \
     zypper --non-interactive clean --all && \
-    rpm -e container-suseconnect && \
+    rpm -e zypper libzypp container-suseconnect && \
     rm -rf /var/log/{alternatives.log,lastlog,tallylog,suseconnect.log,zypper.log,zypp/history,YaST2}
 
 # Additional material
