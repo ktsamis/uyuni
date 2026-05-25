@@ -11,7 +11,7 @@ ARG PRODUCT_PATTERN_PREFIX="patterns-uyuni"
 ARG USEPYTHON="python3"
 
 # Extra packages can be added via project configuration
-ARG EXTRAPACKAGES
+ARG EXTRAPACKAGES=""
 
 # Create stable static UID and GID for salt, tomcat, apache (wwwrun)...
 RUN groupadd -r --gid 10550 susemanager && \
@@ -27,7 +27,7 @@ RUN useradd -r -s /usr/sbin/nologin -G susemanager,www -g tomcat -d /usr/share/t
   useradd -r -s /usr/sbin/nologin -g tftp -d /srv/tftpboot --uid 10555 tftp
 
 # Main packages
-RUN echo "rpm.install.excludedocs = yes" >>/etc/zypp/zypp.conf && \
+RUN set -euo pipefail; \
     zypper ref && zypper --non-interactive up && \
     zypper --gpg-auto-import-keys --non-interactive install --auto-agree-with-licenses --force-resolution \
         ${EXTRAPACKAGES} \
@@ -80,6 +80,7 @@ RUN echo "rpm.install.excludedocs = yes" >>/etc/zypp/zypp.conf && \
         virtualization-formulas \
         mozilla-nss-sysinit \
         zchunk && \
+    (rpm -e container-suseconnect || true) && \
     systemctl enable prometheus-node_exporter && \
     systemctl enable sssd && \
     rm /etc/krb5.conf.d/crypto-policies && \
@@ -91,6 +92,7 @@ RUN echo "rpm.install.excludedocs = yes" >>/etc/zypp/zypp.conf && \
 # The RemoveIPC was needed for postgresql, not sure if it is safe to remove now that it's in its own container
     mkdir -p /etc/systemd/logind.conf.d/ && \
     printf "[Login]\nRemoveIPC=no" >/etc/systemd/logind.conf.d/disable-removeipc.conf && \
+    zypper --non-interactive removerepo --all; \
     rm -rf /var/log/{alternatives.log,lastlog,tallylog,suseconnect.log,zypper.log,zypp/history,YaST2}
 
 ADD --chown=root:root root.tar.gz /

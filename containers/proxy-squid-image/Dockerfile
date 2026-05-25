@@ -4,15 +4,8 @@
 ARG BASE=registry.suse.com/bci/bci-base:15.6
 FROM $BASE AS base
 
-ARG PRODUCT_REPO
-
-# Add distro and product repos
-COPY add_repos.sh /usr/bin
-RUN sh add_repos.sh ${PRODUCT_REPO}
-
 # Main packages
-RUN echo "rpm.install.excludedocs = yes" >>/etc/zypp/zypp.conf && \
-    zypper --gpg-auto-import-keys --non-interactive install --auto-agree-with-licenses \
+RUN zypper --gpg-auto-import-keys --non-interactive install --auto-agree-with-licenses \
         python3 \
         python3-PyYAML \
         squid && \
@@ -33,6 +26,7 @@ COPY --chmod=555 uyuni-configure.py /usr/bin/uyuni-configure.py
 COPY --chown=squid:squid squid.conf /etc/squid/squid.conf
 COPY squid_example.conf /etc/squid/conf.d/squid_example.conf
 
+# LABELs
 ARG PRODUCT=Uyuni
 ARG VENDOR="Uyuni project"
 ARG URL="https://www.uyuni-project.org/"
