@@ -42,6 +42,7 @@ Add more tasks if needed
 - [ ] Request a Snapshot refresh at the "buildops" Team (https://gitlab.suse.de/buildops/release-support/-/issues)
 - [ ] Ask the Ion Squad to promote all salt versions that have updates, including bundle (maybe multiple times - latest on the "Last day for Changes")
 - [ ] Adjust `web.version` in `web/conf/rhn_web.conf` for `master` to match the Milestone (for example `5.1.0 Alpha1`)
+  - [ ] Check also the [push.sh](https://github.com/uyuni-project/uyuni-tools/blob/main/push.sh) script for 'uyuni-tools'. Adjust the sed that replaces the default tag for SUSE Multi-Linux Manager.
 - [ ] Check for updates needed in `_config` (Project Config) for changing milestone names.
 - [ ] Check GITEA for changes in the devel products (updates for project config, products and release packages) which need to be submitted via cherry-pick to the target branch.
       Open the needed Pull Requests (Product PRs).
