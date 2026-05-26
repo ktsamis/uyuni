@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
+# SPDX-FileCopyrightText: 2026 SUSE LLC
+#
 # SPDX-License-Identifier: MIT
+
 # Sanity checks run as root before privilege drop.
 # Fixes ownership/permission issues from legacy installations.
 
